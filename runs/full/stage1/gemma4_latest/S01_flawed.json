@@ -1,0 +1,29 @@
+{
+  "scenario_id": "S01",
+  "variant": "flawed",
+  "domain": "job_offers",
+  "difficulty_tier": 1,
+  "model": "gemma4:latest",
+  "seed": 100,
+  "output": {
+    "summary": "The user's constraint requires Year-1 realized gross compensation to be $\\ge$ $260,000. The components for Year-1 realization are the Base Salary, guaranteed Year-1 cash bonus, and Year-1 equity vesting. The Base Salary is $205,000. The guaranteed bonus is $10,000. The equity vesting in Year 1 is stated as 0%. Therefore, the total realized compensation is $205,000 + $10,000 + $0 = $215,000, which is less than the $260,000 minimum.",
+    "key_claims": [
+      "Base Salary: $205,000",
+      "Guaranteed Year-1 Bonus: $10,000",
+      "Year-1 Equity Vesting: 0%"
+    ],
+    "recommendation": "hold_to_verify",
+    "risks_or_flaws": [
+      "The calculation for Year-1 realized gross compensation ($215,000) falls short of the required minimum of $260,000."
+    ],
+    "verification_question": "Does the 'Year-1 realized gross compensation' calculation include any portion of the $400,000 RSU package, or is the 0% vesting schedule absolute for the first 12 months?",
+    "confidence": 100
+  },
+  "meta": {
+    "prompt_tokens": 644,
+    "output_tokens": 336,
+    "seconds": 7.34,
+    "repaired": false
+  },
+  "advisor_caught": true
+}

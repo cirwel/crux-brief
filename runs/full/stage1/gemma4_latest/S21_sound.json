@@ -1,0 +1,29 @@
+{
+  "scenario_id": "S21",
+  "variant": "sound",
+  "domain": "operational_briefs",
+  "difficulty_tier": 2,
+  "model": "gemma4:latest",
+  "seed": 141,
+  "output": {
+    "summary": "The packet confirms the overall mean API latency dropped from 140 ms to 112 ms, satisfying the positive narrative point. Crucially, the database-backed request p95 latency improved from 165 ms (v3.1) to 134 ms (v3.2). Since 134 ms is significantly less than the 180 ms threshold, the primary constraint is met.",
+    "key_claims": [
+      "Overall mean API latency dropped from 140 ms (v3.1) to 112 ms (v3.2).",
+      "Database-backed request p95 latency improved from 165 ms (v3.1) to 134 ms (v3.2).",
+      "The target p95 latency threshold of 180 ms was not exceeded."
+    ],
+    "recommendation": "proceed",
+    "risks_or_flaws": [
+      "none"
+    ],
+    "verification_question": "none",
+    "confidence": 100
+  },
+  "meta": {
+    "prompt_tokens": 619,
+    "output_tokens": 248,
+    "seconds": 8.93,
+    "repaired": false
+  },
+  "advisor_caught": null
+}

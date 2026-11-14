@@ -1,0 +1,147 @@
+{
+  "scenario_id": "S09",
+  "variant": "flawed",
+  "domain": "leases",
+  "difficulty_tier": 2,
+  "eval_model": "gemma4:latest",
+  "synth_model": "nemotron3:33b",
+  "single_advisor_model": "qwen3.6:27b-coding-mxfp8",
+  "k_spotted": 3,
+  "advisor_caught_by_model": {
+    "gemma4:latest": true,
+    "nemotron3:33b": true,
+    "qwen3.6:27b-coding-mxfp8": true
+  },
+  "briefs": {
+    "single": {
+      "text": "ASSESSMENT OVERVIEW: The user's constraint requires that the financial liability for a 4-day holdover does not exceed $2,000. The decision packet states the holdover penalty is 200% of total Base + Additional Rent for the entire succeeding calendar month. Total monthly rent is $5,400 + $1,200 = $6,600. The penalty is 200% of $6,600, which equals $13,200. This amount significantly exceeds the $2,000 maximum exposure limit. Therefore, the constraint is violated. Key facts: Total monthly rent is $6,600 ($5,400 Base + $1,200 Additional).; Holdover penalty is 200% of total monthly rent, resulting in $13,200 liability..\nPOINTS OF NOTE: The holdover penalty of $13,200 exceeds the user's maximum exposure constraint of $2,000 for a 4-day overrun..\nSUGGESTED NEXT STEP: Can the landlord agree to a pro-rated holdover fee or a cap on the penalty to ensure it stays below $2,000?",
+      "words": 139
+    },
+    "consensus": {
+      "raw": {
+        "overview": "All three advisors confirm that the lease's holdover clause imposes a full month's liability\u2014$6,600 base rent plus $1,200 additional rent\u2014at 200% for any delay, far exceeding the $2,000 maximum exposure for a 4-day overrun. Each advisor identifies this as a clear violation of the user's constraint, with no evidence of proration or alternative calculations.",
+        "points_of_note": "Advisor 1 notes the $4,600 excess beyond $2,000 and flags the lack of proration in Clause 19; Advisor 2 emphasizes the $13,200 liability from applying 200% to the entire month; Advisor 3 reiterates the $13,200 figure and suggests seeking a pro-rated fee or cap. No advisor indicates the constraint is satisfied.",
+        "suggested_next_step": "Proceed to verify the lease's holdover clause language to determine if a pro-rated penalty or negotiated cap can be secured before signing."
+      },
+      "text": "ASSESSMENT OVERVIEW: All three advisors confirm that the lease's holdover clause imposes a full month's liability\u2014$6,600 base rent plus $1,200 additional rent\u2014at 200% for any delay, far exceeding the $2,000 maximum exposure for a 4-day overrun. Each advisor identifies this as a clear violation of the user's constraint, with no evidence of proration or alternative calculations.\nPOINTS OF NOTE: Advisor 1 notes the $4,600 excess beyond $2,000 and flags the lack of proration in Clause 19; Advisor 2 emphasizes the $13,200 liability from applying 200% to the entire month; Advisor 3 reiterates the $13,200 figure and suggests seeking a pro-rated fee or cap. No advisor indicates the constraint is satisfied.\nSUGGESTED NEXT STEP: Proceed to verify the lease's holdover clause language to determine if a pro-rated penalty or negotiated cap can be secured before signing.",
+      "words": 135,
+      "meta": {
+        "prompt_tokens": 1372,
+        "output_tokens": 234,
+        "seconds": 8.88,
+        "repaired": false
+      }
+    },
+    "crux": {
+      "raw": {
+        "shared_ground": [
+          "Total monthly rent is $6,600 ($5,400 Base + $1,200 Additional)",
+          "Holdover penalty is 200% of total monthly rent for the entire succeeding calendar month"
+        ],
+        "cruxes": [
+          {
+            "topic": "Holdover penalty calculation",
+            "side_a": "Advisor 1: 4-day overrun triggers full month liability of $6,600 (exceeds $2,000 limit by $4,600)",
+            "side_b": "Advisor 2 & 3: 4-day overrun triggers $13,200 liability (200% of $6,600) far exceeding $2,000 limit",
+            "premise_at_stake": "Whether liability applies to the entire succeeding month or can be prorated for actual days occupied"
+          }
+        ],
+        "unverified_premises": [
+          "Whether the lease allows proration of the holdover penalty based on actual days occupied beyond the expiration date"
+        ],
+        "decisive_check": "Confirm if Clause 19's 'entire succeeding calendar month' liability applies absolutely to a 4-day delay without proration"
+      },
+      "text": "ASSESSMENT OVERVIEW: Total monthly rent is $6,600 ($5,400 Base + $1,200 Additional) Holdover penalty is 200% of total monthly rent for the entire succeeding calendar month\nPOINTS OF NOTE: Disagreements: (1) Holdover penalty calculation: Side A [Advisor 1: 4-day overrun triggers full month liability of $6,600 (exceeds $2,000 limit by $4,600)] vs. Side B [Advisor 2 & 3: 4-day overrun triggers $13,200 liability (200% of $6,600) far exceeding $2,000 limit] (at stake: Whether liability applies to the entire succeeding month or can be prorated for actual days occupied) Flagged issues: Whether the lease allows proration of the holdover penalty based on actual days occupied beyond the expiration date\nSUGGESTED NEXT STEP: Confirm if Clause 19's 'entire succeeding calendar month' liability applies absolutely to a 4-day delay without proration",
+      "words": 128,
+      "meta": {
+        "prompt_tokens": 1541,
+        "output_tokens": 281,
+        "seconds": 9.87,
+        "repaired": false
+      }
+    }
+  },
+  "crux_survived": {
+    "single": true,
+    "consensus": true,
+    "crux": true
+  },
+  "decisions": {
+    "raw": {
+      "output": {
+        "primary_reason": "The holdover provision (Clause 19) mandates payment for an entire succeeding month at 200% of total rent, which far exceeds the $2,000 maximum liability allowed for a 4-day delay.",
+        "target_clause_or_metric": "Clause 19",
+        "action": "hold_to_verify",
+        "confidence": 100,
+        "brief_endorsement": null
+      },
+      "meta": {
+        "prompt_tokens": 568,
+        "output_tokens": 108,
+        "seconds": 3.55,
+        "repaired": false
+      },
+      "hold": true,
+      "verified_catch": true,
+      "untargeted_hold": false,
+      "false_alarm": null
+    },
+    "single": {
+      "output": {
+        "primary_reason": "The lease's holdover provision mandates payment for an entire succeeding month at 200% of total rent, resulting in a $13,200 penalty, which drastically exceeds the stated maximum allowable liability of $2,000 for a 4-day delay.",
+        "target_clause_or_metric": "Clause 19",
+        "action": "hold_to_verify",
+        "confidence": 100,
+        "brief_endorsement": 5
+      },
+      "meta": {
+        "prompt_tokens": 831,
+        "output_tokens": 120,
+        "seconds": 4.11,
+        "repaired": false
+      },
+      "hold": true,
+      "verified_catch": true,
+      "untargeted_hold": false,
+      "false_alarm": null
+    },
+    "consensus": {
+      "output": {
+        "primary_reason": "The lease's holdover provision (Clause 19) mandates payment for the entire succeeding month at 200% of total rent, which results in a liability far exceeding the stated $2,000 maximum for a 4-day delay. The pre-decision brief confirms this significant discrepancy.",
+        "target_clause_or_metric": "Clause 19",
+        "action": "hold_to_verify",
+        "confidence": 100,
+        "brief_endorsement": 5
+      },
+      "meta": {
+        "prompt_tokens": 793,
+        "output_tokens": 125,
+        "seconds": 4.5,
+        "repaired": false
+      },
+      "hold": true,
+      "verified_catch": true,
+      "untargeted_hold": false,
+      "false_alarm": null
+    },
+    "crux": {
+      "output": {
+        "primary_reason": "The lease's Holdover Provision (Clause 19) mandates payment for the ENTIRE succeeding calendar month at 200% of total rent, which for a 4-day delay results in a liability far exceeding the stated $2,000 maximum, thus violating the constraint.",
+        "target_clause_or_metric": "Clause 19",
+        "action": "hold_to_verify",
+        "confidence": 100,
+        "brief_endorsement": 5
+      },
+      "meta": {
+        "prompt_tokens": 804,
+        "output_tokens": 123,
+        "seconds": 4.51,
+        "repaired": false
+      },
+      "hold": true,
+      "verified_catch": true,
+      "untargeted_hold": false,
+      "false_alarm": null
+    }
+  }
+}

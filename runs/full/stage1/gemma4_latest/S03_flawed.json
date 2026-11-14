@@ -1,0 +1,29 @@
+{
+  "scenario_id": "S03",
+  "variant": "flawed",
+  "domain": "job_offers",
+  "difficulty_tier": 2,
+  "model": "gemma4:latest",
+  "seed": 104,
+  "output": {
+    "summary": "The user's primary constraint requires expected annual cash earnings at historical team attainment to be $\\ge$ $210,000. The historical median attainment is 74%. The payout structure is linear above 80% with a cliff below 80%. Since 74% is below the 80% threshold, the expected variable commission payout based on the historical median attainment is $0, resulting in total cash earnings of only the base salary of $160,000, which fails the $210,000 minimum threshold.",
+    "key_claims": [
+      "Base Salary: $160,000",
+      "Historical Median Quota Attainment: 74%",
+      "Variable Commission at 74% Attainment: $0 (due to 80% cliff)"
+    ],
+    "recommendation": "hold_to_verify",
+    "risks_or_flaws": [
+      "The historical median attainment of 74% falls below the 80% quota attainment cliff, resulting in zero variable commission payout, leading to total cash earnings of $160,000, which is less than the required $210,000."
+    ],
+    "verification_question": "Does the payout structure have an exception or alternative calculation for historical attainment that is below the 80% cliff, or is the $210,000 minimum requirement based on a different historical metric than the median?",
+    "confidence": 100
+  },
+  "meta": {
+    "prompt_tokens": 598,
+    "output_tokens": 345,
+    "seconds": 11.98,
+    "repaired": false
+  },
+  "advisor_caught": true
+}

@@ -1,0 +1,29 @@
+{
+  "scenario_id": "S15",
+  "variant": "flawed",
+  "domain": "procurement_handoffs",
+  "difficulty_tier": 2,
+  "model": "nemotron3:33b",
+  "seed": 1128,
+  "output": {
+    "summary": "The $1,000 discount from early payment on Day 10 must exceed the $249,000 credit-line financing cost (12.0% APR for 20 days) to yield positive net savings. Calculating the financing cost at $83.00 confirms the discount is insufficient, violating the net savings requirement.",
+    "key_claims": [
+      "Discount savings: $1,000",
+      "Financing cost: $83.00",
+      "Net savings: -$82.00"
+    ],
+    "recommendation": "hold_to_verify",
+    "risks_or_flaws": [
+      "Discount savings ($1,000) is less than financing cost ($83.00) resulting in negative net savings"
+    ],
+    "verification_question": "Confirm 12.0% APR applied to $249,000 for 20 days yields exactly $83.00 financing cost",
+    "confidence": 100
+  },
+  "meta": {
+    "prompt_tokens": 698,
+    "output_tokens": 238,
+    "seconds": 8.36,
+    "repaired": false
+  },
+  "advisor_caught": true
+}

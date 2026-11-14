@@ -1,0 +1,29 @@
+{
+  "scenario_id": "S09",
+  "variant": "sound",
+  "domain": "leases",
+  "difficulty_tier": 2,
+  "model": "gemma4:latest",
+  "seed": 117,
+  "output": {
+    "summary": "The goal is to ensure a 4-day move-out overrun does not exceed a $2,000 liability. The daily total rent is $5,400 + $1,200 = $6,600. Since the delay is only 4 days, the holdover rate is 125% of the daily total. The calculated liability for 4 days is $6,600 * 1.25 * 4, which equals $3,300. This exceeds the $2,000 maximum allowable exposure.",
+    "key_claims": [
+      "Daily Total Rent: $6,600",
+      "Holdover Rate for first 10 days: 125%",
+      "Calculated 4-day liability: $3,300"
+    ],
+    "recommendation": "hold_to_verify",
+    "risks_or_flaws": [
+      "The calculated 4-day holdover liability ($3,300) exceeds the stated maximum allowable exposure of $2,000."
+    ],
+    "verification_question": "Does the lease contain any provision that caps the holdover penalty for the first 10 days, or is the 125% calculation accurate for a 4-day delay?",
+    "confidence": 100
+  },
+  "meta": {
+    "prompt_tokens": 552,
+    "output_tokens": 309,
+    "seconds": 11.01,
+    "repaired": false
+  },
+  "advisor_caught": null
+}

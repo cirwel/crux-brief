@@ -1,0 +1,49 @@
+{
+  "scenario_id": "S11",
+  "variant": "sound",
+  "domain": "leases",
+  "difficulty_tier": 3,
+  "synth_model": "gemma4:latest",
+  "k_spotted": null,
+  "advisor_caught_by_model": {
+    "gemma4:latest": null,
+    "nemotron3:33b": null,
+    "qwen3.6:27b-coding-mxfp8": null
+  },
+  "briefs": {
+    "consensus": {
+      "raw": {
+        "overview": "The advisors show strong consensus, all recommending proceeding with the agreement. The core concern regarding the tenant's annual non-rent building repair exposure being capped below the $3,000 threshold is consistently addressed. Furthermore, the critical constraint regarding unbudgeted capital equipment replacement risk appears to be mitigated across all assessments, suggesting a high degree of alignment with the user's stated goals.",
+        "points_of_note": "All three advisors noted that the tenant's annual upkeep obligation is capped at $2,000, which satisfies the $3,000 limit. Crucially, the responsibility for structural and HVAC capital unit replacement remains with the Landlord, as stipulated by Clause 7c. The specific mention of the aging rooftop Trane unit, requiring a $26,500 replacement, is consistently cited as being covered by the Landlord's existing reserves, thereby preventing the risk from shifting to the tenant.",
+        "suggested_next_step": "Given the unanimous recommendation and the consistent confirmation across all reports that the tenant's repair exposure is capped at $2,000 and that the Landlord retains responsibility for major capital replacements, the decision maker should feel confident in proceeding with the lease signing."
+      },
+      "text": "ASSESSMENT OVERVIEW: The advisors show strong consensus, all recommending proceeding with the agreement. The core concern regarding the tenant's annual non-rent building repair exposure being capped below the $3,000 threshold is consistently addressed. Furthermore, the critical constraint regarding unbudgeted capital equipment replacement risk appears to be mitigated across all assessments, suggesting a high degree of alignment with the user's stated goals.\nPOINTS OF NOTE: All three advisors noted that the tenant's annual upkeep obligation is capped at $2,000, which satisfies the $3,000 limit. Crucially, the responsibility for structural and HVAC capital unit replacement remains with the Landlord, as stipulated by Clause 7c. The specific mention of the aging rooftop Trane unit, requiring a $26,500 replacement, is consistently cited as being covered by the Landlord's existing reserves, thereby preventing the risk from shifting to the tenant.\nSUGGESTED NEXT STEP: Given the unanimous recommendation and the consistent confirmation across all reports that the tenant's repair exposure is capped at $2,000 and that the Landlord retains responsibility for major capital replacements, the decision maker should feel confident in proceeding with the lease signing.",
+      "words": 180,
+      "meta": {
+        "prompt_tokens": 1038,
+        "output_tokens": 267,
+        "seconds": 10.48,
+        "repaired": false
+      }
+    },
+    "crux": {
+      "raw": {
+        "shared_ground": [
+          "The tenant's annual non-rent repair obligation is consistently cited as being capped at $2,000.",
+          "All advisors agree that the Landlord is responsible for structural and HVAC capital unit replacement, mitigating unbudgeted risk."
+        ],
+        "cruxes": [],
+        "unverified_premises": [],
+        "decisive_check": "None required; all advisors concur stated constraints are satisfied."
+      },
+      "text": "ASSESSMENT OVERVIEW: The tenant's annual non-rent repair obligation is consistently cited as being capped at $2,000. All advisors agree that the Landlord is responsible for structural and HVAC capital unit replacement, mitigating unbudgeted risk.\nPOINTS OF NOTE: No concrete disagreements or constraint violations flagged across advisors.\nSUGGESTED NEXT STEP: None required; all advisors concur stated constraints are satisfied.",
+      "words": 58,
+      "meta": {
+        "prompt_tokens": 1186,
+        "output_tokens": 104,
+        "seconds": 6.02,
+        "repaired": false
+      }
+    }
+  }
+}

@@ -1,0 +1,49 @@
+{
+  "scenario_id": "S24",
+  "variant": "sound",
+  "domain": "operational_briefs",
+  "difficulty_tier": 1,
+  "synth_model": "nemotron3:33b",
+  "k_spotted": null,
+  "advisor_caught_by_model": {
+    "gemma4:latest": null,
+    "nemotron3:33b": null,
+    "qwen3.6:27b-coding-mxfp8": null
+  },
+  "briefs": {
+    "consensus": {
+      "raw": {
+        "overview": "All three advisors unanimously recommend proceeding with the hospital float-pool hiring plan, as each confirms the proposal satisfies the critical constraint requiring Year-1 net budget savings of at least $100,000. Each assessment verifies that projected savings from eliminating emergency overtime exceed $300,000 annually while accounting for new staffing costs and associated fees, resulting in net savings well above the threshold.",
+        "points_of_note": "While Advisor 1 calculates net savings at $170,000 (using $190,000 in new costs), Advisor 2 reports $250,000 net savings (using $110,000 total costs), and Advisor 3 determines $155,000 net savings (using $205,000 total costs). These variations stem from differing interpretations of cost components\u2014specifically whether the $15,000 item represents a one-time referral bonus versus recurring annual expense\u2014and how expense categories are aggregated, though all figures satisfy the $100,000 minimum requirement without violating any stated constraint.",
+        "suggested_next_step": "Proceed with approval of the hospital float-pool hiring plan, as all advisor assessments confirm the Year-1 net savings exceed the $100,000 threshold and no constraint breaches were identified."
+      },
+      "text": "ASSESSMENT OVERVIEW: All three advisors unanimously recommend proceeding with the hospital float-pool hiring plan, as each confirms the proposal satisfies the critical constraint requiring Year-1 net budget savings of at least $100,000. Each assessment verifies that projected savings from eliminating emergency overtime exceed $300,000 annually while accounting for new staffing costs and associated fees, resulting in net savings well above the threshold.\nPOINTS OF NOTE: While Advisor 1 calculates net savings at $170,000 (using $190,000 in new costs), Advisor 2 reports $250,000 net savings (using $110,000 total costs), and Advisor 3 determines $155,000 net savings (using $205,000 total costs). These variations stem from differing interpretations of cost components\u2014specifically whether the $15,000 item represents a one-time referral bonus versus recurring annual expense\u2014and how expense categories are aggregated, though all figures satisfy the $100,000 minimum requirement without violating any stated constraint.\nSUGGESTED NEXT STEP: Proceed with approval of the hospital float-pool hiring plan, as all advisor assessments confirm the Year-1 net savings exceed the $100,000 threshold and no constraint breaches were identified.",
+      "words": 170,
+      "meta": {
+        "prompt_tokens": 1202,
+        "output_tokens": 299,
+        "seconds": 9.83,
+        "repaired": false
+      }
+    },
+    "crux": {
+      "raw": {
+        "shared_ground": [
+          "Annual savings from eliminating overtime are $360,000",
+          "Net Year-1 savings exceed $100,000 threshold"
+        ],
+        "cruxes": [],
+        "unverified_premises": [],
+        "decisive_check": "None required; all advisors concur stated constraints are satisfied."
+      },
+      "text": "ASSESSMENT OVERVIEW: Annual savings from eliminating overtime are $360,000 Net Year-1 savings exceed $100,000 threshold\nPOINTS OF NOTE: No concrete disagreements or constraint violations flagged across advisors.\nSUGGESTED NEXT STEP: None required; all advisors concur stated constraints are satisfied.",
+      "words": 39,
+      "meta": {
+        "prompt_tokens": 1371,
+        "output_tokens": 85,
+        "seconds": 5.05,
+        "repaired": false
+      }
+    }
+  }
+}

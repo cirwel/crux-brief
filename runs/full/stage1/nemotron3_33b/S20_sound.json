@@ -1,0 +1,29 @@
+{
+  "scenario_id": "S20",
+  "variant": "sound",
+  "domain": "operational_briefs",
+  "difficulty_tier": 2,
+  "model": "nemotron3:33b",
+  "seed": 1139,
+  "output": {
+    "summary": "The packet states 69.0% retention (966/1,400) meets the 65% threshold. Footnote 2 confirms all 1,400 Day-0 signups are counted, including 160 churned early, so the denominator is valid. CAC is irrelevant to the retention constraint.",
+    "key_claims": [
+      "69.0% retention from 966/1,400 as stated",
+      "1,400 total Day-0 signups including 160 early churners per Footnote 2",
+      "65% scale threshold explicitly met"
+    ],
+    "recommendation": "proceed",
+    "risks_or_flaws": [
+      "none"
+    ],
+    "verification_question": "none",
+    "confidence": 100
+  },
+  "meta": {
+    "prompt_tokens": 617,
+    "output_tokens": 191,
+    "seconds": 6.46,
+    "repaired": false
+  },
+  "advisor_caught": null
+}

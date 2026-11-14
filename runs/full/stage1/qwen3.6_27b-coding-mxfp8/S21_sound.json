@@ -1,0 +1,28 @@
+{
+  "scenario_id": "S21",
+  "variant": "sound",
+  "domain": "operational_briefs",
+  "difficulty_tier": 2,
+  "model": "qwen3.6:27b-coding-mxfp8",
+  "seed": 2141,
+  "output": {
+    "summary": "The user's primary constraint is that database-backed request p95 latency must not exceed 180 ms. The decision packet explicitly states that on the uncached database-query path, the v3.2 p95 latency is 134 ms. This figure is strictly less than the 180 ms threshold. The packet also confirms a 20% drop in overall mean latency (140 ms to 112 ms), aligning with the release brief. No other constraints were violated. The arithmetic holds: 134 <= 180. Therefore, the deployment meets all specified conditions.",
+    "key_claims": [
+      "Database-backed request p95 latency for v3.2 is 134 ms.",
+      "Overall mean API latency dropped from 140 ms to 112 ms."
+    ],
+    "recommendation": "proceed",
+    "risks_or_flaws": [
+      "none"
+    ],
+    "verification_question": "none",
+    "confidence": 100
+  },
+  "meta": {
+    "prompt_tokens": 603,
+    "output_tokens": 238,
+    "seconds": 56.37,
+    "repaired": false
+  },
+  "advisor_caught": null
+}

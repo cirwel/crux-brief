@@ -1,0 +1,29 @@
+{
+  "scenario_id": "S15",
+  "variant": "sound",
+  "domain": "procurement_handoffs",
+  "difficulty_tier": 2,
+  "model": "gemma4:latest",
+  "seed": 129,
+  "output": {
+    "summary": "The goal is to approve early payment only if the net dollar savings are positive. The stated discount is $5,000. The financing cost is calculated on the drawn amount ($245,000) for 20 days at 12.0% APR. The financing cost is $400, which is subtracted from the $5,000 discount, resulting in a positive net savings of $4,600.",
+    "key_claims": [
+      "Discount savings: $5,000",
+      "Financing cost: $400",
+      "Net dollar savings: $4,600"
+    ],
+    "recommendation": "proceed",
+    "risks_or_flaws": [
+      "none"
+    ],
+    "verification_question": "none",
+    "confidence": 100
+  },
+  "meta": {
+    "prompt_tokens": 638,
+    "output_tokens": 203,
+    "seconds": 7.43,
+    "repaired": false
+  },
+  "advisor_caught": null
+}

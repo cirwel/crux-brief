@@ -1,0 +1,29 @@
+{
+  "scenario_id": "S09",
+  "variant": "flawed",
+  "domain": "leases",
+  "difficulty_tier": 2,
+  "model": "gemma4:latest",
+  "seed": 116,
+  "output": {
+    "summary": "The user's goal is to ensure the maximum liability for a 4-day move-out overrun does not exceed $2,000. The packet states the holdover provision charges 200% of the total monthly rent for the *entire* succeeding month, regardless of the actual delay length. The total monthly rent is $6,600 ($5,400 + $1,200). A 4-day delay would trigger a charge of $6,600 * 2.00 = $13,200, which vastly exceeds the $2,000 limit.",
+    "key_claims": [
+      "Total Monthly Rent: $6,600 ($5,400 + $1,200)",
+      "Holdover Penalty: 200% of total monthly rent for the ENTIRE succeeding month.",
+      "Calculated 4-Day Overrun Liability: $13,200"
+    ],
+    "recommendation": "hold_to_verify",
+    "risks_or_flaws": [
+      "The stated holdover penalty charges for the entire month ($13,200), which is significantly greater than the user's maximum acceptable liability of $2,000 for a 4-day delay."
+    ],
+    "verification_question": "Does the lease allow for a pro-rated holdover penalty based on actual days occupied, or is the 'entire succeeding calendar month' charge absolute?",
+    "confidence": 100
+  },
+  "meta": {
+    "prompt_tokens": 553,
+    "output_tokens": 349,
+    "seconds": 12.19,
+    "repaired": false
+  },
+  "advisor_caught": true
+}

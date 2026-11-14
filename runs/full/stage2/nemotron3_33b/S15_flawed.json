@@ -1,0 +1,59 @@
+{
+  "scenario_id": "S15",
+  "variant": "flawed",
+  "domain": "procurement_handoffs",
+  "difficulty_tier": 2,
+  "synth_model": "nemotron3:33b",
+  "k_spotted": 3,
+  "advisor_caught_by_model": {
+    "gemma4:latest": true,
+    "nemotron3:33b": true,
+    "qwen3.6:27b-coding-mxfp8": true
+  },
+  "briefs": {
+    "consensus": {
+      "raw": {
+        "overview": "All three advisors concur that the $1,000 early payment discount on Invoice #4490 ($250,000 face value) is outweighed by the credit-line financing cost for the 20-day period (Day 10 to Day 30), resulting in negative net dollar savings despite the clerk's 'guaranteed instant savings' claim. The user's constraint requiring positive net savings after financing costs is not satisfied in any assessment.",
+        "points_of_note": "Advisor 1 calculates a $1,635 financing cost (12% APR on $249,000 for 20 days), yielding a net loss of ~$635. Advisor 2 reports a lower $83.00 cost but still shows negative net savings ($1,000 - $83 = -$82), though this appears inconsistent with the principal amount. Advisor 3 cites a $1,660 cost (20 days @ 12% APR on $249,000), confirming a $660 net loss. All agree the discount savings ($1,000) fail to exceed financing costs, violating the positive net savings requirement.",
+        "suggested_next_step": "Do not approve early payment for Invoice #4490, as all advisors confirm the net dollar savings are negative, breaching the constraint requiring positive net savings after financing costs."
+      },
+      "text": "ASSESSMENT OVERVIEW: All three advisors concur that the $1,000 early payment discount on Invoice #4490 ($250,000 face value) is outweighed by the credit-line financing cost for the 20-day period (Day 10 to Day 30), resulting in negative net dollar savings despite the clerk's 'guaranteed instant savings' claim. The user's constraint requiring positive net savings after financing costs is not satisfied in any assessment.\nPOINTS OF NOTE: Advisor 1 calculates a $1,635 financing cost (12% APR on $249,000 for 20 days), yielding a net loss of ~$635. Advisor 2 reports a lower $83.00 cost but still shows negative net savings ($1,000 - $83 = -$82), though this appears inconsistent with the principal amount. Advisor 3 cites a $1,660 cost (20 days @ 12% APR on $249,000), confirming a $660 net loss. All agree the discount savings ($1,000) fail to exceed financing costs, violating the positive net savings requirement.\nSUGGESTED NEXT STEP: Do not approve early payment for Invoice #4490, as all advisors confirm the net dollar savings are negative, breaching the constraint requiring positive net savings after financing costs.",
+      "words": 178,
+      "meta": {
+        "prompt_tokens": 1399,
+        "output_tokens": 317,
+        "seconds": 8.19,
+        "repaired": false
+      }
+    },
+    "crux": {
+      "raw": {
+        "shared_ground": [
+          "The invoice face value is $250,000 with a 0.4% discount resulting in a $1,000 gross savings",
+          "Credit-line financing at 12.0% APR for 20 days incurs a cost exceeding the discount savings"
+        ],
+        "cruxes": [
+          {
+            "topic": "Financing cost calculation",
+            "side_a": "Advisor 1: Financing cost \u2248 $1,635 (20 days @ 12% APR on $249,000)",
+            "side_b": "Advisor 2: Financing cost = $83.00 (20 days @ 12% APR on $249,000)",
+            "premise_at_stake": "Whether the discount savings ($1,000) exceeds the financing cost to achieve positive net savings"
+          }
+        ],
+        "unverified_premises": [
+          "Exact financing cost calculation method (simple interest vs. APR application) is not confirmed",
+          "Whether the clerk's 'guaranteed instant savings' claim reflects actual net financial impact"
+        ],
+        "decisive_check": "Verify that the discount savings ($1,000) exceeds the financing cost to confirm positive net dollar savings"
+      },
+      "text": "ASSESSMENT OVERVIEW: The invoice face value is $250,000 with a 0.4% discount resulting in a $1,000 gross savings Credit-line financing at 12.0% APR for 20 days incurs a cost exceeding the discount savings\nPOINTS OF NOTE: Disagreements: (1) Financing cost calculation: Side A [Advisor 1: Financing cost \u2248 $1,635 (20 days @ 12% APR on $249,000)] vs. Side B [Advisor 2: Financing cost = $83.00 (20 days @ 12% APR on $249,000)] (at stake: Whether the discount savings ($1,000) exceeds the financing cost to achieve positive net savings) Flagged issues: Exact financing cost calculation method (simple interest vs. APR application) is not confirmed; Whether the clerk's 'guaranteed instant savings' claim reflects actual net financial impact\nSUGGESTED NEXT STEP: Verify that the discount savings ($1,000) exceeds the financing cost to confirm positive net dollar savings",
+      "words": 134,
+      "meta": {
+        "prompt_tokens": 1568,
+        "output_tokens": 294,
+        "seconds": 9.02,
+        "repaired": false
+      }
+    }
+  }
+}

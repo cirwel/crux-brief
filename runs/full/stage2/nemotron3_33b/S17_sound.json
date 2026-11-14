@@ -1,0 +1,51 @@
+{
+  "scenario_id": "S17",
+  "variant": "sound",
+  "domain": "procurement_handoffs",
+  "difficulty_tier": 1,
+  "synth_model": "nemotron3:33b",
+  "k_spotted": null,
+  "advisor_caught_by_model": {
+    "gemma4:latest": null,
+    "nemotron3:33b": null,
+    "qwen3.6:27b-coding-mxfp8": null
+  },
+  "briefs": {
+    "consensus": {
+      "raw": {
+        "overview": "All three advisors unanimously confirm that the total all-in Purchase Order cost of $117,200 for 100 engineering workstations falls safely below the $118,000 budget constraint, with identical calculations showing hardware at $108,000, mandatory support at $7,000, and fixed freight/crating at $2,200.",
+        "points_of_note": "The consistent arithmetic across all assessments\u2014$108,000 hardware subtotal (100 \u00d7 $1,080), $7,000 support cost (100 \u00d7 $70), and $2,200 freight\u2014validates compliance with the $118,000 ceiling, and no advisor flagged hidden exclusions, discrepancies, or constraint violations.",
+        "suggested_next_step": "Approve the purchase order immediately, as all advisors confirm the $117,200 total meets the budget constraint without material concerns."
+      },
+      "text": "ASSESSMENT OVERVIEW: All three advisors unanimously confirm that the total all-in Purchase Order cost of $117,200 for 100 engineering workstations falls safely below the $118,000 budget constraint, with identical calculations showing hardware at $108,000, mandatory support at $7,000, and fixed freight/crating at $2,200.\nPOINTS OF NOTE: The consistent arithmetic across all assessments\u2014$108,000 hardware subtotal (100 \u00d7 $1,080), $7,000 support cost (100 \u00d7 $70), and $2,200 freight\u2014validates compliance with the $118,000 ceiling, and no advisor flagged hidden exclusions, discrepancies, or constraint violations.\nSUGGESTED NEXT STEP: Approve the purchase order immediately, as all advisors confirm the $117,200 total meets the budget constraint without material concerns.",
+      "words": 103,
+      "meta": {
+        "prompt_tokens": 1216,
+        "output_tokens": 223,
+        "seconds": 6.4,
+        "repaired": false
+      }
+    },
+    "crux": {
+      "raw": {
+        "shared_ground": [
+          "Hardware subtotal: $108,000",
+          "Mandatory support cost: $7,000",
+          "Freight cost: $2,200",
+          "Total all-in PO cost: $117,200"
+        ],
+        "cruxes": [],
+        "unverified_premises": [],
+        "decisive_check": "None required; all advisors concur stated constraints are satisfied."
+      },
+      "text": "ASSESSMENT OVERVIEW: Hardware subtotal: $108,000 Mandatory support cost: $7,000\nPOINTS OF NOTE: No concrete disagreements or constraint violations flagged across advisors.\nSUGGESTED NEXT STEP: None required; all advisors concur stated constraints are satisfied.",
+      "words": 33,
+      "meta": {
+        "prompt_tokens": 1385,
+        "output_tokens": 109,
+        "seconds": 4.99,
+        "repaired": false
+      }
+    }
+  }
+}

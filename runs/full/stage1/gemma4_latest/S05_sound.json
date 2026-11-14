@@ -1,0 +1,29 @@
+{
+  "scenario_id": "S05",
+  "variant": "sound",
+  "domain": "job_offers",
+  "difficulty_tier": 2,
+  "model": "gemma4:latest",
+  "seed": 109,
+  "output": {
+    "summary": "The packet addresses the user's primary concerns regarding IP ownership. Clause 8.1 explicitly excludes personal open-source libraries and off-hours/personal hardware tooling. Furthermore, Clause 8.3 specifically carves out 'TraceLite (Apache-2.0 distributed tracing library)' in Exhibit A, directly satisfying the user's constraints regarding both the library and personal development work.",
+    "key_claims": [
+      "PIIA Clause 8.1 excludes personal open-source libraries and off-hours tooling.",
+      "PIIA Clause 8.3 explicitly lists 'TraceLite (Apache-2.0 distributed tracing library)' as carved-out prior IP.",
+      "The agreement covers inventions created using Company equipment, facilities, trade secrets, or during paid working hours."
+    ],
+    "recommendation": "proceed",
+    "risks_or_flaws": [
+      "none"
+    ],
+    "verification_question": "none",
+    "confidence": 100
+  },
+  "meta": {
+    "prompt_tokens": 614,
+    "output_tokens": 224,
+    "seconds": 9.93,
+    "repaired": false
+  },
+  "advisor_caught": null
+}

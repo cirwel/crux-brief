@@ -1,0 +1,28 @@
+{
+  "scenario_id": "S12",
+  "variant": "sound",
+  "domain": "leases",
+  "difficulty_tier": 1,
+  "model": "nemotron3:33b",
+  "seed": 1123,
+  "output": {
+    "summary": "Rent is $2,550, under the $2,700 limit. Symmetric 1,000 Mbps fiber is explicitly included, exceeding the required 200 Mbps. All constraints are satisfied.",
+    "key_claims": [
+      "Rent: $2,550/month",
+      "Symmetric 1,000 Mbps fiber included"
+    ],
+    "recommendation": "proceed",
+    "risks_or_flaws": [
+      "none"
+    ],
+    "verification_question": "none",
+    "confidence": 100
+  },
+  "meta": {
+    "prompt_tokens": 587,
+    "output_tokens": 138,
+    "seconds": 7.16,
+    "repaired": false
+  },
+  "advisor_caught": null
+}

@@ -1,0 +1,29 @@
+{
+  "scenario_id": "S07",
+  "variant": "flawed",
+  "domain": "leases",
+  "difficulty_tier": 1,
+  "model": "gemma4:latest",
+  "seed": 112,
+  "output": {
+    "summary": "The total unavoidable monthly housing cost is calculated by summing the Base Rent ($2,325) and all mandatory monthly fees: Tech Bundle ($135) + Trash Concierge ($55) + Garage Stall ($95). The resulting total is $2,610/month. This calculated total exceeds the user's stated maximum constraint of $2,550/month, meaning the application should be paused.",
+    "key_claims": [
+      "Base Rent: $2,325/month",
+      "Total Mandatory Fees: $135 + $55 + $95 = $285/month",
+      "Calculated Total Monthly Cost: $2,325 + $285 = $2,610/month"
+    ],
+    "recommendation": "hold_to_verify",
+    "risks_or_flaws": [
+      "The calculated total unavoidable monthly housing cost of $2,610/month exceeds the user's stated maximum constraint of $2,550/month."
+    ],
+    "verification_question": "Given the calculated total of $2,610/month, are there any alternative arrangements or waivers for the mandatory fees (Tech Bundle, Trash Concierge, or Garage Stall) that would bring the total below $2,550?",
+    "confidence": 100
+  },
+  "meta": {
+    "prompt_tokens": 572,
+    "output_tokens": 314,
+    "seconds": 10.98,
+    "repaired": false
+  },
+  "advisor_caught": true
+}

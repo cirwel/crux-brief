@@ -1,0 +1,29 @@
+{
+  "scenario_id": "S11",
+  "variant": "sound",
+  "domain": "leases",
+  "difficulty_tier": 3,
+  "model": "gemma4:latest",
+  "seed": 121,
+  "output": {
+    "summary": "The packet states the Landlord handles structural and HVAC capital replacements, which aligns with the user's goal of keeping tenant repair risk below $3,000/yr. The tenant's repair obligation is capped at $2,000/year for minor upkeep. The Landlord's existing reserve of $26,500 for the Trane unit mitigates the risk of unbudgeted capital equipment replacement falling to the tenant, satisfying the primary constraint.",
+    "key_claims": [
+      "Tenant's annual upkeep cap is $2,000.",
+      "Landlord repairs structural/HVAC capital unit replacement.",
+      "Landlord has $26,500 in reserves for the rooftop unit replacement."
+    ],
+    "recommendation": "proceed",
+    "risks_or_flaws": [
+      "none"
+    ],
+    "verification_question": "none",
+    "confidence": 100
+  },
+  "meta": {
+    "prompt_tokens": 587,
+    "output_tokens": 219,
+    "seconds": 7.99,
+    "repaired": false
+  },
+  "advisor_caught": null
+}

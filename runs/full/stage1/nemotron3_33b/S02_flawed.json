@@ -1,0 +1,29 @@
+{
+  "scenario_id": "S02",
+  "variant": "flawed",
+  "domain": "job_offers",
+  "difficulty_tier": 1,
+  "model": "nemotron3:33b",
+  "seed": 1102,
+  "output": {
+    "summary": "The repayment rider requires full $40,000 gross bonus repayment within 15 days of voluntary resignation at any time within 24 months, with no proration. The user's goal requires repayment obligation to expire by Month 12 (or prorate monthly on net after-tax payout) to avoid out-of-pocket clawback at Month 18. The rider's unprorated 24-month window directly violates the Month 12 expiration constraint, creating a Month 18 repayment obligation that would trigger out-of-pocket cash clawback.",
+    "key_claims": [
+      "Sign-on bonus gross amount: $40,000",
+      "Repayment window: 24 months from start date",
+      "Repayment requirement: 100% gross repayment within 15 days (no proration)"
+    ],
+    "recommendation": "hold_to_verify",
+    "risks_or_flaws": [
+      "Repayment obligation extends beyond Month 12 to Month 24, violating the user's constraint that repayment must expire by Month 12 (or prorate monthly) to avoid out-of-pocket clawback at Month 18"
+    ],
+    "verification_question": "Does Clause 6b's 24-month window with no proration satisfy the user's Month 12 expiration requirement?",
+    "confidence": 100
+  },
+  "meta": {
+    "prompt_tokens": 661,
+    "output_tokens": 319,
+    "seconds": 11.51,
+    "repaired": false
+  },
+  "advisor_caught": true
+}

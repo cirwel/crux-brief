@@ -1,0 +1,29 @@
+{
+  "scenario_id": "S03",
+  "variant": "sound",
+  "domain": "job_offers",
+  "difficulty_tier": 2,
+  "model": "gemma4:latest",
+  "seed": 105,
+  "output": {
+    "summary": "The user's primary constraint requires the expected annual cash earnings at historical team attainment to be at least $210,000. The packet states the median historical attainment was 96%. The variable component is $80,000, and the payout is proportional. Calculating the expected variable earnings at 96% attainment yields $80,000 * 0.96 = $76,800. Adding the base salary of $160,000 results in total expected cash earnings of $236,800, which exceeds the $210,000 minimum.",
+    "key_claims": [
+      "Base Salary: $160,000",
+      "Variable Commission at 100% Quota: $80,000",
+      "Expected Cash Earnings at 96% Attainment: $236,800"
+    ],
+    "recommendation": "proceed",
+    "risks_or_flaws": [
+      "none"
+    ],
+    "verification_question": "none",
+    "confidence": 100
+  },
+  "meta": {
+    "prompt_tokens": 603,
+    "output_tokens": 264,
+    "seconds": 9.78,
+    "repaired": false
+  },
+  "advisor_caught": null
+}

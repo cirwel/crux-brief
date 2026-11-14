@@ -1,0 +1,134 @@
+{
+  "scenario_id": "S16",
+  "variant": "sound",
+  "domain": "procurement_handoffs",
+  "difficulty_tier": 3,
+  "eval_model": "nemotron3:33b",
+  "synth_model": "gemma4:latest",
+  "single_advisor_model": "gemma4:latest",
+  "k_spotted": null,
+  "advisor_caught_by_model": {
+    "gemma4:latest": null,
+    "nemotron3:33b": null,
+    "qwen3.6:27b-coding-mxfp8": null
+  },
+  "briefs": {
+    "single": {
+      "text": "ASSESSMENT OVERVIEW: The packet addresses the core concern regarding ownership and distribution rights. Section 9.1 confirms the Buyer owns 100% of custom deliverables (Foreground Work Product). Section 9.3 addresses the Vendor's background IP, granting the Buyer a perpetual, worldwide, paid-up, transferable license with full rights to distribute and sublicense to external clients. This aligns with the user's goal of a white-labeled, sublicensable product. Key facts: Buyer owns 100% of custom deliverables (Foreground Work Product).; Vendor grants Buyer a perpetual, worldwide, paid-up, transferable license for Background Technology.; The license explicitly includes full rights to distribute and sublicense to Buyer's external clients..\nPOINTS OF NOTE: No concrete constraint violations flagged.\nSUGGESTED NEXT STEP: None required; stated constraints appear satisfied.",
+      "words": 117
+    },
+    "consensus": {
+      "raw": {
+        "overview": "The consensus among the advisors is a strong recommendation to proceed with the agreement, as the provided documentation appears to comprehensively address the core requirements for deploying a white-labeled, sublicensed commercial product. All three assessments confirm that the necessary ownership and distribution rights are secured, aligning well with the user's stated goal.",
+        "points_of_note": "All advisors consistently highlighted the critical confirmation that the Buyer owns 100% of custom deliverables (Foreground Work Product, per Section 9.1). Furthermore, the ability to distribute and sublicense to external clients is supported by the grant in Section 9.3, which provides a perpetual, worldwide, transferable license for the Vendor's background technology. The specific mention of the license including 'full rights to distribute and sublicense' across all reports reinforces the viability of the white-label model.",
+        "suggested_next_step": "Given the unanimous 'proceed' recommendation and the consistent identification of key contractual safeguards regarding ownership and sublicensing rights, the decision maker should feel confident moving forward with signing the agreement."
+      },
+      "text": "ASSESSMENT OVERVIEW: The consensus among the advisors is a strong recommendation to proceed with the agreement, as the provided documentation appears to comprehensively address the core requirements for deploying a white-labeled, sublicensed commercial product. All three assessments confirm that the necessary ownership and distribution rights are secured, aligning well with the user's stated goal.\nPOINTS OF NOTE: All advisors consistently highlighted the critical confirmation that the Buyer owns 100% of custom deliverables (Foreground Work Product, per Section 9.1). Furthermore, the ability to distribute and sublicense to external clients is supported by the grant in Section 9.3, which provides a perpetual, worldwide, transferable license for the Vendor's background technology. The specific mention of the license including 'full rights to distribute and sublicense' across all reports reinforces the viability of the white-label model.\nSUGGESTED NEXT STEP: Given the unanimous 'proceed' recommendation and the consistent identification of key contractual safeguards regarding ownership and sublicensing rights, the decision maker should feel confident moving forward with signing the agreement.",
+      "words": 164,
+      "meta": {
+        "prompt_tokens": 897,
+        "output_tokens": 228,
+        "seconds": 10.82,
+        "repaired": false
+      }
+    },
+    "crux": {
+      "raw": {
+        "shared_ground": [
+          "Buyer owns 100% of custom deliverables (Foreground Work Product) per Section 9.1.",
+          "The agreement grants the Buyer a perpetual, worldwide, transferable license with rights to distribute and sublicense the Vendor's background IP/runtime."
+        ],
+        "cruxes": [],
+        "unverified_premises": [],
+        "decisive_check": "None required; all advisors concur stated constraints are satisfied."
+      },
+      "text": "ASSESSMENT OVERVIEW: Buyer owns 100% of custom deliverables (Foreground Work Product) per Section 9.1. The agreement grants the Buyer a perpetual, worldwide, transferable license with rights to distribute and sublicense the Vendor's background IP/runtime.\nPOINTS OF NOTE: No concrete disagreements or constraint violations flagged across advisors.\nSUGGESTED NEXT STEP: None required; all advisors concur stated constraints are satisfied.",
+      "words": 58,
+      "meta": {
+        "prompt_tokens": 1045,
+        "output_tokens": 106,
+        "seconds": 6.21,
+        "repaired": false
+      }
+    }
+  },
+  "crux_survived": null,
+  "decisions": {
+    "raw": {
+      "output": {
+        "primary_reason": "The SOW explicitly states Buyer owns 100% of custom deliverables (Section 9.1) and grants a transferable license for background IP with full distribution/sublicensing rights (Section 9.3), satisfying the white-label requirement.",
+        "target_clause_or_metric": "Section 9.1 and Section 9.3",
+        "action": "proceed",
+        "confidence": 95,
+        "brief_endorsement": null
+      },
+      "meta": {
+        "prompt_tokens": 633,
+        "output_tokens": 113,
+        "seconds": 4.7,
+        "repaired": false
+      },
+      "hold": false,
+      "verified_catch": null,
+      "untargeted_hold": null,
+      "false_alarm": false
+    },
+    "single": {
+      "output": {
+        "primary_reason": "The packet confirms Buyer owns 100% of custom deliverables (Section 9.1) and grants a perpetual, worldwide, transferable license with full distribution and sublicensing rights for background technology (Section 9.3), satisfying the white-label and sublicensing requirement.",
+        "target_clause_or_metric": "none",
+        "action": "proceed",
+        "confidence": 95,
+        "brief_endorsement": 5
+      },
+      "meta": {
+        "prompt_tokens": 835,
+        "output_tokens": 111,
+        "seconds": 4.62,
+        "repaired": false
+      },
+      "hold": false,
+      "verified_catch": null,
+      "untargeted_hold": null,
+      "false_alarm": false
+    },
+    "consensus": {
+      "output": {
+        "primary_reason": "The SOW explicitly states that custom deliverables are 'Work Made for Hire' owned 100% by Buyer (Section 9.1) and grants Buyer a perpetual, worldwide, transferable license with full rights to distribute and sublicense the background technology (Section 9.3), satisfying the requirement for a deployable white-labeled commercial product.",
+        "target_clause_or_metric": "Section 9.1 and Section 9.3",
+        "action": "proceed",
+        "confidence": 95,
+        "brief_endorsement": 5
+      },
+      "meta": {
+        "prompt_tokens": 869,
+        "output_tokens": 135,
+        "seconds": 4.44,
+        "repaired": false
+      },
+      "hold": false,
+      "verified_catch": null,
+      "untargeted_hold": null,
+      "false_alarm": false
+    },
+    "crux": {
+      "output": {
+        "primary_reason": "The SOW explicitly states that custom deliverables are Work Made for Hire owned 100% by Buyer (Section 9.1), and grants Buyer a perpetual, worldwide, transferable license with full distribution and sublicensing rights to the Vendor's background runtime (Section 9.3), satisfying all constraints for white-labeling and external sublicensing.",
+        "target_clause_or_metric": "Section 9.1 and Section 9.3",
+        "action": "proceed",
+        "confidence": 100,
+        "brief_endorsement": 5
+      },
+      "meta": {
+        "prompt_tokens": 736,
+        "output_tokens": 140,
+        "seconds": 4.66,
+        "repaired": false
+      },
+      "hold": false,
+      "verified_catch": null,
+      "untargeted_hold": null,
+      "false_alarm": false
+    }
+  }
+}

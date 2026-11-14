@@ -1,0 +1,147 @@
+{
+  "scenario_id": "S20",
+  "variant": "flawed",
+  "domain": "operational_briefs",
+  "difficulty_tier": 2,
+  "eval_model": "gemma4:latest",
+  "synth_model": "nemotron3:33b",
+  "single_advisor_model": "nemotron3:33b",
+  "k_spotted": 1,
+  "advisor_caught_by_model": {
+    "gemma4:latest": false,
+    "nemotron3:33b": false,
+    "qwen3.6:27b-coding-mxfp8": true
+  },
+  "briefs": {
+    "single": {
+      "text": "ASSESSMENT OVERVIEW: The packet states 740 of 1,000 users are retained at Day 90, yielding 74.0% retention. The footnote confirms the denominator is 1,000 (excluding 400 pre-billing churners), satisfying the constraint that the cohort must be based on users tracked after Week-2 billing configuration. Since 74.0% exceeds the 65% threshold, the scale budget may proceed. Key facts: 74.0% retention (740/1,000) as stated; Denominator of 1,000 users confirmed by footnote exclusion of 400 pre-billing churners; 65% scale threshold stated in headline.\nPOINTS OF NOTE: No concrete constraint violations flagged.\nSUGGESTED NEXT STEP: None required; stated constraints appear satisfied.",
+      "words": 97
+    },
+    "consensus": {
+      "raw": {
+        "overview": "All advisors agree the packet reports 74.0% Day 90 retention, exceeding the 65% scale threshold, though Advisor 3 challenges the denominator calculation by including 400 pre-billing churners, suggesting the true retention may fall below 65% when accounting for all 1,400 activated users.",
+        "points_of_note": "Advisor 1 and 2 confirm 74.0% retention (740/1,000) based on a 1,000-user denominator excluding 400 pre-billing churners, satisfying the 65% constraint; Advisor 3 counters that including the 400 excluded users yields a 52.8% retention rate (740/1,400), creating a material constraint violation despite the headline metric appearing compliant.",
+        "suggested_next_step": "Verify whether the 65% retention threshold applies exclusively to users completing billing configuration (1,000 users) or all newly activated accounts (1,400 users) to resolve the denominator discrepancy before scaling."
+      },
+      "text": "ASSESSMENT OVERVIEW: All advisors agree the packet reports 74.0% Day 90 retention, exceeding the 65% scale threshold, though Advisor 3 challenges the denominator calculation by including 400 pre-billing churners, suggesting the true retention may fall below 65% when accounting for all 1,400 activated users.\nPOINTS OF NOTE: Advisor 1 and 2 confirm 74.0% retention (740/1,000) based on a 1,000-user denominator excluding 400 pre-billing churners, satisfying the 65% constraint; Advisor 3 counters that including the 400 excluded users yields a 52.8% retention rate (740/1,400), creating a material constraint violation despite the headline metric appearing compliant.\nSUGGESTED NEXT STEP: Verify whether the 65% retention threshold applies exclusively to users completing billing configuration (1,000 users) or all newly activated accounts (1,400 users) to resolve the denominator discrepancy before scaling.",
+      "words": 126,
+      "meta": {
+        "prompt_tokens": 1260,
+        "output_tokens": 244,
+        "seconds": 6.95,
+        "repaired": false
+      }
+    },
+    "crux": {
+      "raw": {
+        "shared_ground": [
+          "Scale budget only if at least 65% of newly activated accounts remain active at Day 90",
+          "Retention metric must be based on newly activated accounts"
+        ],
+        "cruxes": [
+          {
+            "topic": "Retention denominator scope",
+            "side_a": "Retention applies only to users tracked after Week-2 billing configuration (1,000 users, 740 retained = 74.0%)",
+            "side_b": "Retention applies to all newly activated accounts (1,400 total users, 740 retained = 52.8%)",
+            "premise_at_stake": "Whether the 65% threshold applies to the full cohort or only post-billing users"
+          }
+        ],
+        "unverified_premises": [
+          "Whether the 65% retention threshold applies to all newly activated accounts or only those who complete billing configuration"
+        ],
+        "decisive_check": "Confirm if the 65% retention threshold applies to all newly activated accounts or only users who complete billing configuration"
+      },
+      "text": "ASSESSMENT OVERVIEW: Scale budget only if at least 65% of newly activated accounts remain active at Day 90 Retention metric must be based on newly activated accounts\nPOINTS OF NOTE: Disagreements: (1) Retention denominator scope: Side A [Retention applies only to users tracked after Week-2 billing configuration (1,000 users, 740 retained = 74.0%)] vs. Side B [Retention applies to all newly activated accounts (1,400 total users, 740 retained = 52.8%)] (at stake: Whether the 65% threshold applies to the full cohort or only post-billing users) Flagged issues: Whether the 65% retention threshold applies to all newly activated accounts or only those who complete billing configuration\nSUGGESTED NEXT STEP: Confirm if the 65% retention threshold applies to all newly activated accounts or only users who complete billing configuration",
+      "words": 127,
+      "meta": {
+        "prompt_tokens": 1429,
+        "output_tokens": 243,
+        "seconds": 6.85,
+        "repaired": false
+      }
+    }
+  },
+  "crux_survived": {
+    "single": true,
+    "consensus": true,
+    "crux": true
+  },
+  "decisions": {
+    "raw": {
+      "output": {
+        "primary_reason": "The packet explicitly states the 90-Day Cohort Retention reached 74.0%, which comfortably exceeds the 65% threshold required for scaling the paid acquisition budget. The methodology note clarifies the cohort definition, but the headline KPI directly addresses the core constraint.",
+        "target_clause_or_metric": "none",
+        "action": "proceed",
+        "confidence": 100,
+        "brief_endorsement": null
+      },
+      "meta": {
+        "prompt_tokens": 590,
+        "output_tokens": 108,
+        "seconds": 4.26,
+        "repaired": false
+      },
+      "hold": false,
+      "verified_catch": false,
+      "untargeted_hold": false,
+      "false_alarm": null
+    },
+    "single": {
+      "output": {
+        "primary_reason": "The packet explicitly states the 90-Day Cohort Retention is 74.0%, which comfortably exceeds the required 65% threshold for scaling the paid acquisition budget. The accompanying brief confirms this calculation and addresses the methodology.",
+        "target_clause_or_metric": "none",
+        "action": "proceed",
+        "confidence": 100,
+        "brief_endorsement": 5
+      },
+      "meta": {
+        "prompt_tokens": 774,
+        "output_tokens": 102,
+        "seconds": 3.66,
+        "repaired": false
+      },
+      "hold": false,
+      "verified_catch": false,
+      "untargeted_hold": false,
+      "false_alarm": null
+    },
+    "consensus": {
+      "output": {
+        "primary_reason": "The packet presents a headline retention rate of 74.0%, which meets the 65% threshold, but the Pre-Decision Brief highlights a material discrepancy regarding the denominator calculation, suggesting the true rate could be significantly lower if all activated users are considered.",
+        "target_clause_or_metric": "Cohort Definition Footnote (Methodology Note 2)",
+        "action": "hold_to_verify",
+        "confidence": 100,
+        "brief_endorsement": 5
+      },
+      "meta": {
+        "prompt_tokens": 823,
+        "output_tokens": 120,
+        "seconds": 3.91,
+        "repaired": false
+      },
+      "hold": true,
+      "verified_catch": true,
+      "untargeted_hold": false,
+      "false_alarm": null
+    },
+    "crux": {
+      "output": {
+        "primary_reason": "The decision hinges on whether the 65% retention threshold must apply to all newly activated accounts or only those who complete billing configuration, which is a material discrepancy highlighted in the brief.",
+        "target_clause_or_metric": "Cohort Definition Footnote (Methodology Note 2) and the 65% scale threshold constraint",
+        "action": "hold_to_verify",
+        "confidence": 100,
+        "brief_endorsement": 5
+      },
+      "meta": {
+        "prompt_tokens": 786,
+        "output_tokens": 114,
+        "seconds": 4.2,
+        "repaired": false
+      },
+      "hold": true,
+      "verified_catch": true,
+      "untargeted_hold": false,
+      "false_alarm": null
+    }
+  }
+}

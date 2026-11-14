@@ -1,0 +1,58 @@
+{
+  "scenario_id": "S09",
+  "variant": "flawed",
+  "domain": "leases",
+  "difficulty_tier": 2,
+  "synth_model": "nemotron3:33b",
+  "k_spotted": 3,
+  "advisor_caught_by_model": {
+    "gemma4:latest": true,
+    "nemotron3:33b": true,
+    "qwen3.6:27b-coding-mxfp8": true
+  },
+  "briefs": {
+    "consensus": {
+      "raw": {
+        "overview": "All three advisors confirm that the lease's holdover clause imposes a full month's liability\u2014$6,600 base rent plus $1,200 additional rent\u2014at 200% for any delay, far exceeding the $2,000 maximum exposure for a 4-day overrun. Each advisor identifies this as a clear violation of the user's constraint, with no evidence of proration or alternative calculations.",
+        "points_of_note": "Advisor 1 notes the $4,600 excess beyond $2,000 and flags the lack of proration in Clause 19; Advisor 2 emphasizes the $13,200 liability from applying 200% to the entire month; Advisor 3 reiterates the $13,200 figure and suggests seeking a pro-rated fee or cap. No advisor indicates the constraint is satisfied.",
+        "suggested_next_step": "Proceed to verify the lease's holdover clause language to determine if a pro-rated penalty or negotiated cap can be secured before signing."
+      },
+      "text": "ASSESSMENT OVERVIEW: All three advisors confirm that the lease's holdover clause imposes a full month's liability\u2014$6,600 base rent plus $1,200 additional rent\u2014at 200% for any delay, far exceeding the $2,000 maximum exposure for a 4-day overrun. Each advisor identifies this as a clear violation of the user's constraint, with no evidence of proration or alternative calculations.\nPOINTS OF NOTE: Advisor 1 notes the $4,600 excess beyond $2,000 and flags the lack of proration in Clause 19; Advisor 2 emphasizes the $13,200 liability from applying 200% to the entire month; Advisor 3 reiterates the $13,200 figure and suggests seeking a pro-rated fee or cap. No advisor indicates the constraint is satisfied.\nSUGGESTED NEXT STEP: Proceed to verify the lease's holdover clause language to determine if a pro-rated penalty or negotiated cap can be secured before signing.",
+      "words": 135,
+      "meta": {
+        "prompt_tokens": 1372,
+        "output_tokens": 234,
+        "seconds": 8.88,
+        "repaired": false
+      }
+    },
+    "crux": {
+      "raw": {
+        "shared_ground": [
+          "Total monthly rent is $6,600 ($5,400 Base + $1,200 Additional)",
+          "Holdover penalty is 200% of total monthly rent for the entire succeeding calendar month"
+        ],
+        "cruxes": [
+          {
+            "topic": "Holdover penalty calculation",
+            "side_a": "Advisor 1: 4-day overrun triggers full month liability of $6,600 (exceeds $2,000 limit by $4,600)",
+            "side_b": "Advisor 2 & 3: 4-day overrun triggers $13,200 liability (200% of $6,600) far exceeding $2,000 limit",
+            "premise_at_stake": "Whether liability applies to the entire succeeding month or can be prorated for actual days occupied"
+          }
+        ],
+        "unverified_premises": [
+          "Whether the lease allows proration of the holdover penalty based on actual days occupied beyond the expiration date"
+        ],
+        "decisive_check": "Confirm if Clause 19's 'entire succeeding calendar month' liability applies absolutely to a 4-day delay without proration"
+      },
+      "text": "ASSESSMENT OVERVIEW: Total monthly rent is $6,600 ($5,400 Base + $1,200 Additional) Holdover penalty is 200% of total monthly rent for the entire succeeding calendar month\nPOINTS OF NOTE: Disagreements: (1) Holdover penalty calculation: Side A [Advisor 1: 4-day overrun triggers full month liability of $6,600 (exceeds $2,000 limit by $4,600)] vs. Side B [Advisor 2 & 3: 4-day overrun triggers $13,200 liability (200% of $6,600) far exceeding $2,000 limit] (at stake: Whether liability applies to the entire succeeding month or can be prorated for actual days occupied) Flagged issues: Whether the lease allows proration of the holdover penalty based on actual days occupied beyond the expiration date\nSUGGESTED NEXT STEP: Confirm if Clause 19's 'entire succeeding calendar month' liability applies absolutely to a 4-day delay without proration",
+      "words": 128,
+      "meta": {
+        "prompt_tokens": 1541,
+        "output_tokens": 281,
+        "seconds": 9.87,
+        "repaired": false
+      }
+    }
+  }
+}

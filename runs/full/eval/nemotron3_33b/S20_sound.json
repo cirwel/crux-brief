@@ -1,0 +1,134 @@
+{
+  "scenario_id": "S20",
+  "variant": "sound",
+  "domain": "operational_briefs",
+  "difficulty_tier": 2,
+  "eval_model": "nemotron3:33b",
+  "synth_model": "gemma4:latest",
+  "single_advisor_model": "nemotron3:33b",
+  "k_spotted": null,
+  "advisor_caught_by_model": {
+    "gemma4:latest": null,
+    "nemotron3:33b": null,
+    "qwen3.6:27b-coding-mxfp8": null
+  },
+  "briefs": {
+    "single": {
+      "text": "ASSESSMENT OVERVIEW: The packet states 69.0% retention (966/1,400) meets the 65% threshold. Footnote 2 confirms all 1,400 Day-0 signups are counted, including 160 churned early, so the denominator is valid. CAC is irrelevant to the retention constraint. Key facts: 69.0% retention from 966/1,400 as stated; 1,400 total Day-0 signups including 160 early churners per Footnote 2; 65% scale threshold explicitly met.\nPOINTS OF NOTE: No concrete constraint violations flagged.\nSUGGESTED NEXT STEP: None required; stated constraints appear satisfied.",
+      "words": 78
+    },
+    "consensus": {
+      "raw": {
+        "overview": "There is strong consensus among the advisors that the current data supports scaling the paid acquisition budget. All three assessments confirm that the primary constraint\u2014maintaining at least 65% 90-day retention\u2014has been met by the metrics presented in the decision packet. The overall alignment is positive, suggesting the necessary threshold for increased spending has been cleared.",
+        "points_of_note": "The core evidence cited across all reports is the 90-Day Cohort Retention rate of 69.0%, derived from 966 retained users out of 1,400 initial Day-0 signups. This calculation (966/1,400) consistently yields 69.0%, which comfortably exceeds the stipulated 65% minimum. Furthermore, the methodology is supported by multiple advisors, noting that the denominator correctly accounts for all initial signups, including those who churned early, thus validating the retention calculation.",
+        "suggested_next_step": "Given that all advisors concur and the stated 69.0% retention rate satisfies the 65% threshold, the recommended next step is to proceed with scaling the paid acquisition budget as planned."
+      },
+      "text": "ASSESSMENT OVERVIEW: There is strong consensus among the advisors that the current data supports scaling the paid acquisition budget. All three assessments confirm that the primary constraint\u2014maintaining at least 65% 90-day retention\u2014has been met by the metrics presented in the decision packet. The overall alignment is positive, suggesting the necessary threshold for increased spending has been cleared.\nPOINTS OF NOTE: The core evidence cited across all reports is the 90-Day Cohort Retention rate of 69.0%, derived from 966 retained users out of 1,400 initial Day-0 signups. This calculation (966/1,400) consistently yields 69.0%, which comfortably exceeds the stipulated 65% minimum. Furthermore, the methodology is supported by multiple advisors, noting that the denominator correctly accounts for all initial signups, including those who churned early, thus validating the retention calculation.\nSUGGESTED NEXT STEP: Given that all advisors concur and the stated 69.0% retention rate satisfies the 65% threshold, the recommended next step is to proceed with scaling the paid acquisition budget as planned.",
+      "words": 160,
+      "meta": {
+        "prompt_tokens": 978,
+        "output_tokens": 257,
+        "seconds": 10.04,
+        "repaired": false
+      }
+    },
+    "crux": {
+      "raw": {
+        "shared_ground": [
+          "The required threshold for scaling the paid acquisition budget is 65% 90-day retention.",
+          "All three advisors confirm the stated 90-day retention rate is 69.0%, calculated from 966 retained users out of 1,400 Day-0 signups."
+        ],
+        "cruxes": [],
+        "unverified_premises": [],
+        "decisive_check": "None required; all advisors concur stated constraints are satisfied."
+      },
+      "text": "ASSESSMENT OVERVIEW: The required threshold for scaling the paid acquisition budget is 65% 90-day retention. All three advisors confirm the stated 90-day retention rate is 69.0%, calculated from 966 retained users out of 1,400 Day-0 signups.\nPOINTS OF NOTE: No concrete disagreements or constraint violations flagged across advisors.\nSUGGESTED NEXT STEP: None required; all advisors concur stated constraints are satisfied.",
+      "words": 60,
+      "meta": {
+        "prompt_tokens": 1126,
+        "output_tokens": 120,
+        "seconds": 5.96,
+        "repaired": false
+      }
+    }
+  },
+  "crux_survived": null,
+  "decisions": {
+    "raw": {
+      "output": {
+        "primary_reason": "The packet explicitly states 69.0% 90-day cohort retention (966 of 1,400), which exceeds the 65% threshold required for scaling. The cohort definition footnote confirms all 1,400 Day-0 activations are included, validating the retention metric's integrity.",
+        "target_clause_or_metric": "1. Headline KPI: '90-Day Cohort Retention reached 69.0% (966 retained of 1,400 Day-0 signups)'",
+        "action": "proceed",
+        "confidence": 100,
+        "brief_endorsement": null
+      },
+      "meta": {
+        "prompt_tokens": 649,
+        "output_tokens": 158,
+        "seconds": 4.74,
+        "repaired": false
+      },
+      "hold": false,
+      "verified_catch": null,
+      "untargeted_hold": null,
+      "false_alarm": false
+    },
+    "single": {
+      "output": {
+        "primary_reason": "The packet explicitly states 69.0% retention (966/1,400) meets the 65% threshold, and Footnote 2 confirms the denominator includes all 1,400 Day-0 signups, satisfying the constraint.",
+        "target_clause_or_metric": "1. Headline KPI: '90-Day Cohort Retention reached 69.0% (966 retained of 1,400 Day-0 signups), beating our 65% scale threshold.'",
+        "action": "proceed",
+        "confidence": 100,
+        "brief_endorsement": 5
+      },
+      "meta": {
+        "prompt_tokens": 821,
+        "output_tokens": 156,
+        "seconds": 4.47,
+        "repaired": false
+      },
+      "hold": false,
+      "verified_catch": null,
+      "untargeted_hold": null,
+      "false_alarm": false
+    },
+    "consensus": {
+      "output": {
+        "primary_reason": "The packet explicitly states 90-Day Cohort Retention is 69.0% (966/1,400), which exceeds the 65% threshold required for scaling, and Footnote 2 confirms the denominator includes all initial signups, validating the metric.",
+        "target_clause_or_metric": "90-Day Cohort Retention 69.0% (966/1,400)",
+        "action": "proceed",
+        "confidence": 95,
+        "brief_endorsement": 5
+      },
+      "meta": {
+        "prompt_tokens": 903,
+        "output_tokens": 132,
+        "seconds": 4.46,
+        "repaired": false
+      },
+      "hold": false,
+      "verified_catch": null,
+      "untargeted_hold": null,
+      "false_alarm": false
+    },
+    "crux": {
+      "output": {
+        "primary_reason": "The packet explicitly states 90-Day Cohort Retention is 69.0% (966/1,400), which exceeds the 65% threshold required for scaling. The methodology footnote confirms the cohort includes all 1,400 Day-0 signups, validating the retention calculation.",
+        "target_clause_or_metric": "90-Day Cohort Retention reached 69.0% (966 retained of 1,400 Day-0 signups)",
+        "action": "proceed",
+        "confidence": 100,
+        "brief_endorsement": 5
+      },
+      "meta": {
+        "prompt_tokens": 759,
+        "output_tokens": 150,
+        "seconds": 3.88,
+        "repaired": false
+      },
+      "hold": false,
+      "verified_catch": null,
+      "untargeted_hold": null,
+      "false_alarm": false
+    }
+  }
+}

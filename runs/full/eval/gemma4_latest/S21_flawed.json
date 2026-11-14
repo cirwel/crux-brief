@@ -1,0 +1,147 @@
+{
+  "scenario_id": "S21",
+  "variant": "flawed",
+  "domain": "operational_briefs",
+  "difficulty_tier": 2,
+  "eval_model": "gemma4:latest",
+  "synth_model": "nemotron3:33b",
+  "single_advisor_model": "qwen3.6:27b-coding-mxfp8",
+  "k_spotted": 3,
+  "advisor_caught_by_model": {
+    "gemma4:latest": true,
+    "nemotron3:33b": true,
+    "qwen3.6:27b-coding-mxfp8": true
+  },
+  "briefs": {
+    "single": {
+      "text": "ASSESSMENT OVERVIEW: The user's explicit constraint requires database-backed request p95 latency to stay <= 180 ms. The decision packet states that for the uncached database-query path, v3.2 p95 latency rose to 248 ms. Although the overall mean latency improved due to higher cache hit rates, the specific metric governing the approval condition (database-backed p95) has regressed significantly above the 180 ms threshold. Therefore, the constraint is violated. Key facts: Database-backed request p95 latency for v3.2 is 248 ms; User constraint requires database-backed request p95 latency <= 180 ms.\nPOINTS OF NOTE: Database-backed request p95 latency (248 ms) exceeds the maximum allowed threshold of 180 ms, violating the explicit deployment constraint..\nSUGGESTED NEXT STEP: Can the ORM join optimization be adjusted to reduce the database-backed p95 latency from 248 ms to <= 180 ms before promotion?",
+      "words": 135
+    },
+    "consensus": {
+      "raw": {
+        "overview": "All three advisors unanimously confirm that the database-backed request p95 latency for API Engine v3.2 (248 ms) exceeds the critical 180 ms threshold, violating the core constraint despite the overall mean latency improvement from 140 ms to 101 ms. The shared focus on the specific p95 metric for database queries, rather than aggregate performance, establishes clear consensus on the constraint breach.",
+        "points_of_note": "The advisors consistently cite the 248 ms p95 latency figure for database-backed requests across all assessments, explicitly noting this exceeds the 180 ms limit. While Advisor 1 questions the measurement context, Advisors 2 and 3 clarify this represents the unmitigated p95 for the uncached database-query path, with no evidence suggesting alternative metrics resolve the violation. The 28% mean latency reduction remains irrelevant to the constraint, as all emphasize the database-specific p95 requirement must be met.",
+        "suggested_next_step": "Immediately investigate and implement ORM join optimizations to reduce database-backed p95 latency from 248 ms to <= 180 ms before any production promotion, as all advisors agree this is the necessary corrective action to satisfy the constraint."
+      },
+      "text": "ASSESSMENT OVERVIEW: All three advisors unanimously confirm that the database-backed request p95 latency for API Engine v3.2 (248 ms) exceeds the critical 180 ms threshold, violating the core constraint despite the overall mean latency improvement from 140 ms to 101 ms. The shared focus on the specific p95 metric for database queries, rather than aggregate performance, establishes clear consensus on the constraint breach.\nPOINTS OF NOTE: The advisors consistently cite the 248 ms p95 latency figure for database-backed requests across all assessments, explicitly noting this exceeds the 180 ms limit. While Advisor 1 questions the measurement context, Advisors 2 and 3 clarify this represents the unmitigated p95 for the uncached database-query path, with no evidence suggesting alternative metrics resolve the violation. The 28% mean latency reduction remains irrelevant to the constraint, as all emphasize the database-specific p95 requirement must be met.\nSUGGESTED NEXT STEP: Immediately investigate and implement ORM join optimizations to reduce database-backed p95 latency from 248 ms to <= 180 ms before any production promotion, as all advisors agree this is the necessary corrective action to satisfy the constraint.",
+      "words": 181,
+      "meta": {
+        "prompt_tokens": 1335,
+        "output_tokens": 272,
+        "seconds": 8.45,
+        "repaired": false
+      }
+    },
+    "crux": {
+      "raw": {
+        "shared_ground": [
+          "Database-backed request p95 latency must stay <= 180 ms",
+          "v3.2 database-backed request p95 latency is 248 ms"
+        ],
+        "cruxes": [
+          {
+            "topic": "p95 latency measurement validity",
+            "side_a": "248 ms p95 latency for database-backed requests is the true, unmitigated value",
+            "side_b": "248 ms may represent an inflated metric (e.g., including ORM join impact) that doesn't reflect actual p95",
+            "premise_at_stake": "Whether the 248 ms value accurately reflects the constraint-governing p95 latency"
+          }
+        ],
+        "unverified_premises": [
+          "The 248 ms p95 latency figure explicitly measures the uncached database-query path during v3.2 benchmarking"
+        ],
+        "decisive_check": "Verify if the 248 ms p95 latency measurement for database-backed requests during v3.2 benchmarking is valid and unmitigated"
+      },
+      "text": "ASSESSMENT OVERVIEW: Database-backed request p95 latency must stay <= 180 ms v3.2 database-backed request p95 latency is 248 ms\nPOINTS OF NOTE: Disagreements: (1) p95 latency measurement validity: Side A [248 ms p95 latency for database-backed requests is the true, unmitigated value] vs. Side B [248 ms may represent an inflated metric (e.g., including ORM join impact) that doesn't reflect actual p95] (at stake: Whether the 248 ms value accurately reflects the constraint-governing p95 latency) Flagged issues: The 248 ms p95 latency figure explicitly measures the uncached database-query path during v3.2 benchmarking\nSUGGESTED NEXT STEP: Verify if the 248 ms p95 latency measurement for database-backed requests during v3.2 benchmarking is valid and unmitigated",
+      "words": 113,
+      "meta": {
+        "prompt_tokens": 1504,
+        "output_tokens": 246,
+        "seconds": 7.5,
+        "repaired": false
+      }
+    }
+  },
+  "crux_survived": {
+    "single": true,
+    "consensus": true,
+    "crux": true
+  },
+  "decisions": {
+    "raw": {
+      "output": {
+        "primary_reason": "The packet explicitly shows that the database-backed request p95 latency increased from 165 ms (v3.1) to 248 ms (v3.2), which violates the constraint of staying <= 180 ms.",
+        "target_clause_or_metric": "Breakdown Appendix: On the remaining uncached database-query path, v3.2 p95 latency rose from 165 ms (v3.1) to 248 ms (v3.2) due to a new ORM join.",
+        "action": "hold_to_verify",
+        "confidence": 100,
+        "brief_endorsement": null
+      },
+      "meta": {
+        "prompt_tokens": 645,
+        "output_tokens": 162,
+        "seconds": 7.6,
+        "repaired": false
+      },
+      "hold": true,
+      "verified_catch": true,
+      "untargeted_hold": false,
+      "false_alarm": null
+    },
+    "single": {
+      "output": {
+        "primary_reason": "The packet explicitly shows that the database-backed request p95 latency for v3.2 is 248 ms, which significantly exceeds the stated constraint limit of 180 ms.",
+        "target_clause_or_metric": "Breakdown Appendix: On the remaining uncached database-query path, v3.2 p95 latency rose from 165 ms (v3.1) to 248 ms (v3.2)",
+        "action": "hold_to_verify",
+        "confidence": 100,
+        "brief_endorsement": 5
+      },
+      "meta": {
+        "prompt_tokens": 869,
+        "output_tokens": 143,
+        "seconds": 8.74,
+        "repaired": false
+      },
+      "hold": true,
+      "verified_catch": true,
+      "untargeted_hold": false,
+      "false_alarm": null
+    },
+    "consensus": {
+      "output": {
+        "primary_reason": "The packet explicitly shows that the database-backed request p95 latency rose to 248 ms, which violates the stated constraint of staying <= 180 ms. The pre-decision brief confirms this violation and recommends a hold.",
+        "target_clause_or_metric": "2. Breakdown Appendix: On the remaining uncached database-query path, v3.2 p95 latency rose from 165 ms (v3.1) to 248 ms (v3.2)",
+        "action": "hold_to_verify",
+        "confidence": 100,
+        "brief_endorsement": 5
+      },
+      "meta": {
+        "prompt_tokens": 907,
+        "output_tokens": 153,
+        "seconds": 7.39,
+        "repaired": false
+      },
+      "hold": true,
+      "verified_catch": true,
+      "untargeted_hold": false,
+      "false_alarm": null
+    },
+    "crux": {
+      "output": {
+        "primary_reason": "The packet explicitly states that the database-backed request p95 latency rose to 248 ms, which violates the constraint of staying <= 180 ms. The pre-decision brief confirms this violation and suggests verification of the measurement's validity.",
+        "target_clause_or_metric": "2. Breakdown Appendix: On the remaining uncached database-query path, v3.2 p95 latency rose from 165 ms (v3.1) to 248 ms (v3.2) due to a new ORM join.",
+        "action": "hold_to_verify",
+        "confidence": 100,
+        "brief_endorsement": 5
+      },
+      "meta": {
+        "prompt_tokens": 852,
+        "output_tokens": 165,
+        "seconds": 7.36,
+        "repaired": false
+      },
+      "hold": true,
+      "verified_catch": true,
+      "untargeted_hold": false,
+      "false_alarm": null
+    }
+  }
+}

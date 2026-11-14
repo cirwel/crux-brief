@@ -1,0 +1,29 @@
+{
+  "scenario_id": "S22",
+  "variant": "flawed",
+  "domain": "operational_briefs",
+  "difficulty_tier": 1,
+  "model": "gemma4:latest",
+  "seed": 142,
+  "output": {
+    "summary": "The goal requires a >= 20% year-over-year decrease in safety incidents per 10,000 service miles. Last year's rate was (38 incidents / 120,000 miles) * 10,000 = 3.17 incidents/10k miles. This year's rate is (28 incidents / 78,000 miles) * 10,000 = 3.59 incidents/10k miles. Since 3.59 is higher than 3.17, the required >= 20% decrease was not met.",
+    "key_claims": [
+      "Last year's incident rate: 3.17 incidents per 10,000 miles",
+      "This year's incident rate: 3.59 incidents per 10,000 miles",
+      "The required decrease was not met as 3.59 is not <= (3.17 * 0.80)"
+    ],
+    "recommendation": "hold_to_verify",
+    "risks_or_flaws": [
+      "The calculated incident rate for this year (3.59/10k miles) is higher than last year's rate (3.17/10k miles), failing the required >= 20% decrease."
+    ],
+    "verification_question": "Can the packet provide the total service miles for the period corresponding to the 38 incidents from last year, to ensure the comparison is based on the same time period?",
+    "confidence": 100
+  },
+  "meta": {
+    "prompt_tokens": 568,
+    "output_tokens": 371,
+    "seconds": 11.91,
+    "repaired": false
+  },
+  "advisor_caught": true
+}

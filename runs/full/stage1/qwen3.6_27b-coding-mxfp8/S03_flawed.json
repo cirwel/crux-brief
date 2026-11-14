@@ -1,0 +1,29 @@
+{
+  "scenario_id": "S03",
+  "variant": "flawed",
+  "domain": "job_offers",
+  "difficulty_tier": 2,
+  "model": "qwen3.6:27b-coding-mxfp8",
+  "seed": 2104,
+  "output": {
+    "summary": "The user requires expected annual cash earnings at historical team attainment to be at least $210,000. The decision packet states the variable commission has a strict zero-commission cliff below 80% quota attainment. Historical team data indicates the median quota attainment is 74%, which falls below the 80% threshold. Consequently, at historical attainment, the variable commission is $0. Total cash earnings would be limited to the $160,000 base salary. This is significantly below the $210,000 constraint, violating the user's explicit financial requirement.",
+    "key_claims": [
+      "Median historical quota attainment is 74%",
+      "Zero commission is paid below 80% attainment",
+      "Base salary is $160,000"
+    ],
+    "recommendation": "hold_to_verify",
+    "risks_or_flaws": [
+      "At historical median attainment of 74%, variable pay is $0 due to the 80% cliff, resulting in total cash earnings of $160,000, which fails the >= $210,000 constraint."
+    ],
+    "verification_question": "Does the 'zero-commission cliff below 80%' apply to the historical median attainment of 74%, thereby reducing total cash compensation to $160,000?",
+    "confidence": 100
+  },
+  "meta": {
+    "prompt_tokens": 589,
+    "output_tokens": 318,
+    "seconds": 36.68,
+    "repaired": false
+  },
+  "advisor_caught": true
+}

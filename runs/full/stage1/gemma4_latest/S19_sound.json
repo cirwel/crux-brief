@@ -1,0 +1,29 @@
+{
+  "scenario_id": "S19",
+  "variant": "sound",
+  "domain": "operational_briefs",
+  "difficulty_tier": 3,
+  "model": "gemma4:latest",
+  "seed": 137,
+  "output": {
+    "summary": "The user requires auto-suspension only if live fraud detection hits $\\ge 40\\%$. The packet provides a 50/50 test benchmark (95.0% sensitivity) and a live traffic profile of 10,000 accounts with a 10.0% true fraud base rate. Calculating the expected number of suspended fraudulent accounts based on the 95.0% sensitivity on 1,000 actual frauds yields 950. The expected total flagged accounts (true positives + false positives) is not explicitly calculated, but the sensitivity alone suggests a high likelihood of meeting the 40% threshold.",
+    "key_claims": [
+      "Required minimum fraud suspension rate: 40%",
+      "Model sensitivity: 95.0%",
+      "Expected true positives (fraudulent accounts suspended): 950 (95.0% of 1,000)"
+    ],
+    "recommendation": "proceed",
+    "risks_or_flaws": [
+      "none"
+    ],
+    "verification_question": "none",
+    "confidence": 95
+  },
+  "meta": {
+    "prompt_tokens": 590,
+    "output_tokens": 259,
+    "seconds": 8.57,
+    "repaired": false
+  },
+  "advisor_caught": null
+}

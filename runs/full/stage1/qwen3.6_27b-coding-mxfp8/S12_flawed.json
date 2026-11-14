@@ -1,0 +1,30 @@
+{
+  "scenario_id": "S12",
+  "variant": "flawed",
+  "domain": "leases",
+  "difficulty_tier": 1,
+  "model": "qwen3.6:27b-coding-mxfp8",
+  "seed": 2122,
+  "output": {
+    "summary": "The unit rent of $2,550 satisfies the <= $2,700 constraint. However, the telecommunications rider explicitly caps shared Wi-Fi at 50 Mbps download and 10 Mbps upload. This violates the user's strict requirement for symmetrical >= 200 Mbps fiber internet. Furthermore, the lease prohibits external fiber installation or cellular gateways, making it impossible to achieve the required bandwidth. The decision packet fails the primary connectivity constraint.",
+    "key_claims": [
+      "Rent is $2,550/month, which is within the $2,700 limit.",
+      "Internet is capped at 50 Mbps down / 10 Mbps up, failing the >= 200 Mbps symmetrical requirement.",
+      "External fiber installation is strictly prohibited, preventing any workaround for the bandwidth deficit."
+    ],
+    "recommendation": "hold_to_verify",
+    "risks_or_flaws": [
+      "Internet speed (50/10 Mbps) is significantly below the required >= 200 Mbps symmetrical fiber speed.",
+      "Lease prohibits external fiber installation, making it impossible to meet the connectivity goal."
+    ],
+    "verification_question": "Is there any exception or alternative ISP option available that provides >= 200 Mbps symmetrical fiber, given the explicit prohibition on external installations?",
+    "confidence": 100
+  },
+  "meta": {
+    "prompt_tokens": 534,
+    "output_tokens": 305,
+    "seconds": 60.62,
+    "repaired": false
+  },
+  "advisor_caught": true
+}

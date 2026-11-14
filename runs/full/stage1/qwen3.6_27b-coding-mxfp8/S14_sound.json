@@ -1,0 +1,28 @@
+{
+  "scenario_id": "S14",
+  "variant": "sound",
+  "domain": "procurement_handoffs",
+  "difficulty_tier": 3,
+  "model": "qwen3.6:27b-coding-mxfp8",
+  "seed": 2127,
+  "output": {
+    "summary": "The decision packet confirms a purchase order for 500 units at $42.00 USD each. Calculating the total cost: 500 multiplied by 42.00 equals exactly $21,000.00 USD. The user's constraint requires the total USD bank debit not to exceed the $21,000.00 ceiling. Since the calculated amount matches the ceiling exactly and the packet explicitly states zero currency conversion or intermediary deductions, the total debit will be precisely $21,000.00. This satisfies the condition of not exceeding the limit. The receiving verification also aligns with the PO quantities and figures. No hidden costs or violations are present.",
+    "key_claims": [
+      "Total calculated cost is $21,000.00 USD (500 units * $42.00)",
+      "Packet confirms zero currency conversion or intermediary deductions"
+    ],
+    "recommendation": "proceed",
+    "risks_or_flaws": [
+      "none"
+    ],
+    "verification_question": "none",
+    "confidence": 100
+  },
+  "meta": {
+    "prompt_tokens": 585,
+    "output_tokens": 258,
+    "seconds": 44.55,
+    "repaired": false
+  },
+  "advisor_caught": null
+}

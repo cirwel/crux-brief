@@ -1,0 +1,30 @@
+{
+  "scenario_id": "S04",
+  "variant": "flawed",
+  "domain": "job_offers",
+  "difficulty_tier": 3,
+  "model": "nemotron3:33b",
+  "seed": 1106,
+  "output": {
+    "summary": "The grant's $400,000 total valuation at $1.00/share implies $100,000/yr, falling short of the $70,000/yr floor when accounting for the 1.5x participating liquidation preference that reduces common equity value. The 400,000 shares at $0.28 FMV total $112,000, but with $82M preferred claims, common equity value is severely constrained, making the grant unlikely to retain positive payout value in a $100M exit.",
+    "key_claims": [
+      "400,000 shares at $1.00/share = $400,000 total valuation",
+      "$82M preferred stock with 1.5x liquidation preference ahead of common",
+      "FMV of $0.28/share implies $112,000 total value for common shares"
+    ],
+    "recommendation": "hold_to_verify",
+    "risks_or_flaws": [
+      "Equity value calculation fails to meet $70,000/yr floor due to liquidation preference impact",
+      "FMV of $0.28/share contradicts $1.00/share valuation used for $400,000 claim"
+    ],
+    "verification_question": "How does the 1.5x participating liquidation preference reduce common stock value in a $100M exit, and what is the actual annual payout value based on $0.28 FMV?",
+    "confidence": 95
+  },
+  "meta": {
+    "prompt_tokens": 707,
+    "output_tokens": 364,
+    "seconds": 12.07,
+    "repaired": false
+  },
+  "advisor_caught": true
+}

@@ -1,0 +1,58 @@
+{
+  "scenario_id": "S08",
+  "variant": "sound",
+  "domain": "leases",
+  "difficulty_tier": 2,
+  "synth_model": "nemotron3:33b",
+  "k_spotted": null,
+  "advisor_caught_by_model": {
+    "gemma4:latest": null,
+    "nemotron3:33b": null,
+    "qwen3.6:27b-coding-mxfp8": null
+  },
+  "briefs": {
+    "consensus": {
+      "raw": {
+        "overview": "All advisors confirm the lease is a 12-month term ending December 31, with Clause 14.2 requiring a 45-day written non-renewal notice to avoid automatic conversion to month-to-month terms. The user's goal to exit cleanly at Month 12 aligns with the lease's structure, as providing notice by the deadline ensures no multi-month renewal penalty, matching the landlord's 'simple 1-year pop-up' characterization.",
+        "points_of_note": "Advisor 1 flagged uncertainty about whether the 45-day notice *guarantees* no penalty beyond Month 12, noting the packet lacks explicit language waiving renewal penalties. Advisor 2 and 3 resolved this by confirming the lease converts to month-to-month (not auto-renewing) if notice is timely, with Advisor 3 specifying the deadline as Dec 10 and Advisor 2 aligning the notice window with Nov 3 sales data availability, showing no constraint breaches.",
+        "suggested_next_step": "Sign the lease immediately, as all advisors confirm the notice mechanics ensure clean exit at Month 12 without penalty when the 45-day notice is delivered by Dec 10, leveraging November 3 sales data for timely compliance."
+      },
+      "text": "ASSESSMENT OVERVIEW: All advisors confirm the lease is a 12-month term ending December 31, with Clause 14.2 requiring a 45-day written non-renewal notice to avoid automatic conversion to month-to-month terms. The user's goal to exit cleanly at Month 12 aligns with the lease's structure, as providing notice by the deadline ensures no multi-month renewal penalty, matching the landlord's 'simple 1-year pop-up' characterization.\nPOINTS OF NOTE: Advisor 1 flagged uncertainty about whether the 45-day notice *guarantees* no penalty beyond Month 12, noting the packet lacks explicit language waiving renewal penalties. Advisor 2 and 3 resolved this by confirming the lease converts to month-to-month (not auto-renewing) if notice is timely, with Advisor 3 specifying the deadline as Dec 10 and Advisor 2 aligning the notice window with Nov 3 sales data availability, showing no constraint breaches.\nSUGGESTED NEXT STEP: Sign the lease immediately, as all advisors confirm the notice mechanics ensure clean exit at Month 12 without penalty when the 45-day notice is delivered by Dec 10, leveraging November 3 sales data for timely compliance.",
+      "words": 173,
+      "meta": {
+        "prompt_tokens": 1287,
+        "output_tokens": 274,
+        "seconds": 11.75,
+        "repaired": false
+      }
+    },
+    "crux": {
+      "raw": {
+        "shared_ground": [
+          "Initial term is 12 months (Jan 1 to Dec 31)",
+          "Non-renewal notice required 45 days prior to expiration"
+        ],
+        "cruxes": [
+          {
+            "topic": "Notice mechanics and renewal penalty",
+            "side_a": "Clause 14.2 requires 45 days prior notice to avoid automatic renewal penalty (Advisor 1)",
+            "side_b": "Notice waives renewal penalty and enables clean exit at Month 12 (Advisor 2 & 3)",
+            "premise_at_stake": "Whether providing the 45-day notice explicitly waives the right to claim an automatic multi-month renewal penalty"
+          }
+        ],
+        "unverified_premises": [
+          "Does Clause 14.2 explicitly state that providing the 45-day notice waives any right to claim an automatic multi-month renewal penalty?"
+        ],
+        "decisive_check": "Confirm Clause 14.2's language on penalty waiver vs. notice requirement"
+      },
+      "text": "ASSESSMENT OVERVIEW: Initial term is 12 months (Jan 1 to Dec 31) Non-renewal notice required 45 days prior to expiration\nPOINTS OF NOTE: Disagreements: (1) Notice mechanics and renewal penalty: Side A [Clause 14.2 requires 45 days prior notice to avoid automatic renewal penalty (Advisor 1)] vs. Side B [Notice waives renewal penalty and enables clean exit at Month 12 (Advisor 2 & 3)] (at stake: Whether providing the 45-day notice explicitly waives the right to claim an automatic multi-month renewal penalty) Flagged issues: Does Clause 14.2 explicitly state that providing the 45-day notice waives any right to claim an automatic multi-month renewal penalty?\nSUGGESTED NEXT STEP: Confirm Clause 14.2's language on penalty waiver vs. notice requirement",
+      "words": 117,
+      "meta": {
+        "prompt_tokens": 1456,
+        "output_tokens": 233,
+        "seconds": 8.73,
+        "repaired": false
+      }
+    }
+  }
+}

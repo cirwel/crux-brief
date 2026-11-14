@@ -1,0 +1,134 @@
+{
+  "scenario_id": "S14",
+  "variant": "sound",
+  "domain": "procurement_handoffs",
+  "difficulty_tier": 3,
+  "eval_model": "gemma4:latest",
+  "synth_model": "nemotron3:33b",
+  "single_advisor_model": "nemotron3:33b",
+  "k_spotted": null,
+  "advisor_caught_by_model": {
+    "gemma4:latest": null,
+    "nemotron3:33b": null,
+    "qwen3.6:27b-coding-mxfp8": null
+  },
+  "briefs": {
+    "single": {
+      "text": "ASSESSMENT OVERVIEW: The packet states a $21,000.00 USD PO ceiling for 500 units at $42.00 each. Calculated total (500 \u00d7 $42.00) equals exactly $21,000.00, which does not exceed the ceiling. All constraints align with the goal to approve payment only if USD payout \u2264 $21,000.00. Key facts: 500 units \u00d7 $42.00 USD = $21,000.00 USD; PO ceiling is $21,000.00 USD; Settlement wire detail confirms $21,000.00 USD payment with no deductions.\nPOINTS OF NOTE: No concrete constraint violations flagged.\nSUGGESTED NEXT STEP: None required; stated constraints appear satisfied.",
+      "words": 87
+    },
+    "consensus": {
+      "raw": {
+        "overview": "All three advisors unanimously recommend proceeding with the wire payout, confirming that the calculated total of $21,000.00 USD exactly matches the Purchase Order ceiling without exceeding it, and that the receiving clerk's verification of quantity and unit figures aligns with the PO terms.",
+        "points_of_note": "The advisors consistently cite the exact calculation (500 units \u00d7 $42.00) yielding $21,000.00 USD, which precisely meets the $21,000.00 ceiling constraint with no evidence of deductions, currency conversion, or hidden costs, and all note zero flagged issues or constraint violations.",
+        "suggested_next_step": "Approve the wire payout immediately as the total USD debit of $21,000.00 exactly meets the Purchase Order ceiling without exceeding it."
+      },
+      "text": "ASSESSMENT OVERVIEW: All three advisors unanimously recommend proceeding with the wire payout, confirming that the calculated total of $21,000.00 USD exactly matches the Purchase Order ceiling without exceeding it, and that the receiving clerk's verification of quantity and unit figures aligns with the PO terms.\nPOINTS OF NOTE: The advisors consistently cite the exact calculation (500 units \u00d7 $42.00) yielding $21,000.00 USD, which precisely meets the $21,000.00 ceiling constraint with no evidence of deductions, currency conversion, or hidden costs, and all note zero flagged issues or constraint violations.\nSUGGESTED NEXT STEP: Approve the wire payout immediately as the total USD debit of $21,000.00 exactly meets the Purchase Order ceiling without exceeding it.",
+      "words": 112,
+      "meta": {
+        "prompt_tokens": 1117,
+        "output_tokens": 189,
+        "seconds": 6.0,
+        "repaired": false
+      }
+    },
+    "crux": {
+      "raw": {
+        "shared_ground": [
+          "Total calculated cost is $21,000.00 USD (500 units * $42.00)",
+          "PO ceiling is $21,000.00 USD"
+        ],
+        "cruxes": [],
+        "unverified_premises": [],
+        "decisive_check": "None required; all advisors concur stated constraints are satisfied."
+      },
+      "text": "ASSESSMENT OVERVIEW: Total calculated cost is $21,000.00 USD (500 units * $42.00) PO ceiling is $21,000.00 USD\nPOINTS OF NOTE: No concrete disagreements or constraint violations flagged across advisors.\nSUGGESTED NEXT STEP: None required; all advisors concur stated constraints are satisfied.",
+      "words": 41,
+      "meta": {
+        "prompt_tokens": 1286,
+        "output_tokens": 96,
+        "seconds": 3.73,
+        "repaired": false
+      }
+    }
+  },
+  "crux_survived": null,
+  "decisions": {
+    "raw": {
+      "output": {
+        "primary_reason": "The packet explicitly states the total USD settlement is $21,000.00 USD, which exactly matches the $21,000.00 USD Purchase Order ceiling, satisfying the primary constraint.",
+        "target_clause_or_metric": "none",
+        "action": "proceed",
+        "confidence": 100,
+        "brief_endorsement": null
+      },
+      "meta": {
+        "prompt_tokens": 613,
+        "output_tokens": 98,
+        "seconds": 3.22,
+        "repaired": false
+      },
+      "hold": false,
+      "verified_catch": null,
+      "untargeted_hold": null,
+      "false_alarm": false
+    },
+    "single": {
+      "output": {
+        "primary_reason": "The packet explicitly confirms the total USD debit is $21,000.00, which exactly matches the $21,000.00 PO ceiling, thus satisfying the primary constraint. The receiving clerk's verification is also supported by the settlement details.",
+        "target_clause_or_metric": "none",
+        "action": "proceed",
+        "confidence": 100,
+        "brief_endorsement": 5
+      },
+      "meta": {
+        "prompt_tokens": 797,
+        "output_tokens": 111,
+        "seconds": 3.78,
+        "repaired": false
+      },
+      "hold": false,
+      "verified_catch": null,
+      "untargeted_hold": null,
+      "false_alarm": false
+    },
+    "consensus": {
+      "output": {
+        "primary_reason": "The packet confirms the total USD debit is exactly $21,000.00, which does not exceed the $21,000.00 PO ceiling, satisfying the primary constraint. The supporting brief reinforces this calculation and confirms no discrepancies.",
+        "target_clause_or_metric": "none",
+        "action": "proceed",
+        "confidence": 100,
+        "brief_endorsement": 5
+      },
+      "meta": {
+        "prompt_tokens": 788,
+        "output_tokens": 108,
+        "seconds": 3.93,
+        "repaired": false
+      },
+      "hold": false,
+      "verified_catch": null,
+      "untargeted_hold": null,
+      "false_alarm": false
+    },
+    "crux": {
+      "output": {
+        "primary_reason": "The packet explicitly states the total USD settlement is $21,000.00 USD, which exactly matches the $21,000.00 USD Purchase Order ceiling, satisfying the primary constraint.",
+        "target_clause_or_metric": "none",
+        "action": "proceed",
+        "confidence": 100,
+        "brief_endorsement": 5
+      },
+      "meta": {
+        "prompt_tokens": 691,
+        "output_tokens": 99,
+        "seconds": 3.19,
+        "repaired": false
+      },
+      "hold": false,
+      "verified_catch": null,
+      "untargeted_hold": null,
+      "false_alarm": false
+    }
+  }
+}

@@ -1,0 +1,29 @@
+{
+  "scenario_id": "S02",
+  "variant": "sound",
+  "domain": "job_offers",
+  "difficulty_tier": 1,
+  "model": "nemotron3:33b",
+  "seed": 1103,
+  "output": {
+    "summary": "The $40,000 sign-on bonus results in $24,800 net cash. The repayment rider requires repayment of 1/12th monthly ($2,067) for 12 months if voluntarily resigned within 12 months, totaling $24,800. Since repayment ends at Month 12, leaving at Month 18 incurs no obligation. All constraints are satisfied.",
+    "key_claims": [
+      "Sign-on bonus: $40,000 gross, $24,800 net",
+      "Repayment: 1/12th monthly ($2,067) for 12 months = $24,800 total, ending at Month 12",
+      "Voluntary resignation within 12 months triggers repayment; after Month 12, obligation is $0"
+    ],
+    "recommendation": "proceed",
+    "risks_or_flaws": [
+      "none"
+    ],
+    "verification_question": "none",
+    "confidence": 100
+  },
+  "meta": {
+    "prompt_tokens": 660,
+    "output_tokens": 244,
+    "seconds": 9.47,
+    "repaired": false
+  },
+  "advisor_caught": null
+}

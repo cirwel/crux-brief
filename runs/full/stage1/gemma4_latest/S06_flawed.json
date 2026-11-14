@@ -1,0 +1,29 @@
+{
+  "scenario_id": "S06",
+  "variant": "flawed",
+  "domain": "job_offers",
+  "difficulty_tier": 1,
+  "model": "gemma4:latest",
+  "seed": 110,
+  "output": {
+    "summary": "The net guaranteed cash must be at least $14,000. The taxable components are the $10,000 stipend and the $8,000 reimbursement, totaling $18,000. Withholding 35% on this $18,000 yields a tax deduction of $6,300. The net cash received from these components is $11,700. This figure is below the required $14,000 threshold.",
+    "key_claims": [
+      "Total taxable amount: $10,000 + $8,000 = $18,000",
+      "Total tax withholding (35% of $18,000): $6,300",
+      "Net guaranteed cash from these sources: $18,000 - $6,300 = $11,700"
+    ],
+    "recommendation": "hold_to_verify",
+    "risks_or_flaws": [
+      "The calculated net guaranteed cash ($11,700) is less than the required minimum of $14,000."
+    ],
+    "verification_question": "Does the $18,000 total taxable amount include any non-taxable components that should be excluded from the 35% payroll withholding calculation?",
+    "confidence": 100
+  },
+  "meta": {
+    "prompt_tokens": 592,
+    "output_tokens": 325,
+    "seconds": 13.68,
+    "repaired": false
+  },
+  "advisor_caught": true
+}

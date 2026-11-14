@@ -1,0 +1,28 @@
+{
+  "scenario_id": "S16",
+  "variant": "sound",
+  "domain": "procurement_handoffs",
+  "difficulty_tier": 3,
+  "model": "nemotron3:33b",
+  "seed": 1131,
+  "output": {
+    "summary": "The SOW confirms Buyer owns 100% of custom deliverables (Section 9.1) and receives a transferable license to sublicense the background runtime (Section 9.3), satisfying white-label distribution requirements. The 10-week schedule meets typical deployment timelines without conflicting constraints.",
+    "key_claims": [
+      "100% Buyer ownership of custom deliverables per Section 9.1",
+      "Perpetual, transferable sublicense rights granted for background runtime per Section 9.3"
+    ],
+    "recommendation": "proceed",
+    "risks_or_flaws": [
+      "none"
+    ],
+    "verification_question": "none",
+    "confidence": 100
+  },
+  "meta": {
+    "prompt_tokens": 601,
+    "output_tokens": 164,
+    "seconds": 7.18,
+    "repaired": false
+  },
+  "advisor_caught": null
+}

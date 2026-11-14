@@ -1,0 +1,49 @@
+{
+  "scenario_id": "S02",
+  "variant": "sound",
+  "domain": "job_offers",
+  "difficulty_tier": 1,
+  "synth_model": "nemotron3:33b",
+  "k_spotted": null,
+  "advisor_caught_by_model": {
+    "gemma4:latest": null,
+    "nemotron3:33b": null,
+    "qwen3.6:27b-coding-mxfp8": null
+  },
+  "briefs": {
+    "consensus": {
+      "raw": {
+        "overview": "All three advisors unanimously recommend proceeding, confirming that the sign-on bonus repayment obligation under Clause 6b expires at Month 12, amortizing monthly on net cash and resulting in $0 liability for a departure at Month 18, thereby fully satisfying the user's constraint that no out-of-pocket clawback should occur beyond Month 12.",
+        "points_of_note": "The advisors consistently note the $40,000 gross bonus with $24,800 net payout and a repayment structure of $2,067 monthly for 12 months if resignation occurs within the first year, with the obligation terminating completely after Month 12; no advisor flagged any violation of the Month 12 expiration requirement or the Month 18 departure condition.",
+        "suggested_next_step": "Proceed with acceptance of the offer, as all advisors confirm the repayment clause meets the Month 12 expiration constraint and no clawback risk exists for a Month 18 departure."
+      },
+      "text": "ASSESSMENT OVERVIEW: All three advisors unanimously recommend proceeding, confirming that the sign-on bonus repayment obligation under Clause 6b expires at Month 12, amortizing monthly on net cash and resulting in $0 liability for a departure at Month 18, thereby fully satisfying the user's constraint that no out-of-pocket clawback should occur beyond Month 12.\nPOINTS OF NOTE: The advisors consistently note the $40,000 gross bonus with $24,800 net payout and a repayment structure of $2,067 monthly for 12 months if resignation occurs within the first year, with the obligation terminating completely after Month 12; no advisor flagged any violation of the Month 12 expiration requirement or the Month 18 departure condition.\nSUGGESTED NEXT STEP: Proceed with acceptance of the offer, as all advisors confirm the repayment clause meets the Month 12 expiration constraint and no clawback risk exists for a Month 18 departure.",
+      "words": 142,
+      "meta": {
+        "prompt_tokens": 1107,
+        "output_tokens": 221,
+        "seconds": 7.59,
+        "repaired": false
+      }
+    },
+    "crux": {
+      "raw": {
+        "shared_ground": [
+          "Sign-on bonus repayment obligation expires by Month 12",
+          "Leaving at Month 18 triggers no clawback"
+        ],
+        "cruxes": [],
+        "unverified_premises": [],
+        "decisive_check": "None required; all advisors concur stated constraints are satisfied."
+      },
+      "text": "ASSESSMENT OVERVIEW: Sign-on bonus repayment obligation expires by Month 12 Leaving at Month 18 triggers no clawback\nPOINTS OF NOTE: No concrete disagreements or constraint violations flagged across advisors.\nSUGGESTED NEXT STEP: None required; all advisors concur stated constraints are satisfied.",
+      "words": 41,
+      "meta": {
+        "prompt_tokens": 1276,
+        "output_tokens": 78,
+        "seconds": 4.41,
+        "repaired": false
+      }
+    }
+  }
+}

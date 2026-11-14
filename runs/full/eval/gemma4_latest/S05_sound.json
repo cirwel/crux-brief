@@ -1,0 +1,134 @@
+{
+  "scenario_id": "S05",
+  "variant": "sound",
+  "domain": "job_offers",
+  "difficulty_tier": 2,
+  "eval_model": "gemma4:latest",
+  "synth_model": "nemotron3:33b",
+  "single_advisor_model": "nemotron3:33b",
+  "k_spotted": null,
+  "advisor_caught_by_model": {
+    "gemma4:latest": null,
+    "nemotron3:33b": null,
+    "qwen3.6:27b-coding-mxfp8": null
+  },
+  "briefs": {
+    "single": {
+      "text": "ASSESSMENT OVERVIEW: The PIIA clause explicitly excludes personal open-source libraries like TraceLite and weekend off-hours code developed on personal hardware, matching the user's constraints. Exhibit A confirms TraceLite is carved out as prior IP with statutory notice. All stated exclusions align with the user's goal to avoid claiming ownership over existing personal projects. Key facts: PIIA Clause 8.1 explicitly excludes personal open-source libraries and weekend tooling developed off-hours on personal hardware; Exhibit A lists 'TraceLite (Apache-2.0)' as carved-out prior IP with statutory notice; User's existing Apache-2.0 library and personal tools fall under stated exclusions.\nPOINTS OF NOTE: No concrete constraint violations flagged.\nSUGGESTED NEXT STEP: None required; stated constraints appear satisfied.",
+      "words": 111
+    },
+    "consensus": {
+      "raw": {
+        "overview": "All three advisors unanimously confirm the employment agreement's IP assignment clause (8.1) excludes personal open-source libraries like TraceLite and off-hours weekend tooling developed on personal hardware, with Clause 8.3 and Exhibit A explicitly carving out TraceLite as prior IP, fully satisfying your constraints against claiming ownership over existing Apache-2.0 library or personal projects.",
+        "points_of_note": "The advisors consistently emphasize Clause 8.1's exclusion of personal libraries and off-hours work, with Exhibit A specifically listing 'TraceLite (Apache-2.0 distributed tracing library)' as carved-out prior IP across all assessments, while Clause 8.3's reference to 'TraceLite' in Exhibit A provides statutory notice confirmation without any material constraint violations identified.",
+        "suggested_next_step": "Proceed with signing the employment agreement as all advisors confirm zero constraint breaches regarding TraceLite ownership or personal off-hours tooling exclusions."
+      },
+      "text": "ASSESSMENT OVERVIEW: All three advisors unanimously confirm the employment agreement's IP assignment clause (8.1) excludes personal open-source libraries like TraceLite and off-hours weekend tooling developed on personal hardware, with Clause 8.3 and Exhibit A explicitly carving out TraceLite as prior IP, fully satisfying your constraints against claiming ownership over existing Apache-2.0 library or personal projects.\nPOINTS OF NOTE: The advisors consistently emphasize Clause 8.1's exclusion of personal libraries and off-hours work, with Exhibit A specifically listing 'TraceLite (Apache-2.0 distributed tracing library)' as carved-out prior IP across all assessments, while Clause 8.3's reference to 'TraceLite' in Exhibit A provides statutory notice confirmation without any material constraint violations identified.\nSUGGESTED NEXT STEP: Proceed with signing the employment agreement as all advisors confirm zero constraint breaches regarding TraceLite ownership or personal off-hours tooling exclusions.",
+      "words": 131,
+      "meta": {
+        "prompt_tokens": 1071,
+        "output_tokens": 209,
+        "seconds": 9.03,
+        "repaired": false
+      }
+    },
+    "crux": {
+      "raw": {
+        "shared_ground": [
+          "PIIA Clause 8.1 excludes personal open-source libraries and off-hours/weekend tooling",
+          "Exhibit A carves out 'TraceLite' as excluded prior IP"
+        ],
+        "cruxes": [],
+        "unverified_premises": [],
+        "decisive_check": "None required; all advisors concur stated constraints are satisfied."
+      },
+      "text": "ASSESSMENT OVERVIEW: PIIA Clause 8.1 excludes personal open-source libraries and off-hours/weekend tooling Exhibit A carves out 'TraceLite' as excluded prior IP\nPOINTS OF NOTE: No concrete disagreements or constraint violations flagged across advisors.\nSUGGESTED NEXT STEP: None required; all advisors concur stated constraints are satisfied.",
+      "words": 45,
+      "meta": {
+        "prompt_tokens": 1240,
+        "output_tokens": 92,
+        "seconds": 5.5,
+        "repaired": false
+      }
+    }
+  },
+  "crux_survived": null,
+  "decisions": {
+    "raw": {
+      "output": {
+        "primary_reason": "The packet explicitly addresses the concerns by stating the Invention Assignment clause (8.1) excludes personal open-source libraries and weekend tooling, and further confirms this by listing 'TraceLite' as a carved-out prior IP in Clause 8.3.",
+        "target_clause_or_metric": "none",
+        "action": "proceed",
+        "confidence": 100,
+        "brief_endorsement": null
+      },
+      "meta": {
+        "prompt_tokens": 629,
+        "output_tokens": 104,
+        "seconds": 3.22,
+        "repaired": false
+      },
+      "hold": false,
+      "verified_catch": null,
+      "untargeted_hold": null,
+      "false_alarm": false
+    },
+    "single": {
+      "output": {
+        "primary_reason": "The packet explicitly addresses the user's concerns by stating that PIIA Clause 8.1 excludes personal open-source libraries and off-hours code, and Clause 8.3 specifically carves out 'TraceLite' in Exhibit A.",
+        "target_clause_or_metric": "none",
+        "action": "proceed",
+        "confidence": 100,
+        "brief_endorsement": 5
+      },
+      "meta": {
+        "prompt_tokens": 795,
+        "output_tokens": 104,
+        "seconds": 3.07,
+        "repaired": false
+      },
+      "hold": false,
+      "verified_catch": null,
+      "untargeted_hold": null,
+      "false_alarm": false
+    },
+    "consensus": {
+      "output": {
+        "primary_reason": "The packet explicitly addresses both concerns: Clause 8.1 excludes personal open-source libraries and off-hours tooling, and Clause 8.3/Exhibit A specifically carves out 'TraceLite' as prior IP, satisfying all stated constraints.",
+        "target_clause_or_metric": "none",
+        "action": "proceed",
+        "confidence": 100,
+        "brief_endorsement": 5
+      },
+      "meta": {
+        "prompt_tokens": 821,
+        "output_tokens": 104,
+        "seconds": 2.93,
+        "repaired": false
+      },
+      "hold": false,
+      "verified_catch": null,
+      "untargeted_hold": null,
+      "false_alarm": false
+    },
+    "crux": {
+      "output": {
+        "primary_reason": "The packet explicitly addresses both constraints: Clause 8.1 excludes personal open-source libraries and off-hours tooling, and Clause 8.3 carves out 'TraceLite' as excluded prior IP. The Pre-Decision Brief confirms this satisfaction.",
+        "target_clause_or_metric": "none",
+        "action": "proceed",
+        "confidence": 100,
+        "brief_endorsement": 5
+      },
+      "meta": {
+        "prompt_tokens": 699,
+        "output_tokens": 105,
+        "seconds": 3.1,
+        "repaired": false
+      },
+      "hold": false,
+      "verified_catch": null,
+      "untargeted_hold": null,
+      "false_alarm": false
+    }
+  }
+}

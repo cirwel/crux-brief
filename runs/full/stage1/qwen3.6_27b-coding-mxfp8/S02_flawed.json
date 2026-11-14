@@ -1,0 +1,29 @@
+{
+  "scenario_id": "S02",
+  "variant": "flawed",
+  "domain": "job_offers",
+  "difficulty_tier": 1,
+  "model": "qwen3.6:27b-coding-mxfp8",
+  "seed": 2102,
+  "output": {
+    "summary": "The user requires that any sign-on bonus repayment obligation expire by Month 12 to ensure leaving at Month 18 triggers no clawback. The decision packet explicitly states in Clause 6b that voluntary resignation within 24 months triggers a 100% repayment of the gross $40,000 bonus. Since 24 months exceeds the user's 12-month limit, leaving at Month 18 would indeed trigger a significant out-of-pocket cash clawback, directly violating the user's explicit constraint.",
+    "key_claims": [
+      "Repayment obligation lasts 24 months",
+      "User constraint requires expiration by Month 12",
+      "Leaving at Month 18 triggers full $40,000 repayment"
+    ],
+    "recommendation": "hold_to_verify",
+    "risks_or_flaws": [
+      "The repayment clause extends to 24 months, violating the user's constraint that it must expire by Month 12. Leaving at Month 18 would require repaying the full gross bonus."
+    ],
+    "verification_question": "Can the repayment period in Clause 6b be negotiated down to 12 months to satisfy the user's constraint?",
+    "confidence": 100
+  },
+  "meta": {
+    "prompt_tokens": 584,
+    "output_tokens": 281,
+    "seconds": 32.58,
+    "repaired": false
+  },
+  "advisor_caught": true
+}

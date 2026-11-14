@@ -1,0 +1,29 @@
+{
+  "scenario_id": "S07",
+  "variant": "flawed",
+  "domain": "leases",
+  "difficulty_tier": 1,
+  "model": "qwen3.6:27b-coding-mxfp8",
+  "seed": 2112,
+  "output": {
+    "summary": "The user's constraint is a maximum total monthly housing cost of $2,550. The packet lists a base rent of $2,325. Mandatory monthly fees include a $135 Tech Bundle, $55 Valet Trash fee, and $95 Garage Stall fee. Summing these mandatory costs: $135 + $55 + $95 = $285. Adding this to the base rent: $2,325 + $285 = $2,610. This total of $2,610 exceeds the user's strict limit of $2,550 by $60. Utilities are metered separately and not included in the landlord's mandatory fees, but the base mandatory costs alone already violate the constraint.",
+    "key_claims": [
+      "Base Rent: $2,325/month",
+      "Total Mandatory Monthly Fees: $285 ($135 + $55 + $95)",
+      "Total Monthly Cost: $2,610"
+    ],
+    "recommendation": "hold_to_verify",
+    "risks_or_flaws": [
+      "The calculated total monthly cost of $2,610 exceeds the user's maximum constraint of $2,550."
+    ],
+    "verification_question": "Can any of the mandatory fees (Tech Bundle, Valet Trash, or Garage Stall) be waived or removed to bring the total below $2,550?",
+    "confidence": 100
+  },
+  "meta": {
+    "prompt_tokens": 555,
+    "output_tokens": 340,
+    "seconds": 65.43,
+    "repaired": false
+  },
+  "advisor_caught": true
+}

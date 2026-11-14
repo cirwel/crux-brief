@@ -1,0 +1,148 @@
+{
+  "scenario_id": "S09",
+  "variant": "flawed",
+  "domain": "leases",
+  "difficulty_tier": 2,
+  "eval_model": "gemma4:latest",
+  "synth_model": "gemma4:latest",
+  "single_advisor_model": "qwen3.6:27b-coding-mxfp8",
+  "k_spotted": 3,
+  "advisor_caught_by_model": {
+    "gemma4:latest": true,
+    "nemotron3:33b": true,
+    "qwen3.6:27b-coding-mxfp8": true
+  },
+  "briefs": {
+    "single": {
+      "text": "ASSESSMENT OVERVIEW: The user's constraint requires that the financial liability for a 4-day holdover does not exceed $2,000. The decision packet states the holdover penalty is 200% of total Base + Additional Rent for the entire succeeding calendar month. Total monthly rent is $5,400 + $1,200 = $6,600. The penalty is 200% of $6,600, which equals $13,200. This amount significantly exceeds the $2,000 maximum exposure limit. Therefore, the constraint is violated. Key facts: Total monthly rent is $6,600 ($5,400 Base + $1,200 Additional).; Holdover penalty is 200% of total monthly rent, resulting in $13,200 liability..\nPOINTS OF NOTE: The holdover penalty of $13,200 exceeds the user's maximum exposure constraint of $2,000 for a 4-day overrun..\nSUGGESTED NEXT STEP: Can the landlord agree to a pro-rated holdover fee or a cap on the penalty to ensure it stays below $2,000?",
+      "words": 139
+    },
+    "consensus": {
+      "raw": {
+        "overview": "All three advisors converge on a critical finding: the current lease holdover penalty structure appears to violate the user's stated constraint of not exceeding $2,000 for a 4-day overrun. The core issue across all reports is the penalty's calculation method, which seems to mandate payment for the entire succeeding month, regardless of the actual short delay.",
+        "points_of_note": "The consensus calculation establishes the total monthly rent at $6,600 ($5,400 Base + $1,200 Additional). Advisors 2 and 3 specifically calculate the penalty as 200% of this total, resulting in a $13,200 liability. Advisor 1 notes a slightly different calculation resulting in $6,600, but the material point remains: the penalty structure significantly exceeds the $2,000 limit. All advisors flag the ambiguity of whether the penalty is pro-rated or absolute.",
+        "suggested_next_step": "Given the unanimous identification of a constraint violation based on the current penalty terms, the immediate next step is to seek clarification on the penalty calculation. Specifically, confirm if the lease allows for a pro-rated holdover fee based on actual days occupied, or if the landlord can agree to cap the penalty to ensure it remains below the $2,000 threshold."
+      },
+      "text": "ASSESSMENT OVERVIEW: All three advisors converge on a critical finding: the current lease holdover penalty structure appears to violate the user's stated constraint of not exceeding $2,000 for a 4-day overrun. The core issue across all reports is the penalty's calculation method, which seems to mandate payment for the entire succeeding month, regardless of the actual short delay.\nPOINTS OF NOTE: The consensus calculation establishes the total monthly rent at $6,600 ($5,400 Base + $1,200 Additional). Advisors 2 and 3 specifically calculate the penalty as 200% of this total, resulting in a $13,200 liability. Advisor 1 notes a slightly different calculation resulting in $6,600, but the material point remains: the penalty structure significantly exceeds the $2,000 limit. All advisors flag the ambiguity of whether the penalty is pro-rated or absolute.\nSUGGESTED NEXT STEP: Given the unanimous identification of a constraint violation based on the current penalty terms, the immediate next step is to seek clarification on the penalty calculation. Specifically, confirm if the lease allows for a pro-rated holdover fee based on actual days occupied, or if the landlord can agree to cap the penalty to ensure it remains below the $2,000 threshold.",
+      "words": 193,
+      "meta": {
+        "prompt_tokens": 1241,
+        "output_tokens": 294,
+        "seconds": 12.23,
+        "repaired": false
+      }
+    },
+    "crux": {
+      "raw": {
+        "shared_ground": [
+          "The total monthly rent is calculated as $6,600 ($5,400 Base + $1,200 Additional).",
+          "All advisors conclude that the stated holdover penalty structure violates the user's $2,000 maximum liability constraint for a 4-day delay."
+        ],
+        "cruxes": [
+          {
+            "topic": "Penalty Calculation Basis",
+            "side_a": "Advisor 1 suggests a liability of $6,600 (full month's liability).",
+            "side_b": "Advisors 2 & 3 calculate a liability of $13,200 (200% of full month's rent).",
+            "premise_at_stake": "Whether the penalty is 200% of the full month's rent ($13,200) or simply the full month's rent ($6,600) for a 4-day delay."
+          }
+        ],
+        "unverified_premises": [
+          "The lease clause regarding holdover penalty is interpreted as applying for the 'entire succeeding calendar month' regardless of actual days occupied.",
+          "The lease does not appear to offer a pro-rated penalty structure for short overruns."
+        ],
+        "decisive_check": "Confirm if the lease allows for a pro-rated holdover penalty based on actual days occupied, or if the 'entire succeeding calendar month' charge is absolute."
+      },
+      "text": "ASSESSMENT OVERVIEW: The total monthly rent is calculated as $6,600 ($5,400 Base + $1,200 Additional). All advisors conclude that the stated holdover penalty structure violates the user's $2,000 maximum liability constraint for a 4-day delay.\nPOINTS OF NOTE: Disagreements: (1) Penalty Calculation Basis: Side A [Advisor 1 suggests a liability of $6,600 (full month's liability).] vs. Side B [Advisors 2 & 3 calculate a liability of $13,200 (200% of full month's rent).] (at stake: Whether the penalty is 200% of the full month's rent ($13,200) or simply the full month's rent ($6,600) for a 4-day delay.) Flagged issues: The lease clause regarding holdover penalty is interpreted as applying for the 'entire succeeding calendar month' regardless of actual days occupied.; The lease does not appear to offer a pro-rated penalty structure for short overruns.\nSUGGESTED NEXT STEP: Confirm if the lease allows for a pro-rated holdover penalty based on actual days occupied, or if the 'entire succeeding calendar month' charge is absolute.",
+      "words": 161,
+      "meta": {
+        "prompt_tokens": 1389,
+        "output_tokens": 338,
+        "seconds": 12.24,
+        "repaired": false
+      }
+    }
+  },
+  "crux_survived": {
+    "single": true,
+    "consensus": true,
+    "crux": true
+  },
+  "decisions": {
+    "raw": {
+      "output": {
+        "primary_reason": "The holdover provision (Clause 19) mandates payment for an entire succeeding month at 200% of total rent, which far exceeds the $2,000 maximum liability allowed for a 4-day delay.",
+        "target_clause_or_metric": "Clause 19",
+        "action": "hold_to_verify",
+        "confidence": 100,
+        "brief_endorsement": null
+      },
+      "meta": {
+        "prompt_tokens": 568,
+        "output_tokens": 108,
+        "seconds": 3.55,
+        "repaired": false
+      },
+      "hold": true,
+      "verified_catch": true,
+      "untargeted_hold": false,
+      "false_alarm": null
+    },
+    "single": {
+      "output": {
+        "primary_reason": "The lease's holdover provision mandates payment for an entire succeeding month at 200% of total rent, resulting in a $13,200 penalty, which drastically exceeds the stated maximum allowable liability of $2,000 for a 4-day delay.",
+        "target_clause_or_metric": "Clause 19",
+        "action": "hold_to_verify",
+        "confidence": 100,
+        "brief_endorsement": 5
+      },
+      "meta": {
+        "prompt_tokens": 831,
+        "output_tokens": 120,
+        "seconds": 4.11,
+        "repaired": false
+      },
+      "hold": true,
+      "verified_catch": true,
+      "untargeted_hold": false,
+      "false_alarm": null
+    },
+    "consensus": {
+      "output": {
+        "primary_reason": "The lease's holdover provision (Clause 19) mandates payment for the entire succeeding month at 200% of total rent, which, as confirmed by the brief, results in a liability far exceeding the stated $2,000 maximum for a 4-day delay. This represents a clear and material constraint violation.",
+        "target_clause_or_metric": "Clause 19",
+        "action": "hold_to_verify",
+        "confidence": 100,
+        "brief_endorsement": 5
+      },
+      "meta": {
+        "prompt_tokens": 846,
+        "output_tokens": 131,
+        "seconds": 6.51,
+        "repaired": false
+      },
+      "hold": true,
+      "verified_catch": true,
+      "untargeted_hold": false,
+      "false_alarm": null
+    },
+    "crux": {
+      "output": {
+        "primary_reason": "The lease's holdover provision (Clause 19) mandates payment for the ENTIRE succeeding calendar month, which results in a penalty far exceeding the user's $2,000 maximum liability for a 4-day delay. The pre-decision brief confirms this conflict, highlighting the non-pro-rated nature of the penalty.",
+        "target_clause_or_metric": "Clause 19",
+        "action": "hold_to_verify",
+        "confidence": 100,
+        "brief_endorsement": 5
+      },
+      "meta": {
+        "prompt_tokens": 844,
+        "output_tokens": 133,
+        "seconds": 6.65,
+        "repaired": false
+      },
+      "hold": true,
+      "verified_catch": true,
+      "untargeted_hold": false,
+      "false_alarm": null
+    }
+  }
+}

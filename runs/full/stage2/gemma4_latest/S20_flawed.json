@@ -1,0 +1,58 @@
+{
+  "scenario_id": "S20",
+  "variant": "flawed",
+  "domain": "operational_briefs",
+  "difficulty_tier": 2,
+  "synth_model": "gemma4:latest",
+  "k_spotted": 1,
+  "advisor_caught_by_model": {
+    "gemma4:latest": false,
+    "nemotron3:33b": false,
+    "qwen3.6:27b-coding-mxfp8": true
+  },
+  "briefs": {
+    "consensus": {
+      "raw": {
+        "overview": "The advisors present a divergence regarding the interpretation of the 90-day retention metric relative to the 65% scaling constraint. Two advisors confirm that the headline metric of 74.0% retention meets the threshold, supporting a 'proceed' recommendation. However, a third advisor raises a critical concern regarding the denominator used for this calculation, suggesting the stated rate may be misleading.",
+        "points_of_note": "Advisor 1 and Advisor 2 both cite the 74.0% retention rate based on a denominator of 1,000 users, concluding the 65% constraint is met. Conversely, Advisor 3 emphasizes that the true denominator should include the 400 pre-billing churners, calculating a significantly lower rate of 52.8%. This discrepancy\u2014whether the denominator should be the 1,000 tracked users or the full 1,400 activated users\u2014is the central point of contention.",
+        "suggested_next_step": "Given the material conflict over the appropriate denominator for the retention calculation, the decision maker should pause scaling and seek clarification on whether the 65% threshold applies only to the 1,000 users tracked post-billing setup, or if it must be calculated against the full 1,400 newly activated accounts."
+      },
+      "text": "ASSESSMENT OVERVIEW: The advisors present a divergence regarding the interpretation of the 90-day retention metric relative to the 65% scaling constraint. Two advisors confirm that the headline metric of 74.0% retention meets the threshold, supporting a 'proceed' recommendation. However, a third advisor raises a critical concern regarding the denominator used for this calculation, suggesting the stated rate may be misleading.\nPOINTS OF NOTE: Advisor 1 and Advisor 2 both cite the 74.0% retention rate based on a denominator of 1,000 users, concluding the 65% constraint is met. Conversely, Advisor 3 emphasizes that the true denominator should include the 400 pre-billing churners, calculating a significantly lower rate of 52.8%. This discrepancy\u2014whether the denominator should be the 1,000 tracked users or the full 1,400 activated users\u2014is the central point of contention.\nSUGGESTED NEXT STEP: Given the material conflict over the appropriate denominator for the retention calculation, the decision maker should pause scaling and seek clarification on whether the 65% threshold applies only to the 1,000 users tracked post-billing setup, or if it must be calculated against the full 1,400 newly activated accounts.",
+      "words": 180,
+      "meta": {
+        "prompt_tokens": 1175,
+        "output_tokens": 287,
+        "seconds": 10.86,
+        "repaired": false
+      }
+    },
+    "crux": {
+      "raw": {
+        "shared_ground": [
+          "The required retention threshold for scaling is 65% at Day 90.",
+          "The packet reports a 74.0% retention rate based on 740 retained users."
+        ],
+        "cruxes": [
+          {
+            "topic": "Retention Denominator",
+            "side_a": "Denominator is 1,000 users (excluding 400 pre-billing churners) leading to 74.0% retention.",
+            "side_b": "Denominator must be 1,400 total activated users (1,000 tracked + 400 excluded) leading to 52.8% retention.",
+            "premise_at_stake": "Whether the 400 pre-billing churners must be included in the denominator for the constraint check."
+          }
+        ],
+        "unverified_premises": [
+          "The precise scope of the 65% retention constraint: whether it applies only to the 1,000 users tracked post-billing setup, or to all 1,400 initially activated users."
+        ],
+        "decisive_check": "Determine if the 65% retention threshold applies to all newly activated accounts (1,400 total) or only those who complete billing configuration (1,000 tracked)."
+      },
+      "text": "ASSESSMENT OVERVIEW: The required retention threshold for scaling is 65% at Day 90. The packet reports a 74.0% retention rate based on 740 retained users.\nPOINTS OF NOTE: Disagreements: (1) Retention Denominator: Side A [Denominator is 1,000 users (excluding 400 pre-billing churners) leading to 74.0% retention.] vs. Side B [Denominator must be 1,400 total activated users (1,000 tracked + 400 excluded) leading to 52.8% retention.] (at stake: Whether the 400 pre-billing churners must be included in the denominator for the constraint check.) Flagged issues: The precise scope of the 65% retention constraint: whether it applies only to the 1,000 users tracked post-billing setup, or to all 1,400 initially activated users.\nSUGGESTED NEXT STEP: Determine if the 65% retention threshold applies to all newly activated accounts (1,400 total) or only those who complete billing configuration (1,000 tracked).",
+      "words": 136,
+      "meta": {
+        "prompt_tokens": 1323,
+        "output_tokens": 307,
+        "seconds": 12.38,
+        "repaired": false
+      }
+    }
+  }
+}

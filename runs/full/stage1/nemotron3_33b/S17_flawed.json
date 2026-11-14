@@ -1,0 +1,30 @@
+{
+  "scenario_id": "S17",
+  "variant": "flawed",
+  "domain": "procurement_handoffs",
+  "difficulty_tier": 1,
+  "model": "nemotron3:33b",
+  "seed": 1132,
+  "output": {
+    "summary": "Calculated all-in PO total for 100 workstations: Hardware $115,000 + Support $9,500 + Shipping $3,800 = $128,300. This exceeds the $118,000 budget constraint by $10,300, violating the requirement that the total must stay <= $118,000.",
+    "key_claims": [
+      "Hardware subtotal: 100 units \u00d7 $1,150 = $115,000",
+      "Support cost: 100 units \u00d7 $95 = $9,500",
+      "Shipping & crating: $3,800",
+      "Total all-in cost: $128,300"
+    ],
+    "recommendation": "hold_to_verify",
+    "risks_or_flaws": [
+      "Total all-in PO cost ($128,300) exceeds $118,000 budget constraint by $10,300"
+    ],
+    "verification_question": "Confirm if hardware quote includes mandatory 3-year support (SKU-SUP-3Y) at $95/unit as required by Bundle Policy Note B",
+    "confidence": 100
+  },
+  "meta": {
+    "prompt_tokens": 633,
+    "output_tokens": 301,
+    "seconds": 9.76,
+    "repaired": false
+  },
+  "advisor_caught": true
+}

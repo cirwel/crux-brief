@@ -1,0 +1,148 @@
+{
+  "scenario_id": "S04",
+  "variant": "flawed",
+  "domain": "job_offers",
+  "difficulty_tier": 3,
+  "eval_model": "gemma4:latest",
+  "synth_model": "nemotron3:33b",
+  "single_advisor_model": "gemma4:latest",
+  "k_spotted": 3,
+  "advisor_caught_by_model": {
+    "gemma4:latest": true,
+    "nemotron3:33b": true,
+    "qwen3.6:27b-coding-mxfp8": true
+  },
+  "briefs": {
+    "single": {
+      "text": "ASSESSMENT OVERVIEW: The required minimum equity value is $280,000 over 4 years. The recruiter values the grant at $400,000 total, which exceeds the minimum. However, the independent common stock valuation ($0.28/share) applied to the 400,000 shares yields a total value of $112,000, which is significantly below the $280,000 floor. Furthermore, the liquidation preference structure suggests the common stock payout could be zero in a $100M exit. Key facts: Total value based on 409A common stock valuation: $112,000; Required minimum equity value: $280,000; Liquidation preference: $82M participating preference ahead of common.\nPOINTS OF NOTE: The calculated equity value based on the 409A common stock valuation ($112,000) fails to meet the required minimum floor of $280,000..\nSUGGESTED NEXT STEP: Does the $82M participating liquidation preference structure guarantee a positive payout for common stock in a $100M exit, or is the common stock payout zero?",
+      "words": 142
+    },
+    "consensus": {
+      "raw": {
+        "overview": "All three advisors concur that the equity grant, while nominally valued at $400,000, fails to meet the $280,000 independent common stock floor ($70,000/yr for 4 years) when applying the 409A valuation of $0.28/share to 400,000 shares, resulting in only $112,000 total value and $28,000/yr payout, with a participating liquidation preference that jeopardizes positive common equity payout in a $100M exit.",
+        "points_of_note": "Advisor 1 highlights the contradiction between the $1.00/share valuation used for the $400,000 claim and the $0.28 FMV, noting the 1.5x participating liquidation preference reduces common equity value in a $100M exit where preferred claims of $82M dominate, while Advisors 2 and 3 emphasize the $112,000 calculated value (400,000 shares \u00d7 $0.28) is less than half the $280,000 requirement and confirm the annualized payout of $28,000/yr falls far below the $70,000/yr floor without inventing new contingencies.",
+        "suggested_next_step": "Verify whether the grant terms can be adjusted to increase the share count to approximately 1,000,000 shares at the $0.28/share valuation to achieve the $280,000 independent common equity floor while preserving positive payout potential in a $100M exit."
+      },
+      "text": "ASSESSMENT OVERVIEW: All three advisors concur that the equity grant, while nominally valued at $400,000, fails to meet the $280,000 independent common stock floor ($70,000/yr for 4 years) when applying the 409A valuation of $0.28/share to 400,000 shares, resulting in only $112,000 total value and $28,000/yr payout, with a participating liquidation preference that jeopardizes positive common equity payout in a $100M exit.\nPOINTS OF NOTE: Advisor 1 highlights the contradiction between the $1.00/share valuation used for the $400,000 claim and the $0.28 FMV, noting the 1.5x participating liquidation preference reduces common equity value in a $100M exit where preferred claims of $82M dominate, while Advisors 2 and 3 emphasize the $112,000 calculated value (400,000 shares \u00d7 $0.28) is less than half the $280,000 requirement and confirm the annualized payout of $28,000/yr falls far below the $70,000/yr floor without inventing new contingencies.\nSUGGESTED NEXT STEP: Verify whether the grant terms can be adjusted to increase the share count to approximately 1,000,000 shares at the $0.28/share valuation to achieve the $280,000 independent common equity floor while preserving positive payout potential in a $100M exit.",
+      "words": 182,
+      "meta": {
+        "prompt_tokens": 1626,
+        "output_tokens": 379,
+        "seconds": 13.15,
+        "repaired": false
+      }
+    },
+    "crux": {
+      "raw": {
+        "shared_ground": [
+          "The grant's total value based on 409A common stock valuation ($0.28/share) is $112,000 for 400,000 shares",
+          "The required minimum equity value is $280,000 over 4 years ($70,000/yr)"
+        ],
+        "cruxes": [
+          {
+            "topic": "Equity value calculation validity",
+            "side_a": "Advisor 1: $400,000 total valuation at $1.00/share is invalid due to liquidation preference impact",
+            "side_b": "Advisors 2 & 3: $112,000 total value at $0.28/share is correct and below $280,000 floor",
+            "premise_at_stake": "Whether the $1.00/share valuation or $0.28/share 409A valuation accurately reflects common equity value"
+          }
+        ],
+        "unverified_premises": [
+          "Whether the 1.5x participating liquidation preference reduces common stock value below zero in a $100M exit",
+          "Whether the $400,000 total valuation claim at $1.00/share is factually accurate given the $0.28 FMV"
+        ],
+        "decisive_check": "Confirm if common stock receives any payout after $82M participating liquidation preference in a $100M exit"
+      },
+      "text": "ASSESSMENT OVERVIEW: The grant's total value based on 409A common stock valuation ($0.28/share) is $112,000 for 400,000 shares The required minimum equity value is $280,000 over 4 years ($70,000/yr)\nPOINTS OF NOTE: Disagreements: (1) Equity value calculation validity: Side A [Advisor 1: $400,000 total valuation at $1.00/share is invalid due to liquidation preference impact] vs. Side B [Advisors 2 & 3: $112,000 total value at $0.28/share is correct and below $280,000 floor] (at stake: Whether the $1.00/share valuation or $0.28/share 409A valuation accurately reflects common equity value) Flagged issues: Whether the 1.5x participating liquidation preference reduces common stock value below zero in a $100M exit; Whether the $400,000 total valuation claim at $1.00/share is factually accurate given the $0.28 FMV\nSUGGESTED NEXT STEP: Confirm if common stock receives any payout after $82M participating liquidation preference in a $100M exit",
+      "words": 139,
+      "meta": {
+        "prompt_tokens": 1795,
+        "output_tokens": 340,
+        "seconds": 11.56,
+        "repaired": false
+      }
+    }
+  },
+  "crux_survived": {
+    "single": true,
+    "consensus": true,
+    "crux": true
+  },
+  "decisions": {
+    "raw": {
+      "output": {
+        "primary_reason": "The stated constraint requires an expected equity grant value of >= $70,000/yr ($280,000 over 4 years) on an independent common-stock basis. The packet provides a valuation of $0.28/share for the common stock, resulting in a total value of $112,000, which is significantly below the required $280,000 over four years.",
+        "target_clause_or_metric": "Cap-Table Footnote (Exhibit C): Most recent 409A independent common stock valuation sets fair market value at $0.28/share across those 400,000 shares.",
+        "action": "hold_to_verify",
+        "confidence": 100,
+        "brief_endorsement": null
+      },
+      "meta": {
+        "prompt_tokens": 665,
+        "output_tokens": 191,
+        "seconds": 19.78,
+        "repaired": false
+      },
+      "hold": true,
+      "verified_catch": true,
+      "untargeted_hold": false,
+      "false_alarm": null
+    },
+    "single": {
+      "output": {
+        "primary_reason": "The packet presents conflicting valuations, but the Pre-Decision Brief highlights a critical failure: the 409A common stock valuation ($112,000) falls significantly short of the required $280,000 floor. Furthermore, the liquidation preference structure raises a material concern regarding the positive payout constraint.",
+        "target_clause_or_metric": "Exhibit C (409A valuation of $0.28/share resulting in $112,000 total value) and the liquidation preference structure ($82M participating preference ahead of common) in relation to the $100M exit constraint.",
+        "action": "hold_to_verify",
+        "confidence": 100,
+        "brief_endorsement": 5
+      },
+      "meta": {
+        "prompt_tokens": 927,
+        "output_tokens": 179,
+        "seconds": 5.52,
+        "repaired": false
+      },
+      "hold": true,
+      "verified_catch": true,
+      "untargeted_hold": false,
+      "false_alarm": null
+    },
+    "consensus": {
+      "output": {
+        "primary_reason": "The packet fails to meet the required minimum equity value because the 409A valuation ($0.28/share) applied to the 400,000 shares yields only $112,000, which is significantly below the required $280,000 floor. Furthermore, the liquidation preference structure threatens the positive payout constraint.",
+        "target_clause_or_metric": "Exhibit C: Most recent 409A independent common stock valuation sets fair market value at $0.28/share across those 400,000 shares",
+        "action": "hold_to_verify",
+        "confidence": 100,
+        "brief_endorsement": 5
+      },
+      "meta": {
+        "prompt_tokens": 1024,
+        "output_tokens": 171,
+        "seconds": 5.2,
+        "repaired": false
+      },
+      "hold": true,
+      "verified_catch": true,
+      "untargeted_hold": false,
+      "false_alarm": null
+    },
+    "crux": {
+      "output": {
+        "primary_reason": "The packet presents conflicting valuations for the common stock, with the 409A valuation ($0.28/share) resulting in a total grant value of $112,000, which fails the required $280,000 floor. Furthermore, the critical constraint regarding positive payout value in a $100M exit remains unverified.",
+        "target_clause_or_metric": "Exhibit C (409A valuation of $0.28/share) and the liquidation preference structure (1.5x participating preference on $82M preferred stock in a $100M exit)",
+        "action": "hold_to_verify",
+        "confidence": 100,
+        "brief_endorsement": 5
+      },
+      "meta": {
+        "prompt_tokens": 962,
+        "output_tokens": 178,
+        "seconds": 5.19,
+        "repaired": false
+      },
+      "hold": true,
+      "verified_catch": true,
+      "untargeted_hold": false,
+      "false_alarm": null
+    }
+  }
+}

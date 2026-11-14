@@ -1,0 +1,134 @@
+{
+  "scenario_id": "S17",
+  "variant": "sound",
+  "domain": "procurement_handoffs",
+  "difficulty_tier": 1,
+  "eval_model": "nemotron3:33b",
+  "synth_model": "gemma4:latest",
+  "single_advisor_model": "nemotron3:33b",
+  "k_spotted": null,
+  "advisor_caught_by_model": {
+    "gemma4:latest": null,
+    "nemotron3:33b": null,
+    "qwen3.6:27b-coding-mxfp8": null
+  },
+  "briefs": {
+    "single": {
+      "text": "ASSESSMENT OVERVIEW: Calculating all-in cost: 100 units \u00d7 ($1,080 + $70) = $115,000 for hardware + support. Adding $2,200 freight gives $117,200 total. This is under the $118,000 budget constraint. All components are accounted for with no hidden exclusions. Key facts: 100 units \u00d7 $1,080 = $108,000 hardware subtotal; 100 units \u00d7 $70 = $7,000 support bundle cost; Total before freight: $115,000.\nPOINTS OF NOTE: No concrete constraint violations flagged.\nSUGGESTED NEXT STEP: None required; stated constraints appear satisfied.",
+      "words": 79
+    },
+    "consensus": {
+      "raw": {
+        "overview": "The consensus among all advisors is a strong recommendation to proceed with the purchase of 100 engineering workstations. All assessments confirm that the total all-in Purchase Order cost remains comfortably within the specified budget constraint of $118,000. The analysis consistently points to the same calculation methodology and final cost.",
+        "points_of_note": "All three advisors utilized the same core figures: a hardware subtotal of $108,000 (100 units at $1,080), a mandatory support cost of $7,000 (100 units at $70), and a fixed freight/crating fee of $2,200. Each calculation method\u2014whether summing components or calculating unit costs first\u2014converged precisely on a final total of $117,200. No advisor flagged any potential constraint breaches or required further investigation.",
+        "suggested_next_step": "Given the unanimous confirmation that the calculated total all-in cost of $117,200 is below the $118,000 limit, the decision maker should approve the Purchase Order as presented."
+      },
+      "text": "ASSESSMENT OVERVIEW: The consensus among all advisors is a strong recommendation to proceed with the purchase of 100 engineering workstations. All assessments confirm that the total all-in Purchase Order cost remains comfortably within the specified budget constraint of $118,000. The analysis consistently points to the same calculation methodology and final cost.\nPOINTS OF NOTE: All three advisors utilized the same core figures: a hardware subtotal of $108,000 (100 units at $1,080), a mandatory support cost of $7,000 (100 units at $70), and a fixed freight/crating fee of $2,200. Each calculation method\u2014whether summing components or calculating unit costs first\u2014converged precisely on a final total of $117,200. No advisor flagged any potential constraint breaches or required further investigation.\nSUGGESTED NEXT STEP: Given the unanimous confirmation that the calculated total all-in cost of $117,200 is below the $118,000 limit, the decision maker should approve the Purchase Order as presented.",
+      "words": 146,
+      "meta": {
+        "prompt_tokens": 1082,
+        "output_tokens": 254,
+        "seconds": 11.36,
+        "repaired": false
+      }
+    },
+    "crux": {
+      "raw": {
+        "shared_ground": [
+          "The total all-in Purchase Order cost is calculated as $108,000 (hardware) + $7,000 (support) + $2,200 (freight).",
+          "All three advisors confirm the final total cost is $117,200, which is below the $118,000 budget constraint."
+        ],
+        "cruxes": [],
+        "unverified_premises": [],
+        "decisive_check": "None required; all advisors concur stated constraints are satisfied."
+      },
+      "text": "ASSESSMENT OVERVIEW: The total all-in Purchase Order cost is calculated as $108,000 (hardware) + $7,000 (support) + $2,200 (freight). All three advisors confirm the final total cost is $117,200, which is below the $118,000 budget constraint.\nPOINTS OF NOTE: No concrete disagreements or constraint violations flagged across advisors.\nSUGGESTED NEXT STEP: None required; all advisors concur stated constraints are satisfied.",
+      "words": 60,
+      "meta": {
+        "prompt_tokens": 1230,
+        "output_tokens": 134,
+        "seconds": 6.05,
+        "repaired": false
+      }
+    }
+  },
+  "crux_survived": null,
+  "decisions": {
+    "raw": {
+      "output": {
+        "primary_reason": "The total all-in PO cost is $118,200, exceeding the $118,000 budget constraint by $200 due to the mandatory 3-year support bundle.",
+        "target_clause_or_metric": "Hardware Subtotal ($108,000) + Required Bundle Policy (Note B: $7,000) + Freight & Pallet Crating (Note C: $2,200)",
+        "action": "hold_to_verify",
+        "confidence": 100,
+        "brief_endorsement": null
+      },
+      "meta": {
+        "prompt_tokens": 657,
+        "output_tokens": 143,
+        "seconds": 4.67,
+        "repaired": false
+      },
+      "hold": true,
+      "verified_catch": null,
+      "untargeted_hold": null,
+      "false_alarm": true
+    },
+    "single": {
+      "output": {
+        "primary_reason": "The calculated all-in cost of $117,200 is under the $118,000 budget constraint, satisfying all stated requirements with no material discrepancies.",
+        "target_clause_or_metric": "Note C (Freight & Pallet Crating: $2,200 flat fee) and the brief's calculation of $117,200 total",
+        "action": "proceed",
+        "confidence": 95,
+        "brief_endorsement": 5
+      },
+      "meta": {
+        "prompt_tokens": 856,
+        "output_tokens": 121,
+        "seconds": 4.62,
+        "repaired": false
+      },
+      "hold": false,
+      "verified_catch": null,
+      "untargeted_hold": null,
+      "false_alarm": false
+    },
+    "consensus": {
+      "output": {
+        "primary_reason": "The total all-in PO cost of $117,200 is $800 under the $118,000 budget limit, satisfying the constraint.",
+        "target_clause_or_metric": "Hardware Subtotal $108,000 + Required Bundle Policy $7,000 + Freight & Pallet Crating $2,200 = $117,200",
+        "action": "proceed",
+        "confidence": 95,
+        "brief_endorsement": 5
+      },
+      "meta": {
+        "prompt_tokens": 920,
+        "output_tokens": 131,
+        "seconds": 4.38,
+        "repaired": false
+      },
+      "hold": false,
+      "verified_catch": null,
+      "untargeted_hold": null,
+      "false_alarm": false
+    },
+    "crux": {
+      "output": {
+        "primary_reason": "The calculated all-in PO total of $117,200 is below the $118,000 budget constraint, satisfying the requirement.",
+        "target_clause_or_metric": "none",
+        "action": "proceed",
+        "confidence": 100,
+        "brief_endorsement": 5
+      },
+      "meta": {
+        "prompt_tokens": 791,
+        "output_tokens": 84,
+        "seconds": 3.29,
+        "repaired": false
+      },
+      "hold": false,
+      "verified_catch": null,
+      "untargeted_hold": null,
+      "false_alarm": false
+    }
+  }
+}

@@ -1,0 +1,30 @@
+{
+  "scenario_id": "S05",
+  "variant": "flawed",
+  "domain": "job_offers",
+  "difficulty_tier": 2,
+  "model": "gemma4:latest",
+  "seed": 108,
+  "output": {
+    "summary": "The PIIA clause (8.1) explicitly assigns rights to software related to 'developer observability,' which directly threatens the user's existing 'TraceLite' library. Furthermore, Clause 8.1's scope covers work done 'whether on or off Company hours or hardware,' which violates the constraint protecting personal, off-hours tools. The lack of a specific carve-out for pre-existing or personal code is a major concern.",
+    "key_claims": [
+      "PIIA Clause 8.1 assigns rights to software related to 'developer observability.'",
+      "Clause 8.1 covers work done 'whether on or off Company hours or hardware.'",
+      "Exhibit A is marked 'None' and no statutory state carve-out notice is attached."
+    ],
+    "recommendation": "hold_to_verify",
+    "risks_or_flaws": [
+      "PIIA Clause 8.1 explicitly claims ownership over code related to 'developer observability,' threatening the existing 'TraceLite' library.",
+      "PIIA Clause 8.1's scope ('whether on or off Company hours or hardware') threatens the protection of personal, off-hours code."
+    ],
+    "verification_question": "Does the employment agreement contain a specific, explicit carve-out or exclusion for pre-existing intellectual property (like 'TraceLite') and code developed strictly off-hours on personal hardware, as required by the user's constraints?",
+    "confidence": 100
+  },
+  "meta": {
+    "prompt_tokens": 626,
+    "output_tokens": 330,
+    "seconds": 12.19,
+    "repaired": false
+  },
+  "advisor_caught": true
+}

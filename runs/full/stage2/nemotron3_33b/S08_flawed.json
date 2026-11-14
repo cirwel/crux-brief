@@ -1,0 +1,59 @@
+{
+  "scenario_id": "S08",
+  "variant": "flawed",
+  "domain": "leases",
+  "difficulty_tier": 2,
+  "synth_model": "nemotron3:33b",
+  "k_spotted": 3,
+  "advisor_caught_by_model": {
+    "gemma4:latest": true,
+    "nemotron3:33b": true,
+    "qwen3.6:27b-coding-mxfp8": true
+  },
+  "briefs": {
+    "consensus": {
+      "raw": {
+        "overview": "All three advisors concur that the lease's 90-day non-renewal notice requirement creates an unavoidable conflict with the user's constraint to base the exit decision on Month 10 sales results available November 3, as this timing prevents delivering timely notice before the renewal deadline, making clean exit without automatic renewal impossible under current terms.",
+        "points_of_note": "The advisors consistently identify the core issue: the 90-day notice deadline (October 31 or October 2 depending on calculation method) precedes the November 3 availability of sales data, creating an unavoidable timing conflict that risks automatic 12-month renewal past Month 12. While Advisor 1 and 2 specify the exact deadline timing and its conflict with sales data availability, Advisor 3 emphasizes the absence of any clause allowing deadline modification based on sales results, confirming no material constraint breach exists but highlighting procedural uncertainty about clean exit feasibility.",
+        "suggested_next_step": "Obtain definitive clarification from the landlord on whether the 90-day notice deadline can be extended to November 3 to align with sales data availability, as this directly addresses the procedural conflict preventing clean exit without penalty."
+      },
+      "text": "ASSESSMENT OVERVIEW: All three advisors concur that the lease's 90-day non-renewal notice requirement creates an unavoidable conflict with the user's constraint to base the exit decision on Month 10 sales results available November 3, as this timing prevents delivering timely notice before the renewal deadline, making clean exit without automatic renewal impossible under current terms.\nPOINTS OF NOTE: The advisors consistently identify the core issue: the 90-day notice deadline (October 31 or October 2 depending on calculation method) precedes the November 3 availability of sales data, creating an unavoidable timing conflict that risks automatic 12-month renewal past Month 12. While Advisor 1 and 2 specify the exact deadline timing and its conflict with sales data availability, Advisor 3 emphasizes the absence of any clause allowing deadline modification based on sales results, confirming no material constraint breach exists but highlighting procedural uncertainty about clean exit feasibility.\nSUGGESTED NEXT STEP: Obtain definitive clarification from the landlord on whether the 90-day notice deadline can be extended to November 3 to align with sales data availability, as this directly addresses the procedural conflict preventing clean exit without penalty.",
+      "words": 184,
+      "meta": {
+        "prompt_tokens": 1283,
+        "output_tokens": 251,
+        "seconds": 10.59,
+        "repaired": false
+      }
+    },
+    "crux": {
+      "raw": {
+        "shared_ground": [
+          "Lease expires December 31",
+          "90-day non-renewal notice required to avoid automatic renewal"
+        ],
+        "cruxes": [
+          {
+            "topic": "Notice deadline timing",
+            "side_a": "Advisor 1: 90-day deadline is October 31 (90 calendar days before December 31)",
+            "side_b": "Advisor 2: 90-day deadline is October 2 (counting back 90 days from December 31)",
+            "premise_at_stake": "Whether the notice deadline falls before or after November 3 sales data availability"
+          }
+        ],
+        "unverified_premises": [
+          "Exact calendar calculation of the 90-day notice deadline from December 31",
+          "Whether lease terms allow modifying the notice deadline based on sales results timing"
+        ],
+        "decisive_check": "What is the absolute deadline for delivering the notarized written non-renewal notice to prevent automatic renewal beyond Month 12?"
+      },
+      "text": "ASSESSMENT OVERVIEW: Lease expires December 31 90-day non-renewal notice required to avoid automatic renewal\nPOINTS OF NOTE: Disagreements: (1) Notice deadline timing: Side A [Advisor 1: 90-day deadline is October 31 (90 calendar days before December 31)] vs. Side B [Advisor 2: 90-day deadline is October 2 (counting back 90 days from December 31)] (at stake: Whether the notice deadline falls before or after November 3 sales data availability) Flagged issues: Exact calendar calculation of the 90-day notice deadline from December 31; Whether lease terms allow modifying the notice deadline based on sales results timing\nSUGGESTED NEXT STEP: What is the absolute deadline for delivering the notarized written non-renewal notice to prevent automatic renewal beyond Month 12?",
+      "words": 117,
+      "meta": {
+        "prompt_tokens": 1452,
+        "output_tokens": 231,
+        "seconds": 10.47,
+        "repaired": false
+      }
+    }
+  }
+}

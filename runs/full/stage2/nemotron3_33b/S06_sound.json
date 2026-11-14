@@ -1,0 +1,49 @@
+{
+  "scenario_id": "S06",
+  "variant": "sound",
+  "domain": "job_offers",
+  "difficulty_tier": 1,
+  "synth_model": "nemotron3:33b",
+  "k_spotted": null,
+  "advisor_caught_by_model": {
+    "gemma4:latest": null,
+    "nemotron3:33b": null,
+    "qwen3.6:27b-coding-mxfp8": null
+  },
+  "briefs": {
+    "consensus": {
+      "raw": {
+        "overview": "All three advisors unanimously recommend proceeding with the relocation decision, as each confirms the guaranteed net after-tax relocation cash of $24,000 exceeds the $14,000 liquidity requirement under the 35% marginal tax rate constraint, with no material issues identified.",
+        "points_of_note": "The advisors consistently highlight that the $24,000 gross relocation benefit is fully preserved after taxes due to a company-provided tax gross-up, ensuring the net cash remains $24,000\u2014well above the $14,000 threshold\u2014with Advisor 3 specifically clarifying the breakdown includes $10,000 moving reimbursements and a $14,000 stipend, all treated as net liquid funds.",
+        "suggested_next_step": "Proceed with accepting the relocation offer, as the $24,000 net guaranteed liquidity satisfies the $14,000 minimum requirement without constraint violations."
+      },
+      "text": "ASSESSMENT OVERVIEW: All three advisors unanimously recommend proceeding with the relocation decision, as each confirms the guaranteed net after-tax relocation cash of $24,000 exceeds the $14,000 liquidity requirement under the 35% marginal tax rate constraint, with no material issues identified.\nPOINTS OF NOTE: The advisors consistently highlight that the $24,000 gross relocation benefit is fully preserved after taxes due to a company-provided tax gross-up, ensuring the net cash remains $24,000\u2014well above the $14,000 threshold\u2014with Advisor 3 specifically clarifying the breakdown includes $10,000 moving reimbursements and a $14,000 stipend, all treated as net liquid funds.\nSUGGESTED NEXT STEP: Proceed with accepting the relocation offer, as the $24,000 net guaranteed liquidity satisfies the $14,000 minimum requirement without constraint violations.",
+      "words": 117,
+      "meta": {
+        "prompt_tokens": 1105,
+        "output_tokens": 216,
+        "seconds": 7.79,
+        "repaired": false
+      }
+    },
+    "crux": {
+      "raw": {
+        "shared_ground": [
+          "Relocation package is $24,000 gross",
+          "35% marginal tax rate applies with full tax gross-up ensuring net cash equals gross amount"
+        ],
+        "cruxes": [],
+        "unverified_premises": [],
+        "decisive_check": "None required; all advisors concur stated constraints are satisfied."
+      },
+      "text": "ASSESSMENT OVERVIEW: Relocation package is $24,000 gross 35% marginal tax rate applies with full tax gross-up ensuring net cash equals gross amount\nPOINTS OF NOTE: No concrete disagreements or constraint violations flagged across advisors.\nSUGGESTED NEXT STEP: None required; all advisors concur stated constraints are satisfied.",
+      "words": 46,
+      "meta": {
+        "prompt_tokens": 1274,
+        "output_tokens": 85,
+        "seconds": 4.1,
+        "repaired": false
+      }
+    }
+  }
+}

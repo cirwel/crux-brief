@@ -1,0 +1,147 @@
+{
+  "scenario_id": "S15",
+  "variant": "flawed",
+  "domain": "procurement_handoffs",
+  "difficulty_tier": 2,
+  "eval_model": "nemotron3:33b",
+  "synth_model": "gemma4:latest",
+  "single_advisor_model": "qwen3.6:27b-coding-mxfp8",
+  "k_spotted": 3,
+  "advisor_caught_by_model": {
+    "gemma4:latest": true,
+    "nemotron3:33b": true,
+    "qwen3.6:27b-coding-mxfp8": true
+  },
+  "briefs": {
+    "single": {
+      "text": "ASSESSMENT OVERVIEW: The invoice face value is $250,000 with a 0.4% discount, resulting in a payment of $249,000 and a gross savings of $1,000. The packet states the funding source is a credit line at 12.0% APR for a 20-day period (Day 10 to Day 30). Calculating the financing cost: ($249,000 * 0.12) * (20/365) \u2248 $1,634.79. Since the financing cost ($1,634.79) exceeds the discount savings ($1,000), the net result is a loss of approximately $634.79. The clerk's claim of 'guaranteed instant savings' is factually incorrect regarding net financial impact. The user's constraint requires positive net dollar savings, which is not met. Key facts: Gross discount savings: $1,000; Estimated financing cost for 20 days at 12% APR: ~$1,635; Net result: Negative (~-$635).\nPOINTS OF NOTE: Net dollar savings are negative because the cost of borrowing ($1,635) exceeds the discount benefit ($1,000), violating the user's constraint for positive net savings..\nSUGGESTED NEXT STEP: Does the user accept a net loss of approximately $635 to secure the early payment, or is the 'positive net dollar savings' constraint strict?",
+      "words": 176
+    },
+    "consensus": {
+      "raw": {
+        "overview": "The advisors present a consistent assessment regarding the financial viability of paying Supplier Invoice #4490 early. All three reports converge on the conclusion that proceeding with the early payment, despite the stated $1,000 discount, will result in a net financial loss rather than the required positive net dollar savings. The core conflict lies between the immediate discount benefit and the cost of utilizing credit-line financing.",
+        "points_of_note": "There is a clear discrepancy in the calculated financing cost across the reports, citing figures ranging from $83.00 to $1,660, though all calculations utilize the 12.0% APR over a 20-day period on the $249,000 payment amount. Regardless of the precise financing cost cited, the consensus is that this cost significantly outweighs the $1,000 discount, leading to a negative net result and violating the primary constraint.",
+        "suggested_next_step": "Given the unanimous finding that the net dollar savings are negative under the current terms, the decision maker should not approve the early payment unless the constraint requiring positive net dollar savings can be formally waived or if the financing cost calculation can be substantially revised downward."
+      },
+      "text": "ASSESSMENT OVERVIEW: The advisors present a consistent assessment regarding the financial viability of paying Supplier Invoice #4490 early. All three reports converge on the conclusion that proceeding with the early payment, despite the stated $1,000 discount, will result in a net financial loss rather than the required positive net dollar savings. The core conflict lies between the immediate discount benefit and the cost of utilizing credit-line financing.\nPOINTS OF NOTE: There is a clear discrepancy in the calculated financing cost across the reports, citing figures ranging from $83.00 to $1,660, though all calculations utilize the 12.0% APR over a 20-day period on the $249,000 payment amount. Regardless of the precise financing cost cited, the consensus is that this cost significantly outweighs the $1,000 discount, leading to a negative net result and violating the primary constraint.\nSUGGESTED NEXT STEP: Given the unanimous finding that the net dollar savings are negative under the current terms, the decision maker should not approve the early payment unless the constraint requiring positive net dollar savings can be formally waived or if the financing cost calculation can be substantially revised downward.",
+      "words": 185,
+      "meta": {
+        "prompt_tokens": 1266,
+        "output_tokens": 263,
+        "seconds": 9.15,
+        "repaired": false
+      }
+    },
+    "crux": {
+      "raw": {
+        "shared_ground": [
+          "The invoice face value is $250,000 with a 0.4% discount, yielding a gross savings of $1,000.",
+          "The decision hinges on whether the net dollar savings remain positive after accounting for credit-line financing costs (12.0% APR for 20 days)."
+        ],
+        "cruxes": [
+          {
+            "topic": "Financing Cost Calculation",
+            "side_a": "Advisor 1: ~$1,634.79",
+            "side_b": "Advisor 3: $1,660",
+            "premise_at_stake": "The precise calculation of the 20-day financing cost on $249,000."
+          }
+        ],
+        "unverified_premises": [
+          "The exact financing cost calculation for 20 days at 12.0% APR on $249,000 is disputed among advisors ($1,635 vs. $83 vs. $1,660)."
+        ],
+        "decisive_check": "Confirm the precise financing cost for 20 days at 12.0% APR on $249,000 and confirm if this cost is less than the $1,000 discount to satisfy the positive net savings constraint."
+      },
+      "text": "ASSESSMENT OVERVIEW: The invoice face value is $250,000 with a 0.4% discount, yielding a gross savings of $1,000. The decision hinges on whether the net dollar savings remain positive after accounting for credit-line financing costs (12.0% APR for 20 days).\nPOINTS OF NOTE: Disagreements: (1) Financing Cost Calculation: Side A [Advisor 1: ~$1,634.79] vs. Side B [Advisor 3: $1,660] (at stake: The precise calculation of the 20-day financing cost on $249,000.) Flagged issues: The exact financing cost calculation for 20 days at 12.0% APR on $249,000 is disputed among advisors ($1,635 vs. $83 vs. $1,660).\nSUGGESTED NEXT STEP: Confirm the precise financing cost for 20 days at 12.0% APR on $249,000 and confirm if this cost is less than the $1,000 discount to satisfy the positive net savings constraint.",
+      "words": 129,
+      "meta": {
+        "prompt_tokens": 1414,
+        "output_tokens": 314,
+        "seconds": 10.24,
+        "repaired": false
+      }
+    }
+  },
+  "crux_survived": {
+    "single": true,
+    "consensus": true,
+    "crux": true
+  },
+  "decisions": {
+    "raw": {
+      "output": {
+        "primary_reason": "The $1,000 discount from paying early on Day 10 is offset by $1,000 in financing costs (12.0% APR on $249,000 for 20 days), resulting in zero net savings and violating the requirement for positive net dollar savings.",
+        "target_clause_or_metric": "Funding Source (operating cash reserve committed, requiring $249,000 draw on revolving credit line at 12.0% APR) and Invoice Terms (0.4% discount yielding $1,000 savings)",
+        "action": "hold_to_verify",
+        "confidence": 100,
+        "brief_endorsement": null
+      },
+      "meta": {
+        "prompt_tokens": 730,
+        "output_tokens": 170,
+        "seconds": 5.5,
+        "repaired": false
+      },
+      "hold": true,
+      "verified_catch": true,
+      "untargeted_hold": false,
+      "false_alarm": null
+    },
+    "single": {
+      "output": {
+        "primary_reason": "The packet confirms the discount savings ($1,000) is outweighed by the 20-day credit line financing cost (~$1,635), resulting in a net loss of ~$635, which violates the constraint requiring positive net dollar savings.",
+        "target_clause_or_metric": "Funding Source (12.0% APR for 20-day period) and Clerk Note (saves $1,000)",
+        "action": "hold_to_verify",
+        "confidence": 95,
+        "brief_endorsement": 5
+      },
+      "meta": {
+        "prompt_tokens": 1099,
+        "output_tokens": 140,
+        "seconds": 5.2,
+        "repaired": false
+      },
+      "hold": true,
+      "verified_catch": true,
+      "untargeted_hold": false,
+      "false_alarm": null
+    },
+    "consensus": {
+      "output": {
+        "primary_reason": "The $1,000 discount from early payment is fully offset by the $249,000 credit-line financing cost over 20 days at 12.0% APR, resulting in a net loss rather than the required positive savings.",
+        "target_clause_or_metric": "Funding Source (operating cash reserve committed; $249,000 drawn on revolving credit line at 12.0% APR for 20 days)",
+        "action": "hold_to_verify",
+        "confidence": 95,
+        "brief_endorsement": 5
+      },
+      "meta": {
+        "prompt_tokens": 996,
+        "output_tokens": 146,
+        "seconds": 5.17,
+        "repaired": false
+      },
+      "hold": true,
+      "verified_catch": true,
+      "untargeted_hold": false,
+      "false_alarm": null
+    },
+    "crux": {
+      "output": {
+        "primary_reason": "The packet confirms the $1,000 discount but does not provide the precise financing cost calculation for 20 days at 12.0% APR on $249,000, creating an unresolved material discrepancy that prevents verifying positive net savings.",
+        "target_clause_or_metric": "Funding Source (Section 2) and Payment Execution (Section 3) clauses, as they specify the $249,000 principal and 20-day financing period without resolving the APR cost calculation dispute",
+        "action": "hold_to_verify",
+        "confidence": 85,
+        "brief_endorsement": 5
+      },
+      "meta": {
+        "prompt_tokens": 1022,
+        "output_tokens": 155,
+        "seconds": 4.98,
+        "repaired": false
+      },
+      "hold": true,
+      "verified_catch": false,
+      "untargeted_hold": true,
+      "false_alarm": null
+    }
+  }
+}

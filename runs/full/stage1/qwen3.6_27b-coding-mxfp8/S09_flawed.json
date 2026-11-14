@@ -1,0 +1,28 @@
+{
+  "scenario_id": "S09",
+  "variant": "flawed",
+  "domain": "leases",
+  "difficulty_tier": 2,
+  "model": "qwen3.6:27b-coding-mxfp8",
+  "seed": 2116,
+  "output": {
+    "summary": "The user's constraint requires that the financial liability for a 4-day holdover does not exceed $2,000. The decision packet states the holdover penalty is 200% of total Base + Additional Rent for the entire succeeding calendar month. Total monthly rent is $5,400 + $1,200 = $6,600. The penalty is 200% of $6,600, which equals $13,200. This amount significantly exceeds the $2,000 maximum exposure limit. Therefore, the constraint is violated.",
+    "key_claims": [
+      "Total monthly rent is $6,600 ($5,400 Base + $1,200 Additional).",
+      "Holdover penalty is 200% of total monthly rent, resulting in $13,200 liability."
+    ],
+    "recommendation": "hold_to_verify",
+    "risks_or_flaws": [
+      "The holdover penalty of $13,200 exceeds the user's maximum exposure constraint of $2,000 for a 4-day overrun."
+    ],
+    "verification_question": "Can the landlord agree to a pro-rated holdover fee or a cap on the penalty to ensure it stays below $2,000?",
+    "confidence": 100
+  },
+  "meta": {
+    "prompt_tokens": 533,
+    "output_tokens": 309,
+    "seconds": 63.13,
+    "repaired": false
+  },
+  "advisor_caught": true
+}

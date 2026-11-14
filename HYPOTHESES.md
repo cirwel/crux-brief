@@ -52,4 +52,4 @@ Prior to locking this plan, the 4-pair smoke calibration suite (`runs/smoke_cali
 
 ## Changes after the lock
 
-*(None — locked prior to launching `runs/full`.)*
+- **2026-11-14 (visual chart layout only):** Adjusted `make_figure1` in [`crux_brief/figures.py`](crux_brief/figures.py) so numeric bar labels sit cleanly above each 95% Wilson CI whisker cap (`min(1.08, h + hi_err + 0.015)`, `ylim(0, 1.18)`) rather than colliding with error bars. Zero changes were made to `runs/full`, prompts, scenarios, metrics, or `results/tables.md`.

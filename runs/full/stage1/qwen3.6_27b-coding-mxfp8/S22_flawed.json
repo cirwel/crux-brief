@@ -1,0 +1,29 @@
+{
+  "scenario_id": "S22",
+  "variant": "flawed",
+  "domain": "operational_briefs",
+  "difficulty_tier": 1,
+  "model": "qwen3.6:27b-coding-mxfp8",
+  "seed": 2142,
+  "output": {
+    "summary": "The user requires a >= 20% decrease in safety incidents per 10,000 service miles. Last year's rate was 38 incidents / 120k miles = 3.17 per 10k. This year's rate is 28 incidents / 78k miles = 3.59 per 10k. The rate actually increased by approximately 13%, violating the constraint. The headline 26% drop refers to total incident count, not the normalized rate, which failed to improve due to the significant drop in mileage.",
+    "key_claims": [
+      "Last year's incident rate: 3.17 per 10,000 miles",
+      "This year's incident rate: 3.59 per 10,000 miles",
+      "The rate increased by ~13%, failing the >= 20% decrease requirement"
+    ],
+    "recommendation": "hold_to_verify",
+    "risks_or_flaws": [
+      "The safety incident rate per 10,000 miles increased rather than decreased, violating the explicit constraint for authorization."
+    ],
+    "verification_question": "Does the decision packet acknowledge that the normalized incident rate per mile increased, thereby failing the safety constraint?",
+    "confidence": 100
+  },
+  "meta": {
+    "prompt_tokens": 554,
+    "output_tokens": 300,
+    "seconds": 57.17,
+    "repaired": false
+  },
+  "advisor_caught": true
+}

@@ -1,0 +1,29 @@
+{
+  "scenario_id": "S20",
+  "variant": "flawed",
+  "domain": "operational_briefs",
+  "difficulty_tier": 2,
+  "model": "qwen3.6:27b-coding-mxfp8",
+  "seed": 2138,
+  "output": {
+    "summary": "The user requires 65% retention of newly activated accounts at Day 90 to scale. The packet claims 74% retention but explicitly excludes 400 users who churned before billing setup from the denominator. True retention must be calculated against all 1,400 activated users (1,000 tracked + 400 excluded). With only 740 retained out of 1,400 total, the actual retention rate is 52.8%. This is significantly below the 65% threshold, violating the user's constraint despite the headline metric appearing compliant.",
+    "key_claims": [
+      "Total activated users: 1,400 (1,000 tracked + 400 excluded)",
+      "Actual retention rate: 52.8% (740 retained / 1,400 total)",
+      "Constraint violation: 52.8% is below the required 65% threshold"
+    ],
+    "recommendation": "hold_to_verify",
+    "risks_or_flaws": [
+      "The reported 74% retention rate is inflated by excluding 400 early-churning users from the denominator, resulting in a true retention rate of 52.8%, which fails the 65% scale threshold."
+    ],
+    "verification_question": "Does the 65% retention threshold apply to all newly activated accounts or only those who complete billing configuration?",
+    "confidence": 100
+  },
+  "meta": {
+    "prompt_tokens": 563,
+    "output_tokens": 334,
+    "seconds": 65.89,
+    "repaired": false
+  },
+  "advisor_caught": true
+}

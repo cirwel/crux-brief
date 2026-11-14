@@ -1,0 +1,29 @@
+{
+  "scenario_id": "S10",
+  "variant": "sound",
+  "domain": "leases",
+  "difficulty_tier": 3,
+  "model": "gemma4:latest",
+  "seed": 119,
+  "output": {
+    "summary": "The packet confirms a 36-month term and a total area of 4,500 sq ft. Constraint 1 requires subleasing 40% in Month 3 while keeping 60% occupied. Clause 12.4 permits subleasing up to 45% to a partner, which covers the 40% requirement. The remaining 60% occupancy is maintained, satisfying the term requirement. The insurance clause is noted but does not affect the occupancy split.",
+    "key_claims": [
+      "Total Area: 4,500 sq ft",
+      "Permitted Sublease Max (Clause 12.4): 45% of Premises",
+      "Required Sublease Percentage: 40% of Premises"
+    ],
+    "recommendation": "proceed",
+    "risks_or_flaws": [
+      "none"
+    ],
+    "verification_question": "none",
+    "confidence": 100
+  },
+  "meta": {
+    "prompt_tokens": 542,
+    "output_tokens": 224,
+    "seconds": 9.59,
+    "repaired": false
+  },
+  "advisor_caught": null
+}

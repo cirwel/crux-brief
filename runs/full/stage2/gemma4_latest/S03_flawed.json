@@ -1,0 +1,58 @@
+{
+  "scenario_id": "S03",
+  "variant": "flawed",
+  "domain": "job_offers",
+  "difficulty_tier": 2,
+  "synth_model": "gemma4:latest",
+  "k_spotted": 3,
+  "advisor_caught_by_model": {
+    "gemma4:latest": true,
+    "nemotron3:33b": true,
+    "qwen3.6:27b-coding-mxfp8": true
+  },
+  "briefs": {
+    "consensus": {
+      "raw": {
+        "overview": "The advisors present a consistent and significant concern regarding the financial viability of accepting the role based on historical performance metrics. All three assessments converge on the finding that the expected annual cash earnings, calculated using the historical median team attainment, fall substantially short of the required $210,000 minimum. The consensus indicates that the current structure creates a substantial gap between the expected compensation and the user's stated financial floor.",
+        "points_of_note": "The evidence cited across all reports is highly specific: the historical median attainment is consistently identified as 74%. Crucially, all advisors point to a zero-commission cliff below the 80% quota attainment threshold. This structural element, combined with the $160,000 base salary, results in a total cash earning estimate of only $160,000, which fails the $210,000 constraint. No advisor identified any mitigating factors or exceptions to this calculation.",
+        "suggested_next_step": "Given the unanimous identification of a material constraint breach based on the historical median attainment, the immediate next step must be to seek clarification on the payout structure. Specifically, confirm if the $210,000 minimum requirement can be met under any historical attainment scenario, or if the payout rules have an exception for historical performance below the 80% cliff."
+      },
+      "text": "ASSESSMENT OVERVIEW: The advisors present a consistent and significant concern regarding the financial viability of accepting the role based on historical performance metrics. All three assessments converge on the finding that the expected annual cash earnings, calculated using the historical median team attainment, fall substantially short of the required $210,000 minimum. The consensus indicates that the current structure creates a substantial gap between the expected compensation and the user's stated financial floor.\nPOINTS OF NOTE: The evidence cited across all reports is highly specific: the historical median attainment is consistently identified as 74%. Crucially, all advisors point to a zero-commission cliff below the 80% quota attainment threshold. This structural element, combined with the $160,000 base salary, results in a total cash earning estimate of only $160,000, which fails the $210,000 constraint. No advisor identified any mitigating factors or exceptions to this calculation.\nSUGGESTED NEXT STEP: Given the unanimous identification of a material constraint breach based on the historical median attainment, the immediate next step must be to seek clarification on the payout structure. Specifically, confirm if the $210,000 minimum requirement can be met under any historical attainment scenario, or if the payout rules have an exception for historical performance below the 80% cliff.",
+      "words": 203,
+      "meta": {
+        "prompt_tokens": 1274,
+        "output_tokens": 293,
+        "seconds": 12.19,
+        "repaired": false
+      }
+    },
+    "crux": {
+      "raw": {
+        "shared_ground": [
+          "The historical median quota attainment is 74%.",
+          "The payout structure imposes a zero-commission cliff below 80% quota attainment."
+        ],
+        "cruxes": [
+          {
+            "topic": "Impact of 74% Attainment",
+            "side_a": "Total cash earnings are $160,000 (Base Salary) because 74% is below the 80% cliff.",
+            "side_b": "The $210,000 minimum constraint must be met, regardless of the 74% median attainment.",
+            "premise_at_stake": "Whether the 74% historical median attainment triggers the zero-commission cliff, resulting in total earnings below the $210,000 threshold."
+          }
+        ],
+        "unverified_premises": [
+          "Whether the payout structure has an exception for historical attainment below the 80% cliff, or if the $210,000 minimum is based on a different historical metric than the median."
+        ],
+        "decisive_check": "Confirmation of the variable commission payout calculation when historical attainment is 74% relative to the 80% cliff, and how this impacts the $210,000 minimum."
+      },
+      "text": "ASSESSMENT OVERVIEW: The historical median quota attainment is 74%. The payout structure imposes a zero-commission cliff below 80% quota attainment.\nPOINTS OF NOTE: Disagreements: (1) Impact of 74% Attainment: Side A [Total cash earnings are $160,000 (Base Salary) because 74% is below the 80% cliff.] vs. Side B [The $210,000 minimum constraint must be met, regardless of the 74% median attainment.] (at stake: Whether the 74% historical median attainment triggers the zero-commission cliff, resulting in total earnings below the $210,000 threshold.) Flagged issues: Whether the payout structure has an exception for historical attainment below the 80% cliff, or if the $210,000 minimum is based on a different historical metric than the median.\nSUGGESTED NEXT STEP: Confirmation of the variable commission payout calculation when historical attainment is 74% relative to the 80% cliff, and how this impacts the $210,000 minimum.",
+      "words": 139,
+      "meta": {
+        "prompt_tokens": 1422,
+        "output_tokens": 298,
+        "seconds": 10.78,
+        "repaired": false
+      }
+    }
+  }
+}

@@ -1,0 +1,29 @@
+{
+  "scenario_id": "S15",
+  "variant": "sound",
+  "domain": "procurement_handoffs",
+  "difficulty_tier": 2,
+  "model": "nemotron3:33b",
+  "seed": 1129,
+  "output": {
+    "summary": "Calculate net savings: $5,000 discount minus $245,000 * (12.0%/360) = $812.50 financing cost, yielding $4,187.50 positive net savings, satisfying the constraint for early payment on Day 10.",
+    "key_claims": [
+      "Discount saves $5,000 (2.0% of $250,000) by Day 10",
+      "Financing cost = $245,000 * (0.12/360) = $812.50",
+      "Net savings = $5,000 - $812.50 = $4,187.50 positive"
+    ],
+    "recommendation": "proceed",
+    "risks_or_flaws": [
+      "none"
+    ],
+    "verification_question": "none",
+    "confidence": 100
+  },
+  "meta": {
+    "prompt_tokens": 698,
+    "output_tokens": 224,
+    "seconds": 8.39,
+    "repaired": false
+  },
+  "advisor_caught": null
+}

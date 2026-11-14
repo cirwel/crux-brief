@@ -1,0 +1,29 @@
+{
+  "scenario_id": "S17",
+  "variant": "sound",
+  "domain": "procurement_handoffs",
+  "difficulty_tier": 1,
+  "model": "qwen3.6:27b-coding-mxfp8",
+  "seed": 2133,
+  "output": {
+    "summary": "The decision packet specifies 100 workstations at $1,080 each, totaling $108,000 for hardware. The mandatory support bundle adds $70 per unit, resulting in $7,000. Freight and crating are a flat fee of $2,200. Summing these components ($108,000 + $7,000 + $2,200) yields a total all-in cost of $117,200. This figure is strictly less than the user's maximum budget constraint of $118,000. All stated conditions are met, and the arithmetic confirms the quote fits within the specified limit.",
+    "key_claims": [
+      "Hardware subtotal: $108,000 (100 units * $1,080)",
+      "Mandatory support cost: $7,000 (100 units * $70)",
+      "Total all-in cost: $117,200"
+    ],
+    "recommendation": "proceed",
+    "risks_or_flaws": [
+      "none"
+    ],
+    "verification_question": "none",
+    "confidence": 100
+  },
+  "meta": {
+    "prompt_tokens": 542,
+    "output_tokens": 284,
+    "seconds": 56.07,
+    "repaired": false
+  },
+  "advisor_caught": null
+}

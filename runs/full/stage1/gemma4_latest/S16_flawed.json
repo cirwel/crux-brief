@@ -1,0 +1,29 @@
+{
+  "scenario_id": "S16",
+  "variant": "flawed",
+  "domain": "procurement_handoffs",
+  "difficulty_tier": 3,
+  "model": "gemma4:latest",
+  "seed": 130,
+  "output": {
+    "summary": "The packet confirms the Buyer owns 100% of custom deliverables (Section 9.1). However, the core query execution relies on the Vendor's proprietary runtime (Section 9.3). The license granted for this critical dependency is explicitly non-sublicensable, which directly conflicts with the goal of distributing and sublicensing the platform to external enterprise clients.",
+    "key_claims": [
+      "Buyer owns 100% of custom deliverables (Section 9.1).",
+      "Vendor's proprietary runtime powers ~70% of core query execution.",
+      "License for proprietary runtime is non-transferable and non-sublicensable."
+    ],
+    "recommendation": "hold_to_verify",
+    "risks_or_flaws": [
+      "The constraint requires the platform to be sublicensed to external enterprise clients, but Section 9.3 limits the license for the core dependency (Vendor Background IP) to being non-sublicensable."
+    ],
+    "verification_question": "Does the agreement provide any mechanism or alternative licensing structure that permits sublicensing of the core query execution dependency, given that the current license is explicitly non-sublicensable?",
+    "confidence": 100
+  },
+  "meta": {
+    "prompt_tokens": 567,
+    "output_tokens": 282,
+    "seconds": 11.02,
+    "repaired": false
+  },
+  "advisor_caught": true
+}

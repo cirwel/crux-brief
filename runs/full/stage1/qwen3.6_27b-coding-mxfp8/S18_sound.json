@@ -1,0 +1,28 @@
+{
+  "scenario_id": "S18",
+  "variant": "sound",
+  "domain": "procurement_handoffs",
+  "difficulty_tier": 3,
+  "model": "qwen3.6:27b-coding-mxfp8",
+  "seed": 2135,
+  "output": {
+    "summary": "The user requires guaranteed rebate savings of at least $15,000 across a demand band of 950 to 1,050 units. The packet states a rebate of $18/unit applies to all Q4 units once 850 units are billed. Since the minimum demand (950) exceeds the threshold (850), the rebate triggers for the entire volume. At the minimum volume of 950 units, the total rebate is 950 * $18 = $17,100. This amount exceeds the $15,000 minimum requirement. The constraint is satisfied at the lower bound of the demand band, ensuring the guarantee holds for any volume within the 950-1,050 range.",
+    "key_claims": [
+      "Minimum rebate savings at 950 units is $17,100",
+      "Rebate threshold of 850 units is below the minimum demand of 950 units"
+    ],
+    "recommendation": "proceed",
+    "risks_or_flaws": [
+      "none"
+    ],
+    "verification_question": "none",
+    "confidence": 100
+  },
+  "meta": {
+    "prompt_tokens": 551,
+    "output_tokens": 275,
+    "seconds": 52.58,
+    "repaired": false
+  },
+  "advisor_caught": null
+}

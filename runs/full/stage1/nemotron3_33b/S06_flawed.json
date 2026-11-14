@@ -1,0 +1,29 @@
+{
+  "scenario_id": "S06",
+  "variant": "flawed",
+  "domain": "job_offers",
+  "difficulty_tier": 1,
+  "model": "nemotron3:33b",
+  "seed": 1110,
+  "output": {
+    "summary": "Calculated gross stipend $10,000 + reimbursement $8,000 = $18,000 gross. 35% tax withholding reduces net to $11,700. This is below the $14,000 net guarantee requirement.",
+    "key_claims": [
+      "Gross relocation amount $18,000",
+      "35% tax withholding applied to gross",
+      "Net after-tax amount $11,700"
+    ],
+    "recommendation": "hold_to_verify",
+    "risks_or_flaws": [
+      "Net guaranteed liquidity drops below $14,000"
+    ],
+    "verification_question": "Is the $10,000 stipend and $8,000 reimbursement truly taxable with no gross-up?",
+    "confidence": 100
+  },
+  "meta": {
+    "prompt_tokens": 653,
+    "output_tokens": 210,
+    "seconds": 8.78,
+    "repaired": false
+  },
+  "advisor_caught": true
+}

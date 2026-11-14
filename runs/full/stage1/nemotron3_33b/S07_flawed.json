@@ -1,0 +1,29 @@
+{
+  "scenario_id": "S07",
+  "variant": "flawed",
+  "domain": "leases",
+  "difficulty_tier": 1,
+  "model": "nemotron3:33b",
+  "seed": 1112,
+  "output": {
+    "summary": "The base rent of $2,325 plus mandatory fees of $135 (tech/fiber), $55 (valet/trash), and $95 (garage) totals $2,610, exceeding the $2,550 monthly housing cost constraint by $60, violating the user's budget limit.",
+    "key_claims": [
+      "Base rent: $2,325/month",
+      "Mandatory fees: $135 + $55 + $95 = $285/month",
+      "Total monthly cost: $2,325 + $285 = $2,610"
+    ],
+    "recommendation": "hold_to_verify",
+    "risks_or_flaws": [
+      "Total mandatory fees ($285) push the monthly cost to $2,610, exceeding the $2,550 constraint by $60"
+    ],
+    "verification_question": "Can the $95 garage fee be waived or excluded per the Phase II zoning covenant?",
+    "confidence": 100
+  },
+  "meta": {
+    "prompt_tokens": 635,
+    "output_tokens": 255,
+    "seconds": 10.98,
+    "repaired": false
+  },
+  "advisor_caught": true
+}

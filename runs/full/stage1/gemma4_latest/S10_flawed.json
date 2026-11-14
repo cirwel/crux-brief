@@ -1,0 +1,29 @@
+{
+  "scenario_id": "S10",
+  "variant": "flawed",
+  "domain": "leases",
+  "difficulty_tier": 3,
+  "model": "gemma4:latest",
+  "seed": 118,
+  "output": {
+    "summary": "The packet confirms a 36-month term and a total space of 4,500 sq ft. The goal requires subleasing 40% in Month 3 while keeping 60% occupied for 36 months. The lease abstract mentions subleasing is possible with Landlord consent, but it critically notes a unilateral Recapture Option for the Landlord within 15 days of *any* notice, which directly threatens the ability to maintain the 60% occupancy for the full term.",
+    "key_claims": [
+      "Total Lease Term: 36 months",
+      "Subleasing/Sharing Requirement: 40% sublease in Month 3, 60% retained.",
+      "Major Risk: Landlord holds an absolute unilateral Recapture Option within 15 days of sublease notice."
+    ],
+    "recommendation": "hold_to_verify",
+    "risks_or_flaws": [
+      "The Landlord's absolute unilateral Recapture Option within 15 days of receiving ANY sublease or space-sharing notice threatens the ability to maintain the required 60% occupancy for the full 36-month term, as this option allows termination based on the initial sublease action."
+    ],
+    "verification_question": "Does the lease abstract provide any mechanism or mitigation strategy to waive or modify the Landlord's absolute unilateral Recapture Option related to subleasing?",
+    "confidence": 100
+  },
+  "meta": {
+    "prompt_tokens": 550,
+    "output_tokens": 326,
+    "seconds": 11.9,
+    "repaired": false
+  },
+  "advisor_caught": true
+}

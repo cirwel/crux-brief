@@ -1,0 +1,29 @@
+{
+  "scenario_id": "S17",
+  "variant": "flawed",
+  "domain": "procurement_handoffs",
+  "difficulty_tier": 1,
+  "model": "gemma4:latest",
+  "seed": 132,
+  "output": {
+    "summary": "The total all-in Purchase Order cost must be calculated by summing the hardware cost, the mandatory support cost, and the shipping/crating fee. The hardware subtotal is $115,000 (100 * $1,150). The mandatory support cost is $9,500 (100 * $95). Adding the fixed freight cost of $3,800 results in a total of $128,300, which exceeds the $118,000 budget constraint.",
+    "key_claims": [
+      "Hardware Subtotal: $115,000",
+      "Mandatory Support Cost: $9,500",
+      "Calculated Total PO Cost: $128,300"
+    ],
+    "recommendation": "hold_to_verify",
+    "risks_or_flaws": [
+      "The calculated total-in Purchase Order cost of $128,300 exceeds the stated maximum budget constraint of $118,000."
+    ],
+    "verification_question": "Given the calculated total of $128,300, is there an alternative support or hardware option that would bring the total cost at or below $118,000?",
+    "confidence": 100
+  },
+  "meta": {
+    "prompt_tokens": 565,
+    "output_tokens": 306,
+    "seconds": 10.5,
+    "repaired": false
+  },
+  "advisor_caught": true
+}

@@ -1,0 +1,147 @@
+{
+  "scenario_id": "S16",
+  "variant": "flawed",
+  "domain": "procurement_handoffs",
+  "difficulty_tier": 3,
+  "eval_model": "gemma4:latest",
+  "synth_model": "nemotron3:33b",
+  "single_advisor_model": "gemma4:latest",
+  "k_spotted": 3,
+  "advisor_caught_by_model": {
+    "gemma4:latest": true,
+    "nemotron3:33b": true,
+    "qwen3.6:27b-coding-mxfp8": true
+  },
+  "briefs": {
+    "single": {
+      "text": "ASSESSMENT OVERVIEW: The packet confirms the Buyer owns 100% of custom deliverables (Section 9.1). However, the core query execution relies on the Vendor's proprietary runtime (Section 9.3). The license granted for this critical dependency is explicitly non-sublicensable, which directly conflicts with the goal of distributing and sublicensing the platform to external enterprise clients. Key facts: Buyer owns 100% of custom deliverables (Section 9.1).; Vendor's proprietary runtime powers ~70% of core query execution.; License for proprietary runtime is non-transferable and non-sublicensable..\nPOINTS OF NOTE: The constraint requires the platform to be sublicensed to external enterprise clients, but Section 9.3 limits the license for the core dependency (Vendor Background IP) to being non-sublicensable..\nSUGGESTED NEXT STEP: Does the agreement provide any mechanism or alternative licensing structure that permits sublicensing of the core query execution dependency, given that the current license is explicitly non-sublicensable?",
+      "words": 141
+    },
+    "consensus": {
+      "raw": {
+        "overview": "All three advisors concur that while the Buyer holds 100% ownership of custom deliverables under Section 9.1, the core runtime\u2014comprising approximately 70% of execution\u2014is governed by a non-transferable, non-sublicensable license for Vendor Background IP, creating a fundamental conflict with the requirement to distribute and sublicense the white-labeled platform to external enterprise clients.",
+        "points_of_note": "The critical issue centers on the non-sublicensable restriction of the Vendor's proprietary runtime (cited by all advisors as affecting ~70% of execution), which directly violates the constraint requiring sublicensing to external clients; Advisor 3 specifically questions whether this restriction applies solely to Buyer's internal use rather than platform distribution, though no resolution is provided in the reports.",
+        "suggested_next_step": "Verify with legal counsel whether Section 9.3's non-sublicensable clause applies exclusively to Buyer's internal use of the background runtime or extends to platform distribution, as this determination is essential to resolve the fatal conflict between ownership rights and distribution requirements."
+      },
+      "text": "ASSESSMENT OVERVIEW: All three advisors concur that while the Buyer holds 100% ownership of custom deliverables under Section 9.1, the core runtime\u2014comprising approximately 70% of execution\u2014is governed by a non-transferable, non-sublicensable license for Vendor Background IP, creating a fundamental conflict with the requirement to distribute and sublicense the white-labeled platform to external enterprise clients.\nPOINTS OF NOTE: The critical issue centers on the non-sublicensable restriction of the Vendor's proprietary runtime (cited by all advisors as affecting ~70% of execution), which directly violates the constraint requiring sublicensing to external clients; Advisor 3 specifically questions whether this restriction applies solely to Buyer's internal use rather than platform distribution, though no resolution is provided in the reports.\nSUGGESTED NEXT STEP: Verify with legal counsel whether Section 9.3's non-sublicensable clause applies exclusively to Buyer's internal use of the background runtime or extends to platform distribution, as this determination is essential to resolve the fatal conflict between ownership rights and distribution requirements.",
+      "words": 157,
+      "meta": {
+        "prompt_tokens": 1234,
+        "output_tokens": 238,
+        "seconds": 8.67,
+        "repaired": false
+      }
+    },
+    "crux": {
+      "raw": {
+        "shared_ground": [
+          "Buyer owns 100% of custom deliverables per Section 9.1",
+          "Core runtime (70% of execution) is Vendor Background IP with non-sublicensable license"
+        ],
+        "cruxes": [
+          {
+            "topic": "Scope of non-sublicensable license restriction",
+            "side_a": "License is non-sublicensable for Buyer's internal use only (Advisor 3)",
+            "side_b": "License is non-sublicensable to third parties, prohibiting distribution to external clients (Advisor 1 & 2)",
+            "premise_at_stake": "Whether the restriction applies to the entire platform or only Buyer's internal runtime use"
+          }
+        ],
+        "unverified_premises": [
+          "Whether Section 9.3's non-sublicensable restriction applies to sublicensing the full platform to external enterprise clients"
+        ],
+        "decisive_check": "Does Section 9.3's 'non-sublicensable' restriction apply to the entire platform or only Buyer's internal use of the background runtime?"
+      },
+      "text": "ASSESSMENT OVERVIEW: Buyer owns 100% of custom deliverables per Section 9.1 Core runtime (70% of execution) is Vendor Background IP with non-sublicensable license\nPOINTS OF NOTE: Disagreements: (1) Scope of non-sublicensable license restriction: Side A [License is non-sublicensable for Buyer's internal use only (Advisor 3)] vs. Side B [License is non-sublicensable to third parties, prohibiting distribution to external clients (Advisor 1 & 2)] (at stake: Whether the restriction applies to the entire platform or only Buyer's internal runtime use) Flagged issues: Whether Section 9.3's non-sublicensable restriction applies to sublicensing the full platform to external enterprise clients\nSUGGESTED NEXT STEP: Does Section 9.3's 'non-sublicensable' restriction apply to the entire platform or only Buyer's internal use of the background runtime?",
+      "words": 118,
+      "meta": {
+        "prompt_tokens": 1403,
+        "output_tokens": 249,
+        "seconds": 8.47,
+        "repaired": false
+      }
+    }
+  },
+  "crux_survived": {
+    "single": true,
+    "consensus": true,
+    "crux": true
+  },
+  "decisions": {
+    "raw": {
+      "output": {
+        "primary_reason": "The constraint requires the platform to be deployable as a white-labeled commercial software product distributed and sublicensed to external enterprise clients, but Section 9.3 explicitly limits the license for the core technology to be non-sublicensable.",
+        "target_clause_or_metric": "Section 9.3",
+        "action": "hold_to_verify",
+        "confidence": 100,
+        "brief_endorsement": null
+      },
+      "meta": {
+        "prompt_tokens": 582,
+        "output_tokens": 110,
+        "seconds": 4.32,
+        "repaired": false
+      },
+      "hold": true,
+      "verified_catch": true,
+      "untargeted_hold": false,
+      "false_alarm": null
+    },
+    "single": {
+      "output": {
+        "primary_reason": "The packet confirms ownership of custom work product but critically violates the constraint regarding sublicensing because the core dependency (Vendor Background IP) is licensed as non-sublicensable.",
+        "target_clause_or_metric": "Section 9.3",
+        "action": "hold_to_verify",
+        "confidence": 100,
+        "brief_endorsement": 5
+      },
+      "meta": {
+        "prompt_tokens": 804,
+        "output_tokens": 98,
+        "seconds": 3.99,
+        "repaired": false
+      },
+      "hold": true,
+      "verified_catch": true,
+      "untargeted_hold": false,
+      "false_alarm": null
+    },
+    "consensus": {
+      "output": {
+        "primary_reason": "The packet confirms that while the Buyer owns the custom deliverables, the core runtime (70% of execution) is licensed only for internal, non-sublicensable use, which directly conflicts with the constraint requiring distribution and sublicensing to external clients.",
+        "target_clause_or_metric": "Section 9.3: Buyer receives a perpetual license strictly 'for Buyer's own internal business operations, non-transferable and non-sublicensable to third parties.'",
+        "action": "hold_to_verify",
+        "confidence": 100,
+        "brief_endorsement": 5
+      },
+      "meta": {
+        "prompt_tokens": 809,
+        "output_tokens": 146,
+        "seconds": 5.27,
+        "repaired": false
+      },
+      "hold": true,
+      "verified_catch": true,
+      "untargeted_hold": false,
+      "false_alarm": null
+    },
+    "crux": {
+      "output": {
+        "primary_reason": "The constraint requires the platform to be sublicensed to external enterprise clients, but Section 9.3 explicitly limits the license for the core runtime to be 'non-sublicensable to third parties,' which directly conflicts with the stated goal.",
+        "target_clause_or_metric": "Section 9.3: Buyer receives a perpetual license strictly 'for Buyer's own internal business operations, non-transferable and non-sublicensable to third parties.'",
+        "action": "hold_to_verify",
+        "confidence": 100,
+        "brief_endorsement": 5
+      },
+      "meta": {
+        "prompt_tokens": 791,
+        "output_tokens": 143,
+        "seconds": 4.96,
+        "repaired": false
+      },
+      "hold": true,
+      "verified_catch": true,
+      "untargeted_hold": false,
+      "false_alarm": null
+    }
+  }
+}

@@ -1,0 +1,134 @@
+{
+  "scenario_id": "S02",
+  "variant": "sound",
+  "domain": "job_offers",
+  "difficulty_tier": 1,
+  "eval_model": "gemma4:latest",
+  "synth_model": "nemotron3:33b",
+  "single_advisor_model": "nemotron3:33b",
+  "k_spotted": null,
+  "advisor_caught_by_model": {
+    "gemma4:latest": null,
+    "nemotron3:33b": null,
+    "qwen3.6:27b-coding-mxfp8": null
+  },
+  "briefs": {
+    "single": {
+      "text": "ASSESSMENT OVERVIEW: The $40,000 sign-on bonus results in $24,800 net cash. The repayment rider requires repayment of 1/12th monthly ($2,067) for 12 months if voluntarily resigned within 12 months, totaling $24,800. Since repayment ends at Month 12, leaving at Month 18 incurs no obligation. All constraints are satisfied. Key facts: Sign-on bonus: $40,000 gross, $24,800 net; Repayment: 1/12th monthly ($2,067) for 12 months = $24,800 total, ending at Month 12; Voluntary resignation within 12 months triggers repayment; after Month 12, obligation is $0.\nPOINTS OF NOTE: No concrete constraint violations flagged.\nSUGGESTED NEXT STEP: None required; stated constraints appear satisfied.",
+      "words": 100
+    },
+    "consensus": {
+      "raw": {
+        "overview": "All three advisors unanimously recommend proceeding, confirming that the sign-on bonus repayment obligation under Clause 6b expires at Month 12, amortizing monthly on net cash and resulting in $0 liability for a departure at Month 18, thereby fully satisfying the user's constraint that no out-of-pocket clawback should occur beyond Month 12.",
+        "points_of_note": "The advisors consistently note the $40,000 gross bonus with $24,800 net payout and a repayment structure of $2,067 monthly for 12 months if resignation occurs within the first year, with the obligation terminating completely after Month 12; no advisor flagged any violation of the Month 12 expiration requirement or the Month 18 departure condition.",
+        "suggested_next_step": "Proceed with acceptance of the offer, as all advisors confirm the repayment clause meets the Month 12 expiration constraint and no clawback risk exists for a Month 18 departure."
+      },
+      "text": "ASSESSMENT OVERVIEW: All three advisors unanimously recommend proceeding, confirming that the sign-on bonus repayment obligation under Clause 6b expires at Month 12, amortizing monthly on net cash and resulting in $0 liability for a departure at Month 18, thereby fully satisfying the user's constraint that no out-of-pocket clawback should occur beyond Month 12.\nPOINTS OF NOTE: The advisors consistently note the $40,000 gross bonus with $24,800 net payout and a repayment structure of $2,067 monthly for 12 months if resignation occurs within the first year, with the obligation terminating completely after Month 12; no advisor flagged any violation of the Month 12 expiration requirement or the Month 18 departure condition.\nSUGGESTED NEXT STEP: Proceed with acceptance of the offer, as all advisors confirm the repayment clause meets the Month 12 expiration constraint and no clawback risk exists for a Month 18 departure.",
+      "words": 142,
+      "meta": {
+        "prompt_tokens": 1107,
+        "output_tokens": 221,
+        "seconds": 7.59,
+        "repaired": false
+      }
+    },
+    "crux": {
+      "raw": {
+        "shared_ground": [
+          "Sign-on bonus repayment obligation expires by Month 12",
+          "Leaving at Month 18 triggers no clawback"
+        ],
+        "cruxes": [],
+        "unverified_premises": [],
+        "decisive_check": "None required; all advisors concur stated constraints are satisfied."
+      },
+      "text": "ASSESSMENT OVERVIEW: Sign-on bonus repayment obligation expires by Month 12 Leaving at Month 18 triggers no clawback\nPOINTS OF NOTE: No concrete disagreements or constraint violations flagged across advisors.\nSUGGESTED NEXT STEP: None required; all advisors concur stated constraints are satisfied.",
+      "words": 41,
+      "meta": {
+        "prompt_tokens": 1276,
+        "output_tokens": 78,
+        "seconds": 4.41,
+        "repaired": false
+      }
+    }
+  },
+  "crux_survived": null,
+  "decisions": {
+    "raw": {
+      "output": {
+        "primary_reason": "The repayment clause explicitly states the obligation drops to $0 after Month 12, which satisfies the constraint that leaving at Month 18 will not trigger an out-of-pocket cash clawback.",
+        "target_clause_or_metric": "Clause 6b",
+        "action": "proceed",
+        "confidence": 100,
+        "brief_endorsement": null
+      },
+      "meta": {
+        "prompt_tokens": 621,
+        "output_tokens": 97,
+        "seconds": 3.13,
+        "repaired": false
+      },
+      "hold": false,
+      "verified_catch": null,
+      "untargeted_hold": null,
+      "false_alarm": false
+    },
+    "single": {
+      "output": {
+        "primary_reason": "The repayment clause explicitly states the obligation drops to $0 after Month 12, which satisfies the constraint that leaving at Month 18 will not trigger an out-of-pocket cash clawback.",
+        "target_clause_or_metric": "Clause 6b",
+        "action": "proceed",
+        "confidence": 100,
+        "brief_endorsement": 5
+      },
+      "meta": {
+        "prompt_tokens": 827,
+        "output_tokens": 98,
+        "seconds": 3.27,
+        "repaired": false
+      },
+      "hold": false,
+      "verified_catch": null,
+      "untargeted_hold": null,
+      "false_alarm": false
+    },
+    "consensus": {
+      "output": {
+        "primary_reason": "The repayment rider (Clause 6b) explicitly states the obligation drops to $0 after Month 12, which directly satisfies the user's constraint that leaving at Month 18 will not trigger an out-of-pocket cash clawback.",
+        "target_clause_or_metric": "Clause 6b",
+        "action": "proceed",
+        "confidence": 100,
+        "brief_endorsement": 5
+      },
+      "meta": {
+        "prompt_tokens": 828,
+        "output_tokens": 108,
+        "seconds": 3.86,
+        "repaired": false
+      },
+      "hold": false,
+      "verified_catch": null,
+      "untargeted_hold": null,
+      "false_alarm": false
+    },
+    "crux": {
+      "output": {
+        "primary_reason": "The repayment rider explicitly states the obligation drops to $0 after Month 12, which satisfies the constraint that leaving at Month 18 will not trigger an out-of-pocket cash clawback.",
+        "target_clause_or_metric": "Clause 6b",
+        "action": "proceed",
+        "confidence": 100,
+        "brief_endorsement": 5
+      },
+      "meta": {
+        "prompt_tokens": 679,
+        "output_tokens": 98,
+        "seconds": 3.04,
+        "repaired": false
+      },
+      "hold": false,
+      "verified_catch": null,
+      "untargeted_hold": null,
+      "false_alarm": false
+    }
+  }
+}

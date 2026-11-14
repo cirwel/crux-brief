@@ -1,0 +1,29 @@
+{
+  "scenario_id": "S15",
+  "variant": "flawed",
+  "domain": "procurement_handoffs",
+  "difficulty_tier": 2,
+  "model": "gemma4:latest",
+  "seed": 128,
+  "output": {
+    "summary": "The goal requires approving early payment only if the net dollar savings are positive after accounting for financing costs. The stated discount saving is $1,000. The financing cost is calculated on the drawn amount ($249,000) for 20 days at 12.0% APR. The interest cost for 20 days is $1,660. Since the financing cost ($1,660) exceeds the discount saving ($1,000), the net savings are negative, violating the core constraint.",
+    "key_claims": [
+      "Discount saving: $1,000",
+      "Financing cost (20 days @ 12.0% APR on $249,000): $1,660",
+      "Net savings: -$660"
+    ],
+    "recommendation": "hold_to_verify",
+    "risks_or_flaws": [
+      "The net dollar savings after credit-line financing cost is negative ($1,000 discount saving - $1,660 financing cost = -$660), which violates the explicit constraint requiring a positive net dollar savings."
+    ],
+    "verification_question": "Given the $1,000 discount saving and the calculated financing cost of $1,660 for 20 days, is the net dollar savings positive?",
+    "confidence": 100
+  },
+  "meta": {
+    "prompt_tokens": 638,
+    "output_tokens": 323,
+    "seconds": 10.29,
+    "repaired": false
+  },
+  "advisor_caught": true
+}

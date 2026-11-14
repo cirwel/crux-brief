@@ -1,0 +1,59 @@
+{
+  "scenario_id": "S24",
+  "variant": "flawed",
+  "domain": "operational_briefs",
+  "difficulty_tier": 1,
+  "synth_model": "nemotron3:33b",
+  "k_spotted": 3,
+  "advisor_caught_by_model": {
+    "gemma4:latest": true,
+    "nemotron3:33b": true,
+    "qwen3.6:27b-coding-mxfp8": true
+  },
+  "briefs": {
+    "consensus": {
+      "raw": {
+        "overview": "All three advisors concur that the proposal's Year-1 net savings fall short of the $100,000 threshold required for approval, with calculations showing net savings of $50,000, $15,000, and $15,000 respectively, confirming a consistent shortfall despite differing interpretations of cost components.",
+        "points_of_note": "Advisor 1 identifies $190,000 in costs (two $95,000 salaries/benefits plus $35,000 fee) yielding $50,000 net savings, while Advisors 2 and 3 calculate $225,000 total costs (including $190,000 salaries/benefits plus $35,000 fee) resulting in $15,000 net savings; all agree the $15,000-$50,000 range remains below the $100,000 requirement, with Advisor 3 specifically questioning whether the $20,000/month overtime figure is already annualized.",
+        "suggested_next_step": "Verify the Year-1 net savings calculation by confirming whether the $20,000 monthly overtime savings figure represents total annual savings or requires annualization, as this directly impacts the $15,000-$50,000 net savings determination against the $100,000 threshold."
+      },
+      "text": "ASSESSMENT OVERVIEW: All three advisors concur that the proposal's Year-1 net savings fall short of the $100,000 threshold required for approval, with calculations showing net savings of $50,000, $15,000, and $15,000 respectively, confirming a consistent shortfall despite differing interpretations of cost components.\nPOINTS OF NOTE: Advisor 1 identifies $190,000 in costs (two $95,000 salaries/benefits plus $35,000 fee) yielding $50,000 net savings, while Advisors 2 and 3 calculate $225,000 total costs (including $190,000 salaries/benefits plus $35,000 fee) resulting in $15,000 net savings; all agree the $15,000-$50,000 range remains below the $100,000 requirement, with Advisor 3 specifically questioning whether the $20,000/month overtime figure is already annualized.\nSUGGESTED NEXT STEP: Verify the Year-1 net savings calculation by confirming whether the $20,000 monthly overtime savings figure represents total annual savings or requires annualization, as this directly impacts the $15,000-$50,000 net savings determination against the $100,000 threshold.",
+      "words": 142,
+      "meta": {
+        "prompt_tokens": 1465,
+        "output_tokens": 327,
+        "seconds": 9.66,
+        "repaired": false
+      }
+    },
+    "crux": {
+      "raw": {
+        "shared_ground": [
+          "Annual emergency overtime savings: $240,000",
+          "Total Year-1 costs: $225,000 ($190,000 salaries/benefits + $35,000 fee)"
+        ],
+        "cruxes": [
+          {
+            "topic": "Annual overtime savings calculation",
+            "side_a": "Advisor 1: $240,000 annual savings (20,000 x 12 months)",
+            "side_b": "Advisors 2 & 3: $240,000 annual savings (20,000 x 12 months)",
+            "premise_at_stake": "Whether the $240,000 figure represents total annual savings or monthly rate"
+          }
+        ],
+        "unverified_premises": [
+          "Exact cost breakdown verification",
+          "Total savings calculation accuracy"
+        ],
+        "decisive_check": "Confirm Year-1 net savings calculation: $240,000 savings - $225,000 costs = $15,000"
+      },
+      "text": "ASSESSMENT OVERVIEW: Annual emergency overtime savings: $240,000 Total Year-1 costs: $225,000 ($190,000 salaries/benefits + $35,000 fee)\nPOINTS OF NOTE: Disagreements: (1) Annual overtime savings calculation: Side A [Advisor 1: $240,000 annual savings (20,000 x 12 months)] vs. Side B [Advisors 2 & 3: $240,000 annual savings (20,000 x 12 months)] (at stake: Whether the $240,000 figure represents total annual savings or monthly rate) Flagged issues: Exact cost breakdown verification; Total savings calculation accuracy\nSUGGESTED NEXT STEP: Confirm Year-1 net savings calculation: $240,000 savings - $225,000 costs = $15,000",
+      "words": 88,
+      "meta": {
+        "prompt_tokens": 1634,
+        "output_tokens": 262,
+        "seconds": 6.98,
+        "repaired": false
+      }
+    }
+  }
+}

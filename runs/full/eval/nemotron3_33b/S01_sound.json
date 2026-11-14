@@ -1,0 +1,134 @@
+{
+  "scenario_id": "S01",
+  "variant": "sound",
+  "domain": "job_offers",
+  "difficulty_tier": 1,
+  "eval_model": "nemotron3:33b",
+  "synth_model": "gemma4:latest",
+  "single_advisor_model": "gemma4:latest",
+  "k_spotted": null,
+  "advisor_caught_by_model": {
+    "gemma4:latest": null,
+    "nemotron3:33b": null,
+    "qwen3.6:27b-coding-mxfp8": null
+  },
+  "briefs": {
+    "single": {
+      "text": "ASSESSMENT OVERVIEW: The required Year-1 realized gross compensation must be at least $260,000. The packet provides a Base Salary of $205,000 and a guaranteed Year-1 bonus of $10,000. The equity vesting within the first 12 months is 25% of the $400,000 grant, totaling $100,000. Summing these components ($205,000 + $10,000 + $100,000) results in $315,000, which exceeds the $260,000 minimum threshold. Key facts: Base Salary: $205,000; Guaranteed Year-1 Bonus: $10,000; Year-1 Equity Vesting: $100,000.\nPOINTS OF NOTE: No concrete constraint violations flagged.\nSUGGESTED NEXT STEP: None required; stated constraints appear satisfied.",
+      "words": 91
+    },
+    "consensus": {
+      "raw": {
+        "overview": "There is strong consensus among the advisors that the proposed compensation package meets the stated financial constraint. All three assessments confirm that the calculated Year-1 realized gross compensation significantly exceeds the required minimum of $260,000. The overall alignment with the user's primary condition\u2014maintaining compensation above the threshold\u2014is robustly supported by the provided figures.",
+        "points_of_note": "The core calculation consistently identifies the Year-1 realized compensation as $315,000. This figure is derived by summing the $205,000 base salary, the guaranteed $10,000 bonus, and the $100,000 equity vesting (25% of the $400,000 grant). Advisor 2 noted that a recruiter's figure of $305,000 appeared inconsistent, reinforcing the reliance on the detailed component breakdown provided by all parties. No material constraint breaches were flagged by any advisor.",
+        "suggested_next_step": "Given the unanimous recommendation to proceed and the clear calculation showing the Year-1 realized compensation at $315,000, which exceeds the $260,000 minimum, the decision maker should feel confident in moving forward with the offer."
+      },
+      "text": "ASSESSMENT OVERVIEW: There is strong consensus among the advisors that the proposed compensation package meets the stated financial constraint. All three assessments confirm that the calculated Year-1 realized gross compensation significantly exceeds the required minimum of $260,000. The overall alignment with the user's primary condition\u2014maintaining compensation above the threshold\u2014is robustly supported by the provided figures.\nPOINTS OF NOTE: The core calculation consistently identifies the Year-1 realized compensation as $315,000. This figure is derived by summing the $205,000 base salary, the guaranteed $10,000 bonus, and the $100,000 equity vesting (25% of the $400,000 grant). Advisor 2 noted that a recruiter's figure of $305,000 appeared inconsistent, reinforcing the reliance on the detailed component breakdown provided by all parties. No material constraint breaches were flagged by any advisor.\nSUGGESTED NEXT STEP: Given the unanimous recommendation to proceed and the clear calculation showing the Year-1 realized compensation at $315,000, which exceeds the $260,000 minimum, the decision maker should feel confident in moving forward with the offer.",
+      "words": 162,
+      "meta": {
+        "prompt_tokens": 1137,
+        "output_tokens": 280,
+        "seconds": 10.71,
+        "repaired": false
+      }
+    },
+    "crux": {
+      "raw": {
+        "shared_ground": [
+          "The required Year-1 realized gross compensation minimum is $260,000.",
+          "The calculated Year-1 realized compensation is $315,000, derived from a $205k base, $10k bonus, and $100k equity vesting."
+        ],
+        "cruxes": [],
+        "unverified_premises": [],
+        "decisive_check": "None required; all advisors concur stated constraints are satisfied."
+      },
+      "text": "ASSESSMENT OVERVIEW: The required Year-1 realized gross compensation minimum is $260,000. The calculated Year-1 realized compensation is $315,000, derived from a $205k base, $10k bonus, and $100k equity vesting.\nPOINTS OF NOTE: No concrete disagreements or constraint violations flagged across advisors.\nSUGGESTED NEXT STEP: None required; all advisors concur stated constraints are satisfied.",
+      "words": 53,
+      "meta": {
+        "prompt_tokens": 1285,
+        "output_tokens": 118,
+        "seconds": 5.4,
+        "repaired": false
+      }
+    }
+  },
+  "crux_survived": null,
+  "decisions": {
+    "raw": {
+      "output": {
+        "primary_reason": "The base salary ($205,000) plus the guaranteed $10,000 signing bonus and $400,000 equity vesting over 4 years (totaling $100,000 in Year 1) results in $315,000 realized gross compensation in Year 1, which exceeds the $260,000 minimum requirement.",
+        "target_clause_or_metric": "none",
+        "action": "proceed",
+        "confidence": 100,
+        "brief_endorsement": null
+      },
+      "meta": {
+        "prompt_tokens": 726,
+        "output_tokens": 138,
+        "seconds": 4.03,
+        "repaired": false
+      },
+      "hold": false,
+      "verified_catch": null,
+      "untargeted_hold": null,
+      "false_alarm": false
+    },
+    "single": {
+      "output": {
+        "primary_reason": "The packet shows Year-1 realized gross compensation of $315,000, which exceeds the $260,000 minimum requirement, satisfying all stated constraints.",
+        "target_clause_or_metric": "Section 3.4 vesting schedule (25% of $400,000 equity vesting within 12 months = $100,000) and Base Salary + guaranteed bonus ($215,000) from Offer Summary",
+        "action": "proceed",
+        "confidence": 95,
+        "brief_endorsement": 5
+      },
+      "meta": {
+        "prompt_tokens": 975,
+        "output_tokens": 147,
+        "seconds": 4.32,
+        "repaired": false
+      },
+      "hold": false,
+      "verified_catch": null,
+      "untargeted_hold": null,
+      "false_alarm": false
+    },
+    "consensus": {
+      "output": {
+        "primary_reason": "The Year-1 realized gross compensation is $315,000, which exceeds the $260,000 minimum requirement as confirmed by the PRE-DECISION BRIEF and the packet's component breakdown.",
+        "target_clause_or_metric": "Section 3.4 vesting schedule and the $100,000 equity vesting (25% of $400,000) derived from the $400,000 RSU grant",
+        "action": "proceed",
+        "confidence": 95,
+        "brief_endorsement": 5
+      },
+      "meta": {
+        "prompt_tokens": 1014,
+        "output_tokens": 147,
+        "seconds": 4.4,
+        "repaired": false
+      },
+      "hold": false,
+      "verified_catch": null,
+      "untargeted_hold": null,
+      "false_alarm": false
+    },
+    "crux": {
+      "output": {
+        "primary_reason": "The Year-1 realized gross compensation is $315,000, which exceeds the $260,000 minimum requirement. All components (base salary, guaranteed bonus, and equity vesting) are accounted for and meet the constraint.",
+        "target_clause_or_metric": "none",
+        "action": "proceed",
+        "confidence": 95,
+        "brief_endorsement": 5
+      },
+      "meta": {
+        "prompt_tokens": 840,
+        "output_tokens": 103,
+        "seconds": 4.07,
+        "repaired": false
+      },
+      "hold": false,
+      "verified_catch": null,
+      "untargeted_hold": null,
+      "false_alarm": false
+    }
+  }
+}

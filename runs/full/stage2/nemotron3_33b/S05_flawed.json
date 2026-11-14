@@ -1,0 +1,59 @@
+{
+  "scenario_id": "S05",
+  "variant": "flawed",
+  "domain": "job_offers",
+  "difficulty_tier": 2,
+  "synth_model": "nemotron3:33b",
+  "k_spotted": 3,
+  "advisor_caught_by_model": {
+    "gemma4:latest": true,
+    "nemotron3:33b": true,
+    "qwen3.6:27b-coding-mxfp8": true
+  },
+  "briefs": {
+    "consensus": {
+      "raw": {
+        "overview": "All three advisors concur that Clause 8.1 of the PIIA agreement poses a material risk to the user's constraints by claiming ownership over software related to distributed tracing/observability, including existing Apache-2.0 libraries like 'TraceLite' and personal off-hours tools developed on personal hardware, with no effective carve-out in the blank Exhibit A or pending 'None' exclusion review.",
+        "points_of_note": "Advisor 1's 95% confidence highlights uncertainty about whether 'during employment' in Clause 8.1 encompasses off-hours personal hardware work for observability projects, while Advisors 2 and 3's 100% confidence emphasize Clause 8.1's explicit scope covering 'distributed tracing, telemetry, or developer observability' regardless of hours/hardware and the critical absence of a pre-existing IP carve-out, with Exhibit A's 'None' designation failing to protect TraceLite as required by the user's constraints.",
+        "suggested_next_step": "Immediately request a written amendment to Clause 8.1 excluding pre-existing Apache-2.0 libraries like TraceLite and explicitly carving out personal off-hours tools developed on personal hardware, or obtain HR's written confirmation that the pending Exhibit A 'None' exclusion retroactively applies to protect existing observability code."
+      },
+      "text": "ASSESSMENT OVERVIEW: All three advisors concur that Clause 8.1 of the PIIA agreement poses a material risk to the user's constraints by claiming ownership over software related to distributed tracing/observability, including existing Apache-2.0 libraries like 'TraceLite' and personal off-hours tools developed on personal hardware, with no effective carve-out in the blank Exhibit A or pending 'None' exclusion review.\nPOINTS OF NOTE: Advisor 1's 95% confidence highlights uncertainty about whether 'during employment' in Clause 8.1 encompasses off-hours personal hardware work for observability projects, while Advisors 2 and 3's 100% confidence emphasize Clause 8.1's explicit scope covering 'distributed tracing, telemetry, or developer observability' regardless of hours/hardware and the critical absence of a pre-existing IP carve-out, with Exhibit A's 'None' designation failing to protect TraceLite as required by the user's constraints.\nSUGGESTED NEXT STEP: Immediately request a written amendment to Clause 8.1 excluding pre-existing Apache-2.0 libraries like TraceLite and explicitly carving out personal off-hours tools developed on personal hardware, or obtain HR's written confirmation that the pending Exhibit A 'None' exclusion retroactively applies to protect existing observability code.",
+      "words": 175,
+      "meta": {
+        "prompt_tokens": 1424,
+        "output_tokens": 293,
+        "seconds": 10.49,
+        "repaired": false
+      }
+    },
+    "crux": {
+      "raw": {
+        "shared_ground": [
+          "PIIA Clause 8.1 assigns rights to software related to distributed tracing/observability regardless of hours or hardware",
+          "TraceLite is an existing Apache-2.0 observability library maintained off-hours on personal hardware"
+        ],
+        "cruxes": [
+          {
+            "topic": "Scope of Clause 8.1",
+            "side_a": "Clause 8.1 covers all software related to distributed tracing/observability created during employment, regardless of hours or hardware",
+            "side_b": "User's constraint requires protection of off-hours personal tools like TraceLite",
+            "premise_at_stake": "Whether Clause 8.1's scope includes off-hours personal code development"
+          }
+        ],
+        "unverified_premises": [
+          "No explicit carve-out for pre-existing or personal code in PIIA Clause 8.1",
+          "Exhibit A's 'None' exclusion lacks state carve-out verification"
+        ],
+        "decisive_check": "Does PIIA Clause 8.1 contain a specific carve-out excluding pre-existing personal observability tools like TraceLite?"
+      },
+      "text": "ASSESSMENT OVERVIEW: PIIA Clause 8.1 assigns rights to software related to distributed tracing/observability regardless of hours or hardware TraceLite is an existing Apache-2.0 observability library maintained off-hours on personal hardware\nPOINTS OF NOTE: Disagreements: (1) Scope of Clause 8.1: Side A [Clause 8.1 covers all software related to distributed tracing/observability created during employment, regardless of hours or hardware] vs. Side B [User's constraint requires protection of off-hours personal tools like TraceLite] (at stake: Whether Clause 8.1's scope includes off-hours personal code development) Flagged issues: No explicit carve-out for pre-existing or personal code in PIIA Clause 8.1; Exhibit A's 'None' exclusion lacks state carve-out verification\nSUGGESTED NEXT STEP: Does PIIA Clause 8.1 contain a specific carve-out excluding pre-existing personal observability tools like TraceLite?",
+      "words": 122,
+      "meta": {
+        "prompt_tokens": 1593,
+        "output_tokens": 257,
+        "seconds": 9.95,
+        "repaired": false
+      }
+    }
+  }
+}

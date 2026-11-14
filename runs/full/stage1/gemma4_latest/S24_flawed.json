@@ -1,0 +1,29 @@
+{
+  "scenario_id": "S24",
+  "variant": "flawed",
+  "domain": "operational_briefs",
+  "difficulty_tier": 1,
+  "model": "gemma4:latest",
+  "seed": 146,
+  "output": {
+    "summary": "The user requires Year-1 net budget savings to be at least $100,000 for approval. The stated annual savings from overtime are $20,000/month * 12 months = $240,000. The total annual costs are $95,000 (salary/benefits) * 2 nurses + $35,000 (agency fee) = $190,000 + $35,000 = $225,000. The net savings calculation is $240,000 (Savings) - $225,000 (Costs) = $15,000. This falls significantly below the $100,000 threshold.",
+    "key_claims": [
+      "Total annual overtime savings: $240,000",
+      "Total annual cost: $225,000",
+      "Calculated net Year-1 savings: $15,000"
+    ],
+    "recommendation": "hold_to_verify",
+    "risks_or_flaws": [
+      "The calculated net Year-1 savings of $15,000 is significantly less than the required minimum of $100,000."
+    ],
+    "verification_question": "Does the $20,000/month overtime savings figure represent the *total* annual savings, or is it already annualized?",
+    "confidence": 100
+  },
+  "meta": {
+    "prompt_tokens": 553,
+    "output_tokens": 348,
+    "seconds": 20.59,
+    "repaired": false
+  },
+  "advisor_caught": true
+}

@@ -1,0 +1,29 @@
+{
+  "scenario_id": "S08",
+  "variant": "flawed",
+  "domain": "leases",
+  "difficulty_tier": 2,
+  "model": "nemotron3:33b",
+  "seed": 1114,
+  "output": {
+    "summary": "The lease requires a 90-day non-renewal notice by November 1 to avoid automatic 12-month renewal past December 31. Month 10 sales results, available November 3, are too late for the 90-day deadline, meaning renewal is inevitable unless an exception applies. The landlord's 'simple 1-year pop-up lease' claim conflicts with the binding renewal clause, but no exception is stated in the packet.",
+    "key_claims": [
+      "90-day notice deadline is 90 calendar days before December 31, requiring notice by October 31",
+      "Month 10 sales results available November 3, which is after the 90-day cutoff",
+      "Automatic renewal for a full additional 12-month term applies if notice is not delivered by the 90-day deadline"
+    ],
+    "recommendation": "hold_to_verify",
+    "risks_or_flaws": [
+      "Notice deadline (October 31) occurs before Month 10 sales results are available (November 3), making timely non-renewal notice impossible per stated terms"
+    ],
+    "verification_question": "Is there a clause allowing tenant-initiated early termination or modification of the renewal notice deadline based on sales results?",
+    "confidence": 100
+  },
+  "meta": {
+    "prompt_tokens": 639,
+    "output_tokens": 292,
+    "seconds": 12.91,
+    "repaired": false
+  },
+  "advisor_caught": true
+}

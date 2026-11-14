@@ -1,0 +1,134 @@
+{
+  "scenario_id": "S07",
+  "variant": "sound",
+  "domain": "leases",
+  "difficulty_tier": 1,
+  "eval_model": "nemotron3:33b",
+  "synth_model": "gemma4:latest",
+  "single_advisor_model": "gemma4:latest",
+  "k_spotted": null,
+  "advisor_caught_by_model": {
+    "gemma4:latest": null,
+    "nemotron3:33b": null,
+    "qwen3.6:27b-coding-mxfp8": null
+  },
+  "briefs": {
+    "single": {
+      "text": "ASSESSMENT OVERVIEW: The total unavoidable monthly housing cost is calculated by summing the Base Rent ($2,325) and all mandatory monthly fees. The mandatory fees identified are the Fiber Internet & Building Access fee ($75) and Valet Trash ($30). The sum of these mandatory costs is $2,430. This total remains below the stated maximum constraint of $2,550/month, satisfying the user's primary condition. Key facts: Base Rent: $2,325/month; Mandatory Fees (Internet + Trash): $105/month; Total Unavoidable Monthly Cost: $2,430/month.\nPOINTS OF NOTE: No concrete constraint violations flagged.\nSUGGESTED NEXT STEP: None required; stated constraints appear satisfied.",
+      "words": 94
+    },
+    "consensus": {
+      "raw": {
+        "overview": "The advisors show strong consensus regarding the financial viability of the proposed housing arrangement relative to the stated constraint. All three assessments confirm that the total unavoidable monthly housing cost remains comfortably below the $2,550 maximum limit. The analysis consistently focuses on isolating only the mandatory components to ensure compliance with the user's primary financial boundary.",
+        "points_of_note": "All advisors utilized the same core figures: a Base Rent of $2,325, and mandatory fees totaling $105, derived from the $75 Fiber Internet & Building Access fee and the $30 Valet Trash fee. This calculation consistently yields a total unavoidable monthly cost of $2,430. Furthermore, all reports correctly excluded optional charges, such as the $95 garage or $40 storage, as non-mandatory, thereby reinforcing the adherence to the 'unavoidable' cost definition.",
+        "suggested_next_step": "Given the unanimous confirmation that the calculated unavoidable monthly cost of $2,430 does not breach the $2,550 constraint, the decision maker should proceed with the application."
+      },
+      "text": "ASSESSMENT OVERVIEW: The advisors show strong consensus regarding the financial viability of the proposed housing arrangement relative to the stated constraint. All three assessments confirm that the total unavoidable monthly housing cost remains comfortably below the $2,550 maximum limit. The analysis consistently focuses on isolating only the mandatory components to ensure compliance with the user's primary financial boundary.\nPOINTS OF NOTE: All advisors utilized the same core figures: a Base Rent of $2,325, and mandatory fees totaling $105, derived from the $75 Fiber Internet & Building Access fee and the $30 Valet Trash fee. This calculation consistently yields a total unavoidable monthly cost of $2,430. Furthermore, all reports correctly excluded optional charges, such as the $95 garage or $40 storage, as non-mandatory, thereby reinforcing the adherence to the 'unavoidable' cost definition.\nSUGGESTED NEXT STEP: Given the unanimous confirmation that the calculated unavoidable monthly cost of $2,430 does not breach the $2,550 constraint, the decision maker should proceed with the application.",
+      "words": 160,
+      "meta": {
+        "prompt_tokens": 1031,
+        "output_tokens": 243,
+        "seconds": 10.23,
+        "repaired": false
+      }
+    },
+    "crux": {
+      "raw": {
+        "shared_ground": [
+          "The base rent is consistently identified as $2,325/month.",
+          "The total unavoidable monthly cost, including mandatory fees, is calculated at $2,430/month."
+        ],
+        "cruxes": [],
+        "unverified_premises": [],
+        "decisive_check": "None required; all advisors concur stated constraints are satisfied."
+      },
+      "text": "ASSESSMENT OVERVIEW: The base rent is consistently identified as $2,325/month. The total unavoidable monthly cost, including mandatory fees, is calculated at $2,430/month.\nPOINTS OF NOTE: No concrete disagreements or constraint violations flagged across advisors.\nSUGGESTED NEXT STEP: None required; all advisors concur stated constraints are satisfied.",
+      "words": 46,
+      "meta": {
+        "prompt_tokens": 1179,
+        "output_tokens": 95,
+        "seconds": 5.72,
+        "repaired": false
+      }
+    }
+  },
+  "crux_survived": null,
+  "decisions": {
+    "raw": {
+      "output": {
+        "primary_reason": "Base rent $2,325 plus mandatory fees $105 (Internet/Access $75 + Valet Trash $30) totals $2,430, which is under the $2,550 limit; optional fees do not affect this calculation.",
+        "target_clause_or_metric": "none",
+        "action": "proceed",
+        "confidence": 100,
+        "brief_endorsement": null
+      },
+      "meta": {
+        "prompt_tokens": 652,
+        "output_tokens": 109,
+        "seconds": 4.17,
+        "repaired": false
+      },
+      "hold": false,
+      "verified_catch": null,
+      "untargeted_hold": null,
+      "false_alarm": false
+    },
+    "single": {
+      "output": {
+        "primary_reason": "The total unavoidable monthly cost of $2,430 is below the $2,550 constraint, and the listed rent of $2,325 plus mandatory fees of $105 confirms compliance.",
+        "target_clause_or_metric": "Base Rent $2,325 + Fiber Internet & Building Access $75 + Valet Trash $30 = $2,430 (Schedule 1, Section 2)",
+        "action": "proceed",
+        "confidence": 95,
+        "brief_endorsement": 5
+      },
+      "meta": {
+        "prompt_tokens": 843,
+        "output_tokens": 138,
+        "seconds": 4.59,
+        "repaired": false
+      },
+      "hold": false,
+      "verified_catch": null,
+      "untargeted_hold": null,
+      "false_alarm": false
+    },
+    "consensus": {
+      "output": {
+        "primary_reason": "The base rent of $2,325 plus the mandatory fees of $75 (Fiber Internet & Building Access) and $30 (Valet Trash) total $2,430, which is under the $2,550 limit, and optional fees are correctly excluded.",
+        "target_clause_or_metric": "Schedule 1: Fiber Internet & Building Access fee $75/month and Valet Trash fee $30/month (total $105 mandatory fees)",
+        "action": "proceed",
+        "confidence": 100,
+        "brief_endorsement": 5
+      },
+      "meta": {
+        "prompt_tokens": 907,
+        "output_tokens": 150,
+        "seconds": 5.36,
+        "repaired": false
+      },
+      "hold": false,
+      "verified_catch": null,
+      "untargeted_hold": null,
+      "false_alarm": false
+    },
+    "crux": {
+      "output": {
+        "primary_reason": "The base rent of $2,325/month plus the mandatory fees of $75 (Internet & Access) and $30 (Valet Trash) totals $2,430/month, which is under the $2,550/month limit. Optional fees are not included as they are not mandatory.",
+        "target_clause_or_metric": "Schedule 1 (Fiber Internet & Building Access $75/month, Valet Trash $30/month)",
+        "action": "proceed",
+        "confidence": 95,
+        "brief_endorsement": 5
+      },
+      "meta": {
+        "prompt_tokens": 740,
+        "output_tokens": 144,
+        "seconds": 4.98,
+        "repaired": false
+      },
+      "hold": false,
+      "verified_catch": null,
+      "untargeted_hold": null,
+      "false_alarm": false
+    }
+  }
+}

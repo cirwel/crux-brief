@@ -1,0 +1,29 @@
+{
+  "scenario_id": "S14",
+  "variant": "sound",
+  "domain": "procurement_handoffs",
+  "difficulty_tier": 3,
+  "model": "nemotron3:33b",
+  "seed": 1127,
+  "output": {
+    "summary": "The packet states a $21,000.00 USD PO ceiling for 500 units at $42.00 each. Calculated total (500 \u00d7 $42.00) equals exactly $21,000.00, which does not exceed the ceiling. All constraints align with the goal to approve payment only if USD payout \u2264 $21,000.00.",
+    "key_claims": [
+      "500 units \u00d7 $42.00 USD = $21,000.00 USD",
+      "PO ceiling is $21,000.00 USD",
+      "Settlement wire detail confirms $21,000.00 USD payment with no deductions"
+    ],
+    "recommendation": "proceed",
+    "risks_or_flaws": [
+      "none"
+    ],
+    "verification_question": "none",
+    "confidence": 100
+  },
+  "meta": {
+    "prompt_tokens": 653,
+    "output_tokens": 221,
+    "seconds": 9.22,
+    "repaired": false
+  },
+  "advisor_caught": null
+}

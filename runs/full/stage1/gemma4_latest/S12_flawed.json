@@ -1,0 +1,29 @@
+{
+  "scenario_id": "S12",
+  "variant": "flawed",
+  "domain": "leases",
+  "difficulty_tier": 1,
+  "model": "gemma4:latest",
+  "seed": 122,
+  "output": {
+    "summary": "The rent of $2,550/month is below the $2,700 maximum constraint. However, the telecommunications rider explicitly states the building shared Wi-Fi is capped at 50 Mbps download / 10 Mbps upload. This fails the primary requirement of supporting symmetrical >= 200 Mbps fiber internet for daily remote engineering needs.",
+    "key_claims": [
+      "Rent is $2,550/month, which is less than the $2,700 limit.",
+      "The required internet speed is symmetrical >= 200 Mbps.",
+      "The available internet speed is capped at 50 Mbps download / 10 Mbps upload."
+    ],
+    "recommendation": "hold_to_verify",
+    "risks_or_flaws": [
+      "The stated internet speed (50 Mbps down / 10 Mbps up) violates the required symmetrical >= 200 Mbps internet speed."
+    ],
+    "verification_question": "Does the 'High-speed building Wi-Fi included' statement override the explicit 50 Mbps download / 10 Mbps upload cap detailed in the Telecommunications Rider (Clause 6.1)?",
+    "confidence": 100
+  },
+  "meta": {
+    "prompt_tokens": 549,
+    "output_tokens": 279,
+    "seconds": 10.13,
+    "repaired": false
+  },
+  "advisor_caught": true
+}

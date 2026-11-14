@@ -1,0 +1,29 @@
+{
+  "scenario_id": "S04",
+  "variant": "sound",
+  "domain": "job_offers",
+  "difficulty_tier": 3,
+  "model": "nemotron3:33b",
+  "seed": 1107,
+  "output": {
+    "summary": "The grant's $400,000 valuation at $1.00/share for 400,000 shares meets the $280,000/4-year ($70,000/yr) equity floor. At the 409A common stock value of $0.82/share, the actual grant value is $328,000, still exceeding the $280,000 minimum. The 0.40% ownership (400,000/100M shares) ensures positive payout value in a $100M exit since 0.40% of $100M is $400,000, well above the $280,000 total required.",
+    "key_claims": [
+      "400,000 shares represent 0.40% of 100M fully diluted shares",
+      "Grant valued at $400,000 at $1.00/share Series C mark",
+      "409A valuation sets common stock fair market value at $0.82/share"
+    ],
+    "recommendation": "proceed",
+    "risks_or_flaws": [
+      "none"
+    ],
+    "verification_question": "none",
+    "confidence": 100
+  },
+  "meta": {
+    "prompt_tokens": 681,
+    "output_tokens": 305,
+    "seconds": 10.98,
+    "repaired": false
+  },
+  "advisor_caught": null
+}

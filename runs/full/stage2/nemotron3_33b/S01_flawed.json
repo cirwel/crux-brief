@@ -1,0 +1,59 @@
+{
+  "scenario_id": "S01",
+  "variant": "flawed",
+  "domain": "job_offers",
+  "difficulty_tier": 1,
+  "synth_model": "nemotron3:33b",
+  "k_spotted": 3,
+  "advisor_caught_by_model": {
+    "gemma4:latest": true,
+    "nemotron3:33b": true,
+    "qwen3.6:27b-coding-mxfp8": true
+  },
+  "briefs": {
+    "consensus": {
+      "raw": {
+        "overview": "All three advisors confirm the Year-1 realized gross compensation calculation of $215,000 (base $205,000 + guaranteed bonus $10,000 + $0 equity vesting) falls short of the $260,000 minimum requirement, with each explicitly identifying the zero Year-1 equity vesting as the core constraint violation.",
+        "points_of_note": "The consistent $215,000 figure across all assessments\u2014derived from $205,000 base, $10,000 guaranteed bonus, and 0% equity vesting\u2014directly breaches the $260,000 threshold, with Advisor 1 noting a $45,000 shortfall and Advisors 2 and 3 emphasizing the irrelevance of four-year averages or discretionary elements while confirming the 0% vesting schedule's validity.",
+        "suggested_next_step": "Verify the equity vesting schedule's 0% Year-1 allocation through Section 3.4 documentation to determine if renegotiation for partial vesting or base salary adjustment is feasible before proceeding."
+      },
+      "text": "ASSESSMENT OVERVIEW: All three advisors confirm the Year-1 realized gross compensation calculation of $215,000 (base $205,000 + guaranteed bonus $10,000 + $0 equity vesting) falls short of the $260,000 minimum requirement, with each explicitly identifying the zero Year-1 equity vesting as the core constraint violation.\nPOINTS OF NOTE: The consistent $215,000 figure across all assessments\u2014derived from $205,000 base, $10,000 guaranteed bonus, and 0% equity vesting\u2014directly breaches the $260,000 threshold, with Advisor 1 noting a $45,000 shortfall and Advisors 2 and 3 emphasizing the irrelevance of four-year averages or discretionary elements while confirming the 0% vesting schedule's validity.\nSUGGESTED NEXT STEP: Verify the equity vesting schedule's 0% Year-1 allocation through Section 3.4 documentation to determine if renegotiation for partial vesting or base salary adjustment is feasible before proceeding.",
+      "words": 127,
+      "meta": {
+        "prompt_tokens": 1471,
+        "output_tokens": 255,
+        "seconds": 6.56,
+        "repaired": false
+      }
+    },
+    "crux": {
+      "raw": {
+        "shared_ground": [
+          "Year-1 realized gross compensation must be >= $260,000",
+          "Base salary is $205,000 and guaranteed bonus is $10,000"
+        ],
+        "cruxes": [
+          {
+            "topic": "Equity vesting in Year 1",
+            "side_a": "0% equity vesting in Year 1 (Advisor 1, 2, 3)",
+            "side_b": "Potential renegotiation to include equity vesting in Year 1 (Advisor 1)",
+            "premise_at_stake": "Whether 0% vesting is absolute or negotiable for meeting the $260,000 threshold"
+          }
+        ],
+        "unverified_premises": [
+          "Whether the 0% equity vesting schedule is confirmed in Section 3.4",
+          "Whether the $400,000 RSU package includes any Year 1 portion"
+        ],
+        "decisive_check": "Can equity vesting be renegotiated to include Year 1 vesting or can base salary be increased to reach $260,000?"
+      },
+      "text": "ASSESSMENT OVERVIEW: Year-1 realized gross compensation must be >= $260,000 Base salary is $205,000 and guaranteed bonus is $10,000\nPOINTS OF NOTE: Disagreements: (1) Equity vesting in Year 1: Side A [0% equity vesting in Year 1 (Advisor 1, 2, 3)] vs. Side B [Potential renegotiation to include equity vesting in Year 1 (Advisor 1)] (at stake: Whether 0% vesting is absolute or negotiable for meeting the $260,000 threshold) Flagged issues: Whether the 0% equity vesting schedule is confirmed in Section 3.4; Whether the $400,000 RSU package includes any Year 1 portion\nSUGGESTED NEXT STEP: Can equity vesting be renegotiated to include Year 1 vesting or can base salary be increased to reach $260,000?",
+      "words": 114,
+      "meta": {
+        "prompt_tokens": 1640,
+        "output_tokens": 266,
+        "seconds": 10.5,
+        "repaired": false
+      }
+    }
+  }
+}

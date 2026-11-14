@@ -1,0 +1,29 @@
+{
+  "scenario_id": "S19",
+  "variant": "sound",
+  "domain": "operational_briefs",
+  "difficulty_tier": 3,
+  "model": "nemotron3:33b",
+  "seed": 1137,
+  "output": {
+    "summary": "The packet states 95.0% sensitivity and 99.4% specificity. With a 10.0% fraud base rate in live traffic (1,000 fraudulent/9,000 legitimate), the actual fraud capture rate is 95% of 1,000 = 950 fraudulent accounts. The false-positive rate is 0.6%, yielding 54 false positives (0.6% of 9,000). Total suspensions = 950 + 54 = 1,004. Fraud proportion = 950/1,004 \u2248 94.6%, which exceeds the 40% requirement. All constraints are satisfied.",
+    "key_claims": [
+      "95.0% sensitivity and 99.4% specificity",
+      "10.0% fraud base rate (1,000 fraudulent, 9,000 legitimate)",
+      "94.6% fraud proportion in suspensions (950 fraud / 1,004 total)"
+    ],
+    "recommendation": "proceed",
+    "risks_or_flaws": [
+      "none"
+    ],
+    "verification_question": "none",
+    "confidence": 100
+  },
+  "meta": {
+    "prompt_tokens": 641,
+    "output_tokens": 286,
+    "seconds": 10.87,
+    "repaired": false
+  },
+  "advisor_caught": null
+}

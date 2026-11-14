@@ -1,0 +1,29 @@
+{
+  "scenario_id": "S23",
+  "variant": "sound",
+  "domain": "operational_briefs",
+  "difficulty_tier": 3,
+  "model": "nemotron3:33b",
+  "seed": 1145,
+  "output": {
+    "summary": "The packet confirms a 9.3% ARPU lift ($4.48 vs $4.10) with p=0.004, exceeding the p<0.05 threshold. Sample sizes (10,000 vs 10,032) meet the intended 50/50 split over the full 14-day window with no early stopping, satisfying the pre-registered validity criteria. Telemetry shows no data collection issues, preserving statistical integrity.",
+    "key_claims": [
+      "ARPU lift of 9.3% with p=0.004 (meets p<0.05 requirement)",
+      "Final session counts: 10,000 (Control) vs 10,032 (Variant) maintaining intended 50/50 split",
+      "Full 14-day duration completed with zero early stopping as pre-registered"
+    ],
+    "recommendation": "proceed",
+    "risks_or_flaws": [
+      "none"
+    ],
+    "verification_question": "none",
+    "confidence": 100
+  },
+  "meta": {
+    "prompt_tokens": 621,
+    "output_tokens": 248,
+    "seconds": 8.5,
+    "repaired": false
+  },
+  "advisor_caught": null
+}

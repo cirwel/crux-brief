@@ -1,0 +1,29 @@
+{
+  "scenario_id": "S13",
+  "variant": "flawed",
+  "domain": "procurement_handoffs",
+  "difficulty_tier": 2,
+  "model": "qwen3.6:27b-coding-mxfp8",
+  "seed": 2124,
+  "output": {
+    "summary": "The vendor's SLA fails both user constraints. First, scheduled maintenance allows up to 8 hours (2 hours/week * 4 weeks) of downtime during US business hours, which exceeds the 60-minute monthly limit. Second, the service credit cap is 10% of the monthly fee, which is significantly below the required 50% reimbursement threshold for SLA breaches. Both critical constraints are violated.",
+    "key_claims": [
+      "Scheduled maintenance allows up to 8 hours of downtime per month during business hours",
+      "Service credit is capped at 10% of the monthly fee"
+    ],
+    "recommendation": "hold_to_verify",
+    "risks_or_flaws": [
+      "Scheduled maintenance exclusion (up to 8 hours/month) exceeds the 60-minute maximum permitted outage constraint",
+      "Service credit cap (10%) is less than the required 50% reimbursement threshold"
+    ],
+    "verification_question": "Can the vendor reduce scheduled maintenance windows to under 60 minutes total per month and increase the service credit to at least 50% of the monthly fee?",
+    "confidence": 100
+  },
+  "meta": {
+    "prompt_tokens": 572,
+    "output_tokens": 262,
+    "seconds": 50.21,
+    "repaired": false
+  },
+  "advisor_caught": true
+}

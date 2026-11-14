@@ -1,0 +1,148 @@
+{
+  "scenario_id": "S01",
+  "variant": "flawed",
+  "domain": "job_offers",
+  "difficulty_tier": 1,
+  "eval_model": "gemma4:latest",
+  "synth_model": "gemma4:latest",
+  "single_advisor_model": "gemma4:latest",
+  "k_spotted": 3,
+  "advisor_caught_by_model": {
+    "gemma4:latest": true,
+    "nemotron3:33b": true,
+    "qwen3.6:27b-coding-mxfp8": true
+  },
+  "briefs": {
+    "single": {
+      "text": "ASSESSMENT OVERVIEW: The user's constraint requires Year-1 realized gross compensation to be $\\ge$ $260,000. The components for Year-1 realization are the Base Salary, guaranteed Year-1 cash bonus, and Year-1 equity vesting. The Base Salary is $205,000. The guaranteed bonus is $10,000. The equity vesting in Year 1 is stated as 0%. Therefore, the total realized compensation is $205,000 + $10,000 + $0 = $215,000, which is less than the $260,000 minimum. Key facts: Base Salary: $205,000; Guaranteed Year-1 Bonus: $10,000; Year-1 Equity Vesting: 0%.\nPOINTS OF NOTE: The calculation for Year-1 realized gross compensation ($215,000) falls short of the required minimum of $260,000..\nSUGGESTED NEXT STEP: Does the 'Year-1 realized gross compensation' calculation include any portion of the $400,000 RSU package, or is the 0% vesting schedule absolute for the first 12 months?",
+      "words": 133
+    },
+    "consensus": {
+      "raw": {
+        "overview": "The advisors show strong consensus regarding the calculation of the Year-1 realized gross compensation. All three assessments confirm that based on the provided figures, the total realized compensation is $215,000, which falls short of the user's stated minimum threshold of $260,000. The core issue identified across all reports is the zero percentage of equity vesting scheduled for the first 12 months, which significantly impacts the total realized pay.",
+        "points_of_note": "The specific figures cited\u2014$205,000 base salary, $10,000 guaranteed bonus, and 0% Year-1 equity vesting\u2014are consistently used by all advisors to arrive at the $215,000 total. Advisor 2 correctly dismisses the $305,000 four-year average as irrelevant to the Year-1 constraint. The consensus points to the 0% vesting schedule as the primary driver of the shortfall, necessitating clarification on whether this schedule is absolute for the first year.",
+        "suggested_next_step": "Given the unanimous identification of a $45,000 gap between the calculated Year-1 pay ($215,000) and the required minimum ($260,000), the immediate next step must be to seek explicit confirmation on the equity vesting schedule, specifically asking if any portion of the RSU package can be adjusted or guaranteed to vest within the first 12 months to meet the $260,000 threshold."
+      },
+      "text": "ASSESSMENT OVERVIEW: The advisors show strong consensus regarding the calculation of the Year-1 realized gross compensation. All three assessments confirm that based on the provided figures, the total realized compensation is $215,000, which falls short of the user's stated minimum threshold of $260,000. The core issue identified across all reports is the zero percentage of equity vesting scheduled for the first 12 months, which significantly impacts the total realized pay.\nPOINTS OF NOTE: The specific figures cited\u2014$205,000 base salary, $10,000 guaranteed bonus, and 0% Year-1 equity vesting\u2014are consistently used by all advisors to arrive at the $215,000 total. Advisor 2 correctly dismisses the $305,000 four-year average as irrelevant to the Year-1 constraint. The consensus points to the 0% vesting schedule as the primary driver of the shortfall, necessitating clarification on whether this schedule is absolute for the first year.\nSUGGESTED NEXT STEP: Given the unanimous identification of a $45,000 gap between the calculated Year-1 pay ($215,000) and the required minimum ($260,000), the immediate next step must be to seek explicit confirmation on the equity vesting schedule, specifically asking if any portion of the RSU package can be adjusted or guaranteed to vest within the first 12 months to meet the $260,000 threshold.",
+      "words": 202,
+      "meta": {
+        "prompt_tokens": 1320,
+        "output_tokens": 336,
+        "seconds": 12.14,
+        "repaired": false
+      }
+    },
+    "crux": {
+      "raw": {
+        "shared_ground": [
+          "The required Year-1 realized gross compensation is $\\ge$ $260,000.",
+          "The calculated Year-1 realized compensation based on current terms is $215,000 ($205k base + $10k bonus + $0 equity)."
+        ],
+        "cruxes": [
+          {
+            "topic": "Year-1 Equity Vesting",
+            "side_a": "0% vesting in Year 1 (Advisor 1, 2, 3)",
+            "side_b": "Potential for renegotiation or inclusion of some equity vesting (Advisor 1, Advisor 3)",
+            "premise_at_stake": "Whether the 0% Year-1 vesting schedule is absolute or negotiable."
+          }
+        ],
+        "unverified_premises": [
+          "The exact terms governing the Year-1 equity vesting schedule (i.e., if 0% is absolute or subject to change).",
+          "Whether the base salary or guaranteed bonus can be increased to bridge the $45,000 gap."
+        ],
+        "decisive_check": "Confirmation of the Year-1 equity vesting schedule and the feasibility of increasing the total Year-1 realized compensation to meet or exceed $260,000."
+      },
+      "text": "ASSESSMENT OVERVIEW: The required Year-1 realized gross compensation is $\\ge$ $260,000. The calculated Year-1 realized compensation based on current terms is $215,000 ($205k base + $10k bonus + $0 equity).\nPOINTS OF NOTE: Disagreements: (1) Year-1 Equity Vesting: Side A [0% vesting in Year 1 (Advisor 1, 2, 3)] vs. Side B [Potential for renegotiation or inclusion of some equity vesting (Advisor 1, Advisor 3)] (at stake: Whether the 0% Year-1 vesting schedule is absolute or negotiable.) Flagged issues: The exact terms governing the Year-1 equity vesting schedule (i.e., if 0% is absolute or subject to change).; Whether the base salary or guaranteed bonus can be increased to bridge the $45,000 gap.\nSUGGESTED NEXT STEP: Confirmation of the Year-1 equity vesting schedule and the feasibility of increasing the total Year-1 realized compensation to meet or exceed $260,000.",
+      "words": 137,
+      "meta": {
+        "prompt_tokens": 1468,
+        "output_tokens": 299,
+        "seconds": 10.69,
+        "repaired": false
+      }
+    }
+  },
+  "crux_survived": {
+    "single": true,
+    "consensus": true,
+    "crux": true
+  },
+  "decisions": {
+    "raw": {
+      "output": {
+        "primary_reason": "The Year-1 realized compensation calculation is incomplete because the equity vesting in Year 1 is stated as 0%, which means the total realized compensation will be significantly below the $260,000 minimum threshold.",
+        "target_clause_or_metric": "Section 3.4: Four-year retention schedule vesting 0% in Year 1",
+        "action": "hold_to_verify",
+        "confidence": 100,
+        "brief_endorsement": null
+      },
+      "meta": {
+        "prompt_tokens": 659,
+        "output_tokens": 120,
+        "seconds": 6.86,
+        "repaired": false
+      },
+      "hold": true,
+      "verified_catch": true,
+      "untargeted_hold": false,
+      "false_alarm": null
+    },
+    "single": {
+      "output": {
+        "primary_reason": "The pre-decision brief clearly calculates the Year-1 realized compensation as $215,000 ($205k base + $10k bonus + $0 equity), which fails to meet the required minimum of $260,000. The discrepancy hinges on the Year-1 equity vesting, which is stated as 0% in the packet.",
+        "target_clause_or_metric": "Section 3.4: Four-year retention schedule vesting 0% in Year 1",
+        "action": "hold_to_verify",
+        "confidence": 100,
+        "brief_endorsement": 5
+      },
+      "meta": {
+        "prompt_tokens": 933,
+        "output_tokens": 154,
+        "seconds": 2.93,
+        "repaired": false
+      },
+      "hold": true,
+      "verified_catch": true,
+      "untargeted_hold": false,
+      "false_alarm": null
+    },
+    "consensus": {
+      "output": {
+        "primary_reason": "The packet fails to meet the constraint because the Year-1 realized compensation calculation ($205,000 base + $10,000 bonus + 0% equity vesting = $215,000) is significantly below the required $260,000 minimum.",
+        "target_clause_or_metric": "Section 3.4: Four-year retention schedule vesting 0% in Year 1",
+        "action": "hold_to_verify",
+        "confidence": 100,
+        "brief_endorsement": 5
+      },
+      "meta": {
+        "prompt_tokens": 979,
+        "output_tokens": 140,
+        "seconds": 7.01,
+        "repaired": false
+      },
+      "hold": true,
+      "verified_catch": true,
+      "untargeted_hold": false,
+      "false_alarm": null
+    },
+    "crux": {
+      "output": {
+        "primary_reason": "The packet explicitly states that Year-1 equity vesting is 0% (Section 3.4), and the Pre-Decision Brief confirms this, leading to a calculated Year-1 realized compensation of $215,000, which falls short of the required $260,000 constraint.",
+        "target_clause_or_metric": "Section 3.4 (Vesting Schedule: 0% in Year 1)",
+        "action": "hold_to_verify",
+        "confidence": 100,
+        "brief_endorsement": 5
+      },
+      "meta": {
+        "prompt_tokens": 898,
+        "output_tokens": 139,
+        "seconds": 7.75,
+        "repaired": false
+      },
+      "hold": true,
+      "verified_catch": true,
+      "untargeted_hold": false,
+      "false_alarm": null
+    }
+  }
+}

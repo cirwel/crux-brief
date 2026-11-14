@@ -1,0 +1,30 @@
+{
+  "scenario_id": "S23",
+  "variant": "flawed",
+  "domain": "operational_briefs",
+  "difficulty_tier": 3,
+  "model": "nemotron3:33b",
+  "seed": 1144,
+  "output": {
+    "summary": "The packet confirms a statistically significant ARPU lift (p=0.03 < 0.05) with 11.0% increase from $4.10 to $4.55, satisfying the primary constraint. However, the experiment was halted early after 10,000 control sessions and 8,380 variant sessions (18,380 total), violating the pre-registered 14-day window and 50/50 split requirement, creating a validity risk despite the p-value.",
+    "key_claims": [
+      "Control ARPU $4.10 vs. Variant ARPU $4.55 (+11.0%, p=0.03)",
+      "10,000 control sessions vs. 8,380 variant sessions (18,380 total)",
+      "Experiment halted on Day 5 instead of 14-day window"
+    ],
+    "recommendation": "hold_to_verify",
+    "risks_or_flaws": [
+      "Early stopping violates pre-registered 14-day window and 50/50 split requirement",
+      "1,600 low-intent mobile visitors excluded due to redirect timeout, potentially biasing sample"
+    ],
+    "verification_question": "Does early stopping at Day 5 with unequal session counts (10,000 vs 8,380) invalidate statistical significance despite p<0.05?",
+    "confidence": 85
+  },
+  "meta": {
+    "prompt_tokens": 638,
+    "output_tokens": 332,
+    "seconds": 10.9,
+    "repaired": false
+  },
+  "advisor_caught": true
+}

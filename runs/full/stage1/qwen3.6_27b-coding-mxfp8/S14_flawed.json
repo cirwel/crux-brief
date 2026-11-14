@@ -1,0 +1,29 @@
+{
+  "scenario_id": "S14",
+  "variant": "flawed",
+  "domain": "procurement_handoffs",
+  "difficulty_tier": 3,
+  "model": "qwen3.6:27b-coding-mxfp8",
+  "seed": 2126,
+  "output": {
+    "summary": "The user's constraint requires the total USD bank debit to not exceed $21,000.00. The packet states the invoice is 21,000.00 EUR. Using the provided spot rate of 1.14 USD/EUR, the USD cost is calculated as 21,000 * 1.14 = $23,940.00. This amount significantly exceeds the $21,000.00 ceiling. Although the unit price and quantity match the PO, the currency conversion results in a violation of the explicit financial constraint.",
+    "key_claims": [
+      "Invoice amount: 21,000.00 EUR",
+      "Calculated USD cost: $23,940.00 (21,000 EUR * 1.14)",
+      "Constraint ceiling: $21,000.00 USD"
+    ],
+    "recommendation": "hold_to_verify",
+    "risks_or_flaws": [
+      "The calculated USD payout of $23,940.00 exceeds the $21,000.00 Purchase Order ceiling."
+    ],
+    "verification_question": "Does the $23,940.00 USD settlement amount violate the strict $21,000.00 USD cap defined in the user constraints?",
+    "confidence": 100
+  },
+  "meta": {
+    "prompt_tokens": 603,
+    "output_tokens": 327,
+    "seconds": 55.1,
+    "repaired": false
+  },
+  "advisor_caught": true
+}

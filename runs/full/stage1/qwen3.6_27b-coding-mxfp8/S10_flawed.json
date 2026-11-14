@@ -1,0 +1,28 @@
+{
+  "scenario_id": "S10",
+  "variant": "flawed",
+  "domain": "leases",
+  "difficulty_tier": 3,
+  "model": "qwen3.6:27b-coding-mxfp8",
+  "seed": 2118,
+  "output": {
+    "summary": "The user intends to sublease 40% of the space in Month 3 while maintaining the remaining 60% for the full 36-month term. The lease term matches the 36-month requirement. However, Clause 12.4 grants the Landlord an absolute unilateral Recapture Option to terminate the *entire* Lease immediately upon receiving a sublease notice. This directly violates the constraint to keep the remaining 60% occupancy intact for the full term, as the Landlord could terminate the whole agreement, forcing the user out of their headquarters space.",
+    "key_claims": [
+      "Lease term is 36 months, matching user requirement.",
+      "Clause 12.4 allows Landlord to terminate the entire lease immediately upon sublease notice."
+    ],
+    "recommendation": "hold_to_verify",
+    "risks_or_flaws": [
+      "Clause 12.4's Recapture Option allows the Landlord to terminate the entire lease, violating the constraint to maintain 60% occupancy for the full 36-month term."
+    ],
+    "verification_question": "Can the Landlord's Recapture Option be waived or limited to only the subleased portion to ensure the remaining 60% remains secure for the full term?",
+    "confidence": 100
+  },
+  "meta": {
+    "prompt_tokens": 536,
+    "output_tokens": 292,
+    "seconds": 63.03,
+    "repaired": false
+  },
+  "advisor_caught": true
+}

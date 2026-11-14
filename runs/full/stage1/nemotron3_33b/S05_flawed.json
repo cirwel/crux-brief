@@ -1,0 +1,30 @@
+{
+  "scenario_id": "S05",
+  "variant": "flawed",
+  "domain": "job_offers",
+  "difficulty_tier": 2,
+  "model": "nemotron3:33b",
+  "seed": 1108,
+  "output": {
+    "summary": "The PIIA Clause 8.1 assigns all rights to software related to distributed tracing/observability created during employment, regardless of hours or hardware. TraceLite, an existing Apache-2.0 library maintained off-hours on personal hardware, falls under this scope. Clause 8.3's 'None' exclusion is pending review with no state carve-out, and post-start maintenance of prior codebases is explicitly covered by 8.1, creating a potential conflict with the user's goal.",
+    "key_claims": [
+      "PIIA Clause 8.1 assigns all rights to software related to distributed tracing/observability created during employment, regardless of hours or hardware",
+      "TraceLite is an existing Apache-2.0 library maintained off-hours on personal hardware",
+      "Post-start maintenance of prior codebases falls under Clause 8.1"
+    ],
+    "recommendation": "hold_to_verify",
+    "risks_or_flaws": [
+      "PIIA Clause 8.1 explicitly claims ownership of TraceLite and personal off-hours tools related to distributed tracing/observability",
+      "Exhibit A's 'None' exclusion is pending review with no state carve-out, creating uncertainty about prior inventions"
+    ],
+    "verification_question": "Does 'during employment' in Clause 8.1 include off-hours work on personal hardware for projects related to distributed tracing/observability?",
+    "confidence": 95
+  },
+  "meta": {
+    "prompt_tokens": 687,
+    "output_tokens": 325,
+    "seconds": 12.04,
+    "repaired": false
+  },
+  "advisor_caught": true
+}

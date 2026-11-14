@@ -1,0 +1,143 @@
+{
+  "scenario_id": "S09",
+  "variant": "sound",
+  "domain": "leases",
+  "difficulty_tier": 2,
+  "eval_model": "gemma4:latest",
+  "synth_model": "nemotron3:33b",
+  "single_advisor_model": "qwen3.6:27b-coding-mxfp8",
+  "k_spotted": null,
+  "advisor_caught_by_model": {
+    "gemma4:latest": null,
+    "nemotron3:33b": null,
+    "qwen3.6:27b-coding-mxfp8": null
+  },
+  "briefs": {
+    "single": {
+      "text": "ASSESSMENT OVERVIEW: The user's constraint is a maximum liability of $2,000 for a 4-day holdover. The lease defines daily rent as Base ($5,400) plus Additional ($1,200), totaling $6,600 monthly. The daily rate is $6,600 / 30 = $220. The holdover penalty for the first 10 days is 125% of this daily rate. Calculation: $220 * 1.25 = $275 per day. For 4 days, the total liability is $275 * 4 = $1,100. Since $1,100 is well below the $2,000 limit, the constraint is satisfied. There are no hidden exclusions or arithmetic errors in the packet that violate the user's goal. Key facts: Total monthly rent is $6,600 ($5,400 Base + $1,200 Additional).; 4-day holdover liability calculates to $1,100 (125% of daily rate)..\nPOINTS OF NOTE: No concrete constraint violations flagged.\nSUGGESTED NEXT STEP: None required; stated constraints appear satisfied.",
+      "words": 139
+    },
+    "consensus": {
+      "raw": {
+        "overview": "All advisors concur that the 4-day holdover liability must be evaluated against the $2,000 exposure cap, with calculations based on a $6,600 monthly rent ($5,400 base + $1,200 additional) yielding a $220 daily rate. The core issue centers on whether the 125% holdover rate applies to the full daily amount or a prorated base, with Advisor 1 flagging a $3,300 liability while Advisors 2 and 3 confirm $1,100. No constraint breaches were identified as all assessments validate the penalty calculation under the lease terms.",
+        "points_of_note": "Advisor 1's $3,300 calculation suggests a potential arithmetic discrepancy or misinterpretation of the holdover rate application, questioning whether the 125% rate applies to the full $220 daily rate or a prorated base; Advisors 2 and 3 resolve this by consistently applying 125% to the $220 daily rate ($275/day), yielding $1,100 for 4 days\u2014well below the $2,000 limit\u2014with no cited lease provisions or arithmetic errors invalidating this approach.",
+        "suggested_next_step": "Proceed with signing, as all advisors confirm the $1,100 4-day holdover liability remains within the $2,000 exposure constraint with no material issues flagged."
+      },
+      "text": "ASSESSMENT OVERVIEW: All advisors concur that the 4-day holdover liability must be evaluated against the $2,000 exposure cap, with calculations based on a $6,600 monthly rent ($5,400 base + $1,200 additional) yielding a $220 daily rate. The core issue centers on whether the 125% holdover rate applies to the full daily amount or a prorated base, with Advisor 1 flagging a $3,300 liability while Advisors 2 and 3 confirm $1,100. No constraint breaches were identified as all assessments validate the penalty calculation under the lease terms.\nPOINTS OF NOTE: Advisor 1's $3,300 calculation suggests a potential arithmetic discrepancy or misinterpretation of the holdover rate application, questioning whether the 125% rate applies to the full $220 daily rate or a prorated base; Advisors 2 and 3 resolve this by consistently applying 125% to the $220 daily rate ($275/day), yielding $1,100 for 4 days\u2014well below the $2,000 limit\u2014with no cited lease provisions or arithmetic errors invalidating this approach.\nSUGGESTED NEXT STEP: Proceed with signing, as all advisors confirm the $1,100 4-day holdover liability remains within the $2,000 exposure constraint with no material issues flagged.",
+      "words": 182,
+      "meta": {
+        "prompt_tokens": 1306,
+        "output_tokens": 326,
+        "seconds": 11.02,
+        "repaired": false
+      }
+    },
+    "crux": {
+      "raw": {
+        "shared_ground": [
+          "Total monthly rent is $6,600 ($5,400 base + $1,200 additional)",
+          "Daily rate is $220 ($6,600 \u00f7 30 days)"
+        ],
+        "cruxes": [
+          {
+            "topic": "Holdover liability calculation",
+            "side_a": "Advisor 1: $6,600 * 1.25 * 4 = $3,300 liability",
+            "side_b": "Advisors 2 & 3: $220 * 1.25 * 4 = $1,100 liability",
+            "premise_at_stake": "Whether the daily rate is multiplied by 1.25 for the first 10 days"
+          }
+        ],
+        "unverified_premises": [
+          "Whether the lease contains a cap on the 125% holdover rate for the first 10 days"
+        ],
+        "decisive_check": "Verify if the lease specifies a capped holdover rate for the first 10 days"
+      },
+      "text": "ASSESSMENT OVERVIEW: Total monthly rent is $6,600 ($5,400 base + $1,200 additional) Daily rate is $220 ($6,600 \u00f7 30 days)\nPOINTS OF NOTE: Disagreements: (1) Holdover liability calculation: Side A [Advisor 1: $6,600 * 1.25 * 4 = $3,300 liability] vs. Side B [Advisors 2 & 3: $220 * 1.25 * 4 = $1,100 liability] (at stake: Whether the daily rate is multiplied by 1.25 for the first 10 days) Flagged issues: Whether the lease contains a cap on the 125% holdover rate for the first 10 days\nSUGGESTED NEXT STEP: Verify if the lease specifies a capped holdover rate for the first 10 days",
+      "words": 105,
+      "meta": {
+        "prompt_tokens": 1475,
+        "output_tokens": 250,
+        "seconds": 10.26,
+        "repaired": false
+      }
+    }
+  },
+  "crux_survived": null,
+  "decisions": {
+    "raw": {
+      "output": {
+        "primary_reason": "The packet details the holdover provision but does not provide the specific daily rate calculation needed to determine if a 4-day overrun exceeds the $2,000 limit.",
+        "target_clause_or_metric": "Clause 19",
+        "action": "hold_to_verify",
+        "confidence": 100,
+        "brief_endorsement": null
+      },
+      "meta": {
+        "prompt_tokens": 567,
+        "output_tokens": 96,
+        "seconds": 4.06,
+        "repaired": false
+      },
+      "hold": true,
+      "verified_catch": null,
+      "untargeted_hold": null,
+      "false_alarm": true
+    },
+    "single": {
+      "output": {
+        "primary_reason": "The Pre-Decision Brief accurately calculates the 4-day holdover cost at $1,100, which is below the stated maximum liability of $2,000, thus satisfying the constraint.",
+        "target_clause_or_metric": "none",
+        "action": "proceed",
+        "confidence": 100,
+        "brief_endorsement": 5
+      },
+      "meta": {
+        "prompt_tokens": 836,
+        "output_tokens": 97,
+        "seconds": 3.31,
+        "repaired": false
+      },
+      "hold": false,
+      "verified_catch": null,
+      "untargeted_hold": null,
+      "false_alarm": false
+    },
+    "consensus": {
+      "output": {
+        "primary_reason": "The PRE-DECISION BRIEF clarifies the calculation, showing that the 4-day holdover liability is calculated at $275/day (125% of the $220 daily rate) resulting in a $1,100 total, which is below the $2,000 constraint. The calculation method is consistent across multiple advisors and does not violate the stated constraint.",
+        "target_clause_or_metric": "none",
+        "action": "proceed",
+        "confidence": 100,
+        "brief_endorsement": 5
+      },
+      "meta": {
+        "prompt_tokens": 876,
+        "output_tokens": 136,
+        "seconds": 6.17,
+        "repaired": false
+      },
+      "hold": false,
+      "verified_catch": null,
+      "untargeted_hold": null,
+      "false_alarm": false
+    },
+    "crux": {
+      "output": {
+        "primary_reason": "The packet provides the formula for the holdover rate (125% of daily total Base + Additional Rent) but the PRE-DECISION BRIEF highlights a material discrepancy regarding how the daily rate is calculated and applied, specifically whether the daily rate is calculated on the total monthly rent or if the calculation method used by Side A ($3,300) or Side B ($1,100) is correct for the 4-day delay.",
+        "target_clause_or_metric": "Clause 19",
+        "action": "hold_to_verify",
+        "confidence": 100,
+        "brief_endorsement": 5
+      },
+      "meta": {
+        "prompt_tokens": 774,
+        "output_tokens": 153,
+        "seconds": 7.87,
+        "repaired": false
+      },
+      "hold": true,
+      "verified_catch": null,
+      "untargeted_hold": null,
+      "false_alarm": true
+    }
+  }
+}

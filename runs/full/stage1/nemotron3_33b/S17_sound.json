@@ -1,0 +1,31 @@
+{
+  "scenario_id": "S17",
+  "variant": "sound",
+  "domain": "procurement_handoffs",
+  "difficulty_tier": 1,
+  "model": "nemotron3:33b",
+  "seed": 1133,
+  "output": {
+    "summary": "Calculating all-in cost: 100 units \u00d7 ($1,080 + $70) = $115,000 for hardware + support. Adding $2,200 freight gives $117,200 total. This is under the $118,000 budget constraint. All components are accounted for with no hidden exclusions.",
+    "key_claims": [
+      "100 units \u00d7 $1,080 = $108,000 hardware subtotal",
+      "100 units \u00d7 $70 = $7,000 support bundle cost",
+      "Total before freight: $115,000",
+      "Freight cost: $2,200",
+      "Final total: $117,200"
+    ],
+    "recommendation": "proceed",
+    "risks_or_flaws": [
+      "none"
+    ],
+    "verification_question": "none",
+    "confidence": 100
+  },
+  "meta": {
+    "prompt_tokens": 625,
+    "output_tokens": 231,
+    "seconds": 8.1,
+    "repaired": false
+  },
+  "advisor_caught": null
+}

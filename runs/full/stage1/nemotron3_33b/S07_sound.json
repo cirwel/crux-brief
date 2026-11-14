@@ -1,0 +1,29 @@
+{
+  "scenario_id": "S07",
+  "variant": "sound",
+  "domain": "leases",
+  "difficulty_tier": 1,
+  "model": "nemotron3:33b",
+  "seed": 1113,
+  "output": {
+    "summary": "Base rent $2,325 plus mandatory fees $105 (internet $75 + valet trash $30) equals $2,430 total, which is under the $2,550 limit. Optional garage ($95) and storage ($40) are excluded as non-mandatory, so the unavoidable cost remains $2,430.",
+    "key_claims": [
+      "Base rent $2,325",
+      "Mandatory fees $105 (internet $75 + valet trash $30)",
+      "Total unavoidable cost $2,430"
+    ],
+    "recommendation": "proceed",
+    "risks_or_flaws": [
+      "none"
+    ],
+    "verification_question": "none",
+    "confidence": 100
+  },
+  "meta": {
+    "prompt_tokens": 620,
+    "output_tokens": 188,
+    "seconds": 9.68,
+    "repaired": false
+  },
+  "advisor_caught": null
+}

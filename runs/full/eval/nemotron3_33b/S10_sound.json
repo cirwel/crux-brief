@@ -1,0 +1,134 @@
+{
+  "scenario_id": "S10",
+  "variant": "sound",
+  "domain": "leases",
+  "difficulty_tier": 3,
+  "eval_model": "nemotron3:33b",
+  "synth_model": "gemma4:latest",
+  "single_advisor_model": "gemma4:latest",
+  "k_spotted": null,
+  "advisor_caught_by_model": {
+    "gemma4:latest": null,
+    "nemotron3:33b": null,
+    "qwen3.6:27b-coding-mxfp8": null
+  },
+  "briefs": {
+    "single": {
+      "text": "ASSESSMENT OVERVIEW: The packet confirms a 36-month term and a total area of 4,500 sq ft. Constraint 1 requires subleasing 40% in Month 3 while keeping 60% occupied. Clause 12.4 permits subleasing up to 45% to a partner, which covers the 40% requirement. The remaining 60% occupancy is maintained, satisfying the term requirement. The insurance clause is noted but does not affect the occupancy split. Key facts: Total Area: 4,500 sq ft; Permitted Sublease Max (Clause 12.4): 45% of Premises; Required Sublease Percentage: 40% of Premises.\nPOINTS OF NOTE: No concrete constraint violations flagged.\nSUGGESTED NEXT STEP: None required; stated constraints appear satisfied.",
+      "words": 103
+    },
+    "consensus": {
+      "raw": {
+        "overview": "The advisors show strong consensus, all recommending proceeding with the plan to sublease 40% of the floor space to a creditworthy partner starting in Month 3, while maintaining the remaining 60% headquarters occupancy for the full 36-month term. The core elements of the user's goal\u2014the 40% split, the 60% retention, and the 36-month duration\u2014are consistently supported by the reviewed documentation.",
+        "points_of_note": "All three assessments confirm that the proposed 40% sublease is permissible, as the underlying lease agreement permits subleasing up to 45% under Clause 12.4. Furthermore, the required 36-month term aligns perfectly with the lease provisions. The specific details cited, such as the 4,500 sq ft total area and the 45% cap, provide robust evidence that the 40% requirement does not breach any stated limitations.",
+        "suggested_next_step": "Given the unanimous recommendation and the consistent confirmation that the 40% sublease within a 36-month term adheres to the lease's 45% sublease cap, the decision maker should proceed with the subleasing arrangement."
+      },
+      "text": "ASSESSMENT OVERVIEW: The advisors show strong consensus, all recommending proceeding with the plan to sublease 40% of the floor space to a creditworthy partner starting in Month 3, while maintaining the remaining 60% headquarters occupancy for the full 36-month term. The core elements of the user's goal\u2014the 40% split, the 60% retention, and the 36-month duration\u2014are consistently supported by the reviewed documentation.\nPOINTS OF NOTE: All three assessments confirm that the proposed 40% sublease is permissible, as the underlying lease agreement permits subleasing up to 45% under Clause 12.4. Furthermore, the required 36-month term aligns perfectly with the lease provisions. The specific details cited, such as the 4,500 sq ft total area and the 45% cap, provide robust evidence that the 40% requirement does not breach any stated limitations.\nSUGGESTED NEXT STEP: Given the unanimous recommendation and the consistent confirmation that the 40% sublease within a 36-month term adheres to the lease's 45% sublease cap, the decision maker should proceed with the subleasing arrangement.",
+      "words": 164,
+      "meta": {
+        "prompt_tokens": 947,
+        "output_tokens": 273,
+        "seconds": 10.56,
+        "repaired": false
+      }
+    },
+    "crux": {
+      "raw": {
+        "shared_ground": [
+          "The lease permits subleasing up to 45% (Clause 12.4).",
+          "All advisors confirm the user's goal of 40% sublease and 36-month term is achievable."
+        ],
+        "cruxes": [],
+        "unverified_premises": [],
+        "decisive_check": "None required; all advisors concur stated constraints are satisfied."
+      },
+      "text": "ASSESSMENT OVERVIEW: The lease permits subleasing up to 45% (Clause 12.4). All advisors confirm the user's goal of 40% sublease and 36-month term is achievable.\nPOINTS OF NOTE: No concrete disagreements or constraint violations flagged across advisors.\nSUGGESTED NEXT STEP: None required; all advisors concur stated constraints are satisfied.",
+      "words": 49,
+      "meta": {
+        "prompt_tokens": 1095,
+        "output_tokens": 102,
+        "seconds": 4.98,
+        "repaired": false
+      }
+    }
+  },
+  "crux_survived": null,
+  "decisions": {
+    "raw": {
+      "output": {
+        "primary_reason": "The lease permits subleasing up to 45% of the floor, which comfortably covers the required 40% sublease while preserving the 60% occupancy for the full 36-month term.",
+        "target_clause_or_metric": "Clause 12.4",
+        "action": "proceed",
+        "confidence": 100,
+        "brief_endorsement": null
+      },
+      "meta": {
+        "prompt_tokens": 623,
+        "output_tokens": 101,
+        "seconds": 3.84,
+        "repaired": false
+      },
+      "hold": false,
+      "verified_catch": null,
+      "untargeted_hold": null,
+      "false_alarm": false
+    },
+    "single": {
+      "output": {
+        "primary_reason": "The packet confirms Clause 12.4 permits subleasing up to 45% of the 4,500 sq ft floor, which satisfies the 40% sublease requirement in Month 3 while preserving 60% occupancy for the full 36-month term.",
+        "target_clause_or_metric": "Clause 12.4",
+        "action": "proceed",
+        "confidence": 95,
+        "brief_endorsement": 5
+      },
+      "meta": {
+        "prompt_tokens": 817,
+        "output_tokens": 119,
+        "seconds": 4.05,
+        "repaired": false
+      },
+      "hold": false,
+      "verified_catch": null,
+      "untargeted_hold": null,
+      "false_alarm": false
+    },
+    "consensus": {
+      "output": {
+        "primary_reason": "The lease permits subleasing up to 45% of the floor area under Clause 12.4, which covers the 40% sublease requirement, and the 36-month term matches the lease duration, satisfying all constraints.",
+        "target_clause_or_metric": "Clause 12.4",
+        "action": "proceed",
+        "confidence": 95,
+        "brief_endorsement": 5
+      },
+      "meta": {
+        "prompt_tokens": 895,
+        "output_tokens": 108,
+        "seconds": 4.23,
+        "repaired": false
+      },
+      "hold": false,
+      "verified_catch": null,
+      "untargeted_hold": null,
+      "false_alarm": false
+    },
+    "crux": {
+      "output": {
+        "primary_reason": "The lease explicitly permits subleasing up to 45% of the floor area (Clause 12.4), which comfortably covers the required 40% sublease while preserving the 60% occupancy for the full 36-month term.",
+        "target_clause_or_metric": "Clause 12.4",
+        "action": "proceed",
+        "confidence": 95,
+        "brief_endorsement": 5
+      },
+      "meta": {
+        "prompt_tokens": 716,
+        "output_tokens": 109,
+        "seconds": 4.07,
+        "repaired": false
+      },
+      "hold": false,
+      "verified_catch": null,
+      "untargeted_hold": null,
+      "false_alarm": false
+    }
+  }
+}

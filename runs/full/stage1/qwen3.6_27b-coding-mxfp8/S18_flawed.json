@@ -1,0 +1,29 @@
+{
+  "scenario_id": "S18",
+  "variant": "flawed",
+  "domain": "procurement_handoffs",
+  "difficulty_tier": 3,
+  "model": "qwen3.6:27b-coding-mxfp8",
+  "seed": 2134,
+  "output": {
+    "summary": "The user requires a guaranteed rebate savings of at least $15,000 across the entire 950-to-1,050 unit demand band. The supplier's rebate structure is a cliff: $0 rebate for volumes under 1,000 units, and a $20/unit retroactive credit for volumes of 1,000 or more. If Q4 demand falls between 950 and 999 units (which is within the specified band), the rebate is $0. This $0 outcome violates the constraint that savings must be >= $15,000 even if demand lands anywhere in the band. Therefore, the guarantee is not met.",
+    "key_claims": [
+      "Rebate is $0 for volumes 950-999 units",
+      "Rebate is $20,000 for volumes >= 1,000 units",
+      "User requires >= $15,000 savings for ANY volume in 950-1,050 range"
+    ],
+    "recommendation": "hold_to_verify",
+    "risks_or_flaws": [
+      "Rebate fails to meet the >= $15,000 guarantee if Q4 volume is between 950 and 999 units, resulting in $0 savings instead of the required minimum."
+    ],
+    "verification_question": "Does the supplier offer a tiered or linear rebate structure that ensures at least $15,000 in savings for volumes below 1,000 units?",
+    "confidence": 100
+  },
+  "meta": {
+    "prompt_tokens": 570,
+    "output_tokens": 360,
+    "seconds": 75.1,
+    "repaired": false
+  },
+  "advisor_caught": true
+}

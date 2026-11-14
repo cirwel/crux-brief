@@ -1,0 +1,29 @@
+{
+  "scenario_id": "S04",
+  "variant": "flawed",
+  "domain": "job_offers",
+  "difficulty_tier": 3,
+  "model": "gemma4:latest",
+  "seed": 106,
+  "output": {
+    "summary": "The required minimum equity value is $280,000 over 4 years. The recruiter values the grant at $400,000 total, which exceeds the minimum. However, the independent common stock valuation ($0.28/share) applied to the 400,000 shares yields a total value of $112,000, which is significantly below the $280,000 floor. Furthermore, the liquidation preference structure suggests the common stock payout could be zero in a $100M exit.",
+    "key_claims": [
+      "Total value based on 409A common stock valuation: $112,000",
+      "Required minimum equity value: $280,000",
+      "Liquidation preference: $82M participating preference ahead of common"
+    ],
+    "recommendation": "hold_to_verify",
+    "risks_or_flaws": [
+      "The calculated equity value based on the 409A common stock valuation ($112,000) fails to meet the required minimum floor of $280,000."
+    ],
+    "verification_question": "Does the $82M participating liquidation preference structure guarantee a positive payout for common stock in a $100M exit, or is the common stock payout zero?",
+    "confidence": 100
+  },
+  "meta": {
+    "prompt_tokens": 650,
+    "output_tokens": 322,
+    "seconds": 12.7,
+    "repaired": false
+  },
+  "advisor_caught": true
+}

@@ -1,0 +1,29 @@
+{
+  "scenario_id": "S10",
+  "variant": "flawed",
+  "domain": "leases",
+  "difficulty_tier": 3,
+  "model": "nemotron3:33b",
+  "seed": 1118,
+  "output": {
+    "summary": "The lease requires a 36-month term with $11,250/month rent. The user plans to sublease 40% (1,800 sq ft) of the 4,500 sq ft floor for 3 months, keeping 60% occupancy. Clause 12.4 grants the landlord an absolute, immediate recapture option upon any sublease notice, which directly conflicts with the user's need to maintain occupancy for the full term.",
+    "key_claims": [
+      "Floor area: 4,500 sq ft",
+      "Sublease 40% = 1,800 sq ft",
+      "Recapture option allows immediate termination upon any sublease notice"
+    ],
+    "recommendation": "hold_to_verify",
+    "risks_or_flaws": [
+      "Landlord's absolute recapture option upon any sublease notice violates the requirement to maintain 60% occupancy for the full 36-month term"
+    ],
+    "verification_question": "Does the landlord's absolute recapture option (Clause 12.4) permit the tenant to sublease 40% of the floor while retaining 60% occupancy for the entire 36-month term?",
+    "confidence": 100
+  },
+  "meta": {
+    "prompt_tokens": 602,
+    "output_tokens": 288,
+    "seconds": 10.51,
+    "repaired": false
+  },
+  "advisor_caught": true
+}

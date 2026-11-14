@@ -1,0 +1,28 @@
+{
+  "scenario_id": "S16",
+  "variant": "sound",
+  "domain": "procurement_handoffs",
+  "difficulty_tier": 3,
+  "model": "qwen3.6:27b-coding-mxfp8",
+  "seed": 2131,
+  "output": {
+    "summary": "The user requires a white-labeled product distributable to external clients. The packet confirms Buyer owns 100% of custom deliverables (Section 9.1). Crucially, Section 9.3 grants a perpetual, worldwide, transferable license for the Vendor's proprietary runtime with explicit rights to distribute and sublicense to external clients. This satisfies the white-labeling and sublicensing constraints. No hidden exclusions or missing premises are evident in the provided summary.",
+    "key_claims": [
+      "Buyer owns 100% of custom frontend dashboards, schemas, and REST endpoints.",
+      "Vendor grants perpetual, worldwide, transferable license for proprietary runtime with rights to distribute and sublicense to external clients."
+    ],
+    "recommendation": "proceed",
+    "risks_or_flaws": [
+      "none"
+    ],
+    "verification_question": "none",
+    "confidence": 100
+  },
+  "meta": {
+    "prompt_tokens": 533,
+    "output_tokens": 208,
+    "seconds": 47.44,
+    "repaired": false
+  },
+  "advisor_caught": null
+}

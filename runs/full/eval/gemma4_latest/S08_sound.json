@@ -1,0 +1,143 @@
+{
+  "scenario_id": "S08",
+  "variant": "sound",
+  "domain": "leases",
+  "difficulty_tier": 2,
+  "eval_model": "gemma4:latest",
+  "synth_model": "nemotron3:33b",
+  "single_advisor_model": "nemotron3:33b",
+  "k_spotted": null,
+  "advisor_caught_by_model": {
+    "gemma4:latest": null,
+    "nemotron3:33b": null,
+    "qwen3.6:27b-coding-mxfp8": null
+  },
+  "briefs": {
+    "single": {
+      "text": "ASSESSMENT OVERVIEW: The lease is a 12-month term ending Dec 31, requiring written non-renewal notice 45 days prior (by Dec 10). Month 10 sales results (available Nov 3) provide sufficient time to calculate and deliver notice, avoiding automatic renewal penalties. The landlord's 'simple 1-year pop-up lease' description aligns with the clause's month-to-month conversion after Month 12, confirming no penalty risk if notice is timely. Key facts: Non-renewal notice deadline: 45 days before Dec 31 (by Dec 10); Month 10 sales results available November 3, providing 38 days to deliver notice; Lease converts to month-to-month after Month 12 without renewal penalty.\nPOINTS OF NOTE: No concrete constraint violations flagged.\nSUGGESTED NEXT STEP: None required; stated constraints appear satisfied.",
+      "words": 117
+    },
+    "consensus": {
+      "raw": {
+        "overview": "All advisors confirm the lease is a 12-month term ending December 31, with Clause 14.2 requiring a 45-day written non-renewal notice to avoid automatic conversion to month-to-month terms. The user's goal to exit cleanly at Month 12 aligns with the lease's structure, as providing notice by the deadline ensures no multi-month renewal penalty, matching the landlord's 'simple 1-year pop-up' characterization.",
+        "points_of_note": "Advisor 1 flagged uncertainty about whether the 45-day notice *guarantees* no penalty beyond Month 12, noting the packet lacks explicit language waiving renewal penalties. Advisor 2 and 3 resolved this by confirming the lease converts to month-to-month (not auto-renewing) if notice is timely, with Advisor 3 specifying the deadline as Dec 10 and Advisor 2 aligning the notice window with Nov 3 sales data availability, showing no constraint breaches.",
+        "suggested_next_step": "Sign the lease immediately, as all advisors confirm the notice mechanics ensure clean exit at Month 12 without penalty when the 45-day notice is delivered by Dec 10, leveraging November 3 sales data for timely compliance."
+      },
+      "text": "ASSESSMENT OVERVIEW: All advisors confirm the lease is a 12-month term ending December 31, with Clause 14.2 requiring a 45-day written non-renewal notice to avoid automatic conversion to month-to-month terms. The user's goal to exit cleanly at Month 12 aligns with the lease's structure, as providing notice by the deadline ensures no multi-month renewal penalty, matching the landlord's 'simple 1-year pop-up' characterization.\nPOINTS OF NOTE: Advisor 1 flagged uncertainty about whether the 45-day notice *guarantees* no penalty beyond Month 12, noting the packet lacks explicit language waiving renewal penalties. Advisor 2 and 3 resolved this by confirming the lease converts to month-to-month (not auto-renewing) if notice is timely, with Advisor 3 specifying the deadline as Dec 10 and Advisor 2 aligning the notice window with Nov 3 sales data availability, showing no constraint breaches.\nSUGGESTED NEXT STEP: Sign the lease immediately, as all advisors confirm the notice mechanics ensure clean exit at Month 12 without penalty when the 45-day notice is delivered by Dec 10, leveraging November 3 sales data for timely compliance.",
+      "words": 173,
+      "meta": {
+        "prompt_tokens": 1287,
+        "output_tokens": 274,
+        "seconds": 11.75,
+        "repaired": false
+      }
+    },
+    "crux": {
+      "raw": {
+        "shared_ground": [
+          "Initial term is 12 months (Jan 1 to Dec 31)",
+          "Non-renewal notice required 45 days prior to expiration"
+        ],
+        "cruxes": [
+          {
+            "topic": "Notice mechanics and renewal penalty",
+            "side_a": "Clause 14.2 requires 45 days prior notice to avoid automatic renewal penalty (Advisor 1)",
+            "side_b": "Notice waives renewal penalty and enables clean exit at Month 12 (Advisor 2 & 3)",
+            "premise_at_stake": "Whether providing the 45-day notice explicitly waives the right to claim an automatic multi-month renewal penalty"
+          }
+        ],
+        "unverified_premises": [
+          "Does Clause 14.2 explicitly state that providing the 45-day notice waives any right to claim an automatic multi-month renewal penalty?"
+        ],
+        "decisive_check": "Confirm Clause 14.2's language on penalty waiver vs. notice requirement"
+      },
+      "text": "ASSESSMENT OVERVIEW: Initial term is 12 months (Jan 1 to Dec 31) Non-renewal notice required 45 days prior to expiration\nPOINTS OF NOTE: Disagreements: (1) Notice mechanics and renewal penalty: Side A [Clause 14.2 requires 45 days prior notice to avoid automatic renewal penalty (Advisor 1)] vs. Side B [Notice waives renewal penalty and enables clean exit at Month 12 (Advisor 2 & 3)] (at stake: Whether providing the 45-day notice explicitly waives the right to claim an automatic multi-month renewal penalty) Flagged issues: Does Clause 14.2 explicitly state that providing the 45-day notice waives any right to claim an automatic multi-month renewal penalty?\nSUGGESTED NEXT STEP: Confirm Clause 14.2's language on penalty waiver vs. notice requirement",
+      "words": 117,
+      "meta": {
+        "prompt_tokens": 1456,
+        "output_tokens": 233,
+        "seconds": 8.73,
+        "repaired": false
+      }
+    }
+  },
+  "crux_survived": null,
+  "decisions": {
+    "raw": {
+      "output": {
+        "primary_reason": "The lease explicitly details the non-renewal notice requirement (Clause 14.2), which requires notice 45 days before the end of Month 12, satisfying the need to exit cleanly.",
+        "target_clause_or_metric": "Clause 14.2",
+        "action": "proceed",
+        "confidence": 95,
+        "brief_endorsement": null
+      },
+      "meta": {
+        "prompt_tokens": 588,
+        "output_tokens": 98,
+        "seconds": 3.92,
+        "repaired": false
+      },
+      "hold": false,
+      "verified_catch": null,
+      "untargeted_hold": null,
+      "false_alarm": false
+    },
+    "single": {
+      "output": {
+        "primary_reason": "The Pre-Decision Brief confirms that the required non-renewal notice deadline (Dec 10) is achievable using the sales results available on November 3, thus satisfying the constraint of exiting cleanly at Month 12 without penalty.",
+        "target_clause_or_metric": "none",
+        "action": "proceed",
+        "confidence": 100,
+        "brief_endorsement": 5
+      },
+      "meta": {
+        "prompt_tokens": 782,
+        "output_tokens": 101,
+        "seconds": 3.53,
+        "repaired": false
+      },
+      "hold": false,
+      "verified_catch": null,
+      "untargeted_hold": null,
+      "false_alarm": false
+    },
+    "consensus": {
+      "output": {
+        "primary_reason": "The packet confirms the lease is for 12 months and Clause 14.2 details the non-renewal notice requirement, which aligns with the user's goal of exiting cleanly at Month 12. The Pre-Decision Brief clarifies that timely notice avoids automatic renewal penalties, addressing the core concern.",
+        "target_clause_or_metric": "Clause 14.2",
+        "action": "proceed",
+        "confidence": 95,
+        "brief_endorsement": 5
+      },
+      "meta": {
+        "prompt_tokens": 856,
+        "output_tokens": 120,
+        "seconds": 4.86,
+        "repaired": false
+      },
+      "hold": false,
+      "verified_catch": null,
+      "untargeted_hold": null,
+      "false_alarm": false
+    },
+    "crux": {
+      "output": {
+        "primary_reason": "The constraint requires confirming that the notice mechanics do not bind the user past Month 12, and the provided packet (Clause 14.2) only states the notice requirement, not whether providing it waives the penalty, which is the core uncertainty highlighted in the brief.",
+        "target_clause_or_metric": "Clause 14.2",
+        "action": "hold_to_verify",
+        "confidence": 100,
+        "brief_endorsement": 5
+      },
+      "meta": {
+        "prompt_tokens": 779,
+        "output_tokens": 119,
+        "seconds": 3.89,
+        "repaired": false
+      },
+      "hold": true,
+      "verified_catch": null,
+      "untargeted_hold": null,
+      "false_alarm": true
+    }
+  }
+}

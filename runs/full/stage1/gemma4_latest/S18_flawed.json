@@ -1,0 +1,29 @@
+{
+  "scenario_id": "S18",
+  "variant": "flawed",
+  "domain": "procurement_handoffs",
+  "difficulty_tier": 3,
+  "model": "gemma4:latest",
+  "seed": 134,
+  "output": {
+    "summary": "The user requires a guaranteed minimum rebate of $15,000 across the entire 950-to-1,050 unit demand band. The rebate structure mandates reaching 1,000 units to earn any credit. If demand is 999 units or less, the rebate is $0. Since the lower bound of the planning band (950 units) results in a $0 rebate, the stated constraint of guaranteeing >= $15,000 is violated.",
+    "key_claims": [
+      "The minimum required rebate savings is $15,000.",
+      "The rebate is $0 if Q4 volume is 999 units or fewer.",
+      "The planning band ranges from 950 to 1,050 units."
+    ],
+    "recommendation": "hold_to_verify",
+    "risks_or_flaws": [
+      "The rebate structure guarantees $0 savings if Q4 volume is 999 units or fewer, which violates the constraint requiring >= $15,000 savings across the entire 950-1,050 unit band."
+    ],
+    "verification_question": "What alternative rebate structure or minimum volume threshold must be secured to guarantee at least $15,000 in savings when Q4 demand is at the low end of the 950-unit band?",
+    "confidence": 100
+  },
+  "meta": {
+    "prompt_tokens": 583,
+    "output_tokens": 326,
+    "seconds": 11.01,
+    "repaired": false
+  },
+  "advisor_caught": true
+}

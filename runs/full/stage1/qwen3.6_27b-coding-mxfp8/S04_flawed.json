@@ -1,0 +1,30 @@
+{
+  "scenario_id": "S04",
+  "variant": "flawed",
+  "domain": "job_offers",
+  "difficulty_tier": 3,
+  "model": "qwen3.6:27b-coding-mxfp8",
+  "seed": 2106,
+  "output": {
+    "summary": "The user requires an independent common-stock equity value of at least $70,000/year ($280,000 total). The packet states a 409A independent common stock valuation of $0.28/share. With a grant of 400,000 shares, the total independent common value is 400,000 * $0.28 = $112,000. This total is significantly below the $280,000 floor. Additionally, the annualized value is $112,000 / 4 = $28,000/yr, which fails the $70,000/yr constraint. The preferred liquidation preference further jeopardizes payout in a $100M exit, but the primary failure is the gross undervaluation against the explicit floor.",
+    "key_claims": [
+      "Total independent common value: $112,000 (400,000 shares * $0.28/share)",
+      "Required independent common value: $280,000 ($70,000/yr * 4 years)",
+      "Constraint violation: $112,000 < $280,000"
+    ],
+    "recommendation": "hold_to_verify",
+    "risks_or_flaws": [
+      "The calculated independent common equity value ($112,000) is less than half of the required minimum ($280,000), violating the explicit financial floor.",
+      "The annualized independent common value ($28,000/yr) is well below the required $70,000/yr."
+    ],
+    "verification_question": "Can the equity grant be increased to approximately 1,000,000 shares to meet the $280,000 independent common value floor at the current $0.28/share valuation?",
+    "confidence": 100
+  },
+  "meta": {
+    "prompt_tokens": 632,
+    "output_tokens": 454,
+    "seconds": 80.1,
+    "repaired": false
+  },
+  "advisor_caught": true
+}

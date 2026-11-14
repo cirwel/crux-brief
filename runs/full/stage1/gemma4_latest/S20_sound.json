@@ -1,0 +1,29 @@
+{
+  "scenario_id": "S20",
+  "variant": "sound",
+  "domain": "operational_briefs",
+  "difficulty_tier": 2,
+  "model": "gemma4:latest",
+  "seed": 139,
+  "output": {
+    "summary": "The user's constraint requires scaling the paid acquisition budget only if at least 65% of newly activated accounts remain active at Day 90. The decision packet explicitly states the '90-Day Cohort Retention reached 69.0%,' which is above the 65% threshold. The calculation confirms 966 retained out of 1,400, yielding 69.0% retention, satisfying the primary condition for scaling.",
+    "key_claims": [
+      "90-Day Cohort Retention reached 69.0%",
+      "966 retained out of 1,400 Day-0 signups",
+      "The 69.0% retention rate exceeds the 65% scale threshold"
+    ],
+    "recommendation": "proceed",
+    "risks_or_flaws": [
+      "none"
+    ],
+    "verification_question": "none",
+    "confidence": 100
+  },
+  "meta": {
+    "prompt_tokens": 572,
+    "output_tokens": 224,
+    "seconds": 7.71,
+    "repaired": false
+  },
+  "advisor_caught": null
+}

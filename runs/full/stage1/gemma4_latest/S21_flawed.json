@@ -1,0 +1,29 @@
+{
+  "scenario_id": "S21",
+  "variant": "flawed",
+  "domain": "operational_briefs",
+  "difficulty_tier": 2,
+  "model": "gemma4:latest",
+  "seed": 140,
+  "output": {
+    "summary": "The user's primary constraint is that database-backed request p95 latency must not exceed 180 ms. The packet explicitly states that the p95 latency for the uncached database-query path rose from 165 ms (v3.1) to 248 ms (v3.2). Since 248 ms significantly exceeds the 180 ms threshold, the deployment cannot proceed based on the stated constraints, despite the overall mean latency improvement.",
+    "key_claims": [
+      "v3.2 database-query p95 latency is 248 ms.",
+      "The maximum allowable database-backed request p95 latency is 180 ms.",
+      "The observed p95 latency (248 ms) exceeds the constraint (180 ms)."
+    ],
+    "recommendation": "hold_to_verify",
+    "risks_or_flaws": [
+      "The stated database-backed request p95 latency of 248 ms exceeds the user's constraint of <= 180 ms."
+    ],
+    "verification_question": "Does the 248 ms p95 latency figure represent the true, unmitigated p95 for the database-backed path, or is there an alternative metric (e.g., median or 95th percentile excluding the ORM join impact) that satisfies the 180 ms limit?",
+    "confidence": 100
+  },
+  "meta": {
+    "prompt_tokens": 630,
+    "output_tokens": 330,
+    "seconds": 10.68,
+    "repaired": false
+  },
+  "advisor_caught": true
+}

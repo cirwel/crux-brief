@@ -1,0 +1,147 @@
+{
+  "scenario_id": "S12",
+  "variant": "flawed",
+  "domain": "leases",
+  "difficulty_tier": 1,
+  "eval_model": "gemma4:latest",
+  "synth_model": "nemotron3:33b",
+  "single_advisor_model": "qwen3.6:27b-coding-mxfp8",
+  "k_spotted": 3,
+  "advisor_caught_by_model": {
+    "gemma4:latest": true,
+    "nemotron3:33b": true,
+    "qwen3.6:27b-coding-mxfp8": true
+  },
+  "briefs": {
+    "single": {
+      "text": "ASSESSMENT OVERVIEW: The unit rent of $2,550 satisfies the <= $2,700 constraint. However, the telecommunications rider explicitly caps shared Wi-Fi at 50 Mbps download and 10 Mbps upload. This violates the user's strict requirement for symmetrical >= 200 Mbps fiber internet. Furthermore, the lease prohibits external fiber installation or cellular gateways, making it impossible to achieve the required bandwidth. The decision packet fails the primary connectivity constraint. Key facts: Rent is $2,550/month, which is within the $2,700 limit.; Internet is capped at 50 Mbps down / 10 Mbps up, failing the >= 200 Mbps symmetrical requirement.; External fiber installation is strictly prohibited, preventing any workaround for the bandwidth deficit..\nPOINTS OF NOTE: Internet speed (50/10 Mbps) is significantly below the required >= 200 Mbps symmetrical fiber speed.; Lease prohibits external fiber installation, making it impossible to meet the connectivity goal..\nSUGGESTED NEXT STEP: Is there any exception or alternative ISP option available that provides >= 200 Mbps symmetrical fiber, given the explicit prohibition on external installations?",
+      "words": 166
+    },
+    "consensus": {
+      "raw": {
+        "overview": "All three advisors confirm the unit's rent of $2,550/month meets the <= $2,700 constraint, but unanimously flag that the building's shared Wi-Fi (50/10 Mbps) fails the >= 200 Mbps symmetrical fiber requirement, with the lease explicitly prohibiting external fiber or cellular solutions to bridge the gap.",
+        "points_of_note": "The rent constraint is consistently satisfied across all assessments, but the internet speed requirement is universally identified as violated: Advisor 1 cites the 50/10 Mbps cap versus 200/200 Mbps need; Advisor 2 questions whether 'High-speed building Wi-Fi included' overrides the Telecommunications Rider's 50/10 Mbps cap; Advisor 3 confirms no workaround exists due to prohibited external installations, making the connectivity constraint materially unmet.",
+        "suggested_next_step": "Verify with the landlord or property manager whether any contractual exception, alternative ISP arrangement, or permitted infrastructure modification exists to fulfill the 200 Mbps symmetrical fiber requirement, as all advisors confirm the current provisions are insufficient."
+      },
+      "text": "ASSESSMENT OVERVIEW: All three advisors confirm the unit's rent of $2,550/month meets the <= $2,700 constraint, but unanimously flag that the building's shared Wi-Fi (50/10 Mbps) fails the >= 200 Mbps symmetrical fiber requirement, with the lease explicitly prohibiting external fiber or cellular solutions to bridge the gap.\nPOINTS OF NOTE: The rent constraint is consistently satisfied across all assessments, but the internet speed requirement is universally identified as violated: Advisor 1 cites the 50/10 Mbps cap versus 200/200 Mbps need; Advisor 2 questions whether 'High-speed building Wi-Fi included' overrides the Telecommunications Rider's 50/10 Mbps cap; Advisor 3 confirms no workaround exists due to prohibited external installations, making the connectivity constraint materially unmet.\nSUGGESTED NEXT STEP: Verify with the landlord or property manager whether any contractual exception, alternative ISP arrangement, or permitted infrastructure modification exists to fulfill the 200 Mbps symmetrical fiber requirement, as all advisors confirm the current provisions are insufficient.",
+      "words": 152,
+      "meta": {
+        "prompt_tokens": 1280,
+        "output_tokens": 247,
+        "seconds": 6.55,
+        "repaired": false
+      }
+    },
+    "crux": {
+      "raw": {
+        "shared_ground": [
+          "Rent is $2,550/month, which is below the $2,700 maximum constraint",
+          "The telecommunications rider explicitly caps shared Wi-Fi at 50 Mbps download / 10 Mbps upload"
+        ],
+        "cruxes": [
+          {
+            "topic": "Internet speed sufficiency",
+            "side_a": "Required symmetrical >= 200 Mbps fiber internet for remote engineering",
+            "side_b": "Building Wi-Fi capped at 50 Mbps down / 10 Mbps up, violating the 200 Mbps requirement",
+            "premise_at_stake": "Whether the capped Wi-Fi meets the symmetrical 200 Mbps fiber requirement"
+          }
+        ],
+        "unverified_premises": [
+          "Whether any provision allows separate fiber installation or external cellular gateway despite lease prohibitions"
+        ],
+        "decisive_check": "Is there any exception or alternative ISP option providing >= 200 Mbps symmetrical fiber despite covenant restrictions?"
+      },
+      "text": "ASSESSMENT OVERVIEW: Rent is $2,550/month, which is below the $2,700 maximum constraint The telecommunications rider explicitly caps shared Wi-Fi at 50 Mbps download / 10 Mbps upload\nPOINTS OF NOTE: Disagreements: (1) Internet speed sufficiency: Side A [Required symmetrical >= 200 Mbps fiber internet for remote engineering] vs. Side B [Building Wi-Fi capped at 50 Mbps down / 10 Mbps up, violating the 200 Mbps requirement] (at stake: Whether the capped Wi-Fi meets the symmetrical 200 Mbps fiber requirement) Flagged issues: Whether any provision allows separate fiber installation or external cellular gateway despite lease prohibitions\nSUGGESTED NEXT STEP: Is there any exception or alternative ISP option providing >= 200 Mbps symmetrical fiber despite covenant restrictions?",
+      "words": 115,
+      "meta": {
+        "prompt_tokens": 1449,
+        "output_tokens": 230,
+        "seconds": 5.68,
+        "repaired": false
+      }
+    }
+  },
+  "crux_survived": {
+    "single": true,
+    "consensus": true,
+    "crux": true
+  },
+  "decisions": {
+    "raw": {
+      "output": {
+        "primary_reason": "The packet violates the core constraint requiring symmetrical >= 200 Mbps fiber internet, as the provided Wi-Fi is capped at 50 Mbps download / 10 Mbps upload, and external fiber installation is prohibited.",
+        "target_clause_or_metric": "Clause 6.1: Tenant receives building shared Wi-Fi capped at 50 Mbps download / 10 Mbps upload. Outside fiber installation or external cellular gateways are strictly prohibited under facade and conduit covenants.",
+        "action": "hold_to_verify",
+        "confidence": 100,
+        "brief_endorsement": null
+      },
+      "meta": {
+        "prompt_tokens": 564,
+        "output_tokens": 143,
+        "seconds": 5.43,
+        "repaired": false
+      },
+      "hold": true,
+      "verified_catch": true,
+      "untargeted_hold": false,
+      "false_alarm": null
+    },
+    "single": {
+      "output": {
+        "primary_reason": "The packet violates the core constraint requiring symmetrical >= 200 Mbps fiber internet because the lease explicitly limits connectivity to shared Wi-Fi capped at 50 Mbps download / 10 Mbps upload, and prohibits external fiber installation.",
+        "target_clause_or_metric": "Clause 6.1: Tenant receives building shared Wi-Fi capped at 50 Mbps download / 10 Mbps upload. Outside fiber installation or external cellular gateways are strictly prohibited under facade and conduit covenants.",
+        "action": "hold_to_verify",
+        "confidence": 100,
+        "brief_endorsement": 5
+      },
+      "meta": {
+        "prompt_tokens": 810,
+        "output_tokens": 146,
+        "seconds": 5.6,
+        "repaired": false
+      },
+      "hold": true,
+      "verified_catch": true,
+      "untargeted_hold": false,
+      "false_alarm": null
+    },
+    "consensus": {
+      "output": {
+        "primary_reason": "The packet clearly violates the core constraint requiring symmetrical >= 200 Mbps fiber internet, as the lease specifies a shared Wi-Fi cap of 50 Mbps download / 10 Mbps upload and prohibits external installations. The rent constraint, however, is satisfied.",
+        "target_clause_or_metric": "Telecommunications Rider (Clause 6.1): Tenant receives building shared Wi-Fi capped at 50 Mbps download / 10 Mbps upload.",
+        "action": "hold_to_verify",
+        "confidence": 100,
+        "brief_endorsement": 5
+      },
+      "meta": {
+        "prompt_tokens": 795,
+        "output_tokens": 141,
+        "seconds": 4.29,
+        "repaired": false
+      },
+      "hold": true,
+      "verified_catch": true,
+      "untargeted_hold": false,
+      "false_alarm": null
+    },
+    "crux": {
+      "output": {
+        "primary_reason": "The packet explicitly states the shared Wi-Fi is capped at 50 Mbps download / 10 Mbps upload, which fails to meet the required symmetrical >= 200 Mbps fiber internet constraint. Furthermore, the lease prohibits external fiber installation.",
+        "target_clause_or_metric": "Clause 6.1: Tenant receives building shared Wi-Fi capped at 50 Mbps download / 10 Mbps upload. Outside fiber installation or external cellular gateways are strictly prohibited under facade and conduit covenants.",
+        "action": "hold_to_verify",
+        "confidence": 100,
+        "brief_endorsement": 5
+      },
+      "meta": {
+        "prompt_tokens": 744,
+        "output_tokens": 149,
+        "seconds": 4.87,
+        "repaired": false
+      },
+      "hold": true,
+      "verified_catch": true,
+      "untargeted_hold": false,
+      "false_alarm": null
+    }
+  }
+}

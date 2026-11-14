@@ -1,0 +1,148 @@
+{
+  "scenario_id": "S11",
+  "variant": "flawed",
+  "domain": "leases",
+  "difficulty_tier": 3,
+  "eval_model": "nemotron3:33b",
+  "synth_model": "gemma4:latest",
+  "single_advisor_model": "nemotron3:33b",
+  "k_spotted": 3,
+  "advisor_caught_by_model": {
+    "gemma4:latest": true,
+    "nemotron3:33b": true,
+    "qwen3.6:27b-coding-mxfp8": true
+  },
+  "briefs": {
+    "single": {
+      "text": "ASSESSMENT OVERVIEW: Clause 7c requires Tenant to fund full capital replacement of the 10-ton rooftop HVAC unit (compressor/heat-exchanger failure), costing $26,500 per Property Inspection Memo. This single replacement exceeds the $3,000 annual cap by over 8x, violating the exposure limit. No other repair clauses shift additional capital risk to Tenant. Key facts: Clause 7c mandates Tenant-paid capital replacement of 10-ton rooftop HVAC unit upon compressor/heat-exchanger failure; Property Inspection Memo states full replacement cost is $26,500 for 19-year-old unit; $26,500 replacement cost exceeds $3,000 annual cap by 787%.\nPOINTS OF NOTE: Clause 7c shifts $26,500 capital replacement risk to Tenant, violating <=$3,000/yr exposure cap.\nSUGGESTED NEXT STEP: Does Clause 7c's 'good working order' obligation explicitly include full capital replacement costs beyond routine maintenance?",
+      "words": 122
+    },
+    "consensus": {
+      "raw": {
+        "overview": "The advisors show strong consensus that the current lease terms present a significant conflict with the user's stated financial constraints. All three assessments highlight that Clause 7c imposes a substantial, unbudgeted capital replacement risk on the Tenant. This potential obligation far exceeds the established $3,000 annual non-rent building repair exposure cap, leading to a consistent recommendation to pause the decision.",
+        "points_of_note": "The core point of divergence centers on the interpretation of the Landlord's cover email versus the specific language of Clause 7c. Advisors 1, 2, and 3 all cite the $26,500 replacement cost for the HVAC unit as the primary violation. Specifically, the $26,500 figure, derived from the Property Inspection Memo, is repeatedly noted as exceeding the $3,000 cap by a large margin. The consensus suggests that the specific, high-cost capital replacement mandate in Clause 7c overrides the general assurance of 'normal upkeep' provided in the cover letter.",
+        "suggested_next_step": "Given the unanimous identification of a material constraint breach regarding capital replacement risk, the decision maker should not proceed until the Landlord explicitly amends Clause 7c to either remove the Tenant's obligation for full capital replacement or cap that obligation at a level consistent with the $3,000 annual exposure limit."
+      },
+      "text": "ASSESSMENT OVERVIEW: The advisors show strong consensus that the current lease terms present a significant conflict with the user's stated financial constraints. All three assessments highlight that Clause 7c imposes a substantial, unbudgeted capital replacement risk on the Tenant. This potential obligation far exceeds the established $3,000 annual non-rent building repair exposure cap, leading to a consistent recommendation to pause the decision.\nPOINTS OF NOTE: The core point of divergence centers on the interpretation of the Landlord's cover email versus the specific language of Clause 7c. Advisors 1, 2, and 3 all cite the $26,500 replacement cost for the HVAC unit as the primary violation. Specifically, the $26,500 figure, derived from the Property Inspection Memo, is repeatedly noted as exceeding the $3,000 cap by a large margin. The consensus suggests that the specific, high-cost capital replacement mandate in Clause 7c overrides the general assurance of 'normal upkeep' provided in the cover letter.\nSUGGESTED NEXT STEP: Given the unanimous identification of a material constraint breach regarding capital replacement risk, the decision maker should not proceed until the Landlord explicitly amends Clause 7c to either remove the Tenant's obligation for full capital replacement or cap that obligation at a level consistent with the $3,000 annual exposure limit.",
+      "words": 205,
+      "meta": {
+        "prompt_tokens": 1237,
+        "output_tokens": 299,
+        "seconds": 11.9,
+        "repaired": false
+      }
+    },
+    "crux": {
+      "raw": {
+        "shared_ground": [
+          "Clause 7c mandates the Tenant to bear the full cost of capital replacement for the HVAC unit upon failure.",
+          "The potential replacement cost for the HVAC unit is quantified at $26,500, significantly exceeding the $3,000 annual cap."
+        ],
+        "cruxes": [
+          {
+            "topic": "Scope of Repair Obligation",
+            "side_a": "Landlord's cover email promises 'Tenant only handles normal upkeep'",
+            "side_b": "Clause 7c requires Tenant to fund full capital replacement of the HVAC unit",
+            "premise_at_stake": "Whether the general promise supersedes the specific, costly clause."
+          }
+        ],
+        "unverified_premises": [
+          "The conflict between the Landlord's general promise of 'normal upkeep' and the specific capital replacement obligation in Clause 7c.",
+          "Whether the $3,000 cap is absolute or can be negotiated based on the nature of the repair."
+        ],
+        "decisive_check": "Confirmation from the Landlord regarding an amendment to Clause 7c to remove the Tenant's obligation for capital replacement of the HVAC unit."
+      },
+      "text": "ASSESSMENT OVERVIEW: Clause 7c mandates the Tenant to bear the full cost of capital replacement for the HVAC unit upon failure. The potential replacement cost for the HVAC unit is quantified at $26,500, significantly exceeding the $3,000 annual cap.\nPOINTS OF NOTE: Disagreements: (1) Scope of Repair Obligation: Side A [Landlord's cover email promises 'Tenant only handles normal upkeep'] vs. Side B [Clause 7c requires Tenant to fund full capital replacement of the HVAC unit] (at stake: Whether the general promise supersedes the specific, costly clause.) Flagged issues: The conflict between the Landlord's general promise of 'normal upkeep' and the specific capital replacement obligation in Clause 7c.; Whether the $3,000 cap is absolute or can be negotiated based on the nature of the repair.\nSUGGESTED NEXT STEP: Confirmation from the Landlord regarding an amendment to Clause 7c to remove the Tenant's obligation for capital replacement of the HVAC unit.",
+      "words": 149,
+      "meta": {
+        "prompt_tokens": 1385,
+        "output_tokens": 276,
+        "seconds": 9.75,
+        "repaired": false
+      }
+    }
+  },
+  "crux_survived": {
+    "single": true,
+    "consensus": true,
+    "crux": true
+  },
+  "decisions": {
+    "raw": {
+      "output": {
+        "primary_reason": "Clause 7c requires Tenant to bear full capital replacement cost of the 10-ton rooftop HVAC unit, which is $26,500 and far exceeds the $3,000 annual cap, creating an unbudgeted capital obligation.",
+        "target_clause_or_metric": "Clause 7c",
+        "action": "hold_to_verify",
+        "confidence": 95,
+        "brief_endorsement": null
+      },
+      "meta": {
+        "prompt_tokens": 697,
+        "output_tokens": 111,
+        "seconds": 3.99,
+        "repaired": false
+      },
+      "hold": true,
+      "verified_catch": true,
+      "untargeted_hold": false,
+      "false_alarm": null
+    },
+    "single": {
+      "output": {
+        "primary_reason": "Clause 7c mandates Tenant-paid full capital replacement of the 10-ton rooftop HVAC unit ($26,500) upon failure, exceeding the $3,000 annual exposure cap by 787% and violating the constraint that Tenant's repair exposure must be capped at $3,000/yr.",
+        "target_clause_or_metric": "Clause 7c",
+        "action": "hold_to_verify",
+        "confidence": 95,
+        "brief_endorsement": 5
+      },
+      "meta": {
+        "prompt_tokens": 966,
+        "output_tokens": 131,
+        "seconds": 4.48,
+        "repaired": false
+      },
+      "hold": true,
+      "verified_catch": true,
+      "untargeted_hold": false,
+      "false_alarm": null
+    },
+    "consensus": {
+      "output": {
+        "primary_reason": "Clause 7c obligates Tenant to bear full capital replacement cost of the 10-ton rooftop HVAC unit, which the Property Inspection Memo values at $26,500\u2014far exceeding the $3,000 annual cap and violating the unbudgeted capital equipment replacement constraint.",
+        "target_clause_or_metric": "Clause 7c",
+        "action": "hold_to_verify",
+        "confidence": 95,
+        "brief_endorsement": 5
+      },
+      "meta": {
+        "prompt_tokens": 1009,
+        "output_tokens": 122,
+        "seconds": 4.85,
+        "repaired": false
+      },
+      "hold": true,
+      "verified_catch": true,
+      "untargeted_hold": false,
+      "false_alarm": null
+    },
+    "crux": {
+      "output": {
+        "primary_reason": "Clause 7c explicitly requires Tenant to bear full capital replacement cost of the HVAC unit, which is $26,500\u2014far exceeding the $3,000 annual cap and violating the constraint that Tenant's repair exposure must be capped at $3,000/yr with no unbudgeted capital obligations.",
+        "target_clause_or_metric": "Clause 7c",
+        "action": "hold_to_verify",
+        "confidence": 95,
+        "brief_endorsement": 5
+      },
+      "meta": {
+        "prompt_tokens": 948,
+        "output_tokens": 129,
+        "seconds": 4.39,
+        "repaired": false
+      },
+      "hold": true,
+      "verified_catch": true,
+      "untargeted_hold": false,
+      "false_alarm": null
+    }
+  }
+}

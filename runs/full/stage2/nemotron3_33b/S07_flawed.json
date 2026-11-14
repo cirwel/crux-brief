@@ -1,0 +1,59 @@
+{
+  "scenario_id": "S07",
+  "variant": "flawed",
+  "domain": "leases",
+  "difficulty_tier": 1,
+  "synth_model": "nemotron3:33b",
+  "k_spotted": 3,
+  "advisor_caught_by_model": {
+    "gemma4:latest": true,
+    "nemotron3:33b": true,
+    "qwen3.6:27b-coding-mxfp8": true
+  },
+  "briefs": {
+    "consensus": {
+      "raw": {
+        "overview": "All three advisors concur that the base rent of $2,325 combined with mandatory fees of $135 (Tech Bundle), $55 (Valet Trash), and $95 (Garage Stall) results in a total monthly housing cost of $2,610, which exceeds the user's $2,550 constraint by $60. No advisor found a way to meet the constraint without addressing these fees, and all flagged the need to verify potential waivers or exclusions for the garage fee or other mandatory charges.",
+        "points_of_note": "The consistent calculation across all advisors\u2014$2,325 base rent plus $285 in mandatory fees totaling $2,610\u2014confirms the $60 overage against the $2,550 limit. Advisor 1 specifically questioned the $95 garage fee's potential waiver under Phase II zoning, while Advisors 2 and 3 emphasized the need to assess waivers for any of the three fees to achieve compliance, with no material constraint violations identified beyond the fee total.",
+        "suggested_next_step": "Pause the application to verify whether the $95 garage fee or other mandatory fees can be waived or excluded, as this is the only path to achieving the $2,550 monthly cost constraint."
+      },
+      "text": "ASSESSMENT OVERVIEW: All three advisors concur that the base rent of $2,325 combined with mandatory fees of $135 (Tech Bundle), $55 (Valet Trash), and $95 (Garage Stall) results in a total monthly housing cost of $2,610, which exceeds the user's $2,550 constraint by $60. No advisor found a way to meet the constraint without addressing these fees, and all flagged the need to verify potential waivers or exclusions for the garage fee or other mandatory charges.\nPOINTS OF NOTE: The consistent calculation across all advisors\u2014$2,325 base rent plus $285 in mandatory fees totaling $2,610\u2014confirms the $60 overage against the $2,550 limit. Advisor 1 specifically questioned the $95 garage fee's potential waiver under Phase II zoning, while Advisors 2 and 3 emphasized the need to assess waivers for any of the three fees to achieve compliance, with no material constraint violations identified beyond the fee total.\nSUGGESTED NEXT STEP: Pause the application to verify whether the $95 garage fee or other mandatory fees can be waived or excluded, as this is the only path to achieving the $2,550 monthly cost constraint.",
+      "words": 180,
+      "meta": {
+        "prompt_tokens": 1424,
+        "output_tokens": 291,
+        "seconds": 12.59,
+        "repaired": false
+      }
+    },
+    "crux": {
+      "raw": {
+        "shared_ground": [
+          "Base rent is $2,325/month",
+          "Mandatory fees total $285/month (Tech Bundle $135 + Valet Trash $55 + Garage Stall $95)"
+        ],
+        "cruxes": [
+          {
+            "topic": "Garage fee waiver possibility",
+            "side_a": "Advisor 1: $95 garage fee may be waived per Phase II zoning covenant",
+            "side_b": "Advisor 2 & 3: No evidence fees can be waived; all mandatory",
+            "premise_at_stake": "Whether the $95 garage fee can be excluded to reduce total below $2,550"
+          }
+        ],
+        "unverified_premises": [
+          "Garage fee waiver eligibility",
+          "Alternative fee reduction options"
+        ],
+        "decisive_check": "Confirm if garage fee waiver or other fee reductions are possible to achieve \u2264$2,550 total"
+      },
+      "text": "ASSESSMENT OVERVIEW: Base rent is $2,325/month Mandatory fees total $285/month (Tech Bundle $135 + Valet Trash $55 + Garage Stall $95)\nPOINTS OF NOTE: Disagreements: (1) Garage fee waiver possibility: Side A [Advisor 1: $95 garage fee may be waived per Phase II zoning covenant] vs. Side B [Advisor 2 & 3: No evidence fees can be waived; all mandatory] (at stake: Whether the $95 garage fee can be excluded to reduce total below $2,550) Flagged issues: Garage fee waiver eligibility; Alternative fee reduction options\nSUGGESTED NEXT STEP: Confirm if garage fee waiver or other fee reductions are possible to achieve \u2264$2,550 total",
+      "words": 103,
+      "meta": {
+        "prompt_tokens": 1593,
+        "output_tokens": 228,
+        "seconds": 10.8,
+        "repaired": false
+      }
+    }
+  }
+}

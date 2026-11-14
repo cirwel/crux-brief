@@ -1,0 +1,29 @@
+{
+  "scenario_id": "S11",
+  "variant": "sound",
+  "domain": "leases",
+  "difficulty_tier": 3,
+  "model": "nemotron3:33b",
+  "seed": 1121,
+  "output": {
+    "summary": "Tenant's annual non-rent repair exposure is capped at $2,000 for routine HVAC maintenance, well below the $3,000 annual limit. The only potential capital replacement risk involves the 19-year-old rooftop Trane unit, which exceeds its 15-18 year typical service life and would require $26,500 replacement. Since Clause 7c specifies Landlord handles 'any structural or HVAC capital unit replacement,' this cost remains Landlord's responsibility and does not shift >$3,000 capital risk to Tenant, satisfying all constraints.",
+    "key_claims": [
+      "Tenant's HVAC obligation capped at $2,000 aggregate per lease year",
+      "Landlord responsible for HVAC capital unit replacement per Clause 7c",
+      "Rooftop Trane unit at 19 years (exceeding 15-18 year service life) with $26,500 replacement cost"
+    ],
+    "recommendation": "proceed",
+    "risks_or_flaws": [
+      "none"
+    ],
+    "verification_question": "none",
+    "confidence": 100
+  },
+  "meta": {
+    "prompt_tokens": 653,
+    "output_tokens": 266,
+    "seconds": 10.15,
+    "repaired": false
+  },
+  "advisor_caught": null
+}

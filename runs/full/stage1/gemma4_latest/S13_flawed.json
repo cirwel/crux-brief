@@ -1,0 +1,30 @@
+{
+  "scenario_id": "S13",
+  "variant": "flawed",
+  "domain": "procurement_handoffs",
+  "difficulty_tier": 2,
+  "model": "gemma4:latest",
+  "seed": 124,
+  "output": {
+    "summary": "The packet presents an SLA with a 99.5% uptime target, but the constraints require two checks. First, the maximum permitted outage is 60 minutes/month. A 99.5% uptime translates to a maximum allowable downtime of 3.04 hours (100% - 99.5% = 0.5%; 0.5% of 24 hours/day * 30 days = 1.8 hours, or 108 minutes, which is greater than 60 minutes). Second, the remedy is capped at 10% of the monthly fee, failing the required minimum reimbursement of 50%.",
+    "key_claims": [
+      "Maximum permitted outage: <= 60 minutes/month",
+      "Required SLA breach reimbursement: >= 50% of monthly fee",
+      "Actual SLA remedy: Capped at 10% of one monthly fee"
+    ],
+    "recommendation": "hold_to_verify",
+    "risks_or_flaws": [
+      "The stated SLA remedy (10% credit) fails the constraint requiring reimbursement of >= 50% of the monthly fee.",
+      "The 99.5% uptime target implies an outage window significantly exceeding the 60-minute/month limit."
+    ],
+    "verification_question": "Does the vendor offer an SLA remedy that guarantees at least 50% reimbursement of the monthly fee, and does the 99.5% uptime target account for the excluded 2 hours of scheduled maintenance per week?",
+    "confidence": 100
+  },
+  "meta": {
+    "prompt_tokens": 580,
+    "output_tokens": 362,
+    "seconds": 12.64,
+    "repaired": false
+  },
+  "advisor_caught": true
+}

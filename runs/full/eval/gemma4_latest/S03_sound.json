@@ -1,0 +1,134 @@
+{
+  "scenario_id": "S03",
+  "variant": "sound",
+  "domain": "job_offers",
+  "difficulty_tier": 2,
+  "eval_model": "gemma4:latest",
+  "synth_model": "nemotron3:33b",
+  "single_advisor_model": "qwen3.6:27b-coding-mxfp8",
+  "k_spotted": null,
+  "advisor_caught_by_model": {
+    "gemma4:latest": null,
+    "nemotron3:33b": null,
+    "qwen3.6:27b-coding-mxfp8": null
+  },
+  "briefs": {
+    "single": {
+      "text": "ASSESSMENT OVERVIEW: The user requires annual cash earnings at historical team attainment to be at least $210,000. The packet states a $160,000 base and $80,000 variable at 100% quota. Historical median attainment is 96%. Calculating cash earnings at this attainment: $160,000 base + (0.96 * $80,000 variable) = $160,000 + $76,800 = $236,800. This figure ($236,800) is strictly greater than the $210,000 constraint. The payout gate confirms proportional payment from the first dollar, validating the linear calculation. No hidden exclusions or thresholds reduce this amount. The constraint is satisfied. Key facts: Base salary is $160,000.; Variable commission is $80,000 at 100% quota.; Historical median attainment is 96%..\nPOINTS OF NOTE: No concrete constraint violations flagged.\nSUGGESTED NEXT STEP: None required; stated constraints appear satisfied.",
+      "words": 124
+    },
+    "consensus": {
+      "raw": {
+        "overview": "All three advisors unanimously recommend proceeding, as each confirms the expected annual cash earnings at historical team attainment exceed the $210,000 threshold. They consistently calculate earnings based on a $160,000 base and $80,000 variable commission, with historical median attainment at 96%, yielding $236,800. Even at lower attainment levels like 88%, earnings remain above $210,000, satisfying the manager's constraint without any identified clause or data point reducing cash below the required minimum.",
+        "points_of_note": "The advisors converge on the $160,000 base plus $80,000 variable structure, with historical median attainment of 96% producing $236,800 in cash earnings\u2014well above the $210,000 requirement. Advisor 1 specifically validates that even at 88% attainment (the lower bound of the rep range), earnings would be $211,200, confirming no constraint breach. All assessments explicitly state no clauses or thresholds reduce historical attainment cash below $210,000, with no flagged points or suggested checks needed.",
+        "suggested_next_step": "Proceed with acceptance, as all advisors confirm the quota payout rules maintain historical-attainment cash earnings above $210,000 with no constraint violations identified."
+      },
+      "text": "ASSESSMENT OVERVIEW: All three advisors unanimously recommend proceeding, as each confirms the expected annual cash earnings at historical team attainment exceed the $210,000 threshold. They consistently calculate earnings based on a $160,000 base and $80,000 variable commission, with historical median attainment at 96%, yielding $236,800. Even at lower attainment levels like 88%, earnings remain above $210,000, satisfying the manager's constraint without any identified clause or data point reducing cash below the required minimum.\nPOINTS OF NOTE: The advisors converge on the $160,000 base plus $80,000 variable structure, with historical median attainment of 96% producing $236,800 in cash earnings\u2014well above the $210,000 requirement. Advisor 1 specifically validates that even at 88% attainment (the lower bound of the rep range), earnings would be $211,200, confirming no constraint breach. All assessments explicitly state no clauses or thresholds reduce historical attainment cash below $210,000, with no flagged points or suggested checks needed.\nSUGGESTED NEXT STEP: Proceed with acceptance, as all advisors confirm the quota payout rules maintain historical-attainment cash earnings above $210,000 with no constraint violations identified.",
+      "words": 173,
+      "meta": {
+        "prompt_tokens": 1214,
+        "output_tokens": 310,
+        "seconds": 9.69,
+        "repaired": false
+      }
+    },
+    "crux": {
+      "raw": {
+        "shared_ground": [
+          "Historical median attainment is 96%",
+          "Base salary is $160,000"
+        ],
+        "cruxes": [],
+        "unverified_premises": [],
+        "decisive_check": "None required; all advisors concur stated constraints are satisfied."
+      },
+      "text": "ASSESSMENT OVERVIEW: Historical median attainment is 96% Base salary is $160,000\nPOINTS OF NOTE: No concrete disagreements or constraint violations flagged across advisors.\nSUGGESTED NEXT STEP: None required; all advisors concur stated constraints are satisfied.",
+      "words": 35,
+      "meta": {
+        "prompt_tokens": 1383,
+        "output_tokens": 73,
+        "seconds": 6.58,
+        "repaired": false
+      }
+    }
+  },
+  "crux_survived": null,
+  "decisions": {
+    "raw": {
+      "output": {
+        "primary_reason": "The packet states the median historical attainment was 96%, which, when applied to the $80,000 variable component, results in $76,800 in variable pay. This total ($160,000 base + $76,800 variable = $236,800) is above the $210,000 minimum, satisfying the constraint.",
+        "target_clause_or_metric": "none",
+        "action": "proceed",
+        "confidence": 100,
+        "brief_endorsement": null
+      },
+      "meta": {
+        "prompt_tokens": 618,
+        "output_tokens": 141,
+        "seconds": 4.37,
+        "repaired": false
+      },
+      "hold": false,
+      "verified_catch": null,
+      "untargeted_hold": null,
+      "false_alarm": false
+    },
+    "single": {
+      "output": {
+        "primary_reason": "The pre-decision brief explicitly calculates the expected cash earnings at historical attainment (96%) as $236,800, which satisfies the minimum required threshold of $210,000. The payout structure also confirms proportional payment, validating the calculation.",
+        "target_clause_or_metric": "none",
+        "action": "proceed",
+        "confidence": 100,
+        "brief_endorsement": 5
+      },
+      "meta": {
+        "prompt_tokens": 865,
+        "output_tokens": 110,
+        "seconds": 3.51,
+        "repaired": false
+      },
+      "hold": false,
+      "verified_catch": null,
+      "untargeted_hold": null,
+      "false_alarm": false
+    },
+    "consensus": {
+      "output": {
+        "primary_reason": "The Pre-Decision Brief explicitly confirms that the expected annual cash earnings at historical team attainment (96% median) are $236,800, which is greater than the required $210,000. Furthermore, the brief confirms that even at the lower end of the historical range (88%), earnings remain above the threshold, satisfying all constraints.",
+        "target_clause_or_metric": "none",
+        "action": "proceed",
+        "confidence": 100,
+        "brief_endorsement": 5
+      },
+      "meta": {
+        "prompt_tokens": 916,
+        "output_tokens": 131,
+        "seconds": 4.01,
+        "repaired": false
+      },
+      "hold": false,
+      "verified_catch": null,
+      "untargeted_hold": null,
+      "false_alarm": false
+    },
+    "crux": {
+      "output": {
+        "primary_reason": "The constraint requires expected annual cash earnings at historical team attainment to be >= $210,000. Using the median historical attainment of 96% and the $80,000 variable component, the expected cash earnings are $160,000 + (0.96 * $80,000) = $160,000 + $76,800 = $236,800, which meets the $210,000 minimum.",
+        "target_clause_or_metric": "none",
+        "action": "proceed",
+        "confidence": 100,
+        "brief_endorsement": 5
+      },
+      "meta": {
+        "prompt_tokens": 673,
+        "output_tokens": 167,
+        "seconds": 5.43,
+        "repaired": false
+      },
+      "hold": false,
+      "verified_catch": null,
+      "untargeted_hold": null,
+      "false_alarm": false
+    }
+  }
+}

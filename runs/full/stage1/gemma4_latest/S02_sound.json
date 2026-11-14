@@ -1,0 +1,29 @@
+{
+  "scenario_id": "S02",
+  "variant": "sound",
+  "domain": "job_offers",
+  "difficulty_tier": 1,
+  "model": "gemma4:latest",
+  "seed": 103,
+  "output": {
+    "summary": "The packet details a $40,000 sign-on bonus with a repayment clause (Clause 6b). This clause stipulates repayment only if resigning voluntarily within 12 months, amortizing monthly on net-of-withholding cash. The clause explicitly states the obligation drops to $0 after Month 12, which satisfies the user's constraint that leaving at Month 18 will not trigger an out-of-pocket cash clawback.",
+    "key_claims": [
+      "Sign-on bonus: $40,000",
+      "Repayment obligation expires after 12 months",
+      "Leaving at Month 18 does not trigger clawback per Clause 6b"
+    ],
+    "recommendation": "proceed",
+    "risks_or_flaws": [
+      "none"
+    ],
+    "verification_question": "none",
+    "confidence": 100
+  },
+  "meta": {
+    "prompt_tokens": 606,
+    "output_tokens": 212,
+    "seconds": 9.17,
+    "repaired": false
+  },
+  "advisor_caught": null
+}

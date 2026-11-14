@@ -1,0 +1,59 @@
+{
+  "scenario_id": "S13",
+  "variant": "flawed",
+  "domain": "procurement_handoffs",
+  "difficulty_tier": 2,
+  "synth_model": "nemotron3:33b",
+  "k_spotted": 3,
+  "advisor_caught_by_model": {
+    "gemma4:latest": true,
+    "nemotron3:33b": true,
+    "qwen3.6:27b-coding-mxfp8": true
+  },
+  "briefs": {
+    "consensus": {
+      "raw": {
+        "overview": "All three advisors unanimously conclude the vendor's SLA fails the two core constraints: the maximum permitted outage during US business hours must not exceed 60 minutes/month, and SLA breach reimbursement must be at least 50% of the monthly fee. The 99.5% uptime target implies 1.8 hours (108 minutes) of downtime monthly, exceeding the 60-minute limit, while scheduled maintenance of up to 8 hours/week (32 hours/month) further compounds the outage exposure. Additionally, the service credit cap of 10% of the monthly fee (e.g., $800 for an $8,000 fee) falls far short of the required 50% reimbursement threshold ($4,000).",
+        "points_of_note": "The 60-minute outage constraint is breached both by the 99.5% uptime target (108 minutes implied downtime) and by scheduled maintenance allowing up to 8 hours/month, with Advisor 3 specifying total potential outage reaching 11.625 hours. Advisor 1 flagged the 10% credit remedy as insufficient for the 50% reimbursement requirement, a point reinforced by Advisors 2 and 3 who explicitly cite the $800 credit versus the $4,000 minimum needed. No advisor proposed a viable path to meet constraints, and all confirmed material violations without suggesting constraint-compliant alternatives.",
+        "suggested_next_step": "Reject the vendor's SLA proposal due to unresolvable constraint violations, specifically the outage duration exceeding 60 minutes/month when including scheduled maintenance and the service credit cap falling below the mandated 50% reimbursement threshold."
+      },
+      "text": "ASSESSMENT OVERVIEW: All three advisors unanimously conclude the vendor's SLA fails the two core constraints: the maximum permitted outage during US business hours must not exceed 60 minutes/month, and SLA breach reimbursement must be at least 50% of the monthly fee. The 99.5% uptime target implies 1.8 hours (108 minutes) of downtime monthly, exceeding the 60-minute limit, while scheduled maintenance of up to 8 hours/week (32 hours/month) further compounds the outage exposure. Additionally, the service credit cap of 10% of the monthly fee (e.g., $800 for an...\nPOINTS OF NOTE: The 60-minute outage constraint is breached both by the 99.5% uptime target (108 minutes implied downtime) and by scheduled maintenance allowing up to 8 hours/month, with Advisor 3 specifying total potential outage reaching 11.625 hours. Advisor 1 flagged the 10% credit remedy as insufficient for the 50% reimbursement requirement, a point reinforced by Advisors 2 and 3 who explicitly cite the $800 credit versus the $4,000 minimum needed. No advisor proposed a viable path to meet constraints, and all confirmed material violations without suggesting constraint-compliant...\nSUGGESTED NEXT STEP: Reject the vendor's SLA proposal due to unresolvable constraint violations, specifically the outage duration exceeding 60 minutes/month when including scheduled maintenance and the service credit cap falling below the mandated 50% reimbursement threshold.",
+      "words": 211,
+      "meta": {
+        "prompt_tokens": 1389,
+        "output_tokens": 385,
+        "seconds": 9.09,
+        "repaired": false
+      }
+    },
+    "crux": {
+      "raw": {
+        "shared_ground": [
+          "Maximum permitted outage is <= 60 minutes/month",
+          "SLA breach reimbursement must be >= 50% of the monthly fee"
+        ],
+        "cruxes": [
+          {
+            "topic": "Scheduled maintenance impact on outage calculation",
+            "side_a": "Vendor's 99.5% uptime target implies 3.04 hours (108 minutes) downtime, exceeding 60-minute limit",
+            "side_b": "Vendor's scheduled maintenance allows up to 8 hours (2 hours/week) of downtime during business hours",
+            "premise_at_stake": "Whether scheduled maintenance hours are included in the 60-minute monthly outage calculation"
+          }
+        ],
+        "unverified_premises": [
+          "Whether the 60-minute outage limit applies to total (scheduled + unscheduled) downtime or only unscheduled downtime",
+          "Whether the 50% reimbursement requirement applies to the total monthly fee or only to unscheduled breach amounts"
+        ],
+        "decisive_check": "Can scheduled maintenance be excluded from the 60-minute outage calculation?"
+      },
+      "text": "ASSESSMENT OVERVIEW: Maximum permitted outage is <= 60 minutes/month SLA breach reimbursement must be >= 50% of the monthly fee\nPOINTS OF NOTE: Disagreements: (1) Scheduled maintenance impact on outage calculation: Side A [Vendor's 99.5% uptime target implies 3.04 hours (108 minutes) downtime, exceeding 60-minute limit] vs. Side B [Vendor's scheduled maintenance allows up to 8 hours (2 hours/week) of downtime during business hours] (at stake: Whether scheduled maintenance hours are included in the 60-minute monthly outage calculation) Flagged issues: Whether the 60-minute outage limit applies to total (scheduled + unscheduled) downtime or only unscheduled downtime; Whether the 50% reimbursement requirement applies to the total monthly fee or only to unscheduled breach amounts\nSUGGESTED NEXT STEP: Can scheduled maintenance be excluded from the 60-minute outage calculation?",
+      "words": 126,
+      "meta": {
+        "prompt_tokens": 1558,
+        "output_tokens": 258,
+        "seconds": 7.09,
+        "repaired": false
+      }
+    }
+  }
+}

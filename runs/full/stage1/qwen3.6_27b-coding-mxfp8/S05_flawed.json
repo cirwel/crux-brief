@@ -1,0 +1,29 @@
+{
+  "scenario_id": "S05",
+  "variant": "flawed",
+  "domain": "job_offers",
+  "difficulty_tier": 2,
+  "model": "qwen3.6:27b-coding-mxfp8",
+  "seed": 2108,
+  "output": {
+    "summary": "The user's constraint requires that the agreement NOT claim ownership over 'TraceLite' or personal off-hours tools. Clause 8.1 explicitly assigns rights to any software relating to 'distributed tracing, telemetry, or developer observability' conceived during employment, regardless of whether it was developed on or off Company hours or hardware. Since TraceLite is an observability library, it falls squarely within this scope. Furthermore, Clause 8.3 leaves the 'Excluded Prior Inventions' exhibit blank, failing to protect existing IP. The agreement directly violates the user's explicit constraints by claiming ownership over the specified library and personal code.",
+    "key_claims": [
+      "Clause 8.1 claims ownership of observability-related code regardless of off-hours/personal hardware usage.",
+      "Exhibit A for excluded prior inventions is left blank, offering no protection for TraceLite."
+    ],
+    "recommendation": "hold_to_verify",
+    "risks_or_flaws": [
+      "Clause 8.1 explicitly captures TraceLite and personal tools because they relate to observability, violating the constraint that the agreement must NOT claim ownership over them.",
+      "The blank Exhibit A fails to exclude existing IP, leaving TraceLite unprotected under the PIIA."
+    ],
+    "verification_question": "Does the blank Exhibit A and broad Clause 8.1 definition of 'observability' legally transfer ownership of TraceLite to LatticeOps?",
+    "confidence": 100
+  },
+  "meta": {
+    "prompt_tokens": 611,
+    "output_tokens": 317,
+    "seconds": 55.58,
+    "repaired": false
+  },
+  "advisor_caught": true
+}

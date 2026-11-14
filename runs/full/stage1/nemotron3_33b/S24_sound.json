@@ -1,0 +1,29 @@
+{
+  "scenario_id": "S24",
+  "variant": "sound",
+  "domain": "operational_briefs",
+  "difficulty_tier": 1,
+  "model": "nemotron3:33b",
+  "seed": 1147,
+  "output": {
+    "summary": "The proposal eliminates $360,000 in annual external costs (12 \u00d7 $30,000). New annual costs total $190,000 (2 \u00d7 $95,000 + $15,000). Net Year-1 savings are $170,000, exceeding the $100,000 threshold. All constraints are satisfied.",
+    "key_claims": [
+      "Annual external cost savings: $360,000 ($30,000 \u00d7 12)",
+      "Total new annual costs: $190,000 ($95,000 \u00d7 2 + $15,000)",
+      "Net Year-1 savings: $170,000 ($360,000 - $190,000)"
+    ],
+    "recommendation": "proceed",
+    "risks_or_flaws": [
+      "none"
+    ],
+    "verification_question": "none",
+    "confidence": 100
+  },
+  "meta": {
+    "prompt_tokens": 607,
+    "output_tokens": 245,
+    "seconds": 8.42,
+    "repaired": false
+  },
+  "advisor_caught": null
+}

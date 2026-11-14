@@ -1,0 +1,29 @@
+{
+  "scenario_id": "S15",
+  "variant": "flawed",
+  "domain": "procurement_handoffs",
+  "difficulty_tier": 2,
+  "model": "qwen3.6:27b-coding-mxfp8",
+  "seed": 2128,
+  "output": {
+    "summary": "The invoice face value is $250,000 with a 0.4% discount, resulting in a payment of $249,000 and a gross savings of $1,000. The packet states the funding source is a credit line at 12.0% APR for a 20-day period (Day 10 to Day 30). Calculating the financing cost: ($249,000 * 0.12) * (20/365) \u2248 $1,634.79. Since the financing cost ($1,634.79) exceeds the discount savings ($1,000), the net result is a loss of approximately $634.79. The clerk's claim of 'guaranteed instant savings' is factually incorrect regarding net financial impact. The user's constraint requires positive net dollar savings, which is not met.",
+    "key_claims": [
+      "Gross discount savings: $1,000",
+      "Estimated financing cost for 20 days at 12% APR: ~$1,635",
+      "Net result: Negative (~-$635)"
+    ],
+    "recommendation": "hold_to_verify",
+    "risks_or_flaws": [
+      "Net dollar savings are negative because the cost of borrowing ($1,635) exceeds the discount benefit ($1,000), violating the user's constraint for positive net savings."
+    ],
+    "verification_question": "Does the user accept a net loss of approximately $635 to secure the early payment, or is the 'positive net dollar savings' constraint strict?",
+    "confidence": 95
+  },
+  "meta": {
+    "prompt_tokens": 629,
+    "output_tokens": 386,
+    "seconds": 67.34,
+    "repaired": false
+  },
+  "advisor_caught": true
+}

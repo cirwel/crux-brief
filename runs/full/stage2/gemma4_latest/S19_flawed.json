@@ -1,0 +1,59 @@
+{
+  "scenario_id": "S19",
+  "variant": "flawed",
+  "domain": "operational_briefs",
+  "difficulty_tier": 3,
+  "synth_model": "gemma4:latest",
+  "k_spotted": 3,
+  "advisor_caught_by_model": {
+    "gemma4:latest": true,
+    "nemotron3:33b": true,
+    "qwen3.6:27b-coding-mxfp8": true
+  },
+  "briefs": {
+    "consensus": {
+      "raw": {
+        "overview": "The consensus across all three advisors is that the current system parameters for automated account suspension do not meet the user's critical constraint. Specifically, the calculated rate of genuinely fraudulent accounts among all accounts flagged for suspension falls significantly short of the required 40% threshold. All assessments point to a substantial discrepancy between the policy's actual performance and the necessary operational benchmark for enabling full automation.",
+        "points_of_note": "All advisors utilized the same core figures: a 1.0% live fraud base rate (100 fraudulent, 9,900 legitimate), 96.0% sensitivity, and an 8.0% false positive rate derived from the 92.0% specificity. This calculation consistently yields 96 true positive suspensions and 792 false positive suspensions, resulting in a calculated precision of approximately 10.8%. This figure is uniformly identified as failing the mandatory 40% threshold, with Advisor 3 noting the implication of suspending ~792 legitimate users for every 96 fraudulent ones.",
+        "suggested_next_step": "Given the unanimous finding that the calculated precision (~10.8%) fails the explicit 40% constraint, the immediate next step must be to halt the enablement of fully automated account suspension until the underlying detection parameters (sensitivity, specificity, or the base rate assumption) can be adjusted to meet or exceed the 40% precision requirement."
+      },
+      "text": "ASSESSMENT OVERVIEW: The consensus across all three advisors is that the current system parameters for automated account suspension do not meet the user's critical constraint. Specifically, the calculated rate of genuinely fraudulent accounts among all accounts flagged for suspension falls significantly short of the required 40% threshold. All assessments point to a substantial discrepancy between the policy's actual performance and the necessary operational benchmark for enabling full automation.\nPOINTS OF NOTE: All advisors utilized the same core figures: a 1.0% live fraud base rate (100 fraudulent, 9,900 legitimate), 96.0% sensitivity, and an 8.0% false positive rate derived from the 92.0% specificity. This calculation consistently yields 96 true positive suspensions and 792 false positive suspensions, resulting in a calculated precision of approximately 10.8%. This figure is uniformly identified as failing the mandatory 40% threshold, with Advisor 3 noting the implication of suspending ~792 legitimate users for every 96 fraudulent ones.\nSUGGESTED NEXT STEP: Given the unanimous finding that the calculated precision (~10.8%) fails the explicit 40% constraint, the immediate next step must be to halt the enablement of fully automated account suspension until the underlying detection parameters (sensitivity, specificity, or the base rate assumption) can be adjusted to meet or exceed the 40% precision requirement.",
+      "words": 204,
+      "meta": {
+        "prompt_tokens": 1507,
+        "output_tokens": 308,
+        "seconds": 11.09,
+        "repaired": false
+      }
+    },
+    "crux": {
+      "raw": {
+        "shared_ground": [
+          "The required condition for auto-suspension is that at least 40% of suspended accounts must be genuinely fraudulent.",
+          "All advisors calculate the expected precision (fraud rate among suspensions) to be approximately 10.8%."
+        ],
+        "cruxes": [
+          {
+            "topic": "Calculated Fraud Rate",
+            "side_a": "Advisor 1: 11.2% fraud rate among suspended accounts",
+            "side_b": "Advisor 2/3: $\\approx 10.8\\%$ fraud rate among suspended accounts",
+            "premise_at_stake": "The precise calculation of the fraud rate based on the given metrics."
+          }
+        ],
+        "unverified_premises": [
+          "The calculation of the actual fraud rate among suspended accounts (precision) is consistently below the 40% threshold.",
+          "The decision hinges on whether the 40% threshold is a hard blocker or if the security team accepts the calculated rate."
+        ],
+        "decisive_check": "Confirmation on whether the 40% minimum precision threshold is a hard blocker for enabling auto-suspension."
+      },
+      "text": "ASSESSMENT OVERVIEW: The required condition for auto-suspension is that at least 40% of suspended accounts must be genuinely fraudulent. All advisors calculate the expected precision (fraud rate among suspensions) to be approximately 10.8%.\nPOINTS OF NOTE: Disagreements: (1) Calculated Fraud Rate: Side A [Advisor 1: 11.2% fraud rate among suspended accounts] vs. Side B [Advisor 2/3: $\\approx 10.8\\%$ fraud rate among suspended accounts] (at stake: The precise calculation of the fraud rate based on the given metrics.) Flagged issues: The calculation of the actual fraud rate among suspended accounts (precision) is consistently below the 40% threshold.; The decision hinges on whether the 40% threshold is a hard blocker or if the security team accepts the calculated rate.\nSUGGESTED NEXT STEP: Confirmation on whether the 40% minimum precision threshold is a hard blocker for enabling auto-suspension.",
+      "words": 135,
+      "meta": {
+        "prompt_tokens": 1655,
+        "output_tokens": 269,
+        "seconds": 9.95,
+        "repaired": false
+      }
+    }
+  }
+}

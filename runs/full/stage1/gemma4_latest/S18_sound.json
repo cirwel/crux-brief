@@ -1,0 +1,29 @@
+{
+  "scenario_id": "S18",
+  "variant": "sound",
+  "domain": "procurement_handoffs",
+  "difficulty_tier": 3,
+  "model": "gemma4:latest",
+  "seed": 135,
+  "output": {
+    "summary": "The user requires a guaranteed rebate of at least $15,000 across the entire 950-1,050 unit demand band. The rebate structure guarantees an $18/unit credit once 850 units are billed. Calculating the minimum rebate at the lower bound (950 units) shows a total rebate of $18/unit * 950 units = $17,100. This exceeds the $15,000 minimum requirement, satisfying the core constraint.",
+    "key_claims": [
+      "Minimum demand in the band is 950 units.",
+      "Rebate is $18/unit upon reaching 850 units.",
+      "Minimum guaranteed rebate at 950 units is $17,100."
+    ],
+    "recommendation": "proceed",
+    "risks_or_flaws": [
+      "none"
+    ],
+    "verification_question": "none",
+    "confidence": 100
+  },
+  "meta": {
+    "prompt_tokens": 565,
+    "output_tokens": 234,
+    "seconds": 8.54,
+    "repaired": false
+  },
+  "advisor_caught": null
+}

@@ -1,0 +1,28 @@
+{
+  "scenario_id": "S12",
+  "variant": "sound",
+  "domain": "leases",
+  "difficulty_tier": 1,
+  "model": "qwen3.6:27b-coding-mxfp8",
+  "seed": 2123,
+  "output": {
+    "summary": "The decision packet confirms the monthly rent is $2,550, which satisfies the constraint of being less than or equal to $2,700. Regarding internet speed, Clause 6.1 explicitly states the unit includes a dedicated municipal fiber drop with symmetric 1,000 Mbps (1 Gbps) up and down. This significantly exceeds the user's requirement for symmetrical speeds of at least 200 Mbps. The initial concern about 'building Wi-Fi' is resolved by the specific fiber provision, ensuring the unit supports the necessary bandwidth for remote engineering tasks. All stated constraints are met.",
+    "key_claims": [
+      "Rent is $2,550/month, satisfying the <= $2,700 limit.",
+      "Internet is symmetric 1,000 Mbps fiber, exceeding the >= 200 Mbps requirement."
+    ],
+    "recommendation": "proceed",
+    "risks_or_flaws": [
+      "none"
+    ],
+    "verification_question": "none",
+    "confidence": 100
+  },
+  "meta": {
+    "prompt_tokens": 520,
+    "output_tokens": 240,
+    "seconds": 46.36,
+    "repaired": false
+  },
+  "advisor_caught": null
+}

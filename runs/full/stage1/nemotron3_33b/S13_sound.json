@@ -1,0 +1,29 @@
+{
+  "scenario_id": "S13",
+  "variant": "sound",
+  "domain": "procurement_handoffs",
+  "difficulty_tier": 2,
+  "model": "nemotron3:33b",
+  "seed": 1125,
+  "output": {
+    "summary": "The SLA guarantees 99.9% uptime (max 0.1% downtime = 7.2 minutes/month), which is under the 60-minute monthly outage limit for US business hours. Scheduled maintenance occurs only during off-peak UTC hours on Sundays, so no US daytime outages are permitted. The remedy clause states that breaches below 99.9% trigger a 50% service credit, satisfying the requirement that SLA breaches reimburse at least 50% of the monthly fee.",
+    "key_claims": [
+      "99.9% uptime target equals 7.2 minutes of downtime per 30-day month, below the 60-minute outage limit",
+      "Scheduled maintenance is limited to 2 hours on Sundays (02:00-04:00 UTC), outside US business hours (09:00-17:00)",
+      "SLA breach below 99.9% triggers 50% service credit, meeting the >=50% reimbursement requirement"
+    ],
+    "recommendation": "proceed",
+    "risks_or_flaws": [
+      "none"
+    ],
+    "verification_question": "none",
+    "confidence": 100
+  },
+  "meta": {
+    "prompt_tokens": 661,
+    "output_tokens": 285,
+    "seconds": 10.6,
+    "repaired": false
+  },
+  "advisor_caught": null
+}

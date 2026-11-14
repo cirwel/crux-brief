@@ -1,0 +1,29 @@
+{
+  "scenario_id": "S02",
+  "variant": "flawed",
+  "domain": "job_offers",
+  "difficulty_tier": 1,
+  "model": "gemma4:latest",
+  "seed": 102,
+  "output": {
+    "summary": "The user requires any sign-on bonus repayment obligation to expire by Month 12 to avoid an out-of-pocket clawback if leaving at Month 18. The packet states the repayment obligation is 100% of the gross $40,000 bonus if resigning within 24 months. This clause has no expiration date mentioned and requires full repayment regardless of time served, directly violating the user's stated constraint.",
+    "key_claims": [
+      "Sign-on bonus repayment is 100% of $40,000 if resigning within 24 months.",
+      "The repayment clause requires no monthly proration.",
+      "The user requires repayment obligations to expire by Month 12."
+    ],
+    "recommendation": "hold_to_verify",
+    "risks_or_flaws": [
+      "The repayment clause requires 100% repayment if leaving within 24 months, which does not expire by Month 12, violating the user's constraint."
+    ],
+    "verification_question": "Does Clause 6b include an expiration date or a pro-rated repayment schedule that ensures no out-of-pocket cash clawback if the employee leaves at Month 18?",
+    "confidence": 100
+  },
+  "meta": {
+    "prompt_tokens": 607,
+    "output_tokens": 290,
+    "seconds": 12.84,
+    "repaired": false
+  },
+  "advisor_caught": true
+}

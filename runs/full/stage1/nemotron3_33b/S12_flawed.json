@@ -1,0 +1,29 @@
+{
+  "scenario_id": "S12",
+  "variant": "flawed",
+  "domain": "leases",
+  "difficulty_tier": 1,
+  "model": "nemotron3:33b",
+  "seed": 1122,
+  "output": {
+    "summary": "The rent of $2,550 is under the $2,700 limit, but the building Wi-Fi is capped at 50/10 Mbps, below the required 200/200 Mbps symmetrical fiber. No external fiber or cellular options are permitted, violating the internet speed requirement.",
+    "key_claims": [
+      "Rent: $2,550/month",
+      "Wi-Fi cap: 50 Mbps down / 10 Mbps up",
+      "Required: >= 200 Mbps symmetrical"
+    ],
+    "recommendation": "hold_to_verify",
+    "risks_or_flaws": [
+      "Internet speed requirement of >= 200 Mbps symmetrical is not met by the 50/10 Mbps capped Wi-Fi, and external fiber or cellular are prohibited."
+    ],
+    "verification_question": "Is there any provision allowing the tenant to obtain a separate fiber installation or external cellular gateway despite the covenants?",
+    "confidence": 100
+  },
+  "meta": {
+    "prompt_tokens": 602,
+    "output_tokens": 237,
+    "seconds": 9.35,
+    "repaired": false
+  },
+  "advisor_caught": true
+}

@@ -1,0 +1,144 @@
+{
+  "scenario_id": "S04",
+  "variant": "sound",
+  "domain": "job_offers",
+  "difficulty_tier": 3,
+  "eval_model": "gemma4:latest",
+  "synth_model": "gemma4:latest",
+  "single_advisor_model": "gemma4:latest",
+  "k_spotted": null,
+  "advisor_caught_by_model": {
+    "gemma4:latest": null,
+    "nemotron3:33b": null,
+    "qwen3.6:27b-coding-mxfp8": null
+  },
+  "briefs": {
+    "single": {
+      "text": "ASSESSMENT OVERVIEW: The packet provides a stated equity value of $400,000 based on the Series C mark ($1.00/share). However, the constraint requires the grant value to be calculated on an independent common-stock basis using the $0.82/share 409A valuation. The calculated value based on the 400,000 shares and $0.82/share is $328,000, which is below the required $280,000 threshold. The payout value check is not determinable from the provided facts. Key facts: Stated equity value (Series C): $400,000; Calculated equity value (400,000 shares * $0.82/share): $328,000; Required minimum equity value: $280,000.\nPOINTS OF NOTE: The calculated equity grant value ($328,000) based on the 409A independent common stock valuation ($0.82/share) is less than the required minimum of $280,000 over 4 years, although it is greater than the minimum..\nSUGGESTED NEXT STEP: Does the $328,000 calculated grant value (400,000 shares * $0.82/share) satisfy the constraint of being >= $70,000/yr ($280,000 over 4 years) on an independent common-stock basis?",
+      "words": 154
+    },
+    "consensus": {
+      "raw": {
+        "overview": "The advisors present a consensus view that the proposed equity grant structure appears to satisfy the core financial constraints, though there is a notable divergence in the calculation methodology emphasized. All three assessments confirm the grant involves 400,000 shares, and the analysis consistently points to a calculated value exceeding the minimum required threshold. The overall sentiment leans toward acceptance, provided the valuation basis is correctly applied.",
+        "points_of_note": "Advisor 1 and Advisor 2 both confirm that using the $0.82/share valuation results in a total grant value of $328,000, which satisfies the $280,000 minimum. Advisor 3 highlights the critical importance of using the $0.82/share 409A valuation over the stated $1.00/share Series C mark for compliance. Crucially, Advisor 3's conclusion that $328,000 is below the $280,000 threshold is contradicted by the arithmetic ($328,000 > $280,000), suggesting a potential misstatement in the advisor's summary regarding the comparison, though the underlying calculation ($328,000) is consistent across the reports.",
+        "suggested_next_step": "Given the convergence on the $328,000 calculated value using the $0.82/share common stock basis, and since this figure exceeds the $280,000 minimum, the decision maker should proceed with the grant, confirming that the non-participating preferred terms adequately protect the positive payout value in the $100M exit."
+      },
+      "text": "ASSESSMENT OVERVIEW: The advisors present a consensus view that the proposed equity grant structure appears to satisfy the core financial constraints, though there is a notable divergence in the calculation methodology emphasized. All three assessments confirm the grant involves 400,000 shares, and the analysis consistently points to a calculated value exceeding the minimum required threshold. The overall sentiment leans toward acceptance, provided the valuation basis is correctly applied.\nPOINTS OF NOTE: Advisor 1 and Advisor 2 both confirm that using the $0.82/share valuation results in a total grant value of $328,000, which satisfies the $280,000 minimum. Advisor 3 highlights the critical importance of using the $0.82/share 409A valuation over the stated $1.00/share Series C mark for compliance. Crucially, Advisor 3's conclusion that $328,000 is below the $280,000 threshold is contradicted by the arithmetic ($328,000 > $280,000), suggesting a potential misstatement in the advisor's summary regarding the comparison, though the underlying calculation ($328,000) is consistent across the reports.\nSUGGESTED NEXT STEP: Given the convergence on the $328,000 calculated value using the $0.82/share common stock basis, and since this figure exceeds the $280,000 minimum, the decision maker should proceed with the grant, confirming that the non-participating preferred terms adequately protect the positive payout value in the $100M exit.",
+      "words": 206,
+      "meta": {
+        "prompt_tokens": 1309,
+        "output_tokens": 362,
+        "seconds": 14.17,
+        "repaired": false
+      }
+    },
+    "crux": {
+      "raw": {
+        "shared_ground": [
+          "The grant involves 400,000 shares.",
+          "The 409A valuation for common stock is $0.82/share."
+        ],
+        "cruxes": [
+          {
+            "topic": "Constraint Satisfaction",
+            "side_a": "Advisor 1 & 2: The $328,000 value exceeds the $280,000 minimum.",
+            "side_b": "Advisor 3: The $328,000 value is below the required $280,000 threshold.",
+            "premise_at_stake": "Whether the $328,000 calculated value satisfies the minimum $280,000 constraint."
+          }
+        ],
+        "unverified_premises": [
+          "Advisor 3 explicitly states the $328,000 value is below the required $280,000 threshold, contradicting the conclusion of Advisors 1 and 2.",
+          "The payout value check for a $100M exit remains undetermined by the panel."
+        ],
+        "decisive_check": "Confirm if the $328,000 calculated grant value (400,000 shares * $0.82/share) satisfies the constraint of being >= $70,000/yr ($280,000 over 4 years) on an independent common-stock basis."
+      },
+      "text": "ASSESSMENT OVERVIEW: The grant involves 400,000 shares. The 409A valuation for common stock is $0.82/share.\nPOINTS OF NOTE: Disagreements: (1) Constraint Satisfaction: Side A [Advisor 1 & 2: The $328,000 value exceeds the $280,000 minimum.] vs. Side B [Advisor 3: The $328,000 value is below the required $280,000 threshold.] (at stake: Whether the $328,000 calculated value satisfies the minimum $280,000 constraint.) Flagged issues: Advisor 3 explicitly states the $328,000 value is below the required $280,000 threshold, contradicting the conclusion of Advisors 1 and 2.; The payout value check for a $100M exit remains undetermined by the panel.\nSUGGESTED NEXT STEP: Confirm if the $328,000 calculated grant value (400,000 shares * $0.82/share) satisfies the constraint of being >= $70,000/yr ($280,000 over 4 years) on an independent common-stock basis.",
+      "words": 127,
+      "meta": {
+        "prompt_tokens": 1457,
+        "output_tokens": 340,
+        "seconds": 11.92,
+        "repaired": false
+      }
+    }
+  },
+  "crux_survived": null,
+  "decisions": {
+    "raw": {
+      "output": {
+        "primary_reason": "The proposed equity grant value ($400,000) exceeds the minimum required value ($280,000), and the terms appear structured to maintain positive payout value in a $100M exit. The discrepancy between the $1.00/share Series C mark and the $0.82/share 409A valuation is noted but does not violate the stated floor.",
+        "target_clause_or_metric": "none",
+        "action": "proceed",
+        "confidence": 95,
+        "brief_endorsement": null
+      },
+      "meta": {
+        "prompt_tokens": 641,
+        "output_tokens": 138,
+        "seconds": 4.49,
+        "repaired": false
+      },
+      "hold": false,
+      "verified_catch": null,
+      "untargeted_hold": null,
+      "false_alarm": false
+    },
+    "single": {
+      "output": {
+        "primary_reason": "The pre-decision brief highlights a discrepancy: the required minimum equity value is $280,000, and the calculated value using the independent common stock valuation ($328,000) is above this floor. However, the brief also notes the payout value check is not determinable, which is a stated constraint.",
+        "target_clause_or_metric": "Payout value check (Constraint)",
+        "action": "hold_to_verify",
+        "confidence": 95,
+        "brief_endorsement": 5
+      },
+      "meta": {
+        "prompt_tokens": 974,
+        "output_tokens": 130,
+        "seconds": 4.27,
+        "repaired": false
+      },
+      "hold": true,
+      "verified_catch": null,
+      "untargeted_hold": null,
+      "false_alarm": true
+    },
+    "consensus": {
+      "output": {
+        "primary_reason": "The packet provides sufficient information, and the PRE-DECISION BRIEF clarifies that the $0.82/share valuation yields a total grant value of $328,000, which exceeds the required $280,000 minimum. The brief also addresses the exit value concern.",
+        "target_clause_or_metric": "none",
+        "action": "proceed",
+        "confidence": 95,
+        "brief_endorsement": 5
+      },
+      "meta": {
+        "prompt_tokens": 987,
+        "output_tokens": 115,
+        "seconds": 7.03,
+        "repaired": false
+      },
+      "hold": false,
+      "verified_catch": null,
+      "untargeted_hold": null,
+      "false_alarm": false
+    },
+    "crux": {
+      "output": {
+        "primary_reason": "The packet provides conflicting information regarding the required valuation, and the pre-decision brief highlights a direct conflict regarding whether the calculated value meets the $280,000 minimum. Specifically, the brief notes a disagreement on whether the $328,000 value satisfies the threshold, which is a material discrepancy threatening the stated constraint.",
+        "target_clause_or_metric": "Pre-Decision Brief, regarding the conflict on whether the $328,000 value satisfies the minimum $280,000 constraint",
+        "action": "hold_to_verify",
+        "confidence": 100,
+        "brief_endorsement": 5
+      },
+      "meta": {
+        "prompt_tokens": 922,
+        "output_tokens": 159,
+        "seconds": 8.13,
+        "repaired": false
+      },
+      "hold": true,
+      "verified_catch": null,
+      "untargeted_hold": null,
+      "false_alarm": true
+    }
+  }
+}

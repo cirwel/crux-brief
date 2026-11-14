@@ -1,0 +1,58 @@
+{
+  "scenario_id": "S04",
+  "variant": "sound",
+  "domain": "job_offers",
+  "difficulty_tier": 3,
+  "synth_model": "nemotron3:33b",
+  "k_spotted": null,
+  "advisor_caught_by_model": {
+    "gemma4:latest": null,
+    "nemotron3:33b": null,
+    "qwen3.6:27b-coding-mxfp8": null
+  },
+  "briefs": {
+    "consensus": {
+      "raw": {
+        "overview": "All advisors confirm the grant structure meets the $280,000 total equity floor ($70,000/year) when calculated using the independent 409A common stock valuation of $0.82/share, resulting in $328,000 total value from 400,000 shares. The non-participating preferred terms ensure common stock retains positive payout value in a $100M exit, with 0.40% ownership supporting a $400,000 payout at exit, exceeding the required minimum.",
+        "points_of_note": "Advisor 3 correctly identifies the constraint requires valuation at the 409A independent common stock basis ($0.82/share), yielding $328,000 total value which exceeds the $280,000 floor despite being below the Series C mark ($400,000). Advisors 1 and 2 validate this calculation as compliant, noting the annual $82,000 value and $400,000 exit payout (0.40% of $100M) both satisfy the floor and positive payout requirements without material issues.",
+        "suggested_next_step": "Proceed with acceptance of the equity grant as all constraints are satisfied when evaluated using the independent 409A common stock valuation basis."
+      },
+      "text": "ASSESSMENT OVERVIEW: All advisors confirm the grant structure meets the $280,000 total equity floor ($70,000/year) when calculated using the independent 409A common stock valuation of $0.82/share, resulting in $328,000 total value from 400,000 shares. The non-participating preferred terms ensure common stock retains positive payout value in a $100M exit, with 0.40% ownership supporting a $400,000 payout at exit, exceeding the required minimum.\nPOINTS OF NOTE: Advisor 3 correctly identifies the constraint requires valuation at the 409A independent common stock basis ($0.82/share), yielding $328,000 total value which exceeds the $280,000 floor despite being below the Series C mark ($400,000). Advisors 1 and 2 validate this calculation as compliant, noting the annual $82,000 value and $400,000 exit payout (0.40% of $100M) both satisfy the floor and positive payout requirements without material issues.\nSUGGESTED NEXT STEP: Proceed with acceptance of the equity grant as all constraints are satisfied when evaluated using the independent 409A common stock valuation basis.",
+      "words": 155,
+      "meta": {
+        "prompt_tokens": 1437,
+        "output_tokens": 306,
+        "seconds": 11.11,
+        "repaired": false
+      }
+    },
+    "crux": {
+      "raw": {
+        "shared_ground": [
+          "The grant consists of 400,000 shares",
+          "The 409A common stock valuation is $0.82/share"
+        ],
+        "cruxes": [
+          {
+            "topic": "Valuation basis for equity grant",
+            "side_a": "Advisor 1 and 2: Grant value based on Series C mark ($1.00/share) = $400,000",
+            "side_b": "Advisor 3: Grant value must use 409A independent common stock valuation ($0.82/share) = $328,000",
+            "premise_at_stake": "Whether the grant value meets the $280,000 total minimum requirement"
+          }
+        ],
+        "unverified_premises": [
+          "The payout value in a $100M exit is not determinable from the provided facts"
+        ],
+        "decisive_check": "Does the $328,000 calculated grant value (400,000 shares * $0.82/share) satisfy the constraint of being >= $280,000 total ($70,000/yr) on an independent common-stock basis?"
+      },
+      "text": "ASSESSMENT OVERVIEW: The grant consists of 400,000 shares The 409A common stock valuation is $0.82/share\nPOINTS OF NOTE: Disagreements: (1) Valuation basis for equity grant: Side A [Advisor 1 and 2: Grant value based on Series C mark ($1.00/share) = $400,000] vs. Side B [Advisor 3: Grant value must use 409A independent common stock valuation ($0.82/share) = $328,000] (at stake: Whether the grant value meets the $280,000 total minimum requirement) Flagged issues: The payout value in a $100M exit is not determinable from the provided facts\nSUGGESTED NEXT STEP: Does the $328,000 calculated grant value (400,000 shares * $0.82/share) satisfy the constraint of being >= $280,000 total ($70,000/yr) on an independent common-stock basis?",
+      "words": 113,
+      "meta": {
+        "prompt_tokens": 1606,
+        "output_tokens": 284,
+        "seconds": 9.92,
+        "repaired": false
+      }
+    }
+  }
+}

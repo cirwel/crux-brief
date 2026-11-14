@@ -1,0 +1,58 @@
+{
+  "scenario_id": "S19",
+  "variant": "flawed",
+  "domain": "operational_briefs",
+  "difficulty_tier": 3,
+  "synth_model": "nemotron3:33b",
+  "k_spotted": 3,
+  "advisor_caught_by_model": {
+    "gemma4:latest": true,
+    "nemotron3:33b": true,
+    "qwen3.6:27b-coding-mxfp8": true
+  },
+  "briefs": {
+    "consensus": {
+      "raw": {
+        "overview": "All three advisors concur that the current model's 96.0% sensitivity and 92.0% specificity, applied to a 1.0% live fraud base rate, yield a fraud precision of approximately 10.8% among suspended accounts, falling far short of the required 40% threshold for enabling fully automated suspension without human review.",
+        "points_of_note": "The advisors consistently calculate that 96 true fraud cases and 792 false positives result in 888 total suspensions, producing a precision of 10.8%, which violates the 40% fraud requirement; while Advisor 1 emphasizes the 11.2% fraud rate derived from sensitivity and base rate, Advisors 2 and 3 reinforce the 10.8% precision calculation using explicit true positive and false positive counts, confirming no constraint breach exists in the data but highlighting the policy's unsuitability for auto-suspension.",
+        "suggested_next_step": "Do not enable auto-suspension, as the calculated fraud precision of ~10.8% remains well below the mandatory 40% threshold, necessitating continued human verification to meet security team sensitivity and specificity standards."
+      },
+      "text": "ASSESSMENT OVERVIEW: All three advisors concur that the current model's 96.0% sensitivity and 92.0% specificity, applied to a 1.0% live fraud base rate, yield a fraud precision of approximately 10.8% among suspended accounts, falling far short of the required 40% threshold for enabling fully automated suspension without human review.\nPOINTS OF NOTE: The advisors consistently calculate that 96 true fraud cases and 792 false positives result in 888 total suspensions, producing a precision of 10.8%, which violates the 40% fraud requirement; while Advisor 1 emphasizes the 11.2% fraud rate derived from sensitivity and base rate, Advisors 2 and 3 reinforce the 10.8% precision calculation using explicit true positive and false positive counts, confirming no constraint breach exists in the data but highlighting the policy's unsuitability for auto-suspension.\nSUGGESTED NEXT STEP: Do not enable auto-suspension, as the calculated fraud precision of ~10.8% remains well below the mandatory 40% threshold, necessitating continued human verification to meet security team sensitivity and specificity standards.",
+      "words": 160,
+      "meta": {
+        "prompt_tokens": 1650,
+        "output_tokens": 262,
+        "seconds": 7.62,
+        "repaired": false
+      }
+    },
+    "crux": {
+      "raw": {
+        "shared_ground": [
+          "The packet provides 96.0% sensitivity and 92.0% specificity",
+          "Live production fraud base rate is 1.0% (100 fraudulent, 9,900 legitimate per 10,000 accounts)"
+        ],
+        "cruxes": [
+          {
+            "topic": "Fraud rate among suspended accounts",
+            "side_a": "Actual fraud rate among suspended accounts is 11.2% (100/(100+792))",
+            "side_b": "Actual fraud rate among suspended accounts is 10.8% (96/(96+792))",
+            "premise_at_stake": "Whether the fraud rate among suspended accounts meets the 40% threshold"
+          }
+        ],
+        "unverified_premises": [
+          "The precise fraud rate among suspended accounts based on sensitivity, specificity, and base rate calculation"
+        ],
+        "decisive_check": "What is the actual fraud rate among suspended accounts based on the 96.0% sensitivity and 92.0% specificity with a 1.0% fraud base rate?"
+      },
+      "text": "ASSESSMENT OVERVIEW: The packet provides 96.0% sensitivity and 92.0% specificity Live production fraud base rate is 1.0% (100 fraudulent, 9,900 legitimate per 10,000 accounts)\nPOINTS OF NOTE: Disagreements: (1) Fraud rate among suspended accounts: Side A [Actual fraud rate among suspended accounts is 11.2% (100/(100+792))] vs. Side B [Actual fraud rate among suspended accounts is 10.8% (96/(96+792))] (at stake: Whether the fraud rate among suspended accounts meets the 40% threshold) Flagged issues: The precise fraud rate among suspended accounts based on sensitivity, specificity, and base rate calculation\nSUGGESTED NEXT STEP: What is the actual fraud rate among suspended accounts based on the 96.0% sensitivity and 92.0% specificity with a 1.0% fraud base rate?",
+      "words": 113,
+      "meta": {
+        "prompt_tokens": 1819,
+        "output_tokens": 261,
+        "seconds": 7.96,
+        "repaired": false
+      }
+    }
+  }
+}

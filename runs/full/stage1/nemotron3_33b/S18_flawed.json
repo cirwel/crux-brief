@@ -1,0 +1,30 @@
+{
+  "scenario_id": "S18",
+  "variant": "flawed",
+  "domain": "procurement_handoffs",
+  "difficulty_tier": 3,
+  "model": "nemotron3:33b",
+  "seed": 1134,
+  "output": {
+    "summary": "The rebate requires 1,000+ units to trigger any savings, but the 950-1,050 band includes 950-999 units where rebate is $0 per Schedule C. At midpoint 980 units, rebate is $0 since <1,000 units, failing the $15,000 minimum requirement.",
+    "key_claims": [
+      "Rebate triggers only at 1,000+ units with $20/unit credit",
+      "Schedule C explicitly states $0 rebate for 999 units or fewer",
+      "950-1,050 band includes 950-999 units where rebate is $0"
+    ],
+    "recommendation": "hold_to_verify",
+    "risks_or_flaws": [
+      "Rebate calculation fails at 950-999 units (below 1,000 threshold)",
+      "Maximum possible rebate at 1,050 units is $21,000 (1,050 \u00d7 $20), but minimum guarantee requirement is $15,000 at all volumes in band"
+    ],
+    "verification_question": "Confirm whether Schedule C's 1,000-unit threshold applies to all units or only incremental units above 1,000",
+    "confidence": 100
+  },
+  "meta": {
+    "prompt_tokens": 636,
+    "output_tokens": 320,
+    "seconds": 10.38,
+    "repaired": false
+  },
+  "advisor_caught": true
+}

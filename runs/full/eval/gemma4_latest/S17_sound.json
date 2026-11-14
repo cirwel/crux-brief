@@ -1,0 +1,136 @@
+{
+  "scenario_id": "S17",
+  "variant": "sound",
+  "domain": "procurement_handoffs",
+  "difficulty_tier": 1,
+  "eval_model": "gemma4:latest",
+  "synth_model": "nemotron3:33b",
+  "single_advisor_model": "nemotron3:33b",
+  "k_spotted": null,
+  "advisor_caught_by_model": {
+    "gemma4:latest": null,
+    "nemotron3:33b": null,
+    "qwen3.6:27b-coding-mxfp8": null
+  },
+  "briefs": {
+    "single": {
+      "text": "ASSESSMENT OVERVIEW: Calculating all-in cost: 100 units \u00d7 ($1,080 + $70) = $115,000 for hardware + support. Adding $2,200 freight gives $117,200 total. This is under the $118,000 budget constraint. All components are accounted for with no hidden exclusions. Key facts: 100 units \u00d7 $1,080 = $108,000 hardware subtotal; 100 units \u00d7 $70 = $7,000 support bundle cost; Total before freight: $115,000.\nPOINTS OF NOTE: No concrete constraint violations flagged.\nSUGGESTED NEXT STEP: None required; stated constraints appear satisfied.",
+      "words": 79
+    },
+    "consensus": {
+      "raw": {
+        "overview": "All three advisors unanimously confirm that the total all-in Purchase Order cost of $117,200 for 100 engineering workstations falls safely below the $118,000 budget constraint, with identical calculations showing hardware at $108,000, mandatory support at $7,000, and fixed freight/crating at $2,200.",
+        "points_of_note": "The consistent arithmetic across all assessments\u2014$108,000 hardware subtotal (100 \u00d7 $1,080), $7,000 support cost (100 \u00d7 $70), and $2,200 freight\u2014validates compliance with the $118,000 ceiling, and no advisor flagged hidden exclusions, discrepancies, or constraint violations.",
+        "suggested_next_step": "Approve the purchase order immediately, as all advisors confirm the $117,200 total meets the budget constraint without material concerns."
+      },
+      "text": "ASSESSMENT OVERVIEW: All three advisors unanimously confirm that the total all-in Purchase Order cost of $117,200 for 100 engineering workstations falls safely below the $118,000 budget constraint, with identical calculations showing hardware at $108,000, mandatory support at $7,000, and fixed freight/crating at $2,200.\nPOINTS OF NOTE: The consistent arithmetic across all assessments\u2014$108,000 hardware subtotal (100 \u00d7 $1,080), $7,000 support cost (100 \u00d7 $70), and $2,200 freight\u2014validates compliance with the $118,000 ceiling, and no advisor flagged hidden exclusions, discrepancies, or constraint violations.\nSUGGESTED NEXT STEP: Approve the purchase order immediately, as all advisors confirm the $117,200 total meets the budget constraint without material concerns.",
+      "words": 103,
+      "meta": {
+        "prompt_tokens": 1216,
+        "output_tokens": 223,
+        "seconds": 6.4,
+        "repaired": false
+      }
+    },
+    "crux": {
+      "raw": {
+        "shared_ground": [
+          "Hardware subtotal: $108,000",
+          "Mandatory support cost: $7,000",
+          "Freight cost: $2,200",
+          "Total all-in PO cost: $117,200"
+        ],
+        "cruxes": [],
+        "unverified_premises": [],
+        "decisive_check": "None required; all advisors concur stated constraints are satisfied."
+      },
+      "text": "ASSESSMENT OVERVIEW: Hardware subtotal: $108,000 Mandatory support cost: $7,000\nPOINTS OF NOTE: No concrete disagreements or constraint violations flagged across advisors.\nSUGGESTED NEXT STEP: None required; all advisors concur stated constraints are satisfied.",
+      "words": 33,
+      "meta": {
+        "prompt_tokens": 1385,
+        "output_tokens": 109,
+        "seconds": 4.99,
+        "repaired": false
+      }
+    }
+  },
+  "crux_survived": null,
+  "decisions": {
+    "raw": {
+      "output": {
+        "primary_reason": "The calculation shows the total cost is $117,200, which is less than the $118,000 budget constraint. Therefore, the proposal meets all stated financial requirements.",
+        "target_clause_or_metric": "none",
+        "action": "proceed",
+        "confidence": 100,
+        "brief_endorsement": null
+      },
+      "meta": {
+        "prompt_tokens": 574,
+        "output_tokens": 95,
+        "seconds": 3.19,
+        "repaired": false
+      },
+      "hold": false,
+      "verified_catch": null,
+      "untargeted_hold": null,
+      "false_alarm": false
+    },
+    "single": {
+      "output": {
+        "primary_reason": "The calculation confirms the total all-in cost is $117,200, which is below the specified maximum budget of $118,000. All components required by the constraints have been accounted for.",
+        "target_clause_or_metric": "none",
+        "action": "proceed",
+        "confidence": 100,
+        "brief_endorsement": 5
+      },
+      "meta": {
+        "prompt_tokens": 745,
+        "output_tokens": 101,
+        "seconds": 3.8,
+        "repaired": false
+      },
+      "hold": false,
+      "verified_catch": null,
+      "untargeted_hold": null,
+      "false_alarm": false
+    },
+    "consensus": {
+      "output": {
+        "primary_reason": "The calculation confirms the total all-in cost is $117,200, which is below the $118,000 constraint. The pre-decision brief also confirms this calculation and provides strong assurance.",
+        "target_clause_or_metric": "none",
+        "action": "proceed",
+        "confidence": 100,
+        "brief_endorsement": 5
+      },
+      "meta": {
+        "prompt_tokens": 785,
+        "output_tokens": 101,
+        "seconds": 3.04,
+        "repaired": false
+      },
+      "hold": false,
+      "verified_catch": null,
+      "untargeted_hold": null,
+      "false_alarm": false
+    },
+    "crux": {
+      "output": {
+        "primary_reason": "The calculation for the total all-in cost is $118,200 ($108,000 + $7,000 + $2,200), which exceeds the stated maximum budget of $118,000.",
+        "target_clause_or_metric": "Total all-in Purchase Order cost must stay <= $118,000",
+        "action": "hold_to_verify",
+        "confidence": 100,
+        "brief_endorsement": 2
+      },
+      "meta": {
+        "prompt_tokens": 632,
+        "output_tokens": 132,
+        "seconds": 4.33,
+        "repaired": false
+      },
+      "hold": true,
+      "verified_catch": null,
+      "untargeted_hold": null,
+      "false_alarm": true
+    }
+  }
+}

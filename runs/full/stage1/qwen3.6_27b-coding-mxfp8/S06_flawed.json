@@ -1,0 +1,29 @@
+{
+  "scenario_id": "S06",
+  "variant": "flawed",
+  "domain": "job_offers",
+  "difficulty_tier": 1,
+  "model": "qwen3.6:27b-coding-mxfp8",
+  "seed": 2110,
+  "output": {
+    "summary": "The packet specifies a total relocation package of $18,000, split into an $8,000 moving reimbursement and a $10,000 stipend. Both components are explicitly classified as taxable W-2 compensation with no tax gross-up. Applying the user's 35% marginal tax rate to the full $18,000 gross amount results in $6,300 in taxes ($18,000 * 0.35). The resulting net cash available is $11,700 ($18,000 - $6,300). This figure is strictly below the user's mandatory constraint of >= $14,000 net after-tax liquidity. Therefore, the offer fails to meet the financial threshold required for acceptance.",
+    "key_claims": [
+      "Total gross relocation value is $18,000 ($8,000 reimbursement + $10,000 stipend).",
+      "Net after-tax cash is $11,700, calculated as $18,000 * (1 - 0.35).",
+      "The net amount of $11,700 is less than the required $14,000 threshold."
+    ],
+    "recommendation": "hold_to_verify",
+    "risks_or_flaws": [
+      "The net after-tax relocation cash ($11,700) violates the explicit constraint of >= $14,000."
+    ],
+    "verification_question": "Does the employer offer any alternative structure or gross-up that would increase the net after-tax amount to at least $14,000?",
+    "confidence": 100
+  },
+  "meta": {
+    "prompt_tokens": 573,
+    "output_tokens": 387,
+    "seconds": 72.19,
+    "repaired": false
+  },
+  "advisor_caught": true
+}

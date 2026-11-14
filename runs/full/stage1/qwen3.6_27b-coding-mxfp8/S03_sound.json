@@ -1,0 +1,29 @@
+{
+  "scenario_id": "S03",
+  "variant": "sound",
+  "domain": "job_offers",
+  "difficulty_tier": 2,
+  "model": "qwen3.6:27b-coding-mxfp8",
+  "seed": 2105,
+  "output": {
+    "summary": "The user requires annual cash earnings at historical team attainment to be at least $210,000. The packet states a $160,000 base and $80,000 variable at 100% quota. Historical median attainment is 96%. Calculating cash earnings at this attainment: $160,000 base + (0.96 * $80,000 variable) = $160,000 + $76,800 = $236,800. This figure ($236,800) is strictly greater than the $210,000 constraint. The payout gate confirms proportional payment from the first dollar, validating the linear calculation. No hidden exclusions or thresholds reduce this amount. The constraint is satisfied.",
+    "key_claims": [
+      "Base salary is $160,000.",
+      "Variable commission is $80,000 at 100% quota.",
+      "Historical median attainment is 96%."
+    ],
+    "recommendation": "proceed",
+    "risks_or_flaws": [
+      "none"
+    ],
+    "verification_question": "none",
+    "confidence": 100
+  },
+  "meta": {
+    "prompt_tokens": 593,
+    "output_tokens": 293,
+    "seconds": 40.21,
+    "repaired": false
+  },
+  "advisor_caught": null
+}

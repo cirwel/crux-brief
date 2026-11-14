@@ -1,0 +1,29 @@
+{
+  "scenario_id": "S14",
+  "variant": "flawed",
+  "domain": "procurement_handoffs",
+  "difficulty_tier": 3,
+  "model": "nemotron3:33b",
+  "seed": 1126,
+  "output": {
+    "summary": "The packet states the PO ceiling is $21,000.00 USD. The invoice is 21,000.00 EUR. At the quoted spot rate of 1.14 USD/EUR, the USD payout equals 21,000.00 * 1.14 = $23,940.00, which exceeds the $21,000.00 ceiling. All stated quantities and rates are consistent, but the conversion violates the constraint.",
+    "key_claims": [
+      "PO ceiling is $21,000.00 USD",
+      "Invoice amount is 21,000.00 EUR",
+      "Spot rate is 1.14 USD/EUR, resulting in $23,940.00 USD payout"
+    ],
+    "recommendation": "hold_to_verify",
+    "risks_or_flaws": [
+      "USD payout ($23,940.00) exceeds $21,000.00 PO ceiling"
+    ],
+    "verification_question": "Is the USD payout calculated as 21,000.00 EUR \u00d7 1.14 USD/EUR?",
+    "confidence": 100
+  },
+  "meta": {
+    "prompt_tokens": 672,
+    "output_tokens": 295,
+    "seconds": 10.13,
+    "repaired": false
+  },
+  "advisor_caught": true
+}

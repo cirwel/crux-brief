@@ -1,0 +1,49 @@
+{
+  "scenario_id": "S17",
+  "variant": "sound",
+  "domain": "procurement_handoffs",
+  "difficulty_tier": 1,
+  "synth_model": "gemma4:latest",
+  "k_spotted": null,
+  "advisor_caught_by_model": {
+    "gemma4:latest": null,
+    "nemotron3:33b": null,
+    "qwen3.6:27b-coding-mxfp8": null
+  },
+  "briefs": {
+    "consensus": {
+      "raw": {
+        "overview": "The consensus among all advisors is a strong recommendation to proceed with the purchase of 100 engineering workstations. All assessments confirm that the total all-in Purchase Order cost remains comfortably within the specified budget constraint of $118,000. The analysis consistently points to the same calculation methodology and final cost.",
+        "points_of_note": "All three advisors utilized the same core figures: a hardware subtotal of $108,000 (100 units at $1,080), a mandatory support cost of $7,000 (100 units at $70), and a fixed freight/crating fee of $2,200. Each calculation method\u2014whether summing components or calculating unit costs first\u2014converged precisely on a final total of $117,200. No advisor flagged any potential constraint breaches or required further investigation.",
+        "suggested_next_step": "Given the unanimous confirmation that the calculated total all-in cost of $117,200 is below the $118,000 limit, the decision maker should approve the Purchase Order as presented."
+      },
+      "text": "ASSESSMENT OVERVIEW: The consensus among all advisors is a strong recommendation to proceed with the purchase of 100 engineering workstations. All assessments confirm that the total all-in Purchase Order cost remains comfortably within the specified budget constraint of $118,000. The analysis consistently points to the same calculation methodology and final cost.\nPOINTS OF NOTE: All three advisors utilized the same core figures: a hardware subtotal of $108,000 (100 units at $1,080), a mandatory support cost of $7,000 (100 units at $70), and a fixed freight/crating fee of $2,200. Each calculation method\u2014whether summing components or calculating unit costs first\u2014converged precisely on a final total of $117,200. No advisor flagged any potential constraint breaches or required further investigation.\nSUGGESTED NEXT STEP: Given the unanimous confirmation that the calculated total all-in cost of $117,200 is below the $118,000 limit, the decision maker should approve the Purchase Order as presented.",
+      "words": 146,
+      "meta": {
+        "prompt_tokens": 1082,
+        "output_tokens": 254,
+        "seconds": 11.36,
+        "repaired": false
+      }
+    },
+    "crux": {
+      "raw": {
+        "shared_ground": [
+          "The total all-in Purchase Order cost is calculated as $108,000 (hardware) + $7,000 (support) + $2,200 (freight).",
+          "All three advisors confirm the final total cost is $117,200, which is below the $118,000 budget constraint."
+        ],
+        "cruxes": [],
+        "unverified_premises": [],
+        "decisive_check": "None required; all advisors concur stated constraints are satisfied."
+      },
+      "text": "ASSESSMENT OVERVIEW: The total all-in Purchase Order cost is calculated as $108,000 (hardware) + $7,000 (support) + $2,200 (freight). All three advisors confirm the final total cost is $117,200, which is below the $118,000 budget constraint.\nPOINTS OF NOTE: No concrete disagreements or constraint violations flagged across advisors.\nSUGGESTED NEXT STEP: None required; all advisors concur stated constraints are satisfied.",
+      "words": 60,
+      "meta": {
+        "prompt_tokens": 1230,
+        "output_tokens": 134,
+        "seconds": 6.05,
+        "repaired": false
+      }
+    }
+  }
+}

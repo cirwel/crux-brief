@@ -1,0 +1,29 @@
+{
+  "scenario_id": "S03",
+  "variant": "sound",
+  "domain": "job_offers",
+  "difficulty_tier": 2,
+  "model": "nemotron3:33b",
+  "seed": 1105,
+  "output": {
+    "summary": "The packet states $240,000 OTE and 96% median attainment, implying $230,400 historical cash earnings (96% of $240,000), which exceeds the $210,000 threshold. Even with 88% attainment (the lower bound of the 60% rep range), cash earnings would be $211,200, still meeting the $210,000 requirement. No clause or data point reduces historical attainment cash below $210,000.",
+    "key_claims": [
+      "OTE = $240,000",
+      "Median historical attainment = 96%",
+      "88% attainment yields $211,200 cash earnings"
+    ],
+    "recommendation": "proceed",
+    "risks_or_flaws": [
+      "none"
+    ],
+    "verification_question": "none",
+    "confidence": 100
+  },
+  "meta": {
+    "prompt_tokens": 659,
+    "output_tokens": 226,
+    "seconds": 8.87,
+    "repaired": false
+  },
+  "advisor_caught": null
+}

@@ -1,0 +1,29 @@
+{
+  "scenario_id": "S24",
+  "variant": "flawed",
+  "domain": "operational_briefs",
+  "difficulty_tier": 1,
+  "model": "qwen3.6:27b-coding-mxfp8",
+  "seed": 2146,
+  "output": {
+    "summary": "The proposal claims $20,000/month in overtime savings, totaling $240,000 annually. Costs include two nurses at $95,000 each ($190,000 total) plus a $35,000 placement fee, summing to $225,000 in Year-1 expenses. Subtracting total costs ($225,000) from total savings ($240,000) yields a net Year-1 savings of $15,000. This figure is significantly below the user's explicit constraint of >= $100,000 net savings. Therefore, the proposal fails the financial viability test defined by the user.",
+    "key_claims": [
+      "Annual overtime savings: $240,000 ($20k x 12 months)",
+      "Total Year-1 costs: $225,000 ($190k salaries + $35k fees)",
+      "Net Year-1 savings: $15,000"
+    ],
+    "recommendation": "hold_to_verify",
+    "risks_or_flaws": [
+      "Net Year-1 savings of $15,000 is below the required $100,000 threshold"
+    ],
+    "verification_question": "Does the $20,000/month overtime savings figure account for all potential cost offsets, or are there additional hidden costs not listed in Table B?",
+    "confidence": 100
+  },
+  "meta": {
+    "prompt_tokens": 538,
+    "output_tokens": 350,
+    "seconds": 58.45,
+    "repaired": false
+  },
+  "advisor_caught": true
+}

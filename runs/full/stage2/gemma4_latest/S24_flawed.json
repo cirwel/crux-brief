@@ -1,0 +1,59 @@
+{
+  "scenario_id": "S24",
+  "variant": "flawed",
+  "domain": "operational_briefs",
+  "difficulty_tier": 1,
+  "synth_model": "gemma4:latest",
+  "k_spotted": 3,
+  "advisor_caught_by_model": {
+    "gemma4:latest": true,
+    "nemotron3:33b": true,
+    "qwen3.6:27b-coding-mxfp8": true
+  },
+  "briefs": {
+    "consensus": {
+      "raw": {
+        "overview": "The advisors show strong consensus that the current hiring plan does not meet the user's primary financial constraint. All three assessments converge on a calculation showing that the projected Year-1 net budget savings fall substantially short of the required $100,000 threshold. While the proposal highlights significant potential overtime savings, the calculated net benefit, based on the provided cost structure, is considerably lower than the established approval benchmark.",
+        "points_of_note": "There is high agreement on the core financial inputs: annual overtime savings are consistently calculated at $240,000, and total Year-1 costs are calculated around $225,000 (combining $190,000 for salaries/benefits and $35,000 for fees). This consistent input leads all advisors to calculate a net Year-1 savings of $15,000, which is flagged by all parties as failing the $100,000 minimum. The discrepancy between the projected savings and the required threshold is the most critical, non-negotiable point across all reports.",
+        "suggested_next_step": "Given the unanimous identification of a material constraint breach\u2014the net Year-1 savings ($15,000) failing to meet the required $100,000 minimum\u2014the immediate next step is to pause approval and request clarification on the underlying assumptions, specifically whether the $20,000/month overtime savings figure represents the total, fully annualized savings, or if there are unlisted cost offsets that could bridge the $85,000 gap."
+      },
+      "text": "ASSESSMENT OVERVIEW: The advisors show strong consensus that the current hiring plan does not meet the user's primary financial constraint. All three assessments converge on a calculation showing that the projected Year-1 net budget savings fall substantially short of the required $100,000 threshold. While the proposal highlights significant potential overtime savings, the calculated net benefit, based on the provided cost structure, is considerably lower than the established approval benchmark.\nPOINTS OF NOTE: There is high agreement on the core financial inputs: annual overtime savings are consistently calculated at $240,000, and total Year-1 costs are calculated around $225,000 (combining $190,000 for salaries/benefits and $35,000 for fees). This consistent input leads all advisors to calculate a net Year-1 savings of $15,000, which is flagged by all parties as failing the $100,000 minimum. The discrepancy between the projected savings and the required threshold is the most critical, non-negotiable point across all reports.\nSUGGESTED NEXT STEP: Given the unanimous identification of a material constraint breach\u2014the net Year-1 savings ($15,000) failing to meet the required $100,000 minimum\u2014the immediate next step is to pause approval and request clarification on the underlying assumptions, specifically whether the $20,000/month overtime savings figure represents the total, fully annualized savings, or if there are unlisted cost offsets that could bridge the $85,000 gap.",
+      "words": 212,
+      "meta": {
+        "prompt_tokens": 1308,
+        "output_tokens": 349,
+        "seconds": 13.02,
+        "repaired": false
+      }
+    },
+    "crux": {
+      "raw": {
+        "shared_ground": [
+          "The required Year-1 net budget savings threshold is $100,000.",
+          "The calculated annual overtime savings across all advisors is $240,000."
+        ],
+        "cruxes": [
+          {
+            "topic": "Net Year-1 Savings Calculation",
+            "side_a": "$50,000 net savings (Advisor 1)",
+            "side_b": "$15,000 net savings (Advisor 2 & 3)",
+            "premise_at_stake": "The precise calculation of total Year-1 costs (specifically the inclusion/exclusion of the $35,000 fee) determines the final net savings figure."
+          }
+        ],
+        "unverified_premises": [
+          "The exact calculation of Year-1 net savings is disputed, ranging from $50,000 to $15,000.",
+          "The scope of the $20,000/month overtime savings figure (whether it is the total annual saving or requires further adjustment) is unclear."
+        ],
+        "decisive_check": "Confirm the definitive Year-1 net savings calculation using the agreed-upon total costs ($225,000) against the total savings ($240,000) to determine if the resulting figure meets the $100,000 minimum."
+      },
+      "text": "ASSESSMENT OVERVIEW: The required Year-1 net budget savings threshold is $100,000. The calculated annual overtime savings across all advisors is $240,000.\nPOINTS OF NOTE: Disagreements: (1) Net Year-1 Savings Calculation: Side A [$50,000 net savings (Advisor 1)] vs. Side B [$15,000 net savings (Advisor 2 & 3)] (at stake: The precise calculation of total Year-1 costs (specifically the inclusion/exclusion of the $35,000 fee) determines the final net savings figure.) Flagged issues: The exact calculation of Year-1 net savings is disputed, ranging from $50,000 to $15,000.; The scope of the $20,000/month overtime savings figure (whether it is the total annual saving or requires further adjustment) is unclear.\nSUGGESTED NEXT STEP: Confirm the definitive Year-1 net savings calculation using the agreed-upon total costs ($225,000) against the total savings ($240,000) to determine if the resulting figure meets the $100,000 minimum.",
+      "words": 137,
+      "meta": {
+        "prompt_tokens": 1456,
+        "output_tokens": 321,
+        "seconds": 12.66,
+        "repaired": false
+      }
+    }
+  }
+}

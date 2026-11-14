@@ -1,0 +1,29 @@
+{
+  "scenario_id": "S10",
+  "variant": "sound",
+  "domain": "leases",
+  "difficulty_tier": 3,
+  "model": "nemotron3:33b",
+  "seed": 1119,
+  "output": {
+    "summary": "The packet states a 45% sublease limit, but the user's goal requires exactly 40% sublease. Since 40% is within the permitted 45% cap, the constraint is satisfied. The 36-month term and rent align with the user's full-term requirement, and insurance requirements are not user-constrained.",
+    "key_claims": [
+      "4,500 sq ft floor area",
+      "45% sublease limit per Clause 12.4",
+      "User's goal requires 40% sublease"
+    ],
+    "recommendation": "proceed",
+    "risks_or_flaws": [
+      "none"
+    ],
+    "verification_question": "none",
+    "confidence": 100
+  },
+  "meta": {
+    "prompt_tokens": 591,
+    "output_tokens": 174,
+    "seconds": 6.73,
+    "repaired": false
+  },
+  "advisor_caught": null
+}

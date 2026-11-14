@@ -1,0 +1,59 @@
+{
+  "scenario_id": "S13",
+  "variant": "flawed",
+  "domain": "procurement_handoffs",
+  "difficulty_tier": 2,
+  "synth_model": "gemma4:latest",
+  "k_spotted": 3,
+  "advisor_caught_by_model": {
+    "gemma4:latest": true,
+    "nemotron3:33b": true,
+    "qwen3.6:27b-coding-mxfp8": true
+  },
+  "briefs": {
+    "consensus": {
+      "raw": {
+        "overview": "The advisors present a consistent and highly cautious assessment, unanimously recommending a 'hold to verify' status. The core concern across all reports is that the vendor's proposed Service Level Agreement (SLA) fails to meet two critical constraints established by the user: the maximum permitted outage duration and the required SLA breach reimbursement percentage. The synthesis indicates significant misalignment between the current proposal and the established risk tolerance.",
+        "points_of_note": "Multiple advisors highlight that the 99.5% uptime target, when combined with scheduled maintenance allowances (up to 8 hours/month), results in a total potential outage far exceeding the 60-minute monthly limit. Furthermore, the proposed remedy, consistently cited as a 10% credit, falls substantially short of the required 50% reimbursement threshold. The specificity of these quantitative failures\u2014the 10% vs. 50% comparison, and the calculation showing total downtime exceeding 60 minutes\u2014is the most critical common ground.",
+        "suggested_next_step": "The decision maker should require the vendor to provide revised SLA terms that explicitly guarantee a service credit of at least 50% of the monthly fee AND demonstrate that the total combined unscheduled and scheduled downtime remains under 60 minutes per month."
+      },
+      "text": "ASSESSMENT OVERVIEW: The advisors present a consistent and highly cautious assessment, unanimously recommending a 'hold to verify' status. The core concern across all reports is that the vendor's proposed Service Level Agreement (SLA) fails to meet two critical constraints established by the user: the maximum permitted outage duration and the required SLA breach reimbursement percentage. The synthesis indicates significant misalignment between the current proposal and the established risk tolerance.\nPOINTS OF NOTE: Multiple advisors highlight that the 99.5% uptime target, when combined with scheduled maintenance allowances (up to 8 hours/month), results in a total potential outage far exceeding the 60-minute monthly limit. Furthermore, the proposed remedy, consistently cited as a 10% credit, falls substantially short of the required 50% reimbursement threshold. The specificity of these quantitative failures\u2014the 10% vs. 50% comparison, and the calculation showing total downtime exceeding 60 minutes\u2014is the most critical common ground.\nSUGGESTED NEXT STEP: The decision maker should require the vendor to provide revised SLA terms that explicitly guarantee a service credit of at least 50% of the monthly fee AND demonstrate that the total combined unscheduled and scheduled downtime remains under 60 minutes per month.",
+      "words": 190,
+      "meta": {
+        "prompt_tokens": 1242,
+        "output_tokens": 273,
+        "seconds": 9.9,
+        "repaired": false
+      }
+    },
+    "crux": {
+      "raw": {
+        "shared_ground": [
+          "The vendor's SLA remedy is capped at 10% of the monthly fee.",
+          "The total potential outage time (including scheduled maintenance) exceeds the 60-minute monthly limit."
+        ],
+        "cruxes": [
+          {
+            "topic": "Outage Calculation",
+            "side_a": "Advisor 1: 99.5% uptime implies 108 minutes downtime, exceeding 60 minutes.",
+            "side_b": "Advisor 2: Scheduled maintenance allows up to 8 hours of downtime, exceeding 60 minutes.",
+            "premise_at_stake": "Whether the 60-minute limit applies to unscheduled only, or includes scheduled maintenance."
+          }
+        ],
+        "unverified_premises": [
+          "The required SLA breach reimbursement is >= 50% of the monthly fee.",
+          "The vendor must address the discrepancy between the 99.5% uptime target and the 60-minute outage constraint."
+        ],
+        "decisive_check": "Confirm if the vendor can guarantee a service credit of >= 50% of the monthly fee AND confirm the total outage calculation (scheduled + unscheduled) remains under 60 minutes."
+      },
+      "text": "ASSESSMENT OVERVIEW: The vendor's SLA remedy is capped at 10% of the monthly fee. The total potential outage time (including scheduled maintenance) exceeds the 60-minute monthly limit.\nPOINTS OF NOTE: Disagreements: (1) Outage Calculation: Side A [Advisor 1: 99.5% uptime implies 108 minutes downtime, exceeding 60 minutes.] vs. Side B [Advisor 2: Scheduled maintenance allows up to 8 hours of downtime, exceeding 60 minutes.] (at stake: Whether the 60-minute limit applies to unscheduled only, or includes scheduled maintenance.) Flagged issues: The required SLA breach reimbursement is >= 50% of the monthly fee.; The vendor must address the discrepancy between the 99.5% uptime target and the 60-minute outage constraint.\nSUGGESTED NEXT STEP: Confirm if the vendor can guarantee a service credit of >= 50% of the monthly fee AND confirm the total outage calculation (scheduled + unscheduled) remains under 60 minutes.",
+      "words": 140,
+      "meta": {
+        "prompt_tokens": 1390,
+        "output_tokens": 284,
+        "seconds": 11.12,
+        "repaired": false
+      }
+    }
+  }
+}

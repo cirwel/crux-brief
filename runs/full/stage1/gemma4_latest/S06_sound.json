@@ -1,0 +1,29 @@
+{
+  "scenario_id": "S06",
+  "variant": "sound",
+  "domain": "job_offers",
+  "difficulty_tier": 1,
+  "model": "gemma4:latest",
+  "seed": 111,
+  "output": {
+    "summary": "The packet states a total benefit of $24,000 with a full tax gross-up, ensuring the employee receives the full amount after taxes. The constraint requires a net after-tax relocation cash of at least $14,000, assuming a 35% marginal tax rate. Since the packet guarantees the employee receives the full $24,000 benefit after taxes, this amount exceeds the minimum required $14,000.",
+    "key_claims": [
+      "Total guaranteed net relocation cash: $24,000",
+      "Required minimum net cash: $14,000",
+      "The packet guarantees the full $24,000 benefit after taxes."
+    ],
+    "recommendation": "proceed",
+    "risks_or_flaws": [
+      "none"
+    ],
+    "verification_question": "none",
+    "confidence": 100
+  },
+  "meta": {
+    "prompt_tokens": 576,
+    "output_tokens": 218,
+    "seconds": 8.64,
+    "repaired": false
+  },
+  "advisor_caught": null
+}

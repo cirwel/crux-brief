@@ -1,0 +1,29 @@
+{
+  "scenario_id": "S11",
+  "variant": "sound",
+  "domain": "leases",
+  "difficulty_tier": 3,
+  "model": "qwen3.6:27b-coding-mxfp8",
+  "seed": 2121,
+  "output": {
+    "summary": "The user requires a cap of $3,000/year on non-rent building repair exposure and no unbudgeted capital equipment replacement. The lease explicitly limits the tenant's HVAC obligation to $2,000 aggregate per lease year, which is below the $3,000 threshold. Furthermore, the landlord assumes responsibility for structural and HVAC capital unit replacement, supported by an escrowed reserve for the aging rooftop unit. This ensures no unbudgeted capital replacement risk falls on the tenant. All stated constraints are satisfied.",
+    "key_claims": [
+      "Tenant HVAC obligation capped at $2,000 aggregate per lease year",
+      "Landlord responsible for HVAC capital unit replacement",
+      "Landlord has $26,500 escrowed for replacement of aging unit"
+    ],
+    "recommendation": "proceed",
+    "risks_or_flaws": [
+      "none"
+    ],
+    "verification_question": "none",
+    "confidence": 100
+  },
+  "meta": {
+    "prompt_tokens": 571,
+    "output_tokens": 228,
+    "seconds": 50.4,
+    "repaired": false
+  },
+  "advisor_caught": null
+}

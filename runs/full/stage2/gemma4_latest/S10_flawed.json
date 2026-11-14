@@ -1,0 +1,59 @@
+{
+  "scenario_id": "S10",
+  "variant": "flawed",
+  "domain": "leases",
+  "difficulty_tier": 3,
+  "synth_model": "gemma4:latest",
+  "k_spotted": 3,
+  "advisor_caught_by_model": {
+    "gemma4:latest": true,
+    "nemotron3:33b": true,
+    "qwen3.6:27b-coding-mxfp8": true
+  },
+  "briefs": {
+    "consensus": {
+      "raw": {
+        "overview": "The advisors show strong consensus regarding the core conflict between the user's operational plan and the existing lease terms. All three assessments highlight that while the 36-month term and the 40% sublease plan are noted, the primary risk centers on the Landlord's unilateral Recapture Option. This clause appears to fundamentally undermine the goal of securing the remaining 60% occupancy for the full 36-month duration.",
+        "points_of_note": "A consistent and critical point across all reports is Clause 12.4, which grants the Landlord an absolute recapture option upon receiving *any* sublease notice. Advisor 1 specified this triggers upon *any* sublease notice, Advisor 2 noted it allows termination of the *entire* lease, and Advisor 3 emphasized the immediacy (within 15 days). These specific details suggest the risk is not merely procedural but existential to the 60% occupancy constraint, regardless of the 1,800 sq ft sublease.",
+        "suggested_next_step": "Given the unanimous identification of the Landlord's absolute Recapture Option as a direct conflict, the decision maker must prioritize obtaining written clarification or negotiation to waive or significantly limit Clause 12.4 before proceeding with any subleasing action."
+      },
+      "text": "ASSESSMENT OVERVIEW: The advisors show strong consensus regarding the core conflict between the user's operational plan and the existing lease terms. All three assessments highlight that while the 36-month term and the 40% sublease plan are noted, the primary risk centers on the Landlord's unilateral Recapture Option. This clause appears to fundamentally undermine the goal of securing the remaining 60% occupancy for the full 36-month duration.\nPOINTS OF NOTE: A consistent and critical point across all reports is Clause 12.4, which grants the Landlord an absolute recapture option upon receiving *any* sublease notice. Advisor 1 specified this triggers upon *any* sublease notice, Advisor 2 noted it allows termination of the *entire* lease, and Advisor 3 emphasized the immediacy (within 15 days). These specific details suggest the risk is not merely procedural but existential to the 60% occupancy constraint, regardless of the 1,800 sq ft sublease.\nSUGGESTED NEXT STEP: Given the unanimous identification of the Landlord's absolute Recapture Option as a direct conflict, the decision maker must prioritize obtaining written clarification or negotiation to waive or significantly limit Clause 12.4 before proceeding with any subleasing action.",
+      "words": 185,
+      "meta": {
+        "prompt_tokens": 1229,
+        "output_tokens": 279,
+        "seconds": 11.86,
+        "repaired": false
+      }
+    },
+    "crux": {
+      "raw": {
+        "shared_ground": [
+          "The required lease term is 36 months.",
+          "All advisors flag Clause 12.4 (or similar recapture option) as a major risk."
+        ],
+        "cruxes": [
+          {
+            "topic": "Recapture Option Scope",
+            "side_a": "Advisor 1: Recapture option allows immediate termination upon any sublease notice.",
+            "side_b": "Advisor 2: Clause 12.4 allows Landlord to terminate the *entire* Lease immediately upon sublease notice.",
+            "premise_at_stake": "Whether the recapture option applies only to the subleased portion or the entire 60% retained space."
+          }
+        ],
+        "unverified_premises": [
+          "The primary blocking issue is the Landlord's absolute recapture option (Clause 12.4), which appears to allow termination of the entire lease upon any sublease notice, jeopardizing the 60% occupancy.",
+          "Confirmation is needed on whether this recapture option can be waived or limited to only the subleased portion."
+        ],
+        "decisive_check": "Does the lease abstract provide any mechanism or mitigation strategy to waive or modify the Landlord's absolute unilateral Recapture Option related to subleasing?"
+      },
+      "text": "ASSESSMENT OVERVIEW: The required lease term is 36 months. All advisors flag Clause 12.4 (or similar recapture option) as a major risk.\nPOINTS OF NOTE: Disagreements: (1) Recapture Option Scope: Side A [Advisor 1: Recapture option allows immediate termination upon any sublease notice.] vs. Side B [Advisor 2: Clause 12.4 allows Landlord to terminate the *entire* Lease immediately upon sublease notice.] (at stake: Whether the recapture option applies only to the subleased portion or the entire 60% retained space.) Flagged issues: The primary blocking issue is the Landlord's absolute recapture option (Clause 12.4), which appears to allow termination of the entire lease upon any sublease notice, jeopardizing the 60% occupancy.; Confirmation is needed on whether this recapture option can be waived or limited to only the subleased portion.\nSUGGESTED NEXT STEP: Does the lease abstract provide any mechanism or mitigation strategy to waive or modify the Landlord's absolute unilateral Recapture Option related to subleasing?",
+      "words": 154,
+      "meta": {
+        "prompt_tokens": 1377,
+        "output_tokens": 289,
+        "seconds": 11.08,
+        "repaired": false
+      }
+    }
+  }
+}

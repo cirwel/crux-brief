@@ -1,0 +1,143 @@
+{
+  "scenario_id": "S15",
+  "variant": "sound",
+  "domain": "procurement_handoffs",
+  "difficulty_tier": 2,
+  "eval_model": "nemotron3:33b",
+  "synth_model": "gemma4:latest",
+  "single_advisor_model": "qwen3.6:27b-coding-mxfp8",
+  "k_spotted": null,
+  "advisor_caught_by_model": {
+    "gemma4:latest": null,
+    "nemotron3:33b": null,
+    "qwen3.6:27b-coding-mxfp8": null
+  },
+  "briefs": {
+    "single": {
+      "text": "ASSESSMENT OVERVIEW: The packet proposes paying $245,000 on Day 10 to secure a $5,000 discount on a $250,000 invoice. This requires borrowing $245,000 at 12.0% APR for 20 days (Day 10 to Day 30). The interest cost is calculated as $245,000 * 0.12 * (20/365) \u2248 $1,616.44. Comparing the $5,000 discount against the ~$1,616 financing cost yields a net positive savings of approximately $3,383. Since the net dollar savings is positive, the constraint for early payment is satisfied. Key facts: Discount amount: $5,000; Financing cost: ~$1,616 (12% APR on $245k for 20 days); Net savings: ~$3,384.\nPOINTS OF NOTE: No concrete constraint violations flagged.\nSUGGESTED NEXT STEP: None required; stated constraints appear satisfied.",
+      "words": 113
+    },
+    "consensus": {
+      "raw": {
+        "overview": "The advisors show strong consensus in recommending approval for the early payment of Supplier Invoice #4490 on Day 10. All three assessments confirm that the primary constraint\u2014achieving a positive net dollar savings after accounting for financing costs\u2014is met. The overall analysis points toward a financially sound decision that capitalizes on the available discount.",
+        "points_of_note": "While all advisors concur on the positive net savings, there are minor variations in the calculation of the financing cost. Advisor 1 estimates the cost at ~$1,616.44 using a 365-day basis, while Advisor 2 calculates it at $812.50 using a 360-day basis. Advisor 3 arrives at a cost of $400. Despite these differing figures, the core conclusion remains consistent: the $5,000 discount significantly outweighs the calculated financing costs, resulting in a positive net benefit.",
+        "suggested_next_step": "Given the unanimous recommendation to proceed and the consistent finding that the net dollar savings remain positive across all calculation methodologies, the decision maker should approve the early payment of Supplier Invoice #4490 on Day 10."
+      },
+      "text": "ASSESSMENT OVERVIEW: The advisors show strong consensus in recommending approval for the early payment of Supplier Invoice #4490 on Day 10. All three assessments confirm that the primary constraint\u2014achieving a positive net dollar savings after accounting for financing costs\u2014is met. The overall analysis points toward a financially sound decision that capitalizes on the available discount.\nPOINTS OF NOTE: While all advisors concur on the positive net savings, there are minor variations in the calculation of the financing cost. Advisor 1 estimates the cost at ~$1,616.44 using a 365-day basis, while Advisor 2 calculates it at $812.50 using a 360-day basis. Advisor 3 arrives at a cost of $400. Despite these differing figures, the core conclusion remains consistent: the $5,000 discount significantly outweighs the calculated financing costs, resulting in a positive net benefit.\nSUGGESTED NEXT STEP: Given the unanimous recommendation to proceed and the consistent finding that the net dollar savings remain positive across all calculation methodologies, the decision maker should approve the early payment of Supplier Invoice #4490 on Day 10.",
+      "words": 171,
+      "meta": {
+        "prompt_tokens": 1028,
+        "output_tokens": 261,
+        "seconds": 11.01,
+        "repaired": false
+      }
+    },
+    "crux": {
+      "raw": {
+        "shared_ground": [
+          "The proposed action is paying $245,000 on Day 10 to secure a $5,000 discount.",
+          "All advisors recommend proceeding because the net dollar savings are calculated to be positive."
+        ],
+        "cruxes": [
+          {
+            "topic": "Financing Cost Calculation",
+            "side_a": "Advisor 1: $245,000 * 0.12 * (20/365) \u2248 $1,616.44",
+            "side_b": "Advisor 2: $245,000 * (0.12/360) = $812.50",
+            "premise_at_stake": "The correct calculation basis for the financing cost (e.g., 365 vs 360 days, or specific formula application) determines the net savings."
+          }
+        ],
+        "unverified_premises": [
+          "The precise methodology for calculating the financing cost (e.g., 365-day vs 360-day year basis) is inconsistent across the assessments."
+        ],
+        "decisive_check": "Confirm the required day-count convention (360 or 365) for calculating the 20-day financing interest cost."
+      },
+      "text": "ASSESSMENT OVERVIEW: The proposed action is paying $245,000 on Day 10 to secure a $5,000 discount. All advisors recommend proceeding because the net dollar savings are calculated to be positive.\nPOINTS OF NOTE: Disagreements: (1) Financing Cost Calculation: Side A [Advisor 1: $245,000 * 0.12 * (20/365) \u2248 $1,616.44] vs. Side B [Advisor 2: $245,000 * (0.12/360) = $812.50] (at stake: The correct calculation basis for the financing cost (e.g., 365 vs 360 days, or specific formula application) determines the net savings.) Flagged issues: The precise methodology for calculating the financing cost (e.g., 365-day vs 360-day year basis) is inconsistent across the assessments.\nSUGGESTED NEXT STEP: Confirm the required day-count convention (360 or 365) for calculating the 20-day financing interest cost.",
+      "words": 121,
+      "meta": {
+        "prompt_tokens": 1176,
+        "output_tokens": 311,
+        "seconds": 11.92,
+        "repaired": false
+      }
+    }
+  },
+  "crux_survived": null,
+  "decisions": {
+    "raw": {
+      "output": {
+        "primary_reason": "The $5,000 discount from early payment is offset by $5,000 in financing costs (245,000 \u00d7 12% APR \u00d7 20/360), resulting in zero net savings, which violates the requirement for positive net dollar savings.",
+        "target_clause_or_metric": "Funding Source (operating cash reserve committed, requiring $245,000 draw at 12.0% APR) and Invoice Terms (2.0% discount on $250,000 = $5,000 savings over 20 days)",
+        "action": "hold_to_verify",
+        "confidence": 100,
+        "brief_endorsement": null
+      },
+      "meta": {
+        "prompt_tokens": 730,
+        "output_tokens": 177,
+        "seconds": 6.22,
+        "repaired": false
+      },
+      "hold": true,
+      "verified_catch": null,
+      "untargeted_hold": null,
+      "false_alarm": true
+    },
+    "single": {
+      "output": {
+        "primary_reason": "The packet confirms the $5,000 discount on Day 10 exceeds the $1,616 financing cost, yielding a positive net savings of ~$3,384, satisfying the constraint for early payment.",
+        "target_clause_or_metric": "Discount amount: $5,000; Financing cost: ~$1,616 (12% APR on $245k for 20 days); Net savings: ~$3,384",
+        "action": "proceed",
+        "confidence": 95,
+        "brief_endorsement": 5
+      },
+      "meta": {
+        "prompt_tokens": 1006,
+        "output_tokens": 147,
+        "seconds": 5.11,
+        "repaired": false
+      },
+      "hold": false,
+      "verified_catch": null,
+      "untargeted_hold": null,
+      "false_alarm": false
+    },
+    "consensus": {
+      "output": {
+        "primary_reason": "The $5,000 discount exceeds the maximum estimated financing cost of $1,616.44 (Advisor 1's 365-day calculation), resulting in a positive net dollar savings after credit-line financing cost, satisfying the constraint.",
+        "target_clause_or_metric": "2.0% / 10 Net 30 (buyer receives a 2.0% discount, saving $5,000, by paying on Day 10 instead of Day 30 \u2014 accelerating cash outflow by 20 days)",
+        "action": "proceed",
+        "confidence": 95,
+        "brief_endorsement": 5
+      },
+      "meta": {
+        "prompt_tokens": 998,
+        "output_tokens": 157,
+        "seconds": 5.1,
+        "repaired": false
+      },
+      "hold": false,
+      "verified_catch": null,
+      "untargeted_hold": null,
+      "false_alarm": false
+    },
+    "crux": {
+      "output": {
+        "primary_reason": "The packet confirms the $5,000 discount but leaves the financing cost calculation method (360 vs 365 days) unresolved, creating uncertainty about whether net savings remain positive after interest expense.",
+        "target_clause_or_metric": "Funding Source (Section 2) and Clerk Note (Section 4) - the packet specifies $245,000 drawn at 12.0% APR for 20 days but does not define the day-count convention (360/365) required to resolve the financing cost discrepancy.",
+        "action": "hold_to_verify",
+        "confidence": 75,
+        "brief_endorsement": 3
+      },
+      "meta": {
+        "prompt_tokens": 1017,
+        "output_tokens": 162,
+        "seconds": 6.48,
+        "repaired": false
+      },
+      "hold": true,
+      "verified_catch": null,
+      "untargeted_hold": null,
+      "false_alarm": true
+    }
+  }
+}

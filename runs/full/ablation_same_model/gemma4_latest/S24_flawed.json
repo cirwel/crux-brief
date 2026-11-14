@@ -1,0 +1,148 @@
+{
+  "scenario_id": "S24",
+  "variant": "flawed",
+  "domain": "operational_briefs",
+  "difficulty_tier": 1,
+  "eval_model": "gemma4:latest",
+  "synth_model": "gemma4:latest",
+  "single_advisor_model": "qwen3.6:27b-coding-mxfp8",
+  "k_spotted": 3,
+  "advisor_caught_by_model": {
+    "gemma4:latest": true,
+    "nemotron3:33b": true,
+    "qwen3.6:27b-coding-mxfp8": true
+  },
+  "briefs": {
+    "single": {
+      "text": "ASSESSMENT OVERVIEW: The proposal claims $20,000/month in overtime savings, totaling $240,000 annually. Costs include two nurses at $95,000 each ($190,000 total) plus a $35,000 placement fee, summing to $225,000 in Year-1 expenses. Subtracting total costs ($225,000) from total savings ($240,000) yields a net Year-1 savings of $15,000. This figure is significantly below the user's explicit constraint of >= $100,000 net savings. Therefore, the proposal fails the financial viability test defined by the user. Key facts: Annual overtime savings: $240,000 ($20k x 12 months); Total Year-1 costs: $225,000 ($190k salaries + $35k fees); Net Year-1 savings: $15,000.\nPOINTS OF NOTE: Net Year-1 savings of $15,000 is below the required $100,000 threshold.\nSUGGESTED NEXT STEP: Does the $20,000/month overtime savings figure account for all potential cost offsets, or are there additional hidden costs not listed in Table B?",
+      "words": 136
+    },
+    "consensus": {
+      "raw": {
+        "overview": "The advisors show strong consensus that the current hiring plan does not meet the user's primary financial constraint. All three assessments converge on a calculation showing that the projected Year-1 net budget savings fall substantially short of the required $100,000 threshold. While the proposal highlights significant potential overtime savings, the calculated net benefit, based on the provided cost structure, is considerably lower than the established approval benchmark.",
+        "points_of_note": "There is high agreement on the core financial inputs: annual overtime savings are consistently calculated at $240,000, and total Year-1 costs are calculated around $225,000 (combining $190,000 for salaries/benefits and $35,000 for fees). This consistent input leads all advisors to calculate a net Year-1 savings of $15,000, which is flagged by all parties as failing the $100,000 minimum. The discrepancy between the projected savings and the required threshold is the most critical, non-negotiable point across all reports.",
+        "suggested_next_step": "Given the unanimous identification of a material constraint breach\u2014the net Year-1 savings ($15,000) failing to meet the required $100,000 minimum\u2014the immediate next step is to pause approval and request clarification on the underlying assumptions, specifically whether the $20,000/month overtime savings figure represents the total, fully annualized savings, or if there are unlisted cost offsets that could bridge the $85,000 gap."
+      },
+      "text": "ASSESSMENT OVERVIEW: The advisors show strong consensus that the current hiring plan does not meet the user's primary financial constraint. All three assessments converge on a calculation showing that the projected Year-1 net budget savings fall substantially short of the required $100,000 threshold. While the proposal highlights significant potential overtime savings, the calculated net benefit, based on the provided cost structure, is considerably lower than the established approval benchmark.\nPOINTS OF NOTE: There is high agreement on the core financial inputs: annual overtime savings are consistently calculated at $240,000, and total Year-1 costs are calculated around $225,000 (combining $190,000 for salaries/benefits and $35,000 for fees). This consistent input leads all advisors to calculate a net Year-1 savings of $15,000, which is flagged by all parties as failing the $100,000 minimum. The discrepancy between the projected savings and the required threshold is the most critical, non-negotiable point across all reports.\nSUGGESTED NEXT STEP: Given the unanimous identification of a material constraint breach\u2014the net Year-1 savings ($15,000) failing to meet the required $100,000 minimum\u2014the immediate next step is to pause approval and request clarification on the underlying assumptions, specifically whether the $20,000/month overtime savings figure represents the total, fully annualized savings, or if there are unlisted cost offsets that could bridge the $85,000 gap.",
+      "words": 212,
+      "meta": {
+        "prompt_tokens": 1308,
+        "output_tokens": 349,
+        "seconds": 13.02,
+        "repaired": false
+      }
+    },
+    "crux": {
+      "raw": {
+        "shared_ground": [
+          "The required Year-1 net budget savings threshold is $100,000.",
+          "The calculated annual overtime savings across all advisors is $240,000."
+        ],
+        "cruxes": [
+          {
+            "topic": "Net Year-1 Savings Calculation",
+            "side_a": "$50,000 net savings (Advisor 1)",
+            "side_b": "$15,000 net savings (Advisor 2 & 3)",
+            "premise_at_stake": "The precise calculation of total Year-1 costs (specifically the inclusion/exclusion of the $35,000 fee) determines the final net savings figure."
+          }
+        ],
+        "unverified_premises": [
+          "The exact calculation of Year-1 net savings is disputed, ranging from $50,000 to $15,000.",
+          "The scope of the $20,000/month overtime savings figure (whether it is the total annual saving or requires further adjustment) is unclear."
+        ],
+        "decisive_check": "Confirm the definitive Year-1 net savings calculation using the agreed-upon total costs ($225,000) against the total savings ($240,000) to determine if the resulting figure meets the $100,000 minimum."
+      },
+      "text": "ASSESSMENT OVERVIEW: The required Year-1 net budget savings threshold is $100,000. The calculated annual overtime savings across all advisors is $240,000.\nPOINTS OF NOTE: Disagreements: (1) Net Year-1 Savings Calculation: Side A [$50,000 net savings (Advisor 1)] vs. Side B [$15,000 net savings (Advisor 2 & 3)] (at stake: The precise calculation of total Year-1 costs (specifically the inclusion/exclusion of the $35,000 fee) determines the final net savings figure.) Flagged issues: The exact calculation of Year-1 net savings is disputed, ranging from $50,000 to $15,000.; The scope of the $20,000/month overtime savings figure (whether it is the total annual saving or requires further adjustment) is unclear.\nSUGGESTED NEXT STEP: Confirm the definitive Year-1 net savings calculation using the agreed-upon total costs ($225,000) against the total savings ($240,000) to determine if the resulting figure meets the $100,000 minimum.",
+      "words": 137,
+      "meta": {
+        "prompt_tokens": 1456,
+        "output_tokens": 321,
+        "seconds": 12.66,
+        "repaired": false
+      }
+    }
+  },
+  "crux_survived": {
+    "single": true,
+    "consensus": true,
+    "crux": true
+  },
+  "decisions": {
+    "raw": {
+      "output": {
+        "primary_reason": "The net Year-1 savings calculation is required to confirm if the savings meet the $100,000 threshold. The packet provides the gross savings ($20,000/month * 12 = $240,000) and the total costs ($95,000 * 2 + $35,000 = $225,000), resulting in a net savings of $15,000, which is significantly below the $100,000 minimum.",
+        "target_clause_or_metric": "Year-1 net budget savings (must be >= $100,000)",
+        "action": "hold_to_verify",
+        "confidence": 100,
+        "brief_endorsement": null
+      },
+      "meta": {
+        "prompt_tokens": 568,
+        "output_tokens": 190,
+        "seconds": 9.79,
+        "repaired": false
+      },
+      "hold": true,
+      "verified_catch": true,
+      "untargeted_hold": false,
+      "false_alarm": null
+    },
+    "single": {
+      "output": {
+        "primary_reason": "The pre-decision brief clearly calculates the net Year-1 savings at $15,000, which fails to meet the mandatory constraint of >= $100,000. Therefore, approval cannot be given based on the provided data.",
+        "target_clause_or_metric": "Constraint: Year-1 net budget savings (after all new salaries, benefits, and agency placement fees) are >= $100,000",
+        "action": "hold_to_verify",
+        "confidence": 100,
+        "brief_endorsement": 5
+      },
+      "meta": {
+        "prompt_tokens": 866,
+        "output_tokens": 140,
+        "seconds": 7.02,
+        "repaired": false
+      },
+      "hold": true,
+      "verified_catch": true,
+      "untargeted_hold": false,
+      "false_alarm": null
+    },
+    "consensus": {
+      "output": {
+        "primary_reason": "The decision packet's stated cost structure ($95,000/nurse * 2 + $35,000 fee = $225,000 total cost) combined with the headline savings ($20,000/month * 12 = $240,000) results in a net savings of only $15,000, which fails the required $100,000 minimum constraint.",
+        "target_clause_or_metric": "Constraint: Year-1 net budget savings (after all new salaries, benefits, and agency placement fees) are >= $100,000",
+        "action": "hold_to_verify",
+        "confidence": 100,
+        "brief_endorsement": 5
+      },
+      "meta": {
+        "prompt_tokens": 901,
+        "output_tokens": 187,
+        "seconds": 10.52,
+        "repaired": false
+      },
+      "hold": true,
+      "verified_catch": true,
+      "untargeted_hold": false,
+      "false_alarm": null
+    },
+    "crux": {
+      "output": {
+        "primary_reason": "The decision hinges on the Year-1 net budget savings, which is explicitly disputed in the PRE-DECISION BRIEF, ranging from $15,000 to $50,000, and none of these figures meet the required $100,000 threshold. Therefore, approval cannot be given without resolving this material discrepancy.",
+        "target_clause_or_metric": "PRE-DECISION BRIEF: Flagged issues: The exact calculation of Year-1 net savings is disputed, ranging from $50,000 to $15,000.",
+        "action": "hold_to_verify",
+        "confidence": 100,
+        "brief_endorsement": 5
+      },
+      "meta": {
+        "prompt_tokens": 830,
+        "output_tokens": 168,
+        "seconds": 8.48,
+        "repaired": false
+      },
+      "hold": true,
+      "verified_catch": true,
+      "untargeted_hold": false,
+      "false_alarm": null
+    }
+  }
+}

@@ -1,0 +1,134 @@
+{
+  "scenario_id": "S13",
+  "variant": "sound",
+  "domain": "procurement_handoffs",
+  "difficulty_tier": 2,
+  "eval_model": "gemma4:latest",
+  "synth_model": "nemotron3:33b",
+  "single_advisor_model": "gemma4:latest",
+  "k_spotted": null,
+  "advisor_caught_by_model": {
+    "gemma4:latest": null,
+    "nemotron3:33b": null,
+    "qwen3.6:27b-coding-mxfp8": null
+  },
+  "briefs": {
+    "single": {
+      "text": "ASSESSMENT OVERVIEW: The packet addresses two key constraints. First, the uptime target of 99.9% implies a maximum downtime of 43.2 minutes per month, which is less than the 60-minute limit. Second, the remedy clause states a 50% credit for breaches below 99.9%, which meets the minimum 50% reimbursement threshold. The packet does not specify the calculation for unscheduled vs. scheduled outages, but the stated terms appear compliant. Key facts: Maximum downtime implied by 99.9% uptime is 43.2 minutes/month (<= 60 minutes).; SLA breach remedy starts at 50% service credit (>= 50% reimbursement).; Scheduled maintenance is restricted to off-peak Sundays, permitting zero US daytime outage..\nPOINTS OF NOTE: No concrete constraint violations flagged.\nSUGGESTED NEXT STEP: None required; stated constraints appear satisfied.",
+      "words": 121
+    },
+    "consensus": {
+      "raw": {
+        "overview": "All three advisors unanimously confirm the vendor's Enterprise High-Availability SLA meets both core constraints: the 99.9% uptime guarantee mathematically permits at most 43.2 minutes of monthly downtime (well under the 60-minute US business hours limit), and the breach remedy clause provides a 50% service credit, satisfying the minimum 50% reimbursement requirement. No material issues were flagged across any assessment.",
+        "points_of_note": "The advisors consistently interpret the 99.9% uptime as permitting 43.2 minutes of monthly downtime (Advisor 1), 7.2 minutes (Advisor 3), or simply as meeting the 60-minute threshold (Advisor 2), with all positions aligning to satisfy the outage limit. All three explicitly note scheduled maintenance occurs exclusively during off-peak UTC hours on Sundays (02:00-04:00 UTC), ensuring zero US business hour outages. Each advisor confirms the 50% service credit for breaches below 99.9% meets the reimbursement threshold, with no constraint violations identified.",
+        "suggested_next_step": "Proceed with vendor approval as all constraints are fully satisfied by the SLA terms and no material issues were flagged by any advisor."
+      },
+      "text": "ASSESSMENT OVERVIEW: All three advisors unanimously confirm the vendor's Enterprise High-Availability SLA meets both core constraints: the 99.9% uptime guarantee mathematically permits at most 43.2 minutes of monthly downtime (well under the 60-minute US business hours limit), and the breach remedy clause provides a 50% service credit, satisfying the minimum 50% reimbursement requirement. No material issues were flagged across any assessment.\nPOINTS OF NOTE: The advisors consistently interpret the 99.9% uptime as permitting 43.2 minutes of monthly downtime (Advisor 1), 7.2 minutes (Advisor 3), or simply as meeting the 60-minute threshold (Advisor 2), with all positions aligning to satisfy the outage limit. All three explicitly note scheduled maintenance occurs exclusively during off-peak UTC hours on Sundays (02:00-04:00 UTC), ensuring zero US business hour outages. Each advisor confirms the 50% service credit for breaches below 99.9% meets the reimbursement threshold, with no constraint violations identified.\nSUGGESTED NEXT STEP: Proceed with vendor approval as all constraints are fully satisfied by the SLA terms and no material issues were flagged by any advisor.",
+      "words": 170,
+      "meta": {
+        "prompt_tokens": 1219,
+        "output_tokens": 282,
+        "seconds": 7.45,
+        "repaired": false
+      }
+    },
+    "crux": {
+      "raw": {
+        "shared_ground": [
+          "99.9% uptime permits ~43.2 minutes of monthly downtime",
+          "SLA breach triggers 50% service credit"
+        ],
+        "cruxes": [],
+        "unverified_premises": [],
+        "decisive_check": "None required; all advisors concur stated constraints are satisfied."
+      },
+      "text": "ASSESSMENT OVERVIEW: 99.9% uptime permits ~43.2 minutes of monthly downtime SLA breach triggers 50% service credit\nPOINTS OF NOTE: No concrete disagreements or constraint violations flagged across advisors.\nSUGGESTED NEXT STEP: None required; all advisors concur stated constraints are satisfied.",
+      "words": 40,
+      "meta": {
+        "prompt_tokens": 1388,
+        "output_tokens": 83,
+        "seconds": 3.39,
+        "repaired": false
+      }
+    }
+  },
+  "crux_survived": null,
+  "decisions": {
+    "raw": {
+      "output": {
+        "primary_reason": "The packet addresses the SLA breach reimbursement constraint (Section 4.4 confirms >= 50% reimbursement for breaches below 99.9%), but the maximum permitted outage constraint (<= 60 minutes/month) is not explicitly calculated or guaranteed based on the 99.9% uptime target.",
+        "target_clause_or_metric": "Section 4.1 (99.9% uptime) vs. 60 minutes/month outage limit",
+        "action": "hold_to_verify",
+        "confidence": 95,
+        "brief_endorsement": null
+      },
+      "meta": {
+        "prompt_tokens": 612,
+        "output_tokens": 141,
+        "seconds": 5.52,
+        "repaired": false
+      },
+      "hold": true,
+      "verified_catch": null,
+      "untargeted_hold": null,
+      "false_alarm": true
+    },
+    "single": {
+      "output": {
+        "primary_reason": "The packet's stated 99.9% uptime target implies a maximum downtime of 43.2 minutes, satisfying the <= 60 minutes constraint. Furthermore, the remedy clause guarantees at least a 50% service credit for breaches below 99.9%, meeting the reimbursement threshold.",
+        "target_clause_or_metric": "none",
+        "action": "proceed",
+        "confidence": 100,
+        "brief_endorsement": 5
+      },
+      "meta": {
+        "prompt_tokens": 807,
+        "output_tokens": 117,
+        "seconds": 5.3,
+        "repaired": false
+      },
+      "hold": false,
+      "verified_catch": null,
+      "untargeted_hold": null,
+      "false_alarm": false
+    },
+    "consensus": {
+      "output": {
+        "primary_reason": "The packet, supported by the pre-decision brief, confirms that the 99.9% uptime target allows for downtime significantly less than the 60-minute limit, and the remedy clause guarantees at least a 50% service credit upon breach, satisfying both stated constraints.",
+        "target_clause_or_metric": "none",
+        "action": "proceed",
+        "confidence": 100,
+        "brief_endorsement": 5
+      },
+      "meta": {
+        "prompt_tokens": 870,
+        "output_tokens": 112,
+        "seconds": 5.1,
+        "repaired": false
+      },
+      "hold": false,
+      "verified_catch": null,
+      "untargeted_hold": null,
+      "false_alarm": false
+    },
+    "crux": {
+      "output": {
+        "primary_reason": "The packet specifies a 50% credit for breaches below 99.9%, which meets the minimum 50% reimbursement constraint. However, the 99.9% uptime target translates to approximately 43.2 minutes of downtime, which is less than the 60-minute maximum permitted outage, satisfying both constraints.",
+        "target_clause_or_metric": "none",
+        "action": "proceed",
+        "confidence": 100,
+        "brief_endorsement": 5
+      },
+      "meta": {
+        "prompt_tokens": 674,
+        "output_tokens": 124,
+        "seconds": 4.5,
+        "repaired": false
+      },
+      "hold": false,
+      "verified_catch": null,
+      "untargeted_hold": null,
+      "false_alarm": false
+    }
+  }
+}

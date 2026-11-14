@@ -1,0 +1,29 @@
+{
+  "scenario_id": "S08",
+  "variant": "sound",
+  "domain": "leases",
+  "difficulty_tier": 2,
+  "model": "gemma4:latest",
+  "seed": 115,
+  "output": {
+    "summary": "The lease specifies an initial term of 12 months, expiring December 31st. Clause 14.2 requires a written non-renewal notice 45 days before expiration. The user needs to confirm if the notice mechanics bind them past Month 12, especially given the goal of exiting cleanly. The packet confirms the notice timing but does not detail the process or penalty structure that might contradict the 'simple 1-year pop-up' understanding.",
+    "key_claims": [
+      "Initial Term: 12 months (Jan 1 to Dec 31)",
+      "Non-renewal notice due: 45 calendar days prior to expiration at the end of Month 12",
+      "Post-term status: Cancellable month-to-month at +3% (if no renewal election)"
+    ],
+    "recommendation": "hold_to_verify",
+    "risks_or_flaws": [
+      "The packet states the notice is due 45 days prior to expiration at the end of Month 12, but it does not confirm that providing this notice *guarantees* no penalty or binding obligation beyond Month 12, which is the core concern regarding the 'automatic multi-month renewal penalty'."
+    ],
+    "verification_question": "Does Clause 14.2 explicitly state that providing the 45-day non-renewal notice waives any right to claim an automatic multi-month renewal penalty, or does it only define the notice requirement?",
+    "confidence": 95
+  },
+  "meta": {
+    "prompt_tokens": 573,
+    "output_tokens": 341,
+    "seconds": 11.41,
+    "repaired": false
+  },
+  "advisor_caught": null
+}

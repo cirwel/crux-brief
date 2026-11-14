@@ -1,0 +1,29 @@
+{
+  "scenario_id": "S19",
+  "variant": "sound",
+  "domain": "operational_briefs",
+  "difficulty_tier": 3,
+  "model": "qwen3.6:27b-coding-mxfp8",
+  "seed": 2137,
+  "output": {
+    "summary": "The user requires at least 40% precision (genuine fraud rate among suspended accounts) to enable auto-suspension. The packet provides a 10% base rate, 95% sensitivity, and 99.4% specificity. Calculating the expected outcomes: True Positives = 1,000 * 0.95 = 950. False Positives = 9,000 * (1 - 0.994) = 9,000 * 0.006 = 54. Total Suspensions = 950 + 54 = 1,004. The precision is 950 / 1,004 \u2248 94.6%. Since 94.6% is significantly higher than the 40% threshold, the constraint is satisfied.",
+    "key_claims": [
+      "Calculated precision is ~94.6% (950 true positives / 1,004 total suspensions)",
+      "False positive count is 54 (0.6% of 9,000 legitimate accounts)",
+      "True positive count is 950 (95% of 1,000 fraudulent accounts)"
+    ],
+    "recommendation": "proceed",
+    "risks_or_flaws": [
+      "none"
+    ],
+    "verification_question": "none",
+    "confidence": 100
+  },
+  "meta": {
+    "prompt_tokens": 575,
+    "output_tokens": 330,
+    "seconds": 63.82,
+    "repaired": false
+  },
+  "advisor_caught": null
+}

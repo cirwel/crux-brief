@@ -1,0 +1,49 @@
+{
+  "scenario_id": "S23",
+  "variant": "sound",
+  "domain": "operational_briefs",
+  "difficulty_tier": 3,
+  "synth_model": "gemma4:latest",
+  "k_spotted": null,
+  "advisor_caught_by_model": {
+    "gemma4:latest": null,
+    "nemotron3:33b": null,
+    "qwen3.6:27b-coding-mxfp8": null
+  },
+  "briefs": {
+    "consensus": {
+      "raw": {
+        "overview": "There is strong consensus among the advisors that the criteria for shipping the new checkout pricing tier have been met. All three assessments recommend proceeding, indicating high confidence in the experimental results. The collective analysis confirms that the necessary statistical validity, positive lift, and adherence to the pre-registered test plan were successfully achieved.",
+        "points_of_note": "The evidence consistently points to a positive ARPU lift of 9.3%, specifically citing figures of $4.10 (Control) versus $4.48 (Variant). Crucially, the statistical significance is confirmed across all reports with a p-value of 0.004, which satisfies the required threshold of p < 0.05. Furthermore, the integrity of the test was maintained by running the full 14-day duration without early stopping, and the sample sizes (10,000 vs 10,032) were confirmed as balanced.",
+        "suggested_next_step": "Given the unanimous recommendation and the confirmation that all constraints\u2014including statistical significance, positive lift, and adherence to the full test duration\u2014have been met, the decision maker should approve the shipment of the new checkout pricing tier."
+      },
+      "text": "ASSESSMENT OVERVIEW: There is strong consensus among the advisors that the criteria for shipping the new checkout pricing tier have been met. All three assessments recommend proceeding, indicating high confidence in the experimental results. The collective analysis confirms that the necessary statistical validity, positive lift, and adherence to the pre-registered test plan were successfully achieved.\nPOINTS OF NOTE: The evidence consistently points to a positive ARPU lift of 9.3%, specifically citing figures of $4.10 (Control) versus $4.48 (Variant). Crucially, the statistical significance is confirmed across all reports with a p-value of 0.004, which satisfies the required threshold of p < 0.05. Furthermore, the integrity of the test was maintained by running the full 14-day duration without early stopping, and the sample sizes (10,000 vs 10,032) were confirmed as balanced.\nSUGGESTED NEXT STEP: Given the unanimous recommendation and the confirmation that all constraints\u2014including statistical significance, positive lift, and adherence to the full test duration\u2014have been met, the decision maker should approve the shipment of the new checkout pricing tier.",
+      "words": 168,
+      "meta": {
+        "prompt_tokens": 1051,
+        "output_tokens": 259,
+        "seconds": 12.12,
+        "repaired": false
+      }
+    },
+    "crux": {
+      "raw": {
+        "shared_ground": [
+          "The experiment reported a positive ARPU lift of 9.3% ($4.10 to $4.48).",
+          "The results achieved statistical significance with a p-value of 0.004, meeting the p < 0.05 threshold."
+        ],
+        "cruxes": [],
+        "unverified_premises": [],
+        "decisive_check": "None required; all advisors concur stated constraints are satisfied."
+      },
+      "text": "ASSESSMENT OVERVIEW: The experiment reported a positive ARPU lift of 9.3% ($4.10 to $4.48). The results achieved statistical significance with a p-value of 0.004, meeting the p < 0.05 threshold.\nPOINTS OF NOTE: No concrete disagreements or constraint violations flagged across advisors.\nSUGGESTED NEXT STEP: None required; all advisors concur stated constraints are satisfied.",
+      "words": 54,
+      "meta": {
+        "prompt_tokens": 1199,
+        "output_tokens": 113,
+        "seconds": 5.64,
+        "repaired": false
+      }
+    }
+  }
+}

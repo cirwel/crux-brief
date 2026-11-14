@@ -1,0 +1,148 @@
+{
+  "scenario_id": "S04",
+  "variant": "flawed",
+  "domain": "job_offers",
+  "difficulty_tier": 3,
+  "eval_model": "nemotron3:33b",
+  "synth_model": "gemma4:latest",
+  "single_advisor_model": "gemma4:latest",
+  "k_spotted": 3,
+  "advisor_caught_by_model": {
+    "gemma4:latest": true,
+    "nemotron3:33b": true,
+    "qwen3.6:27b-coding-mxfp8": true
+  },
+  "briefs": {
+    "single": {
+      "text": "ASSESSMENT OVERVIEW: The required minimum equity value is $280,000 over 4 years. The recruiter values the grant at $400,000 total, which exceeds the minimum. However, the independent common stock valuation ($0.28/share) applied to the 400,000 shares yields a total value of $112,000, which is significantly below the $280,000 floor. Furthermore, the liquidation preference structure suggests the common stock payout could be zero in a $100M exit. Key facts: Total value based on 409A common stock valuation: $112,000; Required minimum equity value: $280,000; Liquidation preference: $82M participating preference ahead of common.\nPOINTS OF NOTE: The calculated equity value based on the 409A common stock valuation ($112,000) fails to meet the required minimum floor of $280,000..\nSUGGESTED NEXT STEP: Does the $82M participating liquidation preference structure guarantee a positive payout for common stock in a $100M exit, or is the common stock payout zero?",
+      "words": 142
+    },
+    "consensus": {
+      "raw": {
+        "overview": "All three advisors converge on a critical concern regarding the proposed equity grant's valuation relative to the stated constraints. While one advisor noted a higher initial valuation, the consensus points to a significant shortfall when applying the independent common-stock valuation ($0.28/share). Furthermore, the structure of the liquidation preference introduces substantial risk regarding the retention of positive payout value in a moderate exit scenario.",
+        "points_of_note": "The most consistent and actionable data point across all reports is the calculation of the independent common value: 400,000 shares at $0.28/share equals $112,000. This figure is repeatedly flagged as failing to meet the required $280,000 floor, representing a substantial gap. The impact of the 1.5x participating liquidation preference, which advisors noted could severely constrain or eliminate common payout in a $100M exit, is a shared structural risk that must be resolved.",
+        "suggested_next_step": "Given the consistent failure to meet the $280,000 floor based on the $0.28/share valuation, the immediate next step is to negotiate an increase in the number of shares granted, or alternatively, seek clarification on how the liquidation preference structure guarantees a positive payout value in a $100M exit scenario."
+      },
+      "text": "ASSESSMENT OVERVIEW: All three advisors converge on a critical concern regarding the proposed equity grant's valuation relative to the stated constraints. While one advisor noted a higher initial valuation, the consensus points to a significant shortfall when applying the independent common-stock valuation ($0.28/share). Furthermore, the structure of the liquidation preference introduces substantial risk regarding the retention of positive payout value in a moderate exit scenario.\nPOINTS OF NOTE: The most consistent and actionable data point across all reports is the calculation of the independent common value: 400,000 shares at $0.28/share equals $112,000. This figure is repeatedly flagged as failing to meet the required $280,000 floor, representing a substantial gap. The impact of the 1.5x participating liquidation preference, which advisors noted could severely constrain or eliminate common payout in a $100M exit, is a shared structural risk that must be resolved.\nSUGGESTED NEXT STEP: Given the consistent failure to meet the $280,000 floor based on the $0.28/share valuation, the immediate next step is to negotiate an increase in the number of shares granted, or alternatively, seek clarification on how the liquidation preference structure guarantees a positive payout value in a $100M exit scenario.",
+      "words": 192,
+      "meta": {
+        "prompt_tokens": 1477,
+        "output_tokens": 293,
+        "seconds": 14.11,
+        "repaired": false
+      }
+    },
+    "crux": {
+      "raw": {
+        "shared_ground": [
+          "The required minimum equity value is $280,000 over 4 years ($70,000/yr).",
+          "The independent common stock valuation of 400,000 shares at $0.28/share yields a total value of $112,000."
+        ],
+        "cruxes": [
+          {
+            "topic": "Valuation Basis Conflict",
+            "side_a": "$400,000 total valuation at $1.00/share (Advisor 1)",
+            "side_b": "$112,000 total value based on $0.28/share (Advisors 2 & 3)",
+            "premise_at_stake": "Which valuation basis ($1.00/share vs $0.28/share) should be used to test against the $280,000 floor?"
+          }
+        ],
+        "unverified_premises": [
+          "The impact of the 1.5x participating liquidation preference on common stock payout in a $100M exit remains unverified.",
+          "The feasibility of increasing the grant size to meet the $280,000 floor at the current $0.28/share valuation."
+        ],
+        "decisive_check": "Determine the actual common stock payout in a $100M exit given the $82M participating liquidation preference."
+      },
+      "text": "ASSESSMENT OVERVIEW: The required minimum equity value is $280,000 over 4 years ($70,000/yr). The independent common stock valuation of 400,000 shares at $0.28/share yields a total value of $112,000.\nPOINTS OF NOTE: Disagreements: (1) Valuation Basis Conflict: Side A [$400,000 total valuation at $1.00/share (Advisor 1)] vs. Side B [$112,000 total value based on $0.28/share (Advisors 2 & 3)] (at stake: Which valuation basis ($1.00/share vs $0.28/share) should be used to test against the $280,000 floor?) Flagged issues: The impact of the 1.5x participating liquidation preference on common stock payout in a $100M exit remains unverified.; The feasibility of increasing the grant size to meet the $280,000 floor at the current $0.28/share valuation.\nSUGGESTED NEXT STEP: Determine the actual common stock payout in a $100M exit given the $82M participating liquidation preference.",
+      "words": 132,
+      "meta": {
+        "prompt_tokens": 1625,
+        "output_tokens": 337,
+        "seconds": 13.18,
+        "repaired": false
+      }
+    }
+  },
+  "crux_survived": {
+    "single": true,
+    "consensus": true,
+    "crux": true
+  },
+  "decisions": {
+    "raw": {
+      "output": {
+        "primary_reason": "The equity grant value is only $112,000 over 4 years ($28,000/yr), far below the required $280,000 total ($70,000/yr) on an independent common-stock basis, and the $0.28/share FMV is well below the $1.00/preferred price used to justify the $400,000 valuation.",
+        "target_clause_or_metric": "Equity Headline (400,000 shares at $0.28/share FMV vs. $1.00/preferred price) and Cap-Table Footnote (cumulative $82M preferred with 1.5x participating liquidation preference)",
+        "action": "hold_to_verify",
+        "confidence": 95,
+        "brief_endorsement": null
+      },
+      "meta": {
+        "prompt_tokens": 739,
+        "output_tokens": 207,
+        "seconds": 5.74,
+        "repaired": false
+      },
+      "hold": true,
+      "verified_catch": true,
+      "untargeted_hold": false,
+      "false_alarm": null
+    },
+    "single": {
+      "output": {
+        "primary_reason": "The equity grant's value based on the 409A common stock valuation ($0.28/share * 400,000 shares = $112,000) is below the required minimum of $280,000 over 4 years, and the $82M participating liquidation preference threatens a zero payout in a $100M exit.",
+        "target_clause_or_metric": "409A common stock valuation ($0.28/share) and $82M participating liquidation preference",
+        "action": "hold_to_verify",
+        "confidence": 95,
+        "brief_endorsement": 5
+      },
+      "meta": {
+        "prompt_tokens": 1029,
+        "output_tokens": 162,
+        "seconds": 5.1,
+        "repaired": false
+      },
+      "hold": true,
+      "verified_catch": true,
+      "untargeted_hold": false,
+      "false_alarm": null
+    },
+    "consensus": {
+      "output": {
+        "primary_reason": "The equity grant's value based on the independent common-stock valuation ($0.28/share) totals $112,000, which is $168,000 below the required $280,000 floor, violating the equity grant value constraint.",
+        "target_clause_or_metric": "400,000 shares at $0.28/share = $112,000 (Exhibit C valuation)",
+        "action": "hold_to_verify",
+        "confidence": 95,
+        "brief_endorsement": 5
+      },
+      "meta": {
+        "prompt_tokens": 1042,
+        "output_tokens": 143,
+        "seconds": 4.45,
+        "repaired": false
+      },
+      "hold": true,
+      "verified_catch": true,
+      "untargeted_hold": false,
+      "false_alarm": null
+    },
+    "crux": {
+      "output": {
+        "primary_reason": "The equity grant's value based on the independent 409A common stock valuation ($0.28/share) yields only $112,000 total ($28,000/yr), falling short of the required $280,000 over 4 years ($70,000/yr). The cap-table footnote confirms the $82M participating liquidation preference would further reduce common stock payout in a $100M exit, making the floor unattainable.",
+        "target_clause_or_metric": "Cap-Table Footnote (Exhibit C): $82M cumulative preferred stock with 1.5x participating liquidation preference; 409A valuation at $0.28/share for 400,000 shares",
+        "action": "hold_to_verify",
+        "confidence": 95,
+        "brief_endorsement": 5
+      },
+      "meta": {
+        "prompt_tokens": 1052,
+        "output_tokens": 216,
+        "seconds": 6.28,
+        "repaired": false
+      },
+      "hold": true,
+      "verified_catch": true,
+      "untargeted_hold": false,
+      "false_alarm": null
+    }
+  }
+}

@@ -1,0 +1,28 @@
+{
+  "scenario_id": "S11",
+  "variant": "flawed",
+  "domain": "leases",
+  "difficulty_tier": 3,
+  "model": "qwen3.6:27b-coding-mxfp8",
+  "seed": 2120,
+  "output": {
+    "summary": "The user requires a cap of $3,000/year on non-rent building repair exposure and explicitly forbids unbudgeted capital equipment replacement obligations. The decision packet reveals Clause 7c mandates the Tenant to bear the full cost of capital replacement for the HVAC unit if specific failures occur. The attached inspection memo quotes this replacement at $26,500. This single potential event exceeds the $3,000 annual cap by a significant margin and constitutes a direct violation of the constraint against capital replacement obligations. Therefore, the lease terms do not align with the user's risk tolerance.",
+    "key_claims": [
+      "Clause 7c requires Tenant to pay for full capital replacement of HVAC unit.",
+      "Quoted replacement cost is $26,500, which exceeds the $3,000 annual cap."
+    ],
+    "recommendation": "hold_to_verify",
+    "risks_or_flaws": [
+      "The lease shifts a $26,500 capital replacement risk to the Tenant, violating the $3,000/year exposure cap and the prohibition on capital equipment replacement obligations."
+    ],
+    "verification_question": "Does the landlord agree to amend Clause 7c to remove the Tenant's obligation for capital replacement of the HVAC unit?",
+    "confidence": 100
+  },
+  "meta": {
+    "prompt_tokens": 580,
+    "output_tokens": 294,
+    "seconds": 62.98,
+    "repaired": false
+  },
+  "advisor_caught": true
+}

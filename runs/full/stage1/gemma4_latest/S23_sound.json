@@ -1,0 +1,29 @@
+{
+  "scenario_id": "S23",
+  "variant": "sound",
+  "domain": "operational_briefs",
+  "difficulty_tier": 3,
+  "model": "gemma4:latest",
+  "seed": 145,
+  "output": {
+    "summary": "The packet reports a positive ARPU lift of $0.38 (9.3%) with a two-sided p-value of 0.004. This p-value is less than the required threshold of 0.05, satisfying the statistical validity requirement. Furthermore, the experiment ran for the full 14-day window as intended, and no technical failures were noted. All stated conditions appear met.",
+    "key_claims": [
+      "ARPU lift: $4.10 (Control) vs. $4.48 (Variant)",
+      "Statistical significance: p = 0.004 (which is < 0.05)",
+      "Experiment duration: Completed the full 14 days with zero early stopping"
+    ],
+    "recommendation": "proceed",
+    "risks_or_flaws": [
+      "none"
+    ],
+    "verification_question": "none",
+    "confidence": 100
+  },
+  "meta": {
+    "prompt_tokens": 572,
+    "output_tokens": 224,
+    "seconds": 11.17,
+    "repaired": false
+  },
+  "advisor_caught": null
+}

@@ -1,0 +1,49 @@
+{
+  "scenario_id": "S21",
+  "variant": "sound",
+  "domain": "operational_briefs",
+  "difficulty_tier": 2,
+  "synth_model": "nemotron3:33b",
+  "k_spotted": null,
+  "advisor_caught_by_model": {
+    "gemma4:latest": null,
+    "nemotron3:33b": null,
+    "qwen3.6:27b-coding-mxfp8": null
+  },
+  "briefs": {
+    "consensus": {
+      "raw": {
+        "overview": "All three advisors unanimously recommend proceeding with the API Engine v3.2 production deployment, as the packet confirms the database-backed request p95 latency of 134 ms remains well below the 180 ms threshold and the overall mean latency dropped from 140 ms to 112 ms, satisfying the celebratory 'major drop' requirement without any regression risk.",
+        "points_of_note": "The critical evidence\u2014134 ms p95 latency for v3.2 versus the 180 ms limit\u2014was consistently cited by all advisors with precise figures, while the 20% mean latency reduction (140 ms to 112 ms) was similarly emphasized as meeting the release brief's celebratory narrative; no advisor flagged deviations, threshold breaches, or conflicting evidence regarding the core constraint.",
+        "suggested_next_step": "Approve the API Engine v3.2 production deployment immediately, as all advisors confirm the database-backed request p95 latency remains safely under 180 ms and the mean latency improvement fulfills the release criteria without constraint violations."
+      },
+      "text": "ASSESSMENT OVERVIEW: All three advisors unanimously recommend proceeding with the API Engine v3.2 production deployment, as the packet confirms the database-backed request p95 latency of 134 ms remains well below the 180 ms threshold and the overall mean latency dropped from 140 ms to 112 ms, satisfying the celebratory 'major drop' requirement without any regression risk.\nPOINTS OF NOTE: The critical evidence\u2014134 ms p95 latency for v3.2 versus the 180 ms limit\u2014was consistently cited by all advisors with precise figures, while the 20% mean latency reduction (140 ms to 112 ms) was similarly emphasized as meeting the release brief's celebratory narrative; no advisor flagged deviations, threshold breaches, or conflicting evidence regarding the core constraint.\nSUGGESTED NEXT STEP: Approve the API Engine v3.2 production deployment immediately, as all advisors confirm the database-backed request p95 latency remains safely under 180 ms and the mean latency improvement fulfills the release criteria without constraint violations.",
+      "words": 151,
+      "meta": {
+        "prompt_tokens": 1121,
+        "output_tokens": 237,
+        "seconds": 7.36,
+        "repaired": false
+      }
+    },
+    "crux": {
+      "raw": {
+        "shared_ground": [
+          "Database-backed request p95 latency is 134 ms (v3.2)",
+          "Overall mean API latency dropped from 140 ms to 112 ms"
+        ],
+        "cruxes": [],
+        "unverified_premises": [],
+        "decisive_check": "None required; all advisors concur stated constraints are satisfied."
+      },
+      "text": "ASSESSMENT OVERVIEW: Database-backed request p95 latency is 134 ms (v3.2) Overall mean API latency dropped from 140 ms to 112 ms\nPOINTS OF NOTE: No concrete disagreements or constraint violations flagged across advisors.\nSUGGESTED NEXT STEP: None required; all advisors concur stated constraints are satisfied.",
+      "words": 45,
+      "meta": {
+        "prompt_tokens": 1290,
+        "output_tokens": 89,
+        "seconds": 3.8,
+        "repaired": false
+      }
+    }
+  }
+}

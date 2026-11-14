@@ -1,0 +1,29 @@
+{
+  "scenario_id": "S20",
+  "variant": "flawed",
+  "domain": "operational_briefs",
+  "difficulty_tier": 2,
+  "model": "nemotron3:33b",
+  "seed": 1138,
+  "output": {
+    "summary": "The packet states 740 of 1,000 users are retained at Day 90, yielding 74.0% retention. The footnote confirms the denominator is 1,000 (excluding 400 pre-billing churners), satisfying the constraint that the cohort must be based on users tracked after Week-2 billing configuration. Since 74.0% exceeds the 65% threshold, the scale budget may proceed.",
+    "key_claims": [
+      "74.0% retention (740/1,000) as stated",
+      "Denominator of 1,000 users confirmed by footnote exclusion of 400 pre-billing churners",
+      "65% scale threshold stated in headline"
+    ],
+    "recommendation": "proceed",
+    "risks_or_flaws": [
+      "none"
+    ],
+    "verification_question": "none",
+    "confidence": 100
+  },
+  "meta": {
+    "prompt_tokens": 622,
+    "output_tokens": 222,
+    "seconds": 7.69,
+    "repaired": false
+  },
+  "advisor_caught": false
+}

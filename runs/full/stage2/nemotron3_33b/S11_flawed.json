@@ -1,0 +1,58 @@
+{
+  "scenario_id": "S11",
+  "variant": "flawed",
+  "domain": "leases",
+  "difficulty_tier": 3,
+  "synth_model": "nemotron3:33b",
+  "k_spotted": 3,
+  "advisor_caught_by_model": {
+    "gemma4:latest": true,
+    "nemotron3:33b": true,
+    "qwen3.6:27b-coding-mxfp8": true
+  },
+  "briefs": {
+    "consensus": {
+      "raw": {
+        "overview": "All advisors concur that Clause 7c creates a potential capital replacement obligation for the Tenant, specifically the $26,500 HVAC unit replacement cost, which materially violates the constraint requiring annual non-rent building repair exposure to be capped at $3,000/year with no unbudgeted capital equipment replacement. The advisors uniformly identify this as a critical constraint breach requiring verification of whether the Landlord's 'Tenant only handles normal upkeep' email supersedes Clause 7c's 'full capital replacement' language.",
+        "points_of_note": "The $26,500 HVAC replacement cost cited by Advisor 1, Advisor 2, and Advisor 3 consistently exceeds the $3,000 annual cap by 787% and constitutes an unbudgeted capital obligation, violating the core constraint. While Advisor 3 questions whether the 'good working order' obligation includes replacement costs, Advisors 1 and 2 explicitly confirm Clause 7c mandates Tenant-paid capital replacement, with no advisor suggesting the Landlord's email promise resolves this conflict without contractual amendment.",
+        "suggested_next_step": "Verify whether the Landlord's 'Tenant only handles normal upkeep' email supersedes Clause 7c's capital replacement obligation, and if not, require Landlord amendment to Clause 7c to eliminate Tenant liability for the $26,500 HVAC replacement."
+      },
+      "text": "ASSESSMENT OVERVIEW: All advisors concur that Clause 7c creates a potential capital replacement obligation for the Tenant, specifically the $26,500 HVAC unit replacement cost, which materially violates the constraint requiring annual non-rent building repair exposure to be capped at $3,000/year with no unbudgeted capital equipment replacement. The advisors uniformly identify this as a critical constraint breach requiring verification of whether the Landlord's 'Tenant only handles normal upkeep' email supersedes Clause 7c's 'full capital replacement' language.\nPOINTS OF NOTE: The $26,500 HVAC replacement cost cited by Advisor 1, Advisor 2, and Advisor 3 consistently exceeds the $3,000 annual cap by 787% and constitutes an unbudgeted capital obligation, violating the core constraint. While Advisor 3 questions whether the 'good working order' obligation includes replacement costs, Advisors 1 and 2 explicitly confirm Clause 7c mandates Tenant-paid capital replacement, with no advisor suggesting the Landlord's email promise resolves this conflict without contractual amendment.\nSUGGESTED NEXT STEP: Verify whether the Landlord's 'Tenant only handles normal upkeep' email supersedes Clause 7c's capital replacement obligation, and if not, require Landlord amendment to Clause 7c to eliminate Tenant liability for the $26,500 HVAC replacement.",
+      "words": 186,
+      "meta": {
+        "prompt_tokens": 1387,
+        "output_tokens": 319,
+        "seconds": 11.53,
+        "repaired": false
+      }
+    },
+    "crux": {
+      "raw": {
+        "shared_ground": [
+          "Tenant is responsible for full capital replacement of the HVAC unit under Clause 7c",
+          "Replacement cost is $26,500, exceeding the $3,000 annual cap"
+        ],
+        "cruxes": [
+          {
+            "topic": "Clause 7c scope",
+            "side_a": "Clause 7c requires Tenant to fund full capital replacement of HVAC unit (compressor/heat-exchanger failure) per Advisor 3",
+            "side_b": "Clause 7c imposes Tenant's obligation for full capital replacement of HVAC unit per Advisor 1 and 2",
+            "premise_at_stake": "Whether Clause 7c's 'good working order' obligation includes full capital replacement costs beyond routine maintenance"
+          }
+        ],
+        "unverified_premises": [
+          "Whether Landlord's cover email promise ('Tenant only handles normal upkeep') supersedes Clause 7c's capital replacement language"
+        ],
+        "decisive_check": "Does Clause 7c's 'good working order' obligation explicitly include full capital replacement costs beyond routine maintenance?"
+      },
+      "text": "ASSESSMENT OVERVIEW: Tenant is responsible for full capital replacement of the HVAC unit under Clause 7c Replacement cost is $26,500, exceeding the $3,000 annual cap\nPOINTS OF NOTE: Disagreements: (1) Clause 7c scope: Side A [Clause 7c requires Tenant to fund full capital replacement of HVAC unit (compressor/heat-exchanger failure) per Advisor 3] vs. Side B [Clause 7c imposes Tenant's obligation for full capital replacement of HVAC unit per Advisor 1 and 2] (at stake: Whether Clause 7c's 'good working order' obligation includes full capital replacement costs beyond routine maintenance) Flagged issues: Whether Landlord's cover email promise ('Tenant only handles normal upkeep') supersedes Clause 7c's capital replacement language\nSUGGESTED NEXT STEP: Does Clause 7c's 'good working order' obligation explicitly include full capital replacement costs beyond routine maintenance?",
+      "words": 126,
+      "meta": {
+        "prompt_tokens": 1556,
+        "output_tokens": 259,
+        "seconds": 10.45,
+        "repaired": false
+      }
+    }
+  }
+}

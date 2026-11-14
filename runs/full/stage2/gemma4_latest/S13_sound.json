@@ -1,0 +1,52 @@
+{
+  "scenario_id": "S13",
+  "variant": "sound",
+  "domain": "procurement_handoffs",
+  "difficulty_tier": 2,
+  "synth_model": "gemma4:latest",
+  "k_spotted": null,
+  "advisor_caught_by_model": {
+    "gemma4:latest": null,
+    "nemotron3:33b": null,
+    "qwen3.6:27b-coding-mxfp8": null
+  },
+  "briefs": {
+    "consensus": {
+      "raw": {
+        "overview": "The consensus among all advisors is a strong recommendation to proceed with the vendor agreement, as the provided SLA terms appear to satisfy all stated user constraints. The core concerns regarding outage duration, scheduled maintenance windows, and breach remediation have been consistently addressed across the assessments, leading to a unified conclusion of compliance.",
+        "points_of_note": "All advisors confirm that the 99.9% uptime guarantee translates to a maximum downtime significantly below the 60-minute monthly limit. Furthermore, the remedy clause consistently cites a 50% service credit for breaches, meeting the minimum reimbursement threshold. Regarding scheduling, all reports note that maintenance is restricted to off-peak UTC hours on Sundays, thereby preventing US business hour outages. Advisor 3 provided the most specific calculation for downtime (7.2 minutes/month), while Advisor 1 confirmed the 50% service credit trigger.",
+        "suggested_next_step": "Given the unanimous recommendation and the consistent confirmation that the SLA terms meet the 60-minute outage threshold, the 50% reimbursement minimum, and the zero US daytime outage requirement, the decision maker should feel confident in approving the agreement."
+      },
+      "text": "ASSESSMENT OVERVIEW: The consensus among all advisors is a strong recommendation to proceed with the vendor agreement, as the provided SLA terms appear to satisfy all stated user constraints. The core concerns regarding outage duration, scheduled maintenance windows, and breach remediation have been consistently addressed across the assessments, leading to a unified conclusion of compliance.\nPOINTS OF NOTE: All advisors confirm that the 99.9% uptime guarantee translates to a maximum downtime significantly below the 60-minute monthly limit. Furthermore, the remedy clause consistently cites a 50% service credit for breaches, meeting the minimum reimbursement threshold. Regarding scheduling, all reports note that maintenance is restricted to off-peak UTC hours on Sundays, thereby preventing US business hour outages. Advisor 3 provided the most specific calculation for downtime (7.2 minutes/month), while Advisor 1 confirmed the 50% service credit trigger.\nSUGGESTED NEXT STEP: Given the unanimous recommendation and the consistent confirmation that the SLA terms meet the 60-minute outage threshold, the 50% reimbursement minimum, and the zero US daytime outage requirement, the decision maker should feel confident in approving the agreement.",
+      "words": 176,
+      "meta": {
+        "prompt_tokens": 1092,
+        "output_tokens": 249,
+        "seconds": 9.46,
+        "repaired": false
+      }
+    },
+    "crux": {
+      "raw": {
+        "shared_ground": [
+          "All advisors recommend proceeding.",
+          "The 99.9% uptime target implies a maximum downtime significantly below the 60-minute monthly threshold.",
+          "The SLA breach remedy consistently provides at least a 50% service credit."
+        ],
+        "cruxes": [],
+        "unverified_premises": [
+          "Advisor 1 calculates downtime as ~43.2 minutes/month, while Advisor 3 calculates it as 7.2 minutes/month based on 0.1% downtime."
+        ],
+        "decisive_check": "Clarification is needed on the precise calculation of maximum permitted downtime from the 99.9% uptime guarantee (e.g., 43.2 minutes vs. 7.2 minutes) to confirm compliance with the 60-minute limit."
+      },
+      "text": "ASSESSMENT OVERVIEW: All advisors recommend proceeding. The 99.9% uptime target implies a maximum downtime significantly below the 60-minute monthly threshold.\nPOINTS OF NOTE: Flagged issues: Advisor 1 calculates downtime as ~43.2 minutes/month, while Advisor 3 calculates it as 7.2 minutes/month based on 0.1% downtime.\nSUGGESTED NEXT STEP: Clarification is needed on the precise calculation of maximum permitted downtime from the 99.9% uptime guarantee (e.g., 43.2 minutes vs. 7.2 minutes) to confirm compliance with the 60-minute limit.",
+      "words": 76,
+      "meta": {
+        "prompt_tokens": 1240,
+        "output_tokens": 191,
+        "seconds": 7.54,
+        "repaired": false
+      }
+    }
+  }
+}

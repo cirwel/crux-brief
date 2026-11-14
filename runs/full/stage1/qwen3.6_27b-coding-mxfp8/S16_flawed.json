@@ -1,0 +1,28 @@
+{
+  "scenario_id": "S16",
+  "variant": "flawed",
+  "domain": "procurement_handoffs",
+  "difficulty_tier": 3,
+  "model": "qwen3.6:27b-coding-mxfp8",
+  "seed": 2130,
+  "output": {
+    "summary": "The user requires a white-labeled product sublicensable to external enterprise clients. The packet states the Buyer owns 100% of custom deliverables, but the core runtime (70% of execution) is Vendor Background IP. Crucially, the license for this runtime is explicitly 'non-transferable and non-sublicensable to third parties.' This directly prohibits the user's goal of distributing and sublicensing the software to external clients, creating a fatal legal conflict.",
+    "key_claims": [
+      "Vendor Background IP license is non-sublicensable to third parties",
+      "Core runtime constitutes ~70% of query execution"
+    ],
+    "recommendation": "hold_to_verify",
+    "risks_or_flaws": [
+      "The non-sublicensable restriction on the Vendor's proprietary runtime prevents the Buyer from distributing or sublicensing the final product to external enterprise clients, violating the core business goal."
+    ],
+    "verification_question": "Can the Vendor grant a sublicensable, transferable license for the proprietary stream-aggregation runtime to allow distribution to third-party clients?",
+    "confidence": 100
+  },
+  "meta": {
+    "prompt_tokens": 553,
+    "output_tokens": 252,
+    "seconds": 51.59,
+    "repaired": false
+  },
+  "advisor_caught": true
+}

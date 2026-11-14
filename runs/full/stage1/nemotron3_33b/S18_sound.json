@@ -1,0 +1,29 @@
+{
+  "scenario_id": "S18",
+  "variant": "sound",
+  "domain": "procurement_handoffs",
+  "difficulty_tier": 3,
+  "model": "nemotron3:33b",
+  "seed": 1135,
+  "output": {
+    "summary": "The $18/unit rebate applies unconditionally above 850 units, guaranteeing $17,640 (950 * $18) at the minimum 950-unit demand, which exceeds the $15,000 threshold. The maximum demand of 1,050 units yields $18,900, confirming the rebate savings are secure across the entire planning band.",
+    "key_claims": [
+      "950 units \u00d7 $18/unit = $17,000 minimum rebate",
+      "1,050 units \u00d7 $18/unit = $18,900 maximum rebate",
+      "$17,000 > $15,000 required minimum"
+    ],
+    "recommendation": "proceed",
+    "risks_or_flaws": [
+      "none"
+    ],
+    "verification_question": "none",
+    "confidence": 100
+  },
+  "meta": {
+    "prompt_tokens": 616,
+    "output_tokens": 220,
+    "seconds": 7.94,
+    "repaired": false
+  },
+  "advisor_caught": null
+}

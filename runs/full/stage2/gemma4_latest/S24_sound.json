@@ -1,0 +1,58 @@
+{
+  "scenario_id": "S24",
+  "variant": "sound",
+  "domain": "operational_briefs",
+  "difficulty_tier": 1,
+  "synth_model": "gemma4:latest",
+  "k_spotted": null,
+  "advisor_caught_by_model": {
+    "gemma4:latest": null,
+    "nemotron3:33b": null,
+    "qwen3.6:27b-coding-mxfp8": null
+  },
+  "briefs": {
+    "consensus": {
+      "raw": {
+        "overview": "The consensus among all advisors is a strong recommendation to proceed with the hospital float-pool hiring plan. All three assessments confirm that the proposal successfully meets the critical financial constraint: achieving Year-1 net budget savings of at least $100,000. The overall alignment is positive, suggesting the plan is financially sound based on the provided data.",
+        "points_of_note": "All advisors independently confirm the core financial components: annual savings derived from eliminating external costs are consistently cited around $360,000. Regarding costs, there is minor variation in the final calculation, with advisors citing total Year-1 costs between $190,000 and $205,000. Despite these minor arithmetic differences in the final net savings figure ($155,000 to $250,000), every calculation confirms a net saving significantly above the required $100,000 threshold.",
+        "suggested_next_step": "Given the unanimous recommendation to proceed and the consistent confirmation that the Year-1 net budget savings substantially exceed the $100,000 minimum threshold, the decision maker should approve the hospital float-pool hiring plan."
+      },
+      "text": "ASSESSMENT OVERVIEW: The consensus among all advisors is a strong recommendation to proceed with the hospital float-pool hiring plan. All three assessments confirm that the proposal successfully meets the critical financial constraint: achieving Year-1 net budget savings of at least $100,000. The overall alignment is positive, suggesting the plan is financially sound based on the provided data.\nPOINTS OF NOTE: All advisors independently confirm the core financial components: annual savings derived from eliminating external costs are consistently cited around $360,000. Regarding costs, there is minor variation in the final calculation, with advisors citing total Year-1 costs between $190,000 and $205,000. Despite these minor arithmetic differences in the final net savings figure ($155,000 to $250,000), every calculation confirms a net saving significantly above the required $100,000 threshold.\nSUGGESTED NEXT STEP: Given the unanimous recommendation to proceed and the consistent confirmation that the Year-1 net budget savings substantially exceed the $100,000 minimum threshold, the decision maker should approve the hospital float-pool hiring plan.",
+      "words": 161,
+      "meta": {
+        "prompt_tokens": 1082,
+        "output_tokens": 264,
+        "seconds": 11.33,
+        "repaired": false
+      }
+    },
+    "crux": {
+      "raw": {
+        "shared_ground": [
+          "All advisors recommend proceeding with the plan.",
+          "The annual savings from eliminating overtime are consistently cited as $360,000."
+        ],
+        "cruxes": [
+          {
+            "topic": "Total Year-1 Costs Calculation",
+            "side_a": "$190,000 (2 \u00d7 $95,000 + $15,000)",
+            "side_b": "$205,000 (2 \u00d7 $95,000 + $15,000)",
+            "premise_at_stake": "The precise calculation of total new annual costs."
+          }
+        ],
+        "unverified_premises": [
+          "The final net Year-1 savings figure varies between $170,000, $250,000, and $155,000 due to differing cost calculations."
+        ],
+        "decisive_check": "Confirm the correct total Year-1 cost calculation: Is it $190,000 (Advisor 1) or $205,000 (Advisor 3)?"
+      },
+      "text": "ASSESSMENT OVERVIEW: All advisors recommend proceeding with the plan. The annual savings from eliminating overtime are consistently cited as $360,000.\nPOINTS OF NOTE: Disagreements: (1) Total Year-1 Costs Calculation: Side A [$190,000 (2 \u00d7 $95,000 + $15,000)] vs. Side B [$205,000 (2 \u00d7 $95,000 + $15,000)] (at stake: The precise calculation of total new annual costs.) Flagged issues: The final net Year-1 savings figure varies between $170,000, $250,000, and $155,000 due to differing cost calculations.\nSUGGESTED NEXT STEP: Confirm the correct total Year-1 cost calculation: Is it $190,000 (Advisor 1) or $205,000 (Advisor 3)?",
+      "words": 94,
+      "meta": {
+        "prompt_tokens": 1230,
+        "output_tokens": 272,
+        "seconds": 11.14,
+        "repaired": false
+      }
+    }
+  }
+}

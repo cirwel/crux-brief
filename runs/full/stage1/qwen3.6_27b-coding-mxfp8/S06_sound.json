@@ -1,0 +1,29 @@
+{
+  "scenario_id": "S06",
+  "variant": "sound",
+  "domain": "job_offers",
+  "difficulty_tier": 1,
+  "model": "qwen3.6:27b-coding-mxfp8",
+  "seed": 2111,
+  "output": {
+    "summary": "The user requires a guaranteed net after-tax relocation cash of at least $14,000. The decision packet specifies a $24,000 total package consisting of $10,000 in direct moving reimbursements and a $14,000 lump-sum stipend. Crucially, Section 3 states the company provides a full tax gross-up, ensuring the employee receives the full $24,000 benefit cleanly after taxes. Since the total net benefit is $24,000, which is strictly greater than the $14,000 threshold, the constraint is satisfied. The breakdown confirms liquidity is available for moving and housing.",
+    "key_claims": [
+      "Total relocation package is $24,000.",
+      "Company provides full tax gross-up, ensuring $24,000 is received net after taxes.",
+      "Net amount ($24,000) exceeds the user's minimum requirement of $14,000."
+    ],
+    "recommendation": "proceed",
+    "risks_or_flaws": [
+      "none"
+    ],
+    "verification_question": "none",
+    "confidence": 100
+  },
+  "meta": {
+    "prompt_tokens": 560,
+    "output_tokens": 275,
+    "seconds": 51.21,
+    "repaired": false
+  },
+  "advisor_caught": null
+}

@@ -1,0 +1,148 @@
+{
+  "scenario_id": "S17",
+  "variant": "flawed",
+  "domain": "procurement_handoffs",
+  "difficulty_tier": 1,
+  "eval_model": "gemma4:latest",
+  "synth_model": "nemotron3:33b",
+  "single_advisor_model": "nemotron3:33b",
+  "k_spotted": 3,
+  "advisor_caught_by_model": {
+    "gemma4:latest": true,
+    "nemotron3:33b": true,
+    "qwen3.6:27b-coding-mxfp8": true
+  },
+  "briefs": {
+    "single": {
+      "text": "ASSESSMENT OVERVIEW: Calculated all-in PO total for 100 workstations: Hardware $115,000 + Support $9,500 + Shipping $3,800 = $128,300. This exceeds the $118,000 budget constraint by $10,300, violating the requirement that the total must stay <= $118,000. Key facts: Hardware subtotal: 100 units \u00d7 $1,150 = $115,000; Support cost: 100 units \u00d7 $95 = $9,500; Shipping & crating: $3,800.\nPOINTS OF NOTE: Total all-in PO cost ($128,300) exceeds $118,000 budget constraint by $10,300.\nSUGGESTED NEXT STEP: Confirm if hardware quote includes mandatory 3-year support (SKU-SUP-3Y) at $95/unit as required by Bundle Policy Note B",
+      "words": 94
+    },
+    "consensus": {
+      "raw": {
+        "overview": "All three advisors confirm that the calculated all-in cost for 100 engineering workstations totals $128,300, which exceeds the $118,000 budget constraint by $10,300, indicating a clear financial violation that must be addressed before approval.",
+        "points_of_note": "The consistent calculation across advisors\u2014$115,000 for hardware, $9,500 for mandatory support, and $3,800 for shipping\u2014shows the $128,300 total is not a discrepancy but a confirmed overrun; Advisor 2's specific reference to Bundle Policy Note B underscores the mandatory nature of the $95/unit support, reinforcing that cost reduction must come from hardware or shipping adjustments, not support scope.",
+        "suggested_next_step": "Contact the sales representative to verify whether a hardware discount, alternative configuration, or revised shipping arrangement can reduce the total cost to $118,000 or below."
+      },
+      "text": "ASSESSMENT OVERVIEW: All three advisors confirm that the calculated all-in cost for 100 engineering workstations totals $128,300, which exceeds the $118,000 budget constraint by $10,300, indicating a clear financial violation that must be addressed before approval.\nPOINTS OF NOTE: The consistent calculation across advisors\u2014$115,000 for hardware, $9,500 for mandatory support, and $3,800 for shipping\u2014shows the $128,300 total is not a discrepancy but a confirmed overrun; Advisor 2's specific reference to Bundle Policy Note B underscores the mandatory nature of the $95/unit support, reinforcing that cost reduction must come from hardware or shipping adjustments, not support scope.\nSUGGESTED NEXT STEP: Contact the sales representative to verify whether a hardware discount, alternative configuration, or revised shipping arrangement can reduce the total cost to $118,000 or below.",
+      "words": 124,
+      "meta": {
+        "prompt_tokens": 1442,
+        "output_tokens": 223,
+        "seconds": 8.66,
+        "repaired": false
+      }
+    },
+    "crux": {
+      "raw": {
+        "shared_ground": [
+          "Total all-in PO cost for 100 workstations is $128,300",
+          "Budget constraint is $118,000"
+        ],
+        "cruxes": [
+          {
+            "topic": "Support inclusion",
+            "side_a": "Support is included at $95/unit (SKU-SUP-3Y) as required by Bundle Policy Note B",
+            "side_b": "Support may not be included or priced differently, affecting total cost",
+            "premise_at_stake": "Whether mandatory support is included at $95/unit"
+          }
+        ],
+        "unverified_premises": [
+          "Whether the hardware quote includes mandatory 3-year support (SKU-SUP-3Y) at $95/unit",
+          "Whether alternative support or hardware options exist to reduce total cost below $118,000"
+        ],
+        "decisive_check": "Confirm inclusion of mandatory 3-year support (SKU-SUP-3Y) at $95/unit in the hardware quote"
+      },
+      "text": "ASSESSMENT OVERVIEW: Total all-in PO cost for 100 workstations is $128,300 Budget constraint is $118,000\nPOINTS OF NOTE: Disagreements: (1) Support inclusion: Side A [Support is included at $95/unit (SKU-SUP-3Y) as required by Bundle Policy Note B] vs. Side B [Support may not be included or priced differently, affecting total cost] (at stake: Whether mandatory support is included at $95/unit) Flagged issues: Whether the hardware quote includes mandatory 3-year support (SKU-SUP-3Y) at $95/unit; Whether alternative support or hardware options exist to reduce total cost below $118,000\nSUGGESTED NEXT STEP: Confirm inclusion of mandatory 3-year support (SKU-SUP-3Y) at $95/unit in the hardware quote",
+      "words": 102,
+      "meta": {
+        "prompt_tokens": 1611,
+        "output_tokens": 243,
+        "seconds": 8.39,
+        "repaired": false
+      }
+    }
+  },
+  "crux_survived": {
+    "single": true,
+    "consensus": true,
+    "crux": true
+  },
+  "decisions": {
+    "raw": {
+      "output": {
+        "primary_reason": "The calculation shows the total all-in cost is $129,800, which significantly exceeds the $118,000 budget constraint.",
+        "target_clause_or_metric": "Total all-in Purchase Order cost must stay <= $118,000",
+        "action": "hold_to_verify",
+        "confidence": 100,
+        "brief_endorsement": null
+      },
+      "meta": {
+        "prompt_tokens": 580,
+        "output_tokens": 108,
+        "seconds": 3.81,
+        "repaired": false
+      },
+      "hold": true,
+      "verified_catch": false,
+      "untargeted_hold": true,
+      "false_alarm": null
+    },
+    "single": {
+      "output": {
+        "primary_reason": "The calculation provided in the Pre-Decision Brief confirms that the total all-in cost ($128,300) significantly exceeds the stated constraint of $118,000. Therefore, approval cannot proceed.",
+        "target_clause_or_metric": "Total all-in PO cost must stay <= $118,000",
+        "action": "hold_to_verify",
+        "confidence": 100,
+        "brief_endorsement": 5
+      },
+      "meta": {
+        "prompt_tokens": 812,
+        "output_tokens": 121,
+        "seconds": 4.54,
+        "repaired": false
+      },
+      "hold": true,
+      "verified_catch": true,
+      "untargeted_hold": false,
+      "false_alarm": null
+    },
+    "consensus": {
+      "output": {
+        "primary_reason": "The calculation confirms the total all-in cost is $128,300, which clearly violates the stated constraint of staying <= $118,000. The pre-decision brief confirms this overrun and advises contacting the sales rep.",
+        "target_clause_or_metric": "Total all-in Purchase Order cost must stay <= $118,000",
+        "action": "hold_to_verify",
+        "confidence": 100,
+        "brief_endorsement": 5
+      },
+      "meta": {
+        "prompt_tokens": 790,
+        "output_tokens": 127,
+        "seconds": 5.15,
+        "repaired": false
+      },
+      "hold": true,
+      "verified_catch": true,
+      "untargeted_hold": false,
+      "false_alarm": null
+    },
+    "crux": {
+      "output": {
+        "primary_reason": "The calculation based on the packet and brief shows a total cost of $128,300, which exceeds the stated constraint of $118,000. The discrepancy is clear and requires verification regarding the mandatory support cost.",
+        "target_clause_or_metric": "Total all-in PO cost must stay <= $118,000",
+        "action": "hold_to_verify",
+        "confidence": 100,
+        "brief_endorsement": 5
+      },
+      "meta": {
+        "prompt_tokens": 779,
+        "output_tokens": 124,
+        "seconds": 4.73,
+        "repaired": false
+      },
+      "hold": true,
+      "verified_catch": true,
+      "untargeted_hold": false,
+      "false_alarm": null
+    }
+  }
+}

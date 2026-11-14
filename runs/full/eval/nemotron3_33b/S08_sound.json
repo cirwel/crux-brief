@@ -1,0 +1,143 @@
+{
+  "scenario_id": "S08",
+  "variant": "sound",
+  "domain": "leases",
+  "difficulty_tier": 2,
+  "eval_model": "nemotron3:33b",
+  "synth_model": "gemma4:latest",
+  "single_advisor_model": "nemotron3:33b",
+  "k_spotted": null,
+  "advisor_caught_by_model": {
+    "gemma4:latest": null,
+    "nemotron3:33b": null,
+    "qwen3.6:27b-coding-mxfp8": null
+  },
+  "briefs": {
+    "single": {
+      "text": "ASSESSMENT OVERVIEW: The lease is a 12-month term ending Dec 31, requiring written non-renewal notice 45 days prior (by Dec 10). Month 10 sales results (available Nov 3) provide sufficient time to calculate and deliver notice, avoiding automatic renewal penalties. The landlord's 'simple 1-year pop-up lease' description aligns with the clause's month-to-month conversion after Month 12, confirming no penalty risk if notice is timely. Key facts: Non-renewal notice deadline: 45 days before Dec 31 (by Dec 10); Month 10 sales results available November 3, providing 38 days to deliver notice; Lease converts to month-to-month after Month 12 without renewal penalty.\nPOINTS OF NOTE: No concrete constraint violations flagged.\nSUGGESTED NEXT STEP: None required; stated constraints appear satisfied.",
+      "words": 117
+    },
+    "consensus": {
+      "raw": {
+        "overview": "The advisors generally converge on the structure of the agreement: a defined 12-month initial term expiring December 31st. The primary mechanism for exiting cleanly is adhering to the non-renewal notice requirement stipulated in Clause 14.2. Overall, the consensus suggests that timely action based on the lease terms mitigates the risk of triggering automatic multi-month renewal penalties, aligning with the user's goal of a simple 1-year pop-up arrangement.",
+        "points_of_note": "Advisor 1 raises a critical nuance, questioning whether the 45-day notice *guarantees* waiver of penalties, while Advisors 2 and 3 are more definitive. However, both Advisors 2 and 3 confirm that the lease structure converts to month-to-month rather than auto-renewing for a second year, and Advisor 3 notes that the Month 10 sales data availability (Nov 3) provides sufficient time to meet the notice deadline (around Dec 10). The specific dates and the month-to-month conversion appear to be the most consistently supported elements.",
+        "suggested_next_step": "Given the high confidence from two advisors and the alignment on the notice mechanics, the decision maker should proceed with signing, contingent upon immediately scheduling a reminder to issue the written non-renewal notice at least 45 days prior to the December 31st expiration date."
+      },
+      "text": "ASSESSMENT OVERVIEW: The advisors generally converge on the structure of the agreement: a defined 12-month initial term expiring December 31st. The primary mechanism for exiting cleanly is adhering to the non-renewal notice requirement stipulated in Clause 14.2. Overall, the consensus suggests that timely action based on the lease terms mitigates the risk of triggering automatic multi-month renewal penalties, aligning with the user's goal of a simple 1-year pop-up arrangement.\nPOINTS OF NOTE: Advisor 1 raises a critical nuance, questioning whether the 45-day notice *guarantees* waiver of penalties, while Advisors 2 and 3 are more definitive. However, both Advisors 2 and 3 confirm that the lease structure converts to month-to-month rather than auto-renewing for a second year, and Advisor 3 notes that the Month 10 sales data availability (Nov 3) provides sufficient time to meet the notice deadline (around Dec 10). The specific dates and the month-to-month conversion appear to be the most consistently supported elements.\nSUGGESTED NEXT STEP: Given the high confidence from two advisors and the alignment on the notice mechanics, the decision maker should proceed with signing, contingent upon immediately scheduling a reminder to issue the written non-renewal notice at least 45 days prior to the December 31st expiration date.",
+      "words": 202,
+      "meta": {
+        "prompt_tokens": 1188,
+        "output_tokens": 304,
+        "seconds": 11.07,
+        "repaired": false
+      }
+    },
+    "crux": {
+      "raw": {
+        "shared_ground": [
+          "The lease specifies an initial term of 12 months, expiring December 31st.",
+          "Clause 14.2 requires a written non-renewal notice 45 days prior to expiration."
+        ],
+        "cruxes": [
+          {
+            "topic": "Penalty Waiver",
+            "side_a": "Advisor 1: Does Clause 14.2 explicitly state that providing the 45-day non-renewal notice waives any right to claim an automatic multi-month renewal penalty?",
+            "side_b": "Advisor 2/3: The lease converts to month-to-month or confirms no penalty risk if notice is timely.",
+            "premise_at_stake": "Whether the notice requirement itself is sufficient to guarantee exiting cleanly at Month 12 without penalty."
+          }
+        ],
+        "unverified_premises": [
+          "Advisor 1 notes the packet does not detail the process or penalty structure contradicting the 'simple 1-year pop-up' understanding."
+        ],
+        "decisive_check": "Confirming if the 45-day non-renewal notice explicitly waives any claim to an automatic multi-month renewal penalty."
+      },
+      "text": "ASSESSMENT OVERVIEW: The lease specifies an initial term of 12 months, expiring December 31st. Clause 14.2 requires a written non-renewal notice 45 days prior to expiration.\nPOINTS OF NOTE: Disagreements: (1) Penalty Waiver: Side A [Advisor 1: Does Clause 14.2 explicitly state that providing the 45-day non-renewal notice waives any right to claim an automatic multi-month renewal penalty?] vs. Side B [Advisor 2/3: The lease converts to month-to-month or confirms no penalty risk if notice is timely.] (at stake: Whether the notice requirement itself is sufficient to guarantee exiting cleanly at Month 12 without penalty.) Flagged issues: Advisor 1 notes the packet does not detail the process or penalty structure contradicting the 'simple 1-year pop-up' understanding.\nSUGGESTED NEXT STEP: Confirming if the 45-day non-renewal notice explicitly waives any claim to an automatic multi-month renewal penalty.",
+      "words": 135,
+      "meta": {
+        "prompt_tokens": 1336,
+        "output_tokens": 275,
+        "seconds": 10.33,
+        "repaired": false
+      }
+    }
+  },
+  "crux_survived": null,
+  "decisions": {
+    "raw": {
+      "output": {
+        "primary_reason": "The lease requires a 45-day written notice prior to Month 12 expiration, which aligns with the goal of exiting cleanly based on November 3 sales results; no clause binds the lease beyond Month 12 without renewal election.",
+        "target_clause_or_metric": "Clause 14.2",
+        "action": "proceed",
+        "confidence": 100,
+        "brief_endorsement": null
+      },
+      "meta": {
+        "prompt_tokens": 654,
+        "output_tokens": 106,
+        "seconds": 3.79,
+        "repaired": false
+      },
+      "hold": false,
+      "verified_catch": null,
+      "untargeted_hold": null,
+      "false_alarm": false
+    },
+    "single": {
+      "output": {
+        "primary_reason": "The lease requires written non-renewal notice 45 days before Dec 31 (by Dec 10), and Month 10 sales results available November 3 provide 38 days to deliver notice, satisfying the timeline without triggering renewal penalties.",
+        "target_clause_or_metric": "Clause 14.2 (45-day notice deadline and month-to-month conversion after Month 12)",
+        "action": "proceed",
+        "confidence": 95,
+        "brief_endorsement": 5
+      },
+      "meta": {
+        "prompt_tokens": 867,
+        "output_tokens": 126,
+        "seconds": 4.81,
+        "repaired": false
+      },
+      "hold": false,
+      "verified_catch": null,
+      "untargeted_hold": null,
+      "false_alarm": false
+    },
+    "consensus": {
+      "output": {
+        "primary_reason": "The lease's 12-month term ends December 31, and Clause 14.2 allows month-to-month continuation without auto-renewal if a 45-day notice is given, which aligns with the goal of exiting cleanly at Month 12.",
+        "target_clause_or_metric": "Clause 14.2",
+        "action": "proceed",
+        "confidence": 95,
+        "brief_endorsement": 5
+      },
+      "meta": {
+        "prompt_tokens": 967,
+        "output_tokens": 115,
+        "seconds": 3.93,
+        "repaired": false
+      },
+      "hold": false,
+      "verified_catch": null,
+      "untargeted_hold": null,
+      "false_alarm": false
+    },
+    "crux": {
+      "output": {
+        "primary_reason": "The lease specifies a 12-month term ending December 31, and Clause 14.2 requires a 45-day written non-renewal notice prior to expiration, which converts the lease to a month-to-month arrangement without a second 12-month term, satisfying the requirement to exit cleanly at Month 12 without penalty.",
+        "target_clause_or_metric": "Clause 14.2",
+        "action": "proceed",
+        "confidence": 95,
+        "brief_endorsement": 5
+      },
+      "meta": {
+        "prompt_tokens": 902,
+        "output_tokens": 129,
+        "seconds": 4.23,
+        "repaired": false
+      },
+      "hold": false,
+      "verified_catch": null,
+      "untargeted_hold": null,
+      "false_alarm": false
+    }
+  }
+}

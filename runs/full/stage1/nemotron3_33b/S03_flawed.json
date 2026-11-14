@@ -1,0 +1,29 @@
+{
+  "scenario_id": "S03",
+  "variant": "flawed",
+  "domain": "job_offers",
+  "difficulty_tier": 2,
+  "model": "nemotron3:33b",
+  "seed": 1104,
+  "output": {
+    "summary": "Historical median attainment of 74% and 60% of reps between 65-79% indicate most reps fall below 80% quota, triggering the zero-commission cliff. At 74% attainment, variable earnings drop to $0, reducing total cash earnings to $160,000 base, which is $50,000 below the $210,000 historical attainment threshold.",
+    "key_claims": [
+      "Historical median quota attainment is 74%",
+      "60% of reps fall between 65% and 79% attainment",
+      "Variable commission is zero below 80% quota attainment"
+    ],
+    "recommendation": "hold_to_verify",
+    "risks_or_flaws": [
+      "Historical attainment (74%) is below 80% threshold, causing zero variable commission and total cash earnings of $160,000, which is $50,000 below the $210,000 requirement"
+    ],
+    "verification_question": "Does the 74% historical median attainment imply that most reps earn $0 variable commission, resulting in total cash earnings below $210,000?",
+    "confidence": 95
+  },
+  "meta": {
+    "prompt_tokens": 653,
+    "output_tokens": 292,
+    "seconds": 10.92,
+    "repaired": false
+  },
+  "advisor_caught": true
+}

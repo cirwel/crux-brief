@@ -1,0 +1,29 @@
+{
+  "scenario_id": "S08",
+  "variant": "sound",
+  "domain": "leases",
+  "difficulty_tier": 2,
+  "model": "nemotron3:33b",
+  "seed": 1115,
+  "output": {
+    "summary": "The lease is a 12-month term ending Dec 31, requiring written non-renewal notice 45 days prior (by Dec 10). Month 10 sales results (available Nov 3) provide sufficient time to calculate and deliver notice, avoiding automatic renewal penalties. The landlord's 'simple 1-year pop-up lease' description aligns with the clause's month-to-month conversion after Month 12, confirming no penalty risk if notice is timely.",
+    "key_claims": [
+      "Non-renewal notice deadline: 45 days before Dec 31 (by Dec 10)",
+      "Month 10 sales results available November 3, providing 38 days to deliver notice",
+      "Lease converts to month-to-month after Month 12 without renewal penalty"
+    ],
+    "recommendation": "proceed",
+    "risks_or_flaws": [
+      "none"
+    ],
+    "verification_question": "none",
+    "confidence": 100
+  },
+  "meta": {
+    "prompt_tokens": 622,
+    "output_tokens": 223,
+    "seconds": 8.37,
+    "repaired": false
+  },
+  "advisor_caught": null
+}

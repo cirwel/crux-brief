@@ -1,0 +1,134 @@
+{
+  "scenario_id": "S02",
+  "variant": "sound",
+  "domain": "job_offers",
+  "difficulty_tier": 1,
+  "eval_model": "nemotron3:33b",
+  "synth_model": "gemma4:latest",
+  "single_advisor_model": "nemotron3:33b",
+  "k_spotted": null,
+  "advisor_caught_by_model": {
+    "gemma4:latest": null,
+    "nemotron3:33b": null,
+    "qwen3.6:27b-coding-mxfp8": null
+  },
+  "briefs": {
+    "single": {
+      "text": "ASSESSMENT OVERVIEW: The $40,000 sign-on bonus results in $24,800 net cash. The repayment rider requires repayment of 1/12th monthly ($2,067) for 12 months if voluntarily resigned within 12 months, totaling $24,800. Since repayment ends at Month 12, leaving at Month 18 incurs no obligation. All constraints are satisfied. Key facts: Sign-on bonus: $40,000 gross, $24,800 net; Repayment: 1/12th monthly ($2,067) for 12 months = $24,800 total, ending at Month 12; Voluntary resignation within 12 months triggers repayment; after Month 12, obligation is $0.\nPOINTS OF NOTE: No concrete constraint violations flagged.\nSUGGESTED NEXT STEP: None required; stated constraints appear satisfied.",
+      "words": 100
+    },
+    "consensus": {
+      "raw": {
+        "overview": "The advisors present a strong consensus that the proposed agreement structure successfully meets the user's primary constraint regarding the sign-on bonus repayment obligation. All three assessments conclude that because the repayment clause expires after twelve months, a planned departure at Month 18 will not result in any out-of-pocket cash clawback for the user.",
+        "points_of_note": "The evidence consistently points to Clause 6b, which stipulates that the repayment obligation amortizes monthly and reaches zero after Month 12. Advisor 2 provided specific figures, noting the $40,000 gross bonus results in a $24,800 net repayment total over 12 months. This specific detail, combined with the explicit confirmation from all advisors that the obligation ceases after the 12-month mark, confirms the constraint satisfaction without flagging any material issues.",
+        "suggested_next_step": "Given the unanimous recommendation and the consistent confirmation across all reports that the repayment clause expires by Month 12, the decision maker should feel confident in proceeding with the agreement."
+      },
+      "text": "ASSESSMENT OVERVIEW: The advisors present a strong consensus that the proposed agreement structure successfully meets the user's primary constraint regarding the sign-on bonus repayment obligation. All three assessments conclude that because the repayment clause expires after twelve months, a planned departure at Month 18 will not result in any out-of-pocket cash clawback for the user.\nPOINTS OF NOTE: The evidence consistently points to Clause 6b, which stipulates that the repayment obligation amortizes monthly and reaches zero after Month 12. Advisor 2 provided specific figures, noting the $40,000 gross bonus results in a $24,800 net repayment total over 12 months. This specific detail, combined with the explicit confirmation from all advisors that the obligation ceases after the 12-month mark, confirms the constraint satisfaction without flagging any material issues.\nSUGGESTED NEXT STEP: Given the unanimous recommendation and the consistent confirmation across all reports that the repayment clause expires by Month 12, the decision maker should feel confident in proceeding with the agreement.",
+      "words": 160,
+      "meta": {
+        "prompt_tokens": 1000,
+        "output_tokens": 232,
+        "seconds": 8.1,
+        "repaired": false
+      }
+    },
+    "crux": {
+      "raw": {
+        "shared_ground": [
+          "The sign-on bonus is $40,000 gross.",
+          "All three advisors recommend proceeding because the repayment obligation expires after Month 12."
+        ],
+        "cruxes": [],
+        "unverified_premises": [],
+        "decisive_check": "None required; all advisors concur stated constraints are satisfied."
+      },
+      "text": "ASSESSMENT OVERVIEW: The sign-on bonus is $40,000 gross. All three advisors recommend proceeding because the repayment obligation expires after Month 12.\nPOINTS OF NOTE: No concrete disagreements or constraint violations flagged across advisors.\nSUGGESTED NEXT STEP: None required; all advisors concur stated constraints are satisfied.",
+      "words": 45,
+      "meta": {
+        "prompt_tokens": 1148,
+        "output_tokens": 88,
+        "seconds": 3.98,
+        "repaired": false
+      }
+    }
+  },
+  "crux_survived": null,
+  "decisions": {
+    "raw": {
+      "output": {
+        "primary_reason": "The repayment rider (Clause 6b) explicitly amortizes the $40,000 sign-on bonus over 12 months, making the obligation $0 after Month 12, which satisfies the constraint that repayment must expire by Month 12. No out-of-pocket clawback risk exists beyond Month 12.",
+        "target_clause_or_metric": "Clause 6b",
+        "action": "proceed",
+        "confidence": 100,
+        "brief_endorsement": null
+      },
+      "meta": {
+        "prompt_tokens": 692,
+        "output_tokens": 127,
+        "seconds": 4.0,
+        "repaired": false
+      },
+      "hold": false,
+      "verified_catch": null,
+      "untargeted_hold": null,
+      "false_alarm": false
+    },
+    "single": {
+      "output": {
+        "primary_reason": "The repayment rider (Clause 6b) specifies that the obligation amortizes 1/12th monthly and drops to $0 after Month 12, meaning any resignation after Month 12 triggers no repayment. The PRE-DECISION BRIEF confirms this structure and states all constraints are satisfied.",
+        "target_clause_or_metric": "Clause 6b",
+        "action": "proceed",
+        "confidence": 95,
+        "brief_endorsement": 5
+      },
+      "meta": {
+        "prompt_tokens": 925,
+        "output_tokens": 121,
+        "seconds": 3.95,
+        "repaired": false
+      },
+      "hold": false,
+      "verified_catch": null,
+      "untargeted_hold": null,
+      "false_alarm": false
+    },
+    "consensus": {
+      "output": {
+        "primary_reason": "The repayment clause (Clause 6b) amortizes monthly and reaches $0 after Month 12, satisfying the constraint that the obligation must expire by Month 12. A departure at Month 18 therefore triggers no out-of-pocket cash clawback.",
+        "target_clause_or_metric": "Clause 6b",
+        "action": "proceed",
+        "confidence": 95,
+        "brief_endorsement": 5
+      },
+      "meta": {
+        "prompt_tokens": 931,
+        "output_tokens": 111,
+        "seconds": 3.62,
+        "repaired": false
+      },
+      "hold": false,
+      "verified_catch": null,
+      "untargeted_hold": null,
+      "false_alarm": false
+    },
+    "crux": {
+      "output": {
+        "primary_reason": "The repayment obligation in Clause 6b expires after Month 12, meaning no clawback can occur beyond Month 12, satisfying the constraint that repayment must expire by Month 12.",
+        "target_clause_or_metric": "Clause 6b",
+        "action": "proceed",
+        "confidence": 95,
+        "brief_endorsement": 5
+      },
+      "meta": {
+        "prompt_tokens": 772,
+        "output_tokens": 98,
+        "seconds": 3.85,
+        "repaired": false
+      },
+      "hold": false,
+      "verified_catch": null,
+      "untargeted_hold": null,
+      "false_alarm": false
+    }
+  }
+}

@@ -1,0 +1,134 @@
+{
+  "scenario_id": "S18",
+  "variant": "sound",
+  "domain": "procurement_handoffs",
+  "difficulty_tier": 3,
+  "eval_model": "gemma4:latest",
+  "synth_model": "nemotron3:33b",
+  "single_advisor_model": "qwen3.6:27b-coding-mxfp8",
+  "k_spotted": null,
+  "advisor_caught_by_model": {
+    "gemma4:latest": null,
+    "nemotron3:33b": null,
+    "qwen3.6:27b-coding-mxfp8": null
+  },
+  "briefs": {
+    "single": {
+      "text": "ASSESSMENT OVERVIEW: The user requires guaranteed rebate savings of at least $15,000 across a demand band of 950 to 1,050 units. The packet states a rebate of $18/unit applies to all Q4 units once 850 units are billed. Since the minimum demand (950) exceeds the threshold (850), the rebate triggers for the entire volume. At the minimum volume of 950 units, the total rebate is 950 * $18 = $17,100. This amount exceeds the $15,000 minimum requirement. The constraint is satisfied at the lower bound of the demand band, ensuring the guarantee holds for any volume within the 950-1,050 range. Key facts: Minimum rebate savings at 950 units is $17,100; Rebate threshold of 850 units is below the minimum demand of 950 units.\nPOINTS OF NOTE: No concrete constraint violations flagged.\nSUGGESTED NEXT STEP: None required; stated constraints appear satisfied.",
+      "words": 140
+    },
+    "consensus": {
+      "raw": {
+        "overview": "All three advisors unanimously recommend proceeding with the procurement decision, as the volume rebate structure guarantees savings exceeding the $15,000 minimum requirement across the entire 950-1,050 unit demand band. Each advisor confirms that the $18/unit rebate applies once 850 units are billed, and since the minimum projected demand of 950 units exceeds this threshold, the rebate is fully triggered for all units.",
+        "points_of_note": "The common ground centers on the $18/unit rebate rate and the 850-unit threshold, with all advisors calculating that the minimum rebate at 950 units equals $17,100 (950 \u00d7 $18), comfortably surpassing the $15,000 requirement. Advisor 1 and 3 explicitly reference the $17,100 figure, while Advisor 2 cites $17,000 as the minimum\u2014both values confirm the constraint is satisfied at the lower bound of the demand range without any flagged issues or constraint breaches.",
+        "suggested_next_step": "Proceed with signing the procurement agreement, as the guaranteed rebate savings exceed the $15,000 threshold across all demand scenarios within the 950-1,050 unit band, with no constraint violations identified."
+      },
+      "text": "ASSESSMENT OVERVIEW: All three advisors unanimously recommend proceeding with the procurement decision, as the volume rebate structure guarantees savings exceeding the $15,000 minimum requirement across the entire 950-1,050 unit demand band. Each advisor confirms that the $18/unit rebate applies once 850 units are billed, and since the minimum projected demand of 950 units exceeds this threshold, the rebate is fully triggered for all units.\nPOINTS OF NOTE: The common ground centers on the $18/unit rebate rate and the 850-unit threshold, with all advisors calculating that the minimum rebate at 950 units equals $17,100 (950 \u00d7 $18), comfortably surpassing the $15,000 requirement. Advisor 1 and 3 explicitly reference the $17,100 figure, while Advisor 2 cites $17,000 as the minimum\u2014both values confirm the constraint is satisfied at the lower bound of the demand range without any flagged issues or constraint breaches.\nSUGGESTED NEXT STEP: Proceed with signing the procurement agreement, as the guaranteed rebate savings exceed the $15,000 threshold across all demand scenarios within the 950-1,050 unit band, with no constraint violations identified.",
+      "words": 171,
+      "meta": {
+        "prompt_tokens": 1204,
+        "output_tokens": 298,
+        "seconds": 9.38,
+        "repaired": false
+      }
+    },
+    "crux": {
+      "raw": {
+        "shared_ground": [
+          "Rebate of $18/unit applies to all Q4 units once 850 units are billed",
+          "Minimum demand in the 950-1,050 band is 950 units"
+        ],
+        "cruxes": [],
+        "unverified_premises": [],
+        "decisive_check": "None required; all advisors concur stated constraints are satisfied."
+      },
+      "text": "ASSESSMENT OVERVIEW: Rebate of $18/unit applies to all Q4 units once 850 units are billed Minimum demand in the 950-1,050 band is 950 units\nPOINTS OF NOTE: No concrete disagreements or constraint violations flagged across advisors.\nSUGGESTED NEXT STEP: None required; all advisors concur stated constraints are satisfied.",
+      "words": 48,
+      "meta": {
+        "prompt_tokens": 1373,
+        "output_tokens": 99,
+        "seconds": 3.79,
+        "repaired": false
+      }
+    }
+  },
+  "crux_survived": null,
+  "decisions": {
+    "raw": {
+      "output": {
+        "primary_reason": "The rebate structure guarantees $18/unit credit upon reaching 850 units, which is met even at the low end of the 950-1,050 band, thus ensuring a minimum rebate far exceeding the $15,000 requirement.",
+        "target_clause_or_metric": "none",
+        "action": "proceed",
+        "confidence": 100,
+        "brief_endorsement": null
+      },
+      "meta": {
+        "prompt_tokens": 580,
+        "output_tokens": 110,
+        "seconds": 3.6,
+        "repaired": false
+      },
+      "hold": false,
+      "verified_catch": null,
+      "untargeted_hold": null,
+      "false_alarm": false
+    },
+    "single": {
+      "output": {
+        "primary_reason": "The pre-decision brief confirms that the minimum projected rebate savings at the lower bound of the demand band (950 units) is $17,100, which successfully meets the required minimum of $15,000. Therefore, the constraint is satisfied.",
+        "target_clause_or_metric": "none",
+        "action": "proceed",
+        "confidence": 100,
+        "brief_endorsement": 5
+      },
+      "meta": {
+        "prompt_tokens": 816,
+        "output_tokens": 111,
+        "seconds": 3.62,
+        "repaired": false
+      },
+      "hold": false,
+      "verified_catch": null,
+      "untargeted_hold": null,
+      "false_alarm": false
+    },
+    "consensus": {
+      "output": {
+        "primary_reason": "The packet, supported by the pre-decision brief, confirms that the $18/unit rebate, triggered at 850 units, results in a minimum rebate of $17,100 when demand is at the 950-unit low end, satisfying the >= $15,000 constraint.",
+        "target_clause_or_metric": "none",
+        "action": "proceed",
+        "confidence": 100,
+        "brief_endorsement": 5
+      },
+      "meta": {
+        "prompt_tokens": 857,
+        "output_tokens": 122,
+        "seconds": 4.31,
+        "repaired": false
+      },
+      "hold": false,
+      "verified_catch": null,
+      "untargeted_hold": null,
+      "false_alarm": false
+    },
+    "crux": {
+      "output": {
+        "primary_reason": "The rebate structure guarantees a minimum rebate of $18/unit on all units once 850 are hit. Given the minimum demand of 950 units, the rebate will apply to all 950 units, resulting in a minimum rebate of $18 * 950 = $17,100, which exceeds the $15,000 minimum.",
+        "target_clause_or_metric": "none",
+        "action": "proceed",
+        "confidence": 100,
+        "brief_endorsement": 5
+      },
+      "meta": {
+        "prompt_tokens": 659,
+        "output_tokens": 136,
+        "seconds": 5.27,
+        "repaired": false
+      },
+      "hold": false,
+      "verified_catch": null,
+      "untargeted_hold": null,
+      "false_alarm": false
+    }
+  }
+}

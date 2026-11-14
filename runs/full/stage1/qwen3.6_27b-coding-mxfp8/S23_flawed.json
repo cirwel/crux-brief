@@ -1,0 +1,29 @@
+{
+  "scenario_id": "S23",
+  "variant": "flawed",
+  "domain": "operational_briefs",
+  "difficulty_tier": 3,
+  "model": "qwen3.6:27b-coding-mxfp8",
+  "seed": 2144,
+  "output": {
+    "summary": "The user requires statistically valid evidence of positive ARPU lift per a pre-registered plan. The packet reports a significant p-value (0.03), but the experiment was halted early on Day 5 instead of the pre-registered 14 days. Early stopping based on interim significance inflates Type I error rates, violating the validity constraint. Additionally, the sample split is imbalanced (10,000 vs 8,380) due to a technical timeout affecting the variant, further compromising the randomized integrity required for valid inference.",
+    "key_claims": [
+      "Experiment stopped early on Day 5 instead of the pre-registered 14 days.",
+      "Variant sample size (8,380) is significantly lower than Control (10,000) due to technical timeouts."
+    ],
+    "recommendation": "hold_to_verify",
+    "risks_or_flaws": [
+      "Early stopping invalidates the p-value due to inflated false positive risk (peeking problem).",
+      "Technical failure caused non-random attrition in the variant group, violating randomization assumptions."
+    ],
+    "verification_question": "Does the statistical analysis account for the multiple testing/peeking bias introduced by stopping early on Day 5?",
+    "confidence": 95
+  },
+  "meta": {
+    "prompt_tokens": 573,
+    "output_tokens": 287,
+    "seconds": 53.09,
+    "repaired": false
+  },
+  "advisor_caught": true
+}

@@ -1,0 +1,29 @@
+{
+  "scenario_id": "S01",
+  "variant": "sound",
+  "domain": "job_offers",
+  "difficulty_tier": 1,
+  "model": "nemotron3:33b",
+  "seed": 1101,
+  "output": {
+    "summary": "Calculated Year-1 realized gross compensation as $205,000 base + $10,000 signing bonus + $100,000 equity vesting (25% of $400,000 RSU grant) = $315,000, which exceeds the $260,000 minimum requirement. The recruiter's $305,000 figure appears inconsistent with actual vesting terms.",
+    "key_claims": [
+      "Year-1 realized gross compensation = $315,000",
+      "Equity vesting in Year-1 = $100,000 (25% of $400,000 RSU grant)",
+      "Total compensation exceeds $260,000 threshold"
+    ],
+    "recommendation": "proceed",
+    "risks_or_flaws": [
+      "none"
+    ],
+    "verification_question": "none",
+    "confidence": 100
+  },
+  "meta": {
+    "prompt_tokens": 694,
+    "output_tokens": 230,
+    "seconds": 9.33,
+    "repaired": false
+  },
+  "advisor_caught": null
+}

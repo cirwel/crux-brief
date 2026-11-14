@@ -1,0 +1,49 @@
+{
+  "scenario_id": "S07",
+  "variant": "sound",
+  "domain": "leases",
+  "difficulty_tier": 1,
+  "synth_model": "nemotron3:33b",
+  "k_spotted": null,
+  "advisor_caught_by_model": {
+    "gemma4:latest": null,
+    "nemotron3:33b": null,
+    "qwen3.6:27b-coding-mxfp8": null
+  },
+  "briefs": {
+    "consensus": {
+      "raw": {
+        "overview": "All three advisors concur that the total unavoidable monthly housing cost of $2,430, derived from the $2,325 base rent plus mandatory $105 in fees (Fiber Internet & Building Access $75 and Valet Trash $30), remains well below the $2,550 constraint, with no material issues identified in the fee structure or calculation method.",
+        "points_of_note": "The advisors consistently exclude non-mandatory items like garage ($95) and storage ($40) fees, confirm utilities are separately metered and thus not part of unavoidable landlord fees, and validate the $2,430 total against the $2,550 ceiling without flagging any constraint violations or calculation discrepancies.",
+        "suggested_next_step": "Proceed with the apartment application as all advisors confirm the mandatory monthly housing cost of $2,430 satisfies the $2,550 budget constraint."
+      },
+      "text": "ASSESSMENT OVERVIEW: All three advisors concur that the total unavoidable monthly housing cost of $2,430, derived from the $2,325 base rent plus mandatory $105 in fees (Fiber Internet & Building Access $75 and Valet Trash $30), remains well below the $2,550 constraint, with no material issues identified in the fee structure or calculation method.\nPOINTS OF NOTE: The advisors consistently exclude non-mandatory items like garage ($95) and storage ($40) fees, confirm utilities are separately metered and thus not part of unavoidable landlord fees, and validate the $2,430 total against the $2,550 ceiling without flagging any constraint violations or calculation discrepancies.\nSUGGESTED NEXT STEP: Proceed with the apartment application as all advisors confirm the mandatory monthly housing cost of $2,430 satisfies the $2,550 budget constraint.",
+      "words": 124,
+      "meta": {
+        "prompt_tokens": 1175,
+        "output_tokens": 210,
+        "seconds": 10.2,
+        "repaired": false
+      }
+    },
+    "crux": {
+      "raw": {
+        "shared_ground": [
+          "Base Rent: $2,325/month",
+          "Mandatory Fees: $105/month (Internet $75 + Valet Trash $30)"
+        ],
+        "cruxes": [],
+        "unverified_premises": [],
+        "decisive_check": "None required; all advisors concur stated constraints are satisfied."
+      },
+      "text": "ASSESSMENT OVERVIEW: Base Rent: $2,325/month Mandatory Fees: $105/month (Internet $75 + Valet Trash $30)\nPOINTS OF NOTE: No concrete disagreements or constraint violations flagged across advisors.\nSUGGESTED NEXT STEP: None required; all advisors concur stated constraints are satisfied.",
+      "words": 38,
+      "meta": {
+        "prompt_tokens": 1344,
+        "output_tokens": 91,
+        "seconds": 7.25,
+        "repaired": false
+      }
+    }
+  }
+}

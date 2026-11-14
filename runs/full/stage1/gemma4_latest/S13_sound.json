@@ -1,0 +1,29 @@
+{
+  "scenario_id": "S13",
+  "variant": "sound",
+  "domain": "procurement_handoffs",
+  "difficulty_tier": 2,
+  "model": "gemma4:latest",
+  "seed": 125,
+  "output": {
+    "summary": "The packet addresses two key constraints. First, the uptime target of 99.9% implies a maximum downtime of 43.2 minutes per month, which is less than the 60-minute limit. Second, the remedy clause states a 50% credit for breaches below 99.9%, which meets the minimum 50% reimbursement threshold. The packet does not specify the calculation for unscheduled vs. scheduled outages, but the stated terms appear compliant.",
+    "key_claims": [
+      "Maximum downtime implied by 99.9% uptime is 43.2 minutes/month (<= 60 minutes).",
+      "SLA breach remedy starts at 50% service credit (>= 50% reimbursement).",
+      "Scheduled maintenance is restricted to off-peak Sundays, permitting zero US daytime outage."
+    ],
+    "recommendation": "proceed",
+    "risks_or_flaws": [
+      "none"
+    ],
+    "verification_question": "none",
+    "confidence": 100
+  },
+  "meta": {
+    "prompt_tokens": 597,
+    "output_tokens": 242,
+    "seconds": 9.65,
+    "repaired": false
+  },
+  "advisor_caught": null
+}

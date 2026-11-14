@@ -1,0 +1,52 @@
+{
+  "scenario_id": "S15",
+  "variant": "sound",
+  "domain": "procurement_handoffs",
+  "difficulty_tier": 2,
+  "synth_model": "nemotron3:33b",
+  "k_spotted": null,
+  "advisor_caught_by_model": {
+    "gemma4:latest": null,
+    "nemotron3:33b": null,
+    "qwen3.6:27b-coding-mxfp8": null
+  },
+  "briefs": {
+    "consensus": {
+      "raw": {
+        "overview": "All three advisors unanimously recommend proceeding with early payment of Supplier Invoice #4490 on Day 10, as each confirms the discount yields positive net dollar savings after accounting for financing costs under the treasury clerk's 'guaranteed instant savings' condition, with no constraint violations identified.",
+        "points_of_note": "Advisor 1 calculates financing cost at ~$1,616 (12% APR on $245k for 20 days), yielding ~$3,384 net savings; Advisor 2 uses a 360-day basis yielding $812.50 cost and $4,187.50 net savings; Advisor 3 reports a $400 cost (likely a calculation error) with $4,600 net savings, but all agree the discount exceeds financing costs, satisfying the positive net savings requirement.",
+        "suggested_next_step": "Approve payment of Supplier Invoice #4490 on Day 10 to capture the discount, as all advisors confirm the net dollar savings remain positive after financing costs."
+      },
+      "text": "ASSESSMENT OVERVIEW: All three advisors unanimously recommend proceeding with early payment of Supplier Invoice #4490 on Day 10, as each confirms the discount yields positive net dollar savings after accounting for financing costs under the treasury clerk's 'guaranteed instant savings' condition, with no constraint violations identified.\nPOINTS OF NOTE: Advisor 1 calculates financing cost at ~$1,616 (12% APR on $245k for 20 days), yielding ~$3,384 net savings; Advisor 2 uses a 360-day basis yielding $812.50 cost and $4,187.50 net savings; Advisor 3 reports a $400 cost (likely a calculation error) with $4,600 net savings, but all agree the discount exceeds financing costs, satisfying the positive net savings requirement.\nSUGGESTED NEXT STEP: Approve payment of Supplier Invoice #4490 on Day 10 to capture the discount, as all advisors confirm the net dollar savings remain positive after financing costs.",
+      "words": 137,
+      "meta": {
+        "prompt_tokens": 1154,
+        "output_tokens": 239,
+        "seconds": 6.44,
+        "repaired": false
+      }
+    },
+    "crux": {
+      "raw": {
+        "shared_ground": [
+          "The invoice amount is $250,000 with a $5,000 discount for early payment on Day 10.",
+          "Financing cost is calculated on $245,000 at 12.0% APR for 20 days."
+        ],
+        "cruxes": [],
+        "unverified_premises": [
+          "The discount amount is $5,000 (2.0% of $250,000).",
+          "The financing cost is $400 (as stated by Advisor 3)."
+        ],
+        "decisive_check": "None required; all advisors concur stated constraints are satisfied."
+      },
+      "text": "ASSESSMENT OVERVIEW: The invoice amount is $250,000 with a $5,000 discount for early payment on Day 10. Financing cost is calculated on $245,000 at 12.0% APR for 20 days.\nPOINTS OF NOTE: Flagged issues: The discount amount is $5,000 (2.0% of $250,000).; The financing cost is $400 (as stated by Advisor 3).\nSUGGESTED NEXT STEP: None required; all advisors concur stated constraints are satisfied.",
+      "words": 64,
+      "meta": {
+        "prompt_tokens": 1323,
+        "output_tokens": 162,
+        "seconds": 5.97,
+        "repaired": false
+      }
+    }
+  }
+}

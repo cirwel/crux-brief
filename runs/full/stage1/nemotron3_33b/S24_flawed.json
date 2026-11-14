@@ -1,0 +1,29 @@
+{
+  "scenario_id": "S24",
+  "variant": "flawed",
+  "domain": "operational_briefs",
+  "difficulty_tier": 1,
+  "model": "nemotron3:33b",
+  "seed": 1146,
+  "output": {
+    "summary": "The proposal eliminates $240,000 annual emergency overtime savings (20,000 x 12 months). Year-1 net savings equal $240,000 in savings minus $190,000 in costs (2 x $95,000 salaries/benefits + $35,000 fee), yielding $50,000 net savings, which is below the $100,000 threshold.",
+    "key_claims": [
+      "Annual emergency overtime savings: $240,000",
+      "Year-1 net savings: $50,000",
+      "Savings threshold: $100,000"
+    ],
+    "recommendation": "hold_to_verify",
+    "risks_or_flaws": [
+      "Year-1 net savings ($50,000) < $100,000 requirement"
+    ],
+    "verification_question": "Confirm Year-1 net savings calculation: $240,000 savings - $190,000 costs = $50,000",
+    "confidence": 100
+  },
+  "meta": {
+    "prompt_tokens": 605,
+    "output_tokens": 276,
+    "seconds": 9.04,
+    "repaired": false
+  },
+  "advisor_caught": true
+}

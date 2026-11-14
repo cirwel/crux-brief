@@ -1,0 +1,29 @@
+{
+  "scenario_id": "S19",
+  "variant": "flawed",
+  "domain": "operational_briefs",
+  "difficulty_tier": 3,
+  "model": "gemma4:latest",
+  "seed": 136,
+  "output": {
+    "summary": "The user requires auto-suspension only if live fraud accuracy is $\\ge 40\\%$. The packet provides a 50/50 test benchmark of 96.0% sensitivity and 92.0% specificity. Applying the sensitivity to the live fraud base rate (10,000 accounts * 1.0% = 100 fraudulent accounts) yields an expected detection rate of $100 \\times 0.96 = 96$ suspended fraudulent accounts. The false positive rate (8.0%) on the 9,900 legitimate accounts results in $9,900 \\times 0.08 = 792$ false positives. The total suspended accounts are $96 + 792 = 888$. The actual fraud suspension rate is $96/888 \\approx 10.8\\%$, which is significantly below the required 40%.",
+    "key_claims": [
+      "Live fraud base rate: 1.0% of 10,000 accounts (100 fraudulent accounts).",
+      "Expected true positive suspensions (Sensitivity): $100 \\times 0.96 = 96$ accounts.",
+      "Expected false positive suspensions (Specificity): $9,900 \\times 0.08 = 792$ accounts."
+    ],
+    "recommendation": "hold_to_verify",
+    "risks_or_flaws": [
+      "The calculated rate of genuinely fraudulent accounts suspended (96 out of 888 total suspensions, or $\\approx 10.8\\%$) is substantially below the required 40% threshold."
+    ],
+    "verification_question": "Given the calculated total suspensions of 888 (96 true positives + 792 false positives), what is the required minimum number of true positives needed to achieve at least 40% of the total suspended accounts?",
+    "confidence": 100
+  },
+  "meta": {
+    "prompt_tokens": 583,
+    "output_tokens": 452,
+    "seconds": 13.56,
+    "repaired": false
+  },
+  "advisor_caught": true
+}

@@ -1,0 +1,52 @@
+{
+  "scenario_id": "S19",
+  "variant": "sound",
+  "domain": "operational_briefs",
+  "difficulty_tier": 3,
+  "synth_model": "nemotron3:33b",
+  "k_spotted": null,
+  "advisor_caught_by_model": {
+    "gemma4:latest": null,
+    "nemotron3:33b": null,
+    "qwen3.6:27b-coding-mxfp8": null
+  },
+  "briefs": {
+    "consensus": {
+      "raw": {
+        "overview": "All three advisors unanimously recommend enabling fully automated account suspension, as the packet's 95.0% sensitivity and 99.4% specificity, combined with a 10.0% fraud base rate in live traffic, yield a calculated fraud proportion of approximately 94.6% among suspended accounts, well exceeding the 40% requirement.",
+        "points_of_note": "Advisor 1 and Advisor 3 explicitly calculate the fraud proportion (94.6%) using true positives (950) and false positives (54) to confirm the 40% threshold is satisfied, while Advisor 2 emphasizes the 95.0% sensitivity alone as sufficient evidence without detailed precision metrics, though all agree no constraint breaches exist.",
+        "suggested_next_step": "Proceed with enabling fully automated account suspension as all constraints are definitively satisfied."
+      },
+      "text": "ASSESSMENT OVERVIEW: All three advisors unanimously recommend enabling fully automated account suspension, as the packet's 95.0% sensitivity and 99.4% specificity, combined with a 10.0% fraud base rate in live traffic, yield a calculated fraud proportion of approximately 94.6% among suspended accounts, well exceeding the 40% requirement.\nPOINTS OF NOTE: Advisor 1 and Advisor 3 explicitly calculate the fraud proportion (94.6%) using true positives (950) and false positives (54) to confirm the 40% threshold is satisfied, while Advisor 2 emphasizes the 95.0% sensitivity alone as sufficient evidence without detailed precision metrics, though all agree no constraint breaches exist.\nSUGGESTED NEXT STEP: Proceed with enabling fully automated account suspension as all constraints are definitively satisfied.",
+      "words": 113,
+      "meta": {
+        "prompt_tokens": 1309,
+        "output_tokens": 191,
+        "seconds": 6.41,
+        "repaired": false
+      }
+    },
+    "crux": {
+      "raw": {
+        "shared_ground": [
+          "95.0% sensitivity",
+          "99.4% specificity",
+          "10.0% fraud base rate (1,000 fraudulent, 9,000 legitimate)"
+        ],
+        "cruxes": [],
+        "unverified_premises": [
+          "Actual live suspension accuracy (fraud proportion among suspended accounts) must be \u226540%"
+        ],
+        "decisive_check": "None required; all advisors concur stated constraints are satisfied."
+      },
+      "text": "ASSESSMENT OVERVIEW: 95.0% sensitivity 99.4% specificity\nPOINTS OF NOTE: Flagged issues: Actual live suspension accuracy (fraud proportion among suspended accounts) must be \u226540%\nSUGGESTED NEXT STEP: None required; all advisors concur stated constraints are satisfied.",
+      "words": 35,
+      "meta": {
+        "prompt_tokens": 1478,
+        "output_tokens": 116,
+        "seconds": 4.42,
+        "repaired": false
+      }
+    }
+  }
+}

@@ -1,0 +1,29 @@
+{
+  "scenario_id": "S06",
+  "variant": "sound",
+  "domain": "job_offers",
+  "difficulty_tier": 1,
+  "model": "nemotron3:33b",
+  "seed": 1111,
+  "output": {
+    "summary": "The $24,000 gross relocation benefit, with 35% tax gross-up, results in $35,714 gross income. After 35% tax, $24,000 remains as net cash. Since $24,000 exceeds the $14,000 liquidity requirement, the constraint is satisfied.",
+    "key_claims": [
+      "Relocation package: $24,000 gross",
+      "35% marginal tax rate applied via gross-up",
+      "Net cash after tax: $24,000"
+    ],
+    "recommendation": "proceed",
+    "risks_or_flaws": [
+      "none"
+    ],
+    "verification_question": "none",
+    "confidence": 100
+  },
+  "meta": {
+    "prompt_tokens": 637,
+    "output_tokens": 180,
+    "seconds": 7.55,
+    "repaired": false
+  },
+  "advisor_caught": null
+}

@@ -1,0 +1,29 @@
+{
+  "scenario_id": "S08",
+  "variant": "flawed",
+  "domain": "leases",
+  "difficulty_tier": 2,
+  "model": "gemma4:latest",
+  "seed": 114,
+  "output": {
+    "summary": "The primary concern is exiting cleanly at Month 12. Clause 14.2 states the lease automatically renews unless a notarized non-renewal notice is delivered 90 days prior to expiration. The packet provides no information regarding the timing of the required notice delivery relative to the Month 10 sales results (available November 3), making it impossible to confirm clean exit mechanics.",
+    "key_claims": [
+      "Initial Term: 12 months (Jan 1 to Dec 31)",
+      "Automatic renewal triggers if notice is not delivered 90 days prior to expiration.",
+      "Notice must be notarized and written."
+    ],
+    "recommendation": "hold_to_verify",
+    "risks_or_flaws": [
+      "The packet does not confirm if the notice mechanics can be satisfied based on the Month 10 sales results available November 3, which is critical for avoiding the automatic renewal penalty."
+    ],
+    "verification_question": "Given the lease expires December 31, what is the absolute deadline for delivering the notarized written non-renewal notice to ensure the lease does not bind past Month 12?",
+    "confidence": 100
+  },
+  "meta": {
+    "prompt_tokens": 587,
+    "output_tokens": 271,
+    "seconds": 11.18,
+    "repaired": false
+  },
+  "advisor_caught": true
+}

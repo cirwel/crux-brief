@@ -1,0 +1,29 @@
+{
+  "scenario_id": "S08",
+  "variant": "sound",
+  "domain": "leases",
+  "difficulty_tier": 2,
+  "model": "qwen3.6:27b-coding-mxfp8",
+  "seed": 2115,
+  "output": {
+    "summary": "The lease specifies a 12-month initial term ending December 31. Clause 14.2 requires a non-renewal notice 45 days prior to expiration to avoid automatic conversion to month-to-month terms. The user's constraint is to exit cleanly at Month 12 without multi-month renewal penalties. Since the lease explicitly states that absent renewal election, it converts to cancellable month-to-month rather than locking in a second 12-month term, the user can exit at Month 12 by providing the required notice. The notice deadline (approx. Nov 16) aligns with the user's data availability (Nov 3). No multi-month penalty is triggered if notice is given.",
+    "key_claims": [
+      "Initial term is 12 months (Jan 1 - Dec 31).",
+      "Non-renewal notice is due 45 days before expiration (approx. Nov 16).",
+      "Lease converts to month-to-month rather than auto-renewing for another year."
+    ],
+    "recommendation": "proceed",
+    "risks_or_flaws": [
+      "none"
+    ],
+    "verification_question": "none",
+    "confidence": 100
+  },
+  "meta": {
+    "prompt_tokens": 553,
+    "output_tokens": 277,
+    "seconds": 49.78,
+    "repaired": false
+  },
+  "advisor_caught": null
+}

@@ -1,0 +1,135 @@
+{
+  "scenario_id": "S22",
+  "variant": "sound",
+  "domain": "operational_briefs",
+  "difficulty_tier": 1,
+  "eval_model": "gemma4:latest",
+  "synth_model": "nemotron3:33b",
+  "single_advisor_model": "gemma4:latest",
+  "k_spotted": null,
+  "advisor_caught_by_model": {
+    "gemma4:latest": null,
+    "nemotron3:33b": null,
+    "qwen3.6:27b-coding-mxfp8": null
+  },
+  "briefs": {
+    "single": {
+      "text": "ASSESSMENT OVERVIEW: The user requires a >= 20% year-over-year decrease in safety incidents per 10,000 service miles to authorize Phase-2 expansion. Last year's rate was (38 events / 120,000 miles) * 10,000 = 3.17 incidents/10k miles. This year's rate is (28 events / 135,000 miles) * 10,000 = 2.07 incidents/10k miles. The calculated drop is (3.17 - 2.07) / 3.17 \u2248 34.8%, which exceeds the 20% threshold. Key facts: Last year's incident rate: 3.17 incidents per 10,000 miles.; This year's incident rate: 2.07 incidents per 10,000 miles.; The calculated year-over-year decrease is approximately 34.8%..\nPOINTS OF NOTE: No concrete constraint violations flagged.\nSUGGESTED NEXT STEP: None required; stated constraints appear satisfied.",
+      "words": 111
+    },
+    "consensus": {
+      "raw": {
+        "overview": "All three advisors concur that the per-10,000-mile safety incident rate decreased by approximately 34.5-34.8%, exceeding the required 20% year-over-year threshold for Phase-2 expansion authorization, with the executive summary's 26% total incident drop aligning with the raw count analysis while the per-mile metric definitively satisfies the constraint.",
+        "points_of_note": "The consistent calculation across advisors shows last year's rate at 3.167-3.17 incidents per 10k miles versus this year's 2.07-2.074, yielding a 34.5-34.8% decline that comfortably clears the 20% requirement, while the 12.5% mileage increase from 120,000 to 135,000 miles properly contextualizes the denominator adjustment without invalidating the metric.",
+        "suggested_next_step": "Authorize Phase-2 autonomous shuttle expansion immediately as all advisors confirm the safety incident rate reduction exceeds the 20% threshold with no constraint violations identified."
+      },
+      "text": "ASSESSMENT OVERVIEW: All three advisors concur that the per-10,000-mile safety incident rate decreased by approximately 34.5-34.8%, exceeding the required 20% year-over-year threshold for Phase-2 expansion authorization, with the executive summary's 26% total incident drop aligning with the raw count analysis while the per-mile metric definitively satisfies the constraint.\nPOINTS OF NOTE: The consistent calculation across advisors shows last year's rate at 3.167-3.17 incidents per 10k miles versus this year's 2.07-2.074, yielding a 34.5-34.8% decline that comfortably clears the 20% requirement, while the 12.5% mileage increase from 120,000 to 135,000 miles properly contextualizes the denominator adjustment without invalidating the metric.\nSUGGESTED NEXT STEP: Authorize Phase-2 autonomous shuttle expansion immediately as all advisors confirm the safety incident rate reduction exceeds the 20% threshold with no constraint violations identified.",
+      "words": 126,
+      "meta": {
+        "prompt_tokens": 1326,
+        "output_tokens": 246,
+        "seconds": 7.34,
+        "repaired": false
+      }
+    },
+    "crux": {
+      "raw": {
+        "shared_ground": [
+          "Last year's incident rate was approximately 3.17 per 10,000 miles",
+          "This year's incident rate was approximately 2.07 per 10,000 miles",
+          "The year-over-year decrease in incident rate exceeds 20%"
+        ],
+        "cruxes": [],
+        "unverified_premises": [],
+        "decisive_check": "None required; all advisors concur stated constraints are satisfied."
+      },
+      "text": "ASSESSMENT OVERVIEW: Last year's incident rate was approximately 3.17 per 10,000 miles This year's incident rate was approximately 2.07 per 10,000 miles\nPOINTS OF NOTE: No concrete disagreements or constraint violations flagged across advisors.\nSUGGESTED NEXT STEP: None required; all advisors concur stated constraints are satisfied.",
+      "words": 46,
+      "meta": {
+        "prompt_tokens": 1495,
+        "output_tokens": 111,
+        "seconds": 4.45,
+        "repaired": false
+      }
+    }
+  },
+  "crux_survived": null,
+  "decisions": {
+    "raw": {
+      "output": {
+        "primary_reason": "The packet provides the percentage drop in incident count (26.3%), which meets the required >= 20% decrease. However, the constraint requires the *per 10,000 service miles* rate to decrease by >= 20%, and the packet only provides raw counts and total miles, not the calculated rate for comparison.",
+        "target_clause_or_metric": "The calculation of the safety incident rate per 10,000 service miles for both years is missing.",
+        "action": "hold_to_verify",
+        "confidence": 100,
+        "brief_endorsement": null
+      },
+      "meta": {
+        "prompt_tokens": 584,
+        "output_tokens": 149,
+        "seconds": 7.68,
+        "repaired": false
+      },
+      "hold": true,
+      "verified_catch": null,
+      "untargeted_hold": null,
+      "false_alarm": true
+    },
+    "single": {
+      "output": {
+        "primary_reason": "The pre-decision brief accurately calculates the required metric, showing the per-10k-mile rate dropped by approximately 34.8%, which satisfies the required >= 20% decrease for authorization.",
+        "target_clause_or_metric": "none",
+        "action": "proceed",
+        "confidence": 100,
+        "brief_endorsement": 5
+      },
+      "meta": {
+        "prompt_tokens": 836,
+        "output_tokens": 97,
+        "seconds": 7.22,
+        "repaired": false
+      },
+      "hold": false,
+      "verified_catch": null,
+      "untargeted_hold": null,
+      "false_alarm": false
+    },
+    "consensus": {
+      "output": {
+        "primary_reason": "The packet, supported by the pre-decision brief, confirms that the safety incident rate decreased by approximately 34.5-34.8%, which exceeds the required 20% year-over-year threshold for expansion authorization. All constraints appear to be satisfied.",
+        "target_clause_or_metric": "none",
+        "action": "proceed",
+        "confidence": 100,
+        "brief_endorsement": 5
+      },
+      "meta": {
+        "prompt_tokens": 825,
+        "output_tokens": 110,
+        "seconds": 6.33,
+        "repaired": false
+      },
+      "hold": false,
+      "verified_catch": null,
+      "untargeted_hold": null,
+      "false_alarm": false
+    },
+    "crux": {
+      "output": {
+        "primary_reason": "The pre-decision brief explicitly calculates the required per-10,000 mile rate drop, showing a decrease from 3.17 to 2.07, which represents a drop greater than the required 20%.",
+        "target_clause_or_metric": "none",
+        "action": "proceed",
+        "confidence": 100,
+        "brief_endorsement": 5
+      },
+      "meta": {
+        "prompt_tokens": 664,
+        "output_tokens": 104,
+        "seconds": 4.81,
+        "repaired": false
+      },
+      "hold": false,
+      "verified_catch": null,
+      "untargeted_hold": null,
+      "false_alarm": false
+    }
+  }
+}

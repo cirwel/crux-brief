@@ -1,0 +1,134 @@
+{
+  "scenario_id": "S07",
+  "variant": "sound",
+  "domain": "leases",
+  "difficulty_tier": 1,
+  "eval_model": "gemma4:latest",
+  "synth_model": "nemotron3:33b",
+  "single_advisor_model": "gemma4:latest",
+  "k_spotted": null,
+  "advisor_caught_by_model": {
+    "gemma4:latest": null,
+    "nemotron3:33b": null,
+    "qwen3.6:27b-coding-mxfp8": null
+  },
+  "briefs": {
+    "single": {
+      "text": "ASSESSMENT OVERVIEW: The total unavoidable monthly housing cost is calculated by summing the Base Rent ($2,325) and all mandatory monthly fees. The mandatory fees identified are the Fiber Internet & Building Access fee ($75) and Valet Trash ($30). The sum of these mandatory costs is $2,430. This total remains below the stated maximum constraint of $2,550/month, satisfying the user's primary condition. Key facts: Base Rent: $2,325/month; Mandatory Fees (Internet + Trash): $105/month; Total Unavoidable Monthly Cost: $2,430/month.\nPOINTS OF NOTE: No concrete constraint violations flagged.\nSUGGESTED NEXT STEP: None required; stated constraints appear satisfied.",
+      "words": 94
+    },
+    "consensus": {
+      "raw": {
+        "overview": "All three advisors concur that the total unavoidable monthly housing cost of $2,430, derived from the $2,325 base rent plus mandatory $105 in fees (Fiber Internet & Building Access $75 and Valet Trash $30), remains well below the $2,550 constraint, with no material issues identified in the fee structure or calculation method.",
+        "points_of_note": "The advisors consistently exclude non-mandatory items like garage ($95) and storage ($40) fees, confirm utilities are separately metered and thus not part of unavoidable landlord fees, and validate the $2,430 total against the $2,550 ceiling without flagging any constraint violations or calculation discrepancies.",
+        "suggested_next_step": "Proceed with the apartment application as all advisors confirm the mandatory monthly housing cost of $2,430 satisfies the $2,550 budget constraint."
+      },
+      "text": "ASSESSMENT OVERVIEW: All three advisors concur that the total unavoidable monthly housing cost of $2,430, derived from the $2,325 base rent plus mandatory $105 in fees (Fiber Internet & Building Access $75 and Valet Trash $30), remains well below the $2,550 constraint, with no material issues identified in the fee structure or calculation method.\nPOINTS OF NOTE: The advisors consistently exclude non-mandatory items like garage ($95) and storage ($40) fees, confirm utilities are separately metered and thus not part of unavoidable landlord fees, and validate the $2,430 total against the $2,550 ceiling without flagging any constraint violations or calculation discrepancies.\nSUGGESTED NEXT STEP: Proceed with the apartment application as all advisors confirm the mandatory monthly housing cost of $2,430 satisfies the $2,550 budget constraint.",
+      "words": 124,
+      "meta": {
+        "prompt_tokens": 1175,
+        "output_tokens": 210,
+        "seconds": 10.2,
+        "repaired": false
+      }
+    },
+    "crux": {
+      "raw": {
+        "shared_ground": [
+          "Base Rent: $2,325/month",
+          "Mandatory Fees: $105/month (Internet $75 + Valet Trash $30)"
+        ],
+        "cruxes": [],
+        "unverified_premises": [],
+        "decisive_check": "None required; all advisors concur stated constraints are satisfied."
+      },
+      "text": "ASSESSMENT OVERVIEW: Base Rent: $2,325/month Mandatory Fees: $105/month (Internet $75 + Valet Trash $30)\nPOINTS OF NOTE: No concrete disagreements or constraint violations flagged across advisors.\nSUGGESTED NEXT STEP: None required; all advisors concur stated constraints are satisfied.",
+      "words": 38,
+      "meta": {
+        "prompt_tokens": 1344,
+        "output_tokens": 91,
+        "seconds": 7.25,
+        "repaired": false
+      }
+    }
+  },
+  "crux_survived": null,
+  "decisions": {
+    "raw": {
+      "output": {
+        "primary_reason": "The mandatory monthly costs are $2,325 (Base Rent) + $75 (Internet/Access) + $30 (Trash) = $2,430. This total is below the $2,550 limit, so no constraints are violated.",
+        "target_clause_or_metric": "none",
+        "action": "proceed",
+        "confidence": 100,
+        "brief_endorsement": null
+      },
+      "meta": {
+        "prompt_tokens": 578,
+        "output_tokens": 111,
+        "seconds": 3.92,
+        "repaired": false
+      },
+      "hold": false,
+      "verified_catch": null,
+      "untargeted_hold": null,
+      "false_alarm": false
+    },
+    "single": {
+      "output": {
+        "primary_reason": "The calculation confirms that the total unavoidable monthly cost ($2,430) remains below the specified maximum constraint of $2,550, satisfying all stated requirements.",
+        "target_clause_or_metric": "none",
+        "action": "proceed",
+        "confidence": 100,
+        "brief_endorsement": 5
+      },
+      "meta": {
+        "prompt_tokens": 742,
+        "output_tokens": 89,
+        "seconds": 3.05,
+        "repaired": false
+      },
+      "hold": false,
+      "verified_catch": null,
+      "untargeted_hold": null,
+      "false_alarm": false
+    },
+    "consensus": {
+      "output": {
+        "primary_reason": "The packet confirms the base rent ($2,325) plus mandatory fees ($75 + $30 = $105) results in a total unavoidable monthly cost of $2,430, which is below the $2,550 constraint. The pre-decision brief corroborates this calculation and confirms no violations.",
+        "target_clause_or_metric": "none",
+        "action": "proceed",
+        "confidence": 100,
+        "brief_endorsement": 5
+      },
+      "meta": {
+        "prompt_tokens": 770,
+        "output_tokens": 124,
+        "seconds": 4.09,
+        "repaired": false
+      },
+      "hold": false,
+      "verified_catch": null,
+      "untargeted_hold": null,
+      "false_alarm": false
+    },
+    "crux": {
+      "output": {
+        "primary_reason": "The total unavoidable monthly cost is calculated as $2,325 (Base Rent) + $75 (Internet) + $30 (Valet Trash) = $2,430, which is below the $2,550 limit. The packet confirms this calculation and notes that other fees are optional.",
+        "target_clause_or_metric": "none",
+        "action": "proceed",
+        "confidence": 100,
+        "brief_endorsement": 5
+      },
+      "meta": {
+        "prompt_tokens": 647,
+        "output_tokens": 121,
+        "seconds": 4.32,
+        "repaired": false
+      },
+      "hold": false,
+      "verified_catch": null,
+      "untargeted_hold": null,
+      "false_alarm": false
+    }
+  }
+}

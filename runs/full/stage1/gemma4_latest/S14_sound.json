@@ -1,0 +1,29 @@
+{
+  "scenario_id": "S14",
+  "variant": "sound",
+  "domain": "procurement_handoffs",
+  "difficulty_tier": 3,
+  "model": "gemma4:latest",
+  "seed": 127,
+  "output": {
+    "summary": "The packet confirms the total USD debit calculation is 500 units multiplied by $42.00 USD per unit, resulting in a total of $21,000.00 USD. This calculated total exactly matches the stated Purchase Order ceiling of $21,000.00 USD. All stated conditions, including the receiving clerk's verification and the final settlement detail, confirm the debit does not exceed the ceiling.",
+    "key_claims": [
+      "PO Quantity: 500 units",
+      "Unit Price: $42.00 USD",
+      "Total Debit: $21,000.00 USD"
+    ],
+    "recommendation": "proceed",
+    "risks_or_flaws": [
+      "none"
+    ],
+    "verification_question": "none",
+    "confidence": 100
+  },
+  "meta": {
+    "prompt_tokens": 598,
+    "output_tokens": 205,
+    "seconds": 8.35,
+    "repaired": false
+  },
+  "advisor_caught": null
+}

@@ -1,0 +1,49 @@
+{
+  "scenario_id": "S13",
+  "variant": "sound",
+  "domain": "procurement_handoffs",
+  "difficulty_tier": 2,
+  "synth_model": "nemotron3:33b",
+  "k_spotted": null,
+  "advisor_caught_by_model": {
+    "gemma4:latest": null,
+    "nemotron3:33b": null,
+    "qwen3.6:27b-coding-mxfp8": null
+  },
+  "briefs": {
+    "consensus": {
+      "raw": {
+        "overview": "All three advisors unanimously confirm the vendor's Enterprise High-Availability SLA meets both core constraints: the 99.9% uptime guarantee mathematically permits at most 43.2 minutes of monthly downtime (well under the 60-minute US business hours limit), and the breach remedy clause provides a 50% service credit, satisfying the minimum 50% reimbursement requirement. No material issues were flagged across any assessment.",
+        "points_of_note": "The advisors consistently interpret the 99.9% uptime as permitting 43.2 minutes of monthly downtime (Advisor 1), 7.2 minutes (Advisor 3), or simply as meeting the 60-minute threshold (Advisor 2), with all positions aligning to satisfy the outage limit. All three explicitly note scheduled maintenance occurs exclusively during off-peak UTC hours on Sundays (02:00-04:00 UTC), ensuring zero US business hour outages. Each advisor confirms the 50% service credit for breaches below 99.9% meets the reimbursement threshold, with no constraint violations identified.",
+        "suggested_next_step": "Proceed with vendor approval as all constraints are fully satisfied by the SLA terms and no material issues were flagged by any advisor."
+      },
+      "text": "ASSESSMENT OVERVIEW: All three advisors unanimously confirm the vendor's Enterprise High-Availability SLA meets both core constraints: the 99.9% uptime guarantee mathematically permits at most 43.2 minutes of monthly downtime (well under the 60-minute US business hours limit), and the breach remedy clause provides a 50% service credit, satisfying the minimum 50% reimbursement requirement. No material issues were flagged across any assessment.\nPOINTS OF NOTE: The advisors consistently interpret the 99.9% uptime as permitting 43.2 minutes of monthly downtime (Advisor 1), 7.2 minutes (Advisor 3), or simply as meeting the 60-minute threshold (Advisor 2), with all positions aligning to satisfy the outage limit. All three explicitly note scheduled maintenance occurs exclusively during off-peak UTC hours on Sundays (02:00-04:00 UTC), ensuring zero US business hour outages. Each advisor confirms the 50% service credit for breaches below 99.9% meets the reimbursement threshold, with no constraint violations identified.\nSUGGESTED NEXT STEP: Proceed with vendor approval as all constraints are fully satisfied by the SLA terms and no material issues were flagged by any advisor.",
+      "words": 170,
+      "meta": {
+        "prompt_tokens": 1219,
+        "output_tokens": 282,
+        "seconds": 7.45,
+        "repaired": false
+      }
+    },
+    "crux": {
+      "raw": {
+        "shared_ground": [
+          "99.9% uptime permits ~43.2 minutes of monthly downtime",
+          "SLA breach triggers 50% service credit"
+        ],
+        "cruxes": [],
+        "unverified_premises": [],
+        "decisive_check": "None required; all advisors concur stated constraints are satisfied."
+      },
+      "text": "ASSESSMENT OVERVIEW: 99.9% uptime permits ~43.2 minutes of monthly downtime SLA breach triggers 50% service credit\nPOINTS OF NOTE: No concrete disagreements or constraint violations flagged across advisors.\nSUGGESTED NEXT STEP: None required; all advisors concur stated constraints are satisfied.",
+      "words": 40,
+      "meta": {
+        "prompt_tokens": 1388,
+        "output_tokens": 83,
+        "seconds": 3.39,
+        "repaired": false
+      }
+    }
+  }
+}

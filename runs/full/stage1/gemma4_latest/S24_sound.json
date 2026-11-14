@@ -1,0 +1,29 @@
+{
+  "scenario_id": "S24",
+  "variant": "sound",
+  "domain": "operational_briefs",
+  "difficulty_tier": 1,
+  "model": "gemma4:latest",
+  "seed": 147,
+  "output": {
+    "summary": "The user requires Year-1 net budget savings to be at least $100,000 for approval. The stated savings from eliminating overtime are $30,000/month, totaling $360,000 annually. The total costs are $95,000/year for two nurses plus a $15,000 bonus, totaling $110,000. The calculated net savings ($360,000 - $110,000) is $250,000, which significantly exceeds the $100,000 threshold.",
+    "key_claims": [
+      "Total annual savings from overtime elimination: $360,000",
+      "Total Year-1 cost: $110,000",
+      "Calculated Net Year-1 Savings: $250,000"
+    ],
+    "recommendation": "proceed",
+    "risks_or_flaws": [
+      "none"
+    ],
+    "verification_question": "none",
+    "confidence": 100
+  },
+  "meta": {
+    "prompt_tokens": 554,
+    "output_tokens": 261,
+    "seconds": 11.15,
+    "repaired": false
+  },
+  "advisor_caught": null
+}

@@ -85,12 +85,12 @@ def make_figure1(ev: list[dict[str, Any]], out_path: Path) -> None:
             alpha=0.82,
             label=f"False alarm on sound (n={len(so)})",
         )
-        for bars in (b1, b2):
-            for bar in bars:
+        for bars, hi_errs in ((b1, catch_hi), (b2, fa_hi)):
+            for bar, hi_err in zip(bars, hi_errs):
                 h = bar.get_height()
                 ax.text(
                     bar.get_x() + bar.get_width() / 2,
-                    min(1.02, h + 0.03),
+                    min(1.08, h + hi_err + 0.015),
                     f"{h:.2f}",
                     ha="center",
                     va="bottom",
@@ -102,7 +102,7 @@ def make_figure1(ev: list[dict[str, Any]], out_path: Path) -> None:
         synth = rs[0].get("synth_model")
         title = f"{synth.split(':')[0]} synth -> {model.split(':')[0]} decider" if synth else model
         ax.set_title(title, fontsize=10)
-        ax.set_ylim(0, 1.15)
+        ax.set_ylim(0, 1.18)
         ax.spines[["top", "right"]].set_visible(False)
 
     axes[0].set_ylabel("Proportion of packets")

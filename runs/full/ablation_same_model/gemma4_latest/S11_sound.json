@@ -1,0 +1,134 @@
+{
+  "scenario_id": "S11",
+  "variant": "sound",
+  "domain": "leases",
+  "difficulty_tier": 3,
+  "eval_model": "gemma4:latest",
+  "synth_model": "gemma4:latest",
+  "single_advisor_model": "nemotron3:33b",
+  "k_spotted": null,
+  "advisor_caught_by_model": {
+    "gemma4:latest": null,
+    "nemotron3:33b": null,
+    "qwen3.6:27b-coding-mxfp8": null
+  },
+  "briefs": {
+    "single": {
+      "text": "ASSESSMENT OVERVIEW: Tenant's annual non-rent repair exposure is capped at $2,000 for routine HVAC maintenance, well below the $3,000 annual limit. The only potential capital replacement risk involves the 19-year-old rooftop Trane unit, which exceeds its 15-18 year typical service life and would require $26,500 replacement. Since Clause 7c specifies Landlord handles 'any structural or HVAC capital unit replacement,' this cost remains Landlord's responsibility and does not shift >$3,000 capital risk to Tenant, satisfying all constraints. Key facts: Tenant's HVAC obligation capped at $2,000 aggregate per lease year; Landlord responsible for HVAC capital unit replacement per Clause 7c; Rooftop Trane unit at 19 years (exceeding 15-18 year service life) with $26,500 replacement cost.\nPOINTS OF NOTE: No concrete constraint violations flagged.\nSUGGESTED NEXT STEP: None required; stated constraints appear satisfied.",
+      "words": 130
+    },
+    "consensus": {
+      "raw": {
+        "overview": "The advisors show strong consensus, all recommending proceeding with the agreement. The core concern regarding the tenant's annual non-rent building repair exposure being capped below the $3,000 threshold is consistently addressed. Furthermore, the critical constraint regarding unbudgeted capital equipment replacement risk appears to be mitigated across all assessments, suggesting a high degree of alignment with the user's stated goals.",
+        "points_of_note": "All three advisors noted that the tenant's annual upkeep obligation is capped at $2,000, which satisfies the $3,000 limit. Crucially, the responsibility for structural and HVAC capital unit replacement remains with the Landlord, as stipulated by Clause 7c. The specific mention of the aging rooftop Trane unit, requiring a $26,500 replacement, is consistently cited as being covered by the Landlord's existing reserves, thereby preventing the risk from shifting to the tenant.",
+        "suggested_next_step": "Given the unanimous recommendation and the consistent confirmation across all reports that the tenant's repair exposure is capped at $2,000 and that the Landlord retains responsibility for major capital replacements, the decision maker should feel confident in proceeding with the lease signing."
+      },
+      "text": "ASSESSMENT OVERVIEW: The advisors show strong consensus, all recommending proceeding with the agreement. The core concern regarding the tenant's annual non-rent building repair exposure being capped below the $3,000 threshold is consistently addressed. Furthermore, the critical constraint regarding unbudgeted capital equipment replacement risk appears to be mitigated across all assessments, suggesting a high degree of alignment with the user's stated goals.\nPOINTS OF NOTE: All three advisors noted that the tenant's annual upkeep obligation is capped at $2,000, which satisfies the $3,000 limit. Crucially, the responsibility for structural and HVAC capital unit replacement remains with the Landlord, as stipulated by Clause 7c. The specific mention of the aging rooftop Trane unit, requiring a $26,500 replacement, is consistently cited as being covered by the Landlord's existing reserves, thereby preventing the risk from shifting to the tenant.\nSUGGESTED NEXT STEP: Given the unanimous recommendation and the consistent confirmation across all reports that the tenant's repair exposure is capped at $2,000 and that the Landlord retains responsibility for major capital replacements, the decision maker should feel confident in proceeding with the lease signing.",
+      "words": 180,
+      "meta": {
+        "prompt_tokens": 1038,
+        "output_tokens": 267,
+        "seconds": 10.48,
+        "repaired": false
+      }
+    },
+    "crux": {
+      "raw": {
+        "shared_ground": [
+          "The tenant's annual non-rent repair obligation is consistently cited as being capped at $2,000.",
+          "All advisors agree that the Landlord is responsible for structural and HVAC capital unit replacement, mitigating unbudgeted risk."
+        ],
+        "cruxes": [],
+        "unverified_premises": [],
+        "decisive_check": "None required; all advisors concur stated constraints are satisfied."
+      },
+      "text": "ASSESSMENT OVERVIEW: The tenant's annual non-rent repair obligation is consistently cited as being capped at $2,000. All advisors agree that the Landlord is responsible for structural and HVAC capital unit replacement, mitigating unbudgeted risk.\nPOINTS OF NOTE: No concrete disagreements or constraint violations flagged across advisors.\nSUGGESTED NEXT STEP: None required; all advisors concur stated constraints are satisfied.",
+      "words": 58,
+      "meta": {
+        "prompt_tokens": 1186,
+        "output_tokens": 104,
+        "seconds": 6.02,
+        "repaired": false
+      }
+    }
+  },
+  "crux_survived": null,
+  "decisions": {
+    "raw": {
+      "output": {
+        "primary_reason": "The packet explicitly states the Landlord handles structural/HVAC capital replacement, and the Tenant's upkeep is capped at $2,000, which satisfies the $3,000 cap and removes unbudgeted capital risk.",
+        "target_clause_or_metric": "none",
+        "action": "proceed",
+        "confidence": 100,
+        "brief_endorsement": null
+      },
+      "meta": {
+        "prompt_tokens": 602,
+        "output_tokens": 102,
+        "seconds": 3.67,
+        "repaired": false
+      },
+      "hold": false,
+      "verified_catch": null,
+      "untargeted_hold": null,
+      "false_alarm": false
+    },
+    "single": {
+      "output": {
+        "primary_reason": "The packet confirms the tenant's repair exposure is capped at $2,000/yr, which is below the $3,000 limit, and Clause 7c explicitly assigns structural/HVAC capital replacement to the Landlord, satisfying the constraint against unbudgeted capital equipment replacement risk.",
+        "target_clause_or_metric": "none",
+        "action": "proceed",
+        "confidence": 100,
+        "brief_endorsement": 5
+      },
+      "meta": {
+        "prompt_tokens": 827,
+        "output_tokens": 117,
+        "seconds": 3.97,
+        "repaired": false
+      },
+      "hold": false,
+      "verified_catch": null,
+      "untargeted_hold": null,
+      "false_alarm": false
+    },
+    "consensus": {
+      "output": {
+        "primary_reason": "The packet explicitly limits the tenant's annual upkeep obligation to $2,000 (Clause 7c), which is below the $3,000 cap, and Clause 7c clearly assigns structural/HVAC capital replacement to the Landlord, satisfying the constraint against unbudgeted capital risk.",
+        "target_clause_or_metric": "Clause 7c",
+        "action": "proceed",
+        "confidence": 100,
+        "brief_endorsement": 5
+      },
+      "meta": {
+        "prompt_tokens": 853,
+        "output_tokens": 121,
+        "seconds": 7.13,
+        "repaired": false
+      },
+      "hold": false,
+      "verified_catch": null,
+      "untargeted_hold": null,
+      "false_alarm": false
+    },
+    "crux": {
+      "output": {
+        "primary_reason": "The packet confirms the tenant's repair obligation is capped at $2,000, which satisfies the <= $3,000 constraint, and Clause 7c explicitly assigns major capital replacements (roof slab, structural, HVAC) to the Landlord, satisfying the no unbudgeted capital equipment replacement obligation constraint.",
+        "target_clause_or_metric": "none",
+        "action": "proceed",
+        "confidence": 100,
+        "brief_endorsement": 5
+      },
+      "meta": {
+        "prompt_tokens": 685,
+        "output_tokens": 120,
+        "seconds": 8.23,
+        "repaired": false
+      },
+      "hold": false,
+      "verified_catch": null,
+      "untargeted_hold": null,
+      "false_alarm": false
+    }
+  }
+}

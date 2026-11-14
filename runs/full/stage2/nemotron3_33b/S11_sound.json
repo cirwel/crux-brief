@@ -1,0 +1,49 @@
+{
+  "scenario_id": "S11",
+  "variant": "sound",
+  "domain": "leases",
+  "difficulty_tier": 3,
+  "synth_model": "nemotron3:33b",
+  "k_spotted": null,
+  "advisor_caught_by_model": {
+    "gemma4:latest": null,
+    "nemotron3:33b": null,
+    "qwen3.6:27b-coding-mxfp8": null
+  },
+  "briefs": {
+    "consensus": {
+      "raw": {
+        "overview": "All three advisors unanimously recommend proceeding with the lease signing, confirming that the tenant's annual non-rent repair exposure is capped at $2,000\u2014well below the $3,000 threshold\u2014and that the landlord's obligation to cover structural and HVAC capital unit replacements, supported by a $26,500 reserve for the aging rooftop Trane unit, fully satisfies the constraint against unbudgeted capital equipment replacement risks shifting to the tenant.",
+        "points_of_note": "The advisors consistently emphasize that the tenant's $2,000 annual HVAC maintenance cap is the sole tenant financial obligation, while Clause 7c and the escrowed $26,500 reserve ensure the landlord bears all capital replacement costs, including the 19-year-old Trane unit exceeding its 15-18 year service life, with no evidence of constraint violations or unbudgeted tenant liabilities.",
+        "suggested_next_step": "Proceed with signing the lease agreement as all constraints are satisfied and no material issues were flagged by any advisor."
+      },
+      "text": "ASSESSMENT OVERVIEW: All three advisors unanimously recommend proceeding with the lease signing, confirming that the tenant's annual non-rent repair exposure is capped at $2,000\u2014well below the $3,000 threshold\u2014and that the landlord's obligation to cover structural and HVAC capital unit replacements, supported by a $26,500 reserve for the aging rooftop Trane unit, fully satisfies the constraint against unbudgeted capital equipment replacement risks shifting to the tenant.\nPOINTS OF NOTE: The advisors consistently emphasize that the tenant's $2,000 annual HVAC maintenance cap is the sole tenant financial obligation, while Clause 7c and the escrowed $26,500 reserve ensure the landlord bears all capital replacement costs, including the 19-year-old Trane unit exceeding its 15-18 year service life, with no evidence of constraint violations or unbudgeted tenant liabilities.\nSUGGESTED NEXT STEP: Proceed with signing the lease agreement as all constraints are satisfied and no material issues were flagged by any advisor.",
+      "words": 146,
+      "meta": {
+        "prompt_tokens": 1157,
+        "output_tokens": 237,
+        "seconds": 10.5,
+        "repaired": false
+      }
+    },
+    "crux": {
+      "raw": {
+        "shared_ground": [
+          "Tenant's annual non-rent repair exposure is capped at $2,000 for routine HVAC maintenance",
+          "Landlord is responsible for structural and HVAC capital unit replacement per lease clause"
+        ],
+        "cruxes": [],
+        "unverified_premises": [],
+        "decisive_check": "None required; all advisors concur stated constraints are satisfied."
+      },
+      "text": "ASSESSMENT OVERVIEW: Tenant's annual non-rent repair exposure is capped at $2,000 for routine HVAC maintenance Landlord is responsible for structural and HVAC capital unit replacement per lease clause\nPOINTS OF NOTE: No concrete disagreements or constraint violations flagged across advisors.\nSUGGESTED NEXT STEP: None required; all advisors concur stated constraints are satisfied.",
+      "words": 52,
+      "meta": {
+        "prompt_tokens": 1326,
+        "output_tokens": 92,
+        "seconds": 5.54,
+        "repaired": false
+      }
+    }
+  }
+}

@@ -1,0 +1,29 @@
+{
+  "scenario_id": "S16",
+  "variant": "flawed",
+  "domain": "procurement_handoffs",
+  "difficulty_tier": 3,
+  "model": "nemotron3:33b",
+  "seed": 1130,
+  "output": {
+    "summary": "The SOW grants Buyer 100% ownership of all foreground work product per Section 9.1, satisfying the 'Work Made for Hire' requirement for custom deliverables. However, Section 9.3 restricts the background runtime license to non-transferable, non-sublicensable use by Buyer only, violating the constraint that the platform must be distributable and sublicensed to external enterprise clients as white-labeled software.",
+    "key_claims": [
+      "All custom deliverables are 100% owned by Buyer per Section 9.1",
+      "Background runtime license is non-transferable and non-sublicensable per Section 9.3",
+      "Platform requires sublicensing to external clients per user goal"
+    ],
+    "recommendation": "hold_to_verify",
+    "risks_or_flaws": [
+      "License for background runtime is non-sublicensable, violating requirement to distribute/sub-license platform to external clients"
+    ],
+    "verification_question": "Does Section 9.3's 'non-sublicensable' restriction apply to the entire platform or only Buyer's internal use of the background runtime?",
+    "confidence": 100
+  },
+  "meta": {
+    "prompt_tokens": 623,
+    "output_tokens": 267,
+    "seconds": 9.81,
+    "repaired": false
+  },
+  "advisor_caught": true
+}

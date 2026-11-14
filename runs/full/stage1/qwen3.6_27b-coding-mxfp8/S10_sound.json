@@ -1,0 +1,29 @@
+{
+  "scenario_id": "S10",
+  "variant": "sound",
+  "domain": "leases",
+  "difficulty_tier": 3,
+  "model": "qwen3.6:27b-coding-mxfp8",
+  "seed": 2119,
+  "output": {
+    "summary": "The user intends to sublease 40% of the floor space in Month 3 for a 36-month term. The lease allows subleasing up to 45% to creditworthy partners with consent not unreasonably withheld. Since 40% is less than the 45% limit and the partner is described as creditworthy, the sublease percentage constraint is satisfied. The remaining 60% occupancy aligns with the user's goal. The lease term matches the user's 36-month requirement. No hidden exclusions or arithmetic violations are present.",
+    "key_claims": [
+      "Sublease limit is 45%, user plans 40%.",
+      "Lease term is 36 months, matching user requirement.",
+      "Partner is creditworthy, satisfying the 'reasonable credit' clause."
+    ],
+    "recommendation": "proceed",
+    "risks_or_flaws": [
+      "none"
+    ],
+    "verification_question": "none",
+    "confidence": 100
+  },
+  "meta": {
+    "prompt_tokens": 528,
+    "output_tokens": 219,
+    "seconds": 47.73,
+    "repaired": false
+  },
+  "advisor_caught": null
+}

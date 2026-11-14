@@ -1,0 +1,28 @@
+{
+  "scenario_id": "S02",
+  "variant": "sound",
+  "domain": "job_offers",
+  "difficulty_tier": 1,
+  "model": "qwen3.6:27b-coding-mxfp8",
+  "seed": 2103,
+  "output": {
+    "summary": "The user requires that any sign-on bonus repayment obligation expires by Month 12 to ensure leaving at Month 18 triggers no clawback. The decision packet's Clause 6b explicitly states the repayment obligation amortizes 1/12th per completed month and drops to $0 after Month 12. Since the user plans to leave at Month 18, which is well beyond the 12-month expiration point, the repayment obligation will be zero. The net after-tax payout figure is consistent with the gross bonus and standard withholding assumptions. All stated constraints regarding the repayment timeline are satisfied.",
+    "key_claims": [
+      "Repayment obligation drops to $0 after Month 12",
+      "User plans to leave at Month 18"
+    ],
+    "recommendation": "proceed",
+    "risks_or_flaws": [
+      "none"
+    ],
+    "verification_question": "none",
+    "confidence": 100
+  },
+  "meta": {
+    "prompt_tokens": 582,
+    "output_tokens": 217,
+    "seconds": 26.53,
+    "repaired": false
+  },
+  "advisor_caught": null
+}

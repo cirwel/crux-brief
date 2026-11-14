@@ -1,0 +1,28 @@
+{
+  "scenario_id": "S20",
+  "variant": "sound",
+  "domain": "operational_briefs",
+  "difficulty_tier": 2,
+  "model": "qwen3.6:27b-coding-mxfp8",
+  "seed": 2139,
+  "output": {
+    "summary": "The user requires 90-day retention of at least 65% to scale the paid acquisition budget. The decision packet states a headline KPI of 69.0% retention, calculated as 966 retained users out of 1,400 Day-0 signups. Arithmetic verification confirms that 966 divided by 1,400 equals exactly 0.69, or 69%. This figure exceeds the 65% threshold. The methodology note clarifies that the denominator includes all activated accounts, preventing survivorship bias. Since the stated retention rate satisfies the explicit constraint, the recommendation is to proceed.",
+    "key_claims": [
+      "Calculated retention: 966 / 1400 = 69.0%",
+      "Constraint threshold: 65%"
+    ],
+    "recommendation": "proceed",
+    "risks_or_flaws": [
+      "none"
+    ],
+    "verification_question": "none",
+    "confidence": 100
+  },
+  "meta": {
+    "prompt_tokens": 560,
+    "output_tokens": 234,
+    "seconds": 52.05,
+    "repaired": false
+  },
+  "advisor_caught": null
+}

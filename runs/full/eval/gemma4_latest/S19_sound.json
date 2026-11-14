@@ -1,0 +1,137 @@
+{
+  "scenario_id": "S19",
+  "variant": "sound",
+  "domain": "operational_briefs",
+  "difficulty_tier": 3,
+  "eval_model": "gemma4:latest",
+  "synth_model": "nemotron3:33b",
+  "single_advisor_model": "gemma4:latest",
+  "k_spotted": null,
+  "advisor_caught_by_model": {
+    "gemma4:latest": null,
+    "nemotron3:33b": null,
+    "qwen3.6:27b-coding-mxfp8": null
+  },
+  "briefs": {
+    "single": {
+      "text": "ASSESSMENT OVERVIEW: The user requires auto-suspension only if live fraud detection hits $\\ge 40\\%$. The packet provides a 50/50 test benchmark (95.0% sensitivity) and a live traffic profile of 10,000 accounts with a 10.0% true fraud base rate. Calculating the expected number of suspended fraudulent accounts based on the 95.0% sensitivity on 1,000 actual frauds yields 950. The expected total flagged accounts (true positives + false positives) is not explicitly calculated, but the sensitivity alone suggests a high likelihood of meeting the 40% threshold. Key facts: Required minimum fraud suspension rate: 40%; Model sensitivity: 95.0%; Expected true positives (fraudulent accounts suspended): 950 (95.0% of 1,000).\nPOINTS OF NOTE: No concrete constraint violations flagged.\nSUGGESTED NEXT STEP: None required; stated constraints appear satisfied.",
+      "words": 122
+    },
+    "consensus": {
+      "raw": {
+        "overview": "All three advisors unanimously recommend enabling fully automated account suspension, as the packet's 95.0% sensitivity and 99.4% specificity, combined with a 10.0% fraud base rate in live traffic, yield a calculated fraud proportion of approximately 94.6% among suspended accounts, well exceeding the 40% requirement.",
+        "points_of_note": "Advisor 1 and Advisor 3 explicitly calculate the fraud proportion (94.6%) using true positives (950) and false positives (54) to confirm the 40% threshold is satisfied, while Advisor 2 emphasizes the 95.0% sensitivity alone as sufficient evidence without detailed precision metrics, though all agree no constraint breaches exist.",
+        "suggested_next_step": "Proceed with enabling fully automated account suspension as all constraints are definitively satisfied."
+      },
+      "text": "ASSESSMENT OVERVIEW: All three advisors unanimously recommend enabling fully automated account suspension, as the packet's 95.0% sensitivity and 99.4% specificity, combined with a 10.0% fraud base rate in live traffic, yield a calculated fraud proportion of approximately 94.6% among suspended accounts, well exceeding the 40% requirement.\nPOINTS OF NOTE: Advisor 1 and Advisor 3 explicitly calculate the fraud proportion (94.6%) using true positives (950) and false positives (54) to confirm the 40% threshold is satisfied, while Advisor 2 emphasizes the 95.0% sensitivity alone as sufficient evidence without detailed precision metrics, though all agree no constraint breaches exist.\nSUGGESTED NEXT STEP: Proceed with enabling fully automated account suspension as all constraints are definitively satisfied.",
+      "words": 113,
+      "meta": {
+        "prompt_tokens": 1309,
+        "output_tokens": 191,
+        "seconds": 6.41,
+        "repaired": false
+      }
+    },
+    "crux": {
+      "raw": {
+        "shared_ground": [
+          "95.0% sensitivity",
+          "99.4% specificity",
+          "10.0% fraud base rate (1,000 fraudulent, 9,000 legitimate)"
+        ],
+        "cruxes": [],
+        "unverified_premises": [
+          "Actual live suspension accuracy (fraud proportion among suspended accounts) must be \u226540%"
+        ],
+        "decisive_check": "None required; all advisors concur stated constraints are satisfied."
+      },
+      "text": "ASSESSMENT OVERVIEW: 95.0% sensitivity 99.4% specificity\nPOINTS OF NOTE: Flagged issues: Actual live suspension accuracy (fraud proportion among suspended accounts) must be \u226540%\nSUGGESTED NEXT STEP: None required; all advisors concur stated constraints are satisfied.",
+      "words": 35,
+      "meta": {
+        "prompt_tokens": 1478,
+        "output_tokens": 116,
+        "seconds": 4.42,
+        "repaired": false
+      }
+    }
+  },
+  "crux_survived": null,
+  "decisions": {
+    "raw": {
+      "output": {
+        "primary_reason": "The packet provides validation metrics (95.0% sensitivity) and a live traffic profile (10.0% fraud base rate), but it does not calculate or confirm if the expected number of suspended accounts will meet the 40% threshold required by the constraint.",
+        "target_clause_or_metric": "Constraint: Enable fully automated account suspension (without human review) ONLY if at least 40% of accounts suspended in live production traffic are genuinely fraudulent.",
+        "action": "hold_to_verify",
+        "confidence": 95,
+        "brief_endorsement": null
+      },
+      "meta": {
+        "prompt_tokens": 605,
+        "output_tokens": 140,
+        "seconds": 4.87,
+        "repaired": false
+      },
+      "hold": true,
+      "verified_catch": null,
+      "untargeted_hold": null,
+      "false_alarm": true
+    },
+    "single": {
+      "output": {
+        "primary_reason": "The packet provides sufficient data to estimate the suspension rate, showing that the expected true positives (950) against the total expected flagged accounts (which must be at least 950) strongly suggests the 40% threshold will be met. The pre-decision brief confirms this calculation and suggests proceeding.",
+        "target_clause_or_metric": "none",
+        "action": "proceed",
+        "confidence": 95,
+        "brief_endorsement": 5
+      },
+      "meta": {
+        "prompt_tokens": 817,
+        "output_tokens": 116,
+        "seconds": 3.95,
+        "repaired": false
+      },
+      "hold": false,
+      "verified_catch": null,
+      "untargeted_hold": null,
+      "false_alarm": false
+    },
+    "consensus": {
+      "output": {
+        "primary_reason": "The packet provides validation metrics (95.0% sensitivity, 99.4% specificity) and a live traffic profile (10.0% fraud base rate), and the pre-decision brief confirms that the resulting fraud proportion among suspended accounts (94.6%) significantly exceeds the 40% threshold. No constraints appear violated.",
+        "target_clause_or_metric": "none",
+        "action": "proceed",
+        "confidence": 100,
+        "brief_endorsement": 5
+      },
+      "meta": {
+        "prompt_tokens": 782,
+        "output_tokens": 125,
+        "seconds": 4.1,
+        "repaired": false
+      },
+      "hold": false,
+      "verified_catch": null,
+      "untargeted_hold": null,
+      "false_alarm": false
+    },
+    "crux": {
+      "output": {
+        "primary_reason": "The packet provides strong validation metrics (95.0% sensitivity, 99.4% specificity) and a clear plan, but it does not calculate or state the expected live suspension accuracy (fraud proportion among suspended accounts) required by the constraint (>=40%).",
+        "target_clause_or_metric": "Constraint: Enable fully automated account suspension (without human review) ONLY if at least 40% of accounts suspended in live production traffic are genuinely fraudulent.",
+        "action": "hold_to_verify",
+        "confidence": 95,
+        "brief_endorsement": 4
+      },
+      "meta": {
+        "prompt_tokens": 666,
+        "output_tokens": 142,
+        "seconds": 4.71,
+        "repaired": false
+      },
+      "hold": true,
+      "verified_catch": null,
+      "untargeted_hold": null,
+      "false_alarm": true
+    }
+  }
+}

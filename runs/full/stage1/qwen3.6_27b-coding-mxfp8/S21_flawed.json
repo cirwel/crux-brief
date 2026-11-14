@@ -1,0 +1,28 @@
+{
+  "scenario_id": "S21",
+  "variant": "flawed",
+  "domain": "operational_briefs",
+  "difficulty_tier": 2,
+  "model": "qwen3.6:27b-coding-mxfp8",
+  "seed": 2140,
+  "output": {
+    "summary": "The user's explicit constraint requires database-backed request p95 latency to stay <= 180 ms. The decision packet states that for the uncached database-query path, v3.2 p95 latency rose to 248 ms. Although the overall mean latency improved due to higher cache hit rates, the specific metric governing the approval condition (database-backed p95) has regressed significantly above the 180 ms threshold. Therefore, the constraint is violated.",
+    "key_claims": [
+      "Database-backed request p95 latency for v3.2 is 248 ms",
+      "User constraint requires database-backed request p95 latency <= 180 ms"
+    ],
+    "recommendation": "hold_to_verify",
+    "risks_or_flaws": [
+      "Database-backed request p95 latency (248 ms) exceeds the maximum allowed threshold of 180 ms, violating the explicit deployment constraint."
+    ],
+    "verification_question": "Can the ORM join optimization be adjusted to reduce the database-backed p95 latency from 248 ms to <= 180 ms before promotion?",
+    "confidence": 100
+  },
+  "meta": {
+    "prompt_tokens": 613,
+    "output_tokens": 266,
+    "seconds": 51.08,
+    "repaired": false
+  },
+  "advisor_caught": true
+}

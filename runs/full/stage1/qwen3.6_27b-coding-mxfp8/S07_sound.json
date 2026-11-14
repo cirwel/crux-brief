@@ -1,0 +1,29 @@
+{
+  "scenario_id": "S07",
+  "variant": "sound",
+  "domain": "leases",
+  "difficulty_tier": 1,
+  "model": "qwen3.6:27b-coding-mxfp8",
+  "seed": 2113,
+  "output": {
+    "summary": "The user's constraint is a maximum total monthly housing cost of $2,550. The packet lists a base rent of $2,325. Mandatory monthly fees include a $75 Fiber Internet & Building Access fee and a $30 Valet Trash fee. Optional fees for garage ($95) and storage ($40) are excluded as they are not mandatory. Utilities are metered separately by the city, meaning they are not fixed landlord fees included in the 'unavoidable' base calculation defined by the prompt's focus on landlord fees and required packages. Summing the mandatory costs: $2,325 (Rent) + $75 (Internet/Access) + $30 (Trash) = $2,430. This total is below the $2,550 limit. The security deposit is a one-time fee, not a monthly cost. All stated constraints are satisfied.",
+    "key_claims": [
+      "Base Rent: $2,325",
+      "Mandatory Monthly Fees: $105 ($75 Internet + $30 Trash)",
+      "Total Monthly Cost: $2,430"
+    ],
+    "recommendation": "proceed",
+    "risks_or_flaws": [
+      "none"
+    ],
+    "verification_question": "none",
+    "confidence": 100
+  },
+  "meta": {
+    "prompt_tokens": 543,
+    "output_tokens": 305,
+    "seconds": 55.58,
+    "repaired": false
+  },
+  "advisor_caught": null
+}

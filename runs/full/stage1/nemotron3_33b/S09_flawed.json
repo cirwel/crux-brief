@@ -1,0 +1,29 @@
+{
+  "scenario_id": "S09",
+  "variant": "flawed",
+  "domain": "leases",
+  "difficulty_tier": 2,
+  "model": "nemotron3:33b",
+  "seed": 1116,
+  "output": {
+    "summary": "The lease requires full month payment for any holdover, even a 1-day delay. A 4-day overrun would trigger a full month's liability of $6,600 (Base $5,400 + Additional $1,200), exceeding the $2,000 limit by $4,600. The penalty structure violates the exposure constraint.",
+    "key_claims": [
+      "Monthly total rent = $6,600",
+      "Holdover penalty = 200% of full month rent",
+      "$6,600 exceeds $2,000 exposure limit"
+    ],
+    "recommendation": "hold_to_verify",
+    "risks_or_flaws": [
+      "Holdover clause imposes full month liability for any delay, creating $4,600 exposure beyond $2,000 limit"
+    ],
+    "verification_question": "Confirm whether Clause 19's 'entire succeeding calendar month' liability applies to a 4-day delay without proration",
+    "confidence": 100
+  },
+  "meta": {
+    "prompt_tokens": 604,
+    "output_tokens": 246,
+    "seconds": 9.6,
+    "repaired": false
+  },
+  "advisor_caught": true
+}

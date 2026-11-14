@@ -1,0 +1,49 @@
+{
+  "scenario_id": "S16",
+  "variant": "sound",
+  "domain": "procurement_handoffs",
+  "difficulty_tier": 3,
+  "synth_model": "gemma4:latest",
+  "k_spotted": null,
+  "advisor_caught_by_model": {
+    "gemma4:latest": null,
+    "nemotron3:33b": null,
+    "qwen3.6:27b-coding-mxfp8": null
+  },
+  "briefs": {
+    "consensus": {
+      "raw": {
+        "overview": "The consensus among the advisors is a strong recommendation to proceed with the agreement, as the provided documentation appears to comprehensively address the core requirements for deploying a white-labeled, sublicensed commercial product. All three assessments confirm that the necessary ownership and distribution rights are secured, aligning well with the user's stated goal.",
+        "points_of_note": "All advisors consistently highlighted the critical confirmation that the Buyer owns 100% of custom deliverables (Foreground Work Product, per Section 9.1). Furthermore, the ability to distribute and sublicense to external clients is supported by the grant in Section 9.3, which provides a perpetual, worldwide, transferable license for the Vendor's background technology. The specific mention of the license including 'full rights to distribute and sublicense' across all reports reinforces the viability of the white-label model.",
+        "suggested_next_step": "Given the unanimous 'proceed' recommendation and the consistent identification of key contractual safeguards regarding ownership and sublicensing rights, the decision maker should feel confident moving forward with signing the agreement."
+      },
+      "text": "ASSESSMENT OVERVIEW: The consensus among the advisors is a strong recommendation to proceed with the agreement, as the provided documentation appears to comprehensively address the core requirements for deploying a white-labeled, sublicensed commercial product. All three assessments confirm that the necessary ownership and distribution rights are secured, aligning well with the user's stated goal.\nPOINTS OF NOTE: All advisors consistently highlighted the critical confirmation that the Buyer owns 100% of custom deliverables (Foreground Work Product, per Section 9.1). Furthermore, the ability to distribute and sublicense to external clients is supported by the grant in Section 9.3, which provides a perpetual, worldwide, transferable license for the Vendor's background technology. The specific mention of the license including 'full rights to distribute and sublicense' across all reports reinforces the viability of the white-label model.\nSUGGESTED NEXT STEP: Given the unanimous 'proceed' recommendation and the consistent identification of key contractual safeguards regarding ownership and sublicensing rights, the decision maker should feel confident moving forward with signing the agreement.",
+      "words": 164,
+      "meta": {
+        "prompt_tokens": 897,
+        "output_tokens": 228,
+        "seconds": 10.82,
+        "repaired": false
+      }
+    },
+    "crux": {
+      "raw": {
+        "shared_ground": [
+          "Buyer owns 100% of custom deliverables (Foreground Work Product) per Section 9.1.",
+          "The agreement grants the Buyer a perpetual, worldwide, transferable license with rights to distribute and sublicense the Vendor's background IP/runtime."
+        ],
+        "cruxes": [],
+        "unverified_premises": [],
+        "decisive_check": "None required; all advisors concur stated constraints are satisfied."
+      },
+      "text": "ASSESSMENT OVERVIEW: Buyer owns 100% of custom deliverables (Foreground Work Product) per Section 9.1. The agreement grants the Buyer a perpetual, worldwide, transferable license with rights to distribute and sublicense the Vendor's background IP/runtime.\nPOINTS OF NOTE: No concrete disagreements or constraint violations flagged across advisors.\nSUGGESTED NEXT STEP: None required; all advisors concur stated constraints are satisfied.",
+      "words": 58,
+      "meta": {
+        "prompt_tokens": 1045,
+        "output_tokens": 106,
+        "seconds": 6.21,
+        "repaired": false
+      }
+    }
+  }
+}

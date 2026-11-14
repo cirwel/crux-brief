@@ -1,0 +1,65 @@
+{
+  "scenario_id": "S23",
+  "variant": "flawed",
+  "domain": "operational_briefs",
+  "difficulty_tier": 3,
+  "synth_model": "nemotron3:33b",
+  "k_spotted": 3,
+  "advisor_caught_by_model": {
+    "gemma4:latest": true,
+    "nemotron3:33b": true,
+    "qwen3.6:27b-coding-mxfp8": true
+  },
+  "briefs": {
+    "consensus": {
+      "raw": {
+        "overview": "All advisors concur the packet reports a statistically significant 11.0% ARPU lift (p=0.03) meeting the pre-registered p<0.05 threshold, but unanimously flag critical validity concerns that undermine the evidence's reliability per the experiment's pre-registered design.",
+        "points_of_note": "Advisor 1 and 2 emphasize that early termination on Day 5 instead of the pre-registered 14 days and the imbalanced sample split (10,000 vs 8,380 sessions) violate core validity constraints, with Advisor 1 specifically noting this creates Type I error inflation through peeking bias and non-random attrition. Advisor 3 corroborates the p=0.03 significance but adds a nuanced validity risk from 1,600 low-intent mobile visitors in the variant group experiencing incomplete session logging due to script timeouts, potentially distorting the ARPU calculation despite the apparent lift.",
+        "suggested_next_step": "Conduct a validity audit to verify whether the statistical analysis explicitly adjusts for early stopping-induced peeking bias and accounts for the 1,600 low-intent mobile visitors with incomplete session logging in the variant group before proceeding."
+      },
+      "text": "ASSESSMENT OVERVIEW: All advisors concur the packet reports a statistically significant 11.0% ARPU lift (p=0.03) meeting the pre-registered p<0.05 threshold, but unanimously flag critical validity concerns that undermine the evidence's reliability per the experiment's pre-registered design.\nPOINTS OF NOTE: Advisor 1 and 2 emphasize that early termination on Day 5 instead of the pre-registered 14 days and the imbalanced sample split (10,000 vs 8,380 sessions) violate core validity constraints, with Advisor 1 specifically noting this creates Type I error inflation through peeking bias and non-random attrition. Advisor 3 corroborates the p=0.03 significance but adds a nuanced validity risk from 1,600 low-intent mobile visitors in the variant group experiencing incomplete session logging due to script timeouts, potentially distorting the ARPU calculation despite the apparent lift.\nSUGGESTED NEXT STEP: Conduct a validity audit to verify whether the statistical analysis explicitly adjusts for early stopping-induced peeking bias and accounts for the 1,600 low-intent mobile visitors with incomplete session logging in the variant group before proceeding.",
+      "words": 162,
+      "meta": {
+        "prompt_tokens": 1379,
+        "output_tokens": 266,
+        "seconds": 11.14,
+        "repaired": false
+      }
+    },
+    "crux": {
+      "raw": {
+        "shared_ground": [
+          "The packet reports a statistically significant ARPU lift (p < 0.05) with an 11.0% increase from $4.10 to $4.55",
+          "The experiment was halted early instead of the pre-registered 14-day window"
+        ],
+        "cruxes": [
+          {
+            "topic": "Early stopping validity",
+            "side_a": "Early stopping on Day 5 inflates Type I error rates and invalidates p-value due to peeking bias",
+            "side_b": "p-value of 0.03 remains statistically significant despite early stopping",
+            "premise_at_stake": "Whether early termination violates the pre-registered validity constraint for statistical inference"
+          },
+          {
+            "topic": "Sample imbalance",
+            "side_a": "Variant sample size (8,380) is significantly lower than Control (10,000) due to technical timeout",
+            "side_b": "p-value of 0.03 is valid despite unequal sample sizes",
+            "premise_at_stake": "Whether unequal sample sizes compromise the randomized integrity required for valid inference"
+          }
+        ],
+        "unverified_premises": [
+          "The impact of 1,600 low-intent mobile visitors with incomplete session logging on the ARPU calculation is unverified",
+          "The statistical analysis accounts for multiple testing/peeking bias from early stopping"
+        ],
+        "decisive_check": "Does the statistical analysis account for the multiple testing/peeking bias introduced by stopping early on Day 5?"
+      },
+      "text": "ASSESSMENT OVERVIEW: The packet reports a statistically significant ARPU lift (p < 0.05) with an 11.0% increase from $4.10 to $4.55 The experiment was halted early instead of the pre-registered 14-day window\nPOINTS OF NOTE: Disagreements: (1) Early stopping validity: Side A [Early stopping on Day 5 inflates Type I error rates and invalidates p-value due to peeking bias] vs. Side B [p-value of 0.03 remains statistically significant despite early stopping] (at stake: Whether early termination violates the pre-registered validity constraint for statistical inference) | (2) Sample imbalance: Side A [Variant sample size (8,380) is significantly lower than Control (10,000) due to technical timeout] vs. Side B [p-value of 0.03 is valid despite unequal sample sizes] (at stake: Whether unequal sample sizes compromise the randomized integrity required for valid inference) Flagged issues: The impact of 1,600 low-intent mobile visitors with incomplete session logging on the ARPU calculation is unverified; The statistical analysis accounts for multiple testing/peeking bias from early stopping\nSUGGESTED NEXT STEP: Does the statistical analysis account for the multiple testing/peeking bias introduced by stopping early on Day 5?",
+      "words": 180,
+      "meta": {
+        "prompt_tokens": 1548,
+        "output_tokens": 346,
+        "seconds": 10.27,
+        "repaired": false
+      }
+    }
+  }
+}

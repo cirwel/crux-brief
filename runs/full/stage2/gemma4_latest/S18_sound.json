@@ -1,0 +1,49 @@
+{
+  "scenario_id": "S18",
+  "variant": "sound",
+  "domain": "procurement_handoffs",
+  "difficulty_tier": 3,
+  "synth_model": "gemma4:latest",
+  "k_spotted": null,
+  "advisor_caught_by_model": {
+    "gemma4:latest": null,
+    "nemotron3:33b": null,
+    "qwen3.6:27b-coding-mxfp8": null
+  },
+  "briefs": {
+    "consensus": {
+      "raw": {
+        "overview": "The consensus among all advisors is to proceed with the agreement, as the projected rebate structure successfully meets the user's critical constraint. All three assessments confirm that the required minimum rebate savings of $15,000 is guaranteed, even under the most conservative demand scenario within the specified 950 to 1,050 unit band.",
+        "points_of_note": "The evidence consistently points to the rebate triggering at 850 units, which is safely below the minimum projected demand of 950 units. Specifically, all advisors calculate that at the 950-unit minimum, the total rebate amounts to $17,100 (or $17,000, depending on the precise calculation cited), which comfortably exceeds the $15,000 floor. The consistency across multiple calculations regarding the $18/unit rate and the 950-unit floor provides strong corroboration.",
+        "suggested_next_step": "Given the unanimous recommendation and the consistent confirmation that the minimum projected rebate of $17,100 exceeds the $15,000 requirement across the entire 950-1,050 unit band, the decision maker should feel confident in proceeding with signing the agreement."
+      },
+      "text": "ASSESSMENT OVERVIEW: The consensus among all advisors is to proceed with the agreement, as the projected rebate structure successfully meets the user's critical constraint. All three assessments confirm that the required minimum rebate savings of $15,000 is guaranteed, even under the most conservative demand scenario within the specified 950 to 1,050 unit band.\nPOINTS OF NOTE: The evidence consistently points to the rebate triggering at 850 units, which is safely below the minimum projected demand of 950 units. Specifically, all advisors calculate that at the 950-unit minimum, the total rebate amounts to $17,100 (or $17,000, depending on the precise calculation cited), which comfortably exceeds the $15,000 floor. The consistency across multiple calculations regarding the $18/unit rate and the 950-unit floor provides strong corroboration.\nSUGGESTED NEXT STEP: Given the unanimous recommendation and the consistent confirmation that the minimum projected rebate of $17,100 exceeds the $15,000 requirement across the entire 950-1,050 unit band, the decision maker should feel confident in proceeding with signing the agreement.",
+      "words": 163,
+      "meta": {
+        "prompt_tokens": 1079,
+        "output_tokens": 277,
+        "seconds": 11.09,
+        "repaired": false
+      }
+    },
+    "crux": {
+      "raw": {
+        "shared_ground": [
+          "The required minimum rebate savings is $15,000.",
+          "The rebate structure is $18/unit once 850 units are billed."
+        ],
+        "cruxes": [],
+        "unverified_premises": [],
+        "decisive_check": "None required; all advisors concur stated constraints are satisfied."
+      },
+      "text": "ASSESSMENT OVERVIEW: The required minimum rebate savings is $15,000. The rebate structure is $18/unit once 850 units are billed.\nPOINTS OF NOTE: No concrete disagreements or constraint violations flagged across advisors.\nSUGGESTED NEXT STEP: None required; all advisors concur stated constraints are satisfied.",
+      "words": 43,
+      "meta": {
+        "prompt_tokens": 1227,
+        "output_tokens": 89,
+        "seconds": 5.09,
+        "repaired": false
+      }
+    }
+  }
+}

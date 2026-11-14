@@ -1,0 +1,49 @@
+{
+  "scenario_id": "S20",
+  "variant": "sound",
+  "domain": "operational_briefs",
+  "difficulty_tier": 2,
+  "synth_model": "nemotron3:33b",
+  "k_spotted": null,
+  "advisor_caught_by_model": {
+    "gemma4:latest": null,
+    "nemotron3:33b": null,
+    "qwen3.6:27b-coding-mxfp8": null
+  },
+  "briefs": {
+    "consensus": {
+      "raw": {
+        "overview": "All three advisors unanimously recommend proceeding with the paid acquisition budget scale, as the decision packet confirms 90- Day Cohort Retention at 69.0%, exceeding the 65% threshold required for scaling. The calculation of 966 retained users from 1,400 Day-0 signups, including early churners per Footnote 2, validates the denominator and satisfies the constraint without any material concerns.",
+        "points_of_note": "The 69.0% retention figure (966/1,400) is consistently cited across all advisors as meeting the 65% requirement, with Advisor 1 explicitly noting Footnote 2's inclusion of 160 early churners to ensure denominator validity. Advisor 2 emphasizes arithmetic verification of 0.69 (69%) and methodology clarity against survivorship bias, while Advisor 3 confirms the headline KPI directly satisfies the primary scaling condition. No constraint breaches were flagged, as all evidence aligns with the 65% Day 90 retention threshold.",
+        "suggested_next_step": "Proceed with scaling the paid acquisition budget, as the 69.0% retention rate exceeds the 65% threshold and all advisors confirm no constraint violations exist."
+      },
+      "text": "ASSESSMENT OVERVIEW: All three advisors unanimously recommend proceeding with the paid acquisition budget scale, as the decision packet confirms 90- Day Cohort Retention at 69.0%, exceeding the 65% threshold required for scaling. The calculation of 966 retained users from 1,400 Day-0 signups, including early churners per Footnote 2, validates the denominator and satisfies the constraint without any material concerns.\nPOINTS OF NOTE: The 69.0% retention figure (966/1,400) is consistently cited across all advisors as meeting the 65% requirement, with Advisor 1 explicitly noting Footnote 2's inclusion of 160 early churners to ensure denominator validity. Advisor 2 emphasizes arithmetic verification of 0.69 (69%) and methodology clarity against survivorship bias, while Advisor 3 confirms the headline KPI directly satisfies the primary scaling condition. No constraint breaches were flagged, as all evidence aligns with the 65% Day 90 retention threshold.\nSUGGESTED NEXT STEP: Proceed with scaling the paid acquisition budget, as the 69.0% retention rate exceeds the 65% threshold and all advisors confirm no constraint violations exist.",
+      "words": 164,
+      "meta": {
+        "prompt_tokens": 1050,
+        "output_tokens": 277,
+        "seconds": 8.44,
+        "repaired": false
+      }
+    },
+    "crux": {
+      "raw": {
+        "shared_ground": [
+          "69.0% retention from 966/1,400",
+          "65% scale threshold explicitly met"
+        ],
+        "cruxes": [],
+        "unverified_premises": [],
+        "decisive_check": "None required; all advisors concur stated constraints are satisfied."
+      },
+      "text": "ASSESSMENT OVERVIEW: 69.0% retention from 966/1,400 65% scale threshold explicitly met\nPOINTS OF NOTE: No concrete disagreements or constraint violations flagged across advisors.\nSUGGESTED NEXT STEP: None required; all advisors concur stated constraints are satisfied.",
+      "words": 35,
+      "meta": {
+        "prompt_tokens": 1219,
+        "output_tokens": 79,
+        "seconds": 3.37,
+        "repaired": false
+      }
+    }
+  }
+}

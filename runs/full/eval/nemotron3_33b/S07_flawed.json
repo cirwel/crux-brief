@@ -1,0 +1,147 @@
+{
+  "scenario_id": "S07",
+  "variant": "flawed",
+  "domain": "leases",
+  "difficulty_tier": 1,
+  "eval_model": "nemotron3:33b",
+  "synth_model": "gemma4:latest",
+  "single_advisor_model": "gemma4:latest",
+  "k_spotted": 3,
+  "advisor_caught_by_model": {
+    "gemma4:latest": true,
+    "nemotron3:33b": true,
+    "qwen3.6:27b-coding-mxfp8": true
+  },
+  "briefs": {
+    "single": {
+      "text": "ASSESSMENT OVERVIEW: The total unavoidable monthly housing cost is calculated by summing the Base Rent ($2,325) and all mandatory monthly fees: Tech Bundle ($135) + Trash Concierge ($55) + Garage Stall ($95). The resulting total is $2,610/month. This calculated total exceeds the user's stated maximum constraint of $2,550/month, meaning the application should be paused. Key facts: Base Rent: $2,325/month; Total Mandatory Fees: $135 + $55 + $95 = $285/month; Calculated Total Monthly Cost: $2,325 + $285 = $2,610/month.\nPOINTS OF NOTE: The calculated total unavoidable monthly housing cost of $2,610/month exceeds the user's stated maximum constraint of $2,550/month..\nSUGGESTED NEXT STEP: Given the calculated total of $2,610/month, are there any alternative arrangements or waivers for the mandatory fees (Tech Bundle, Trash Concierge, or Garage Stall) that would bring the total below $2,550?",
+      "words": 132
+    },
+    "consensus": {
+      "raw": {
+        "overview": "The advisors show strong consensus that the proposed housing package, while appealing in terms of base rent, currently violates the user's critical financial constraint. All three assessments calculate the total unavoidable monthly cost to be $2,610, which exceeds the established maximum limit of $2,550 by $60. Consequently, the unified recommendation is to pause the application until the mandatory fee structure can be adjusted.",
+        "points_of_note": "The evidence is highly consistent across all reports: the base rent is $2,325, and the mandatory fees sum to $285 ($135 Tech Bundle, $55 Valet Trash, $95 Garage Stall). This calculation consistently yields a total of $2,610. The specific figures and the resulting $60 overage are uniformly cited, making the constraint violation a clear, non-negotiable point of concern. No advisor identified any material issues that would allow proceeding without addressing this fee discrepancy.",
+        "suggested_next_step": "The decision maker must immediately pursue verification regarding the mandatory fees. Specifically, investigate the possibility of waiving or removing any of the three mandatory components\u2014the Tech Bundle, Valet Trash fee, or Garage Stall fee\u2014to bring the total monthly cost below the $2,550 threshold."
+      },
+      "text": "ASSESSMENT OVERVIEW: The advisors show strong consensus that the proposed housing package, while appealing in terms of base rent, currently violates the user's critical financial constraint. All three assessments calculate the total unavoidable monthly cost to be $2,610, which exceeds the established maximum limit of $2,550 by $60. Consequently, the unified recommendation is to pause the application until the mandatory fee structure can be adjusted.\nPOINTS OF NOTE: The evidence is highly consistent across all reports: the base rent is $2,325, and the mandatory fees sum to $285 ($135 Tech Bundle, $55 Valet Trash, $95 Garage Stall). This calculation consistently yields a total of $2,610. The specific figures and the resulting $60 overage are uniformly cited, making the constraint violation a clear, non-negotiable point of concern. No advisor identified any material issues that would allow proceeding without addressing this fee discrepancy.\nSUGGESTED NEXT STEP: The decision maker must immediately pursue verification regarding the mandatory fees. Specifically, investigate the possibility of waiving or removing any of the three mandatory components\u2014the Tech Bundle, Valet Trash fee, or Garage Stall fee\u2014to bring the total monthly cost below the $2,550 threshold.",
+      "words": 187,
+      "meta": {
+        "prompt_tokens": 1246,
+        "output_tokens": 284,
+        "seconds": 11.37,
+        "repaired": false
+      }
+    },
+    "crux": {
+      "raw": {
+        "shared_ground": [
+          "The base rent is consistently reported as $2,325/month.",
+          "The total unavoidable monthly cost, including mandatory fees, is calculated at $2,610/month."
+        ],
+        "cruxes": [
+          {
+            "topic": "Fee Waiver Scope",
+            "side_a": "Can the $95 garage fee be waived or excluded per the Phase II zoning covenant? (Advisor 1)",
+            "side_b": "Can any of the mandatory fees (Tech Bundle, Valet Trash, or Garage Stall) be waived or removed to bring the total below $2,550? (Advisor 2)",
+            "premise_at_stake": "Whether a specific fee waiver (e.g., garage) or a general fee reduction is required to meet the $2,550 constraint."
+          }
+        ],
+        "unverified_premises": [
+          "The mandatory fees ($135 Tech, $55 Valet, $95 Garage) result in a total cost of $2,610, which exceeds the $2,550 limit."
+        ],
+        "decisive_check": "Confirmation of any potential waiver or exclusion for the mandatory fees to bring the total cost below $2,550."
+      },
+      "text": "ASSESSMENT OVERVIEW: The base rent is consistently reported as $2,325/month. The total unavoidable monthly cost, including mandatory fees, is calculated at $2,610/month.\nPOINTS OF NOTE: Disagreements: (1) Fee Waiver Scope: Side A [Can the $95 garage fee be waived or excluded per the Phase II zoning covenant? (Advisor 1)] vs. Side B [Can any of the mandatory fees (Tech Bundle, Valet Trash, or Garage Stall) be waived or removed to bring the total below $2,550? (Advisor 2)] (at stake: Whether a specific fee waiver (e.g., garage) or a general fee reduction is required to meet the $2,550 constraint.) Flagged issues: The mandatory fees ($135 Tech, $55 Valet, $95 Garage) result in a total cost of $2,610, which exceeds the $2,550 limit.\nSUGGESTED NEXT STEP: Confirmation of any potential waiver or exclusion for the mandatory fees to bring the total cost below $2,550.",
+      "words": 142,
+      "meta": {
+        "prompt_tokens": 1394,
+        "output_tokens": 296,
+        "seconds": 11.9,
+        "repaired": false
+      }
+    }
+  },
+  "crux_survived": {
+    "single": true,
+    "consensus": true,
+    "crux": true
+  },
+  "decisions": {
+    "raw": {
+      "output": {
+        "primary_reason": "The base rent of $2,325 plus mandatory fees of $135 + $55 + $95 = $285 results in a total monthly cost of $2,610, which exceeds the $2,550 constraint.",
+        "target_clause_or_metric": "Schedule 1: $135/month Smart-Building Tech & Fiber Bundle, $55/month Valet Trash & Package Concierge fee, and $95/month Assigned Garage Stall fee",
+        "action": "hold_to_verify",
+        "confidence": 100,
+        "brief_endorsement": null
+      },
+      "meta": {
+        "prompt_tokens": 667,
+        "output_tokens": 154,
+        "seconds": 5.62,
+        "repaired": false
+      },
+      "hold": true,
+      "verified_catch": true,
+      "untargeted_hold": false,
+      "false_alarm": null
+    },
+    "single": {
+      "output": {
+        "primary_reason": "The calculated total monthly housing cost of $2,610 exceeds the user's maximum allowable cost of $2,550 by $60, violating the constraint.",
+        "target_clause_or_metric": "Schedule 1: Mandatory Monthly Addenda ($135 Tech Bundle + $55 Trash & Concierge + $95 Garage Stall = $285/month)",
+        "action": "hold_to_verify",
+        "confidence": 100,
+        "brief_endorsement": 5
+      },
+      "meta": {
+        "prompt_tokens": 965,
+        "output_tokens": 129,
+        "seconds": 4.97,
+        "repaired": false
+      },
+      "hold": true,
+      "verified_catch": true,
+      "untargeted_hold": false,
+      "false_alarm": null
+    },
+    "consensus": {
+      "output": {
+        "primary_reason": "The mandatory monthly fees total $285, which when added to the base rent of $2,325 results in $2,610, exceeding the $2,550 limit by $60.",
+        "target_clause_or_metric": "Schedule 1: $135 Smart-Building Tech & Fiber Bundle, $55 Valet Trash & Package Concierge fee, and $95 Assigned Garage Stall fee",
+        "action": "hold_to_verify",
+        "confidence": 95,
+        "brief_endorsement": 5
+      },
+      "meta": {
+        "prompt_tokens": 960,
+        "output_tokens": 138,
+        "seconds": 5.06,
+        "repaired": false
+      },
+      "hold": true,
+      "verified_catch": true,
+      "untargeted_hold": false,
+      "false_alarm": null
+    },
+    "crux": {
+      "output": {
+        "primary_reason": "The total unavoidable monthly cost is $2,610, which exceeds the $2,550 limit by $60, violating the constraint that total cost must not exceed $2,550/month.",
+        "target_clause_or_metric": "Schedule 1: $135/month Smart-Building Tech & Fiber Bundle, $55/month Valet Trash & Package Concierge fee, and $95/month Assigned Garage Stall fee",
+        "action": "hold_to_verify",
+        "confidence": 95,
+        "brief_endorsement": 5
+      },
+      "meta": {
+        "prompt_tokens": 948,
+        "output_tokens": 146,
+        "seconds": 5.53,
+        "repaired": false
+      },
+      "hold": true,
+      "verified_catch": true,
+      "untargeted_hold": false,
+      "false_alarm": null
+    }
+  }
+}

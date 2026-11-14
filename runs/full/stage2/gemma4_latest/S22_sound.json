@@ -1,0 +1,49 @@
+{
+  "scenario_id": "S22",
+  "variant": "sound",
+  "domain": "operational_briefs",
+  "difficulty_tier": 1,
+  "synth_model": "gemma4:latest",
+  "k_spotted": null,
+  "advisor_caught_by_model": {
+    "gemma4:latest": null,
+    "nemotron3:33b": null,
+    "qwen3.6:27b-coding-mxfp8": null
+  },
+  "briefs": {
+    "consensus": {
+      "raw": {
+        "overview": "The consensus among the advisors is a strong recommendation to proceed with the Phase-2 autonomous shuttle expansion. All three assessments confirm that the core constraint\u2014a year-over-year decrease of at least 20% in safety incidents per 10,000 service miles\u2014has been met. The analysis consistently points to a significant reduction in the rate, providing a clear path to authorization based on the provided metrics.",
+        "points_of_note": "The advisors converged on the critical calculation: the incident rate dropped from approximately 3.17 to 2.07 incidents per 10,000 miles. This represents a calculated decline of roughly 34.5% to 34.8%, comfortably exceeding the required 20% threshold. While the executive summary noted a 26% drop in raw incident counts, the more rigorous per-mile calculation confirms the safety improvement is substantially greater than the minimum requirement. Furthermore, the increase in fleet mileage (12.5%) was correctly factored into the rate adjustments.",
+        "suggested_next_step": "Given the unanimous agreement and the quantitative evidence confirming the safety metric threshold has been surpassed, the decision maker should authorize the Phase-2 autonomous shuttle expansion."
+      },
+      "text": "ASSESSMENT OVERVIEW: The consensus among the advisors is a strong recommendation to proceed with the Phase-2 autonomous shuttle expansion. All three assessments confirm that the core constraint\u2014a year-over-year decrease of at least 20% in safety incidents per 10,000 service miles\u2014has been met. The analysis consistently points to a significant reduction in the rate, providing a clear path to authorization based on the provided metrics.\nPOINTS OF NOTE: The advisors converged on the critical calculation: the incident rate dropped from approximately 3.17 to 2.07 incidents per 10,000 miles. This represents a calculated decline of roughly 34.5% to 34.8%, comfortably exceeding the required 20% threshold. While the executive summary noted a 26% drop in raw incident counts, the more rigorous per-mile calculation confirms the safety improvement is substantially greater than the minimum requirement. Furthermore, the increase in fleet mileage (12.5%) was correctly factored into the rate adjustments.\nSUGGESTED NEXT STEP: Given the unanimous agreement and the quantitative evidence confirming the safety metric threshold has been surpassed, the decision maker should authorize the Phase-2 autonomous shuttle expansion.",
+      "words": 174,
+      "meta": {
+        "prompt_tokens": 1231,
+        "output_tokens": 268,
+        "seconds": 11.99,
+        "repaired": false
+      }
+    },
+    "crux": {
+      "raw": {
+        "shared_ground": [
+          "The required safety threshold is a >= 20% year-over-year decrease in incidents per 10,000 service miles.",
+          "All advisors calculate the rate drop to be significantly above the 20% threshold (approx. 34.5% - 34.8%)."
+        ],
+        "cruxes": [],
+        "unverified_premises": [],
+        "decisive_check": "None required; all advisors concur stated constraints are satisfied."
+      },
+      "text": "ASSESSMENT OVERVIEW: The required safety threshold is a >= 20% year-over-year decrease in incidents per 10,000 service miles. All advisors calculate the rate drop to be significantly above the 20% threshold (approx. 34.5% - 34.8%).\nPOINTS OF NOTE: No concrete disagreements or constraint violations flagged across advisors.\nSUGGESTED NEXT STEP: None required; all advisors concur stated constraints are satisfied.",
+      "words": 59,
+      "meta": {
+        "prompt_tokens": 1379,
+        "output_tokens": 120,
+        "seconds": 7.02,
+        "repaired": false
+      }
+    }
+  }
+}

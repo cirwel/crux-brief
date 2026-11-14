@@ -1,0 +1,134 @@
+{
+  "scenario_id": "S22",
+  "variant": "sound",
+  "domain": "operational_briefs",
+  "difficulty_tier": 1,
+  "eval_model": "nemotron3:33b",
+  "synth_model": "gemma4:latest",
+  "single_advisor_model": "gemma4:latest",
+  "k_spotted": null,
+  "advisor_caught_by_model": {
+    "gemma4:latest": null,
+    "nemotron3:33b": null,
+    "qwen3.6:27b-coding-mxfp8": null
+  },
+  "briefs": {
+    "single": {
+      "text": "ASSESSMENT OVERVIEW: The user requires a >= 20% year-over-year decrease in safety incidents per 10,000 service miles to authorize Phase-2 expansion. Last year's rate was (38 events / 120,000 miles) * 10,000 = 3.17 incidents/10k miles. This year's rate is (28 events / 135,000 miles) * 10,000 = 2.07 incidents/10k miles. The calculated drop is (3.17 - 2.07) / 3.17 \u2248 34.8%, which exceeds the 20% threshold. Key facts: Last year's incident rate: 3.17 incidents per 10,000 miles.; This year's incident rate: 2.07 incidents per 10,000 miles.; The calculated year-over-year decrease is approximately 34.8%..\nPOINTS OF NOTE: No concrete constraint violations flagged.\nSUGGESTED NEXT STEP: None required; stated constraints appear satisfied.",
+      "words": 111
+    },
+    "consensus": {
+      "raw": {
+        "overview": "The consensus among the advisors is a strong recommendation to proceed with the Phase-2 autonomous shuttle expansion. All three assessments confirm that the core constraint\u2014a year-over-year decrease of at least 20% in safety incidents per 10,000 service miles\u2014has been met. The analysis consistently points to a significant reduction in the rate, providing a clear path to authorization based on the provided metrics.",
+        "points_of_note": "The advisors converged on the critical calculation: the incident rate dropped from approximately 3.17 to 2.07 incidents per 10,000 miles. This represents a calculated decline of roughly 34.5% to 34.8%, comfortably exceeding the required 20% threshold. While the executive summary noted a 26% drop in raw incident counts, the more rigorous per-mile calculation confirms the safety improvement is substantially greater than the minimum requirement. Furthermore, the increase in fleet mileage (12.5%) was correctly factored into the rate adjustments.",
+        "suggested_next_step": "Given the unanimous agreement and the quantitative evidence confirming the safety metric threshold has been surpassed, the decision maker should authorize the Phase-2 autonomous shuttle expansion."
+      },
+      "text": "ASSESSMENT OVERVIEW: The consensus among the advisors is a strong recommendation to proceed with the Phase-2 autonomous shuttle expansion. All three assessments confirm that the core constraint\u2014a year-over-year decrease of at least 20% in safety incidents per 10,000 service miles\u2014has been met. The analysis consistently points to a significant reduction in the rate, providing a clear path to authorization based on the provided metrics.\nPOINTS OF NOTE: The advisors converged on the critical calculation: the incident rate dropped from approximately 3.17 to 2.07 incidents per 10,000 miles. This represents a calculated decline of roughly 34.5% to 34.8%, comfortably exceeding the required 20% threshold. While the executive summary noted a 26% drop in raw incident counts, the more rigorous per-mile calculation confirms the safety improvement is substantially greater than the minimum requirement. Furthermore, the increase in fleet mileage (12.5%) was correctly factored into the rate adjustments.\nSUGGESTED NEXT STEP: Given the unanimous agreement and the quantitative evidence confirming the safety metric threshold has been surpassed, the decision maker should authorize the Phase-2 autonomous shuttle expansion.",
+      "words": 174,
+      "meta": {
+        "prompt_tokens": 1231,
+        "output_tokens": 268,
+        "seconds": 11.99,
+        "repaired": false
+      }
+    },
+    "crux": {
+      "raw": {
+        "shared_ground": [
+          "The required safety threshold is a >= 20% year-over-year decrease in incidents per 10,000 service miles.",
+          "All advisors calculate the rate drop to be significantly above the 20% threshold (approx. 34.5% - 34.8%)."
+        ],
+        "cruxes": [],
+        "unverified_premises": [],
+        "decisive_check": "None required; all advisors concur stated constraints are satisfied."
+      },
+      "text": "ASSESSMENT OVERVIEW: The required safety threshold is a >= 20% year-over-year decrease in incidents per 10,000 service miles. All advisors calculate the rate drop to be significantly above the 20% threshold (approx. 34.5% - 34.8%).\nPOINTS OF NOTE: No concrete disagreements or constraint violations flagged across advisors.\nSUGGESTED NEXT STEP: None required; all advisors concur stated constraints are satisfied.",
+      "words": 59,
+      "meta": {
+        "prompt_tokens": 1379,
+        "output_tokens": 120,
+        "seconds": 7.02,
+        "repaired": false
+      }
+    }
+  },
+  "crux_survived": null,
+  "decisions": {
+    "raw": {
+      "output": {
+        "primary_reason": "The incident count dropped 26.3% year-over-year, exceeding the required 20% reduction, and the per-10k-mile rate also decreased by 26.3% (from 31.7 to 26.3), satisfying the safety constraint.",
+        "target_clause_or_metric": "Incident Count Headline (26.3% drop from 38 to 28 events)",
+        "action": "proceed",
+        "confidence": 100,
+        "brief_endorsement": null
+      },
+      "meta": {
+        "prompt_tokens": 643,
+        "output_tokens": 131,
+        "seconds": 3.78,
+        "repaired": false
+      },
+      "hold": false,
+      "verified_catch": null,
+      "untargeted_hold": null,
+      "false_alarm": false
+    },
+    "single": {
+      "output": {
+        "primary_reason": "The packet confirms a 26.3% drop in total incidents and calculates a 34.8% year-over-year decrease in incidents per 10,000 miles (from 3.17 to 2.07), which exceeds the required 20% threshold.",
+        "target_clause_or_metric": "Incident Count Headline (26.3% drop) and Fleet Telemetry Table (120,000 to 135,000 miles) supporting the 34.8% rate decrease",
+        "action": "proceed",
+        "confidence": 100,
+        "brief_endorsement": 5
+      },
+      "meta": {
+        "prompt_tokens": 917,
+        "output_tokens": 160,
+        "seconds": 4.68,
+        "repaired": false
+      },
+      "hold": false,
+      "verified_catch": null,
+      "untargeted_hold": null,
+      "false_alarm": false
+    },
+    "consensus": {
+      "output": {
+        "primary_reason": "The packet confirms a 26.3% decline in incident count and, via the per-10k-mile calculation (3.17 to 2.07 incidents), shows a 34.5% reduction, exceeding the required 20% threshold.",
+        "target_clause_or_metric": "Incident Count Headline (26.3% decline) and Fleet Telemetry Table (120,000 to 135,000 miles) supporting the 34.5% rate drop",
+        "action": "proceed",
+        "confidence": 95,
+        "brief_endorsement": 5
+      },
+      "meta": {
+        "prompt_tokens": 908,
+        "output_tokens": 154,
+        "seconds": 4.24,
+        "repaired": false
+      },
+      "hold": false,
+      "verified_catch": null,
+      "untargeted_hold": null,
+      "false_alarm": false
+    },
+    "crux": {
+      "output": {
+        "primary_reason": "The incident count dropped 26.3% year-over-year, and fleet mileage increased 12.5%, resulting in a per-10k-mile incident rate decrease of approximately 34.5%\u201334.8%, which exceeds the required 20% threshold.",
+        "target_clause_or_metric": "Incident Count Headline (26.3% drop) and Fleet Telemetry Table (120,000 to 135,000 miles)",
+        "action": "proceed",
+        "confidence": 95,
+        "brief_endorsement": 5
+      },
+      "meta": {
+        "prompt_tokens": 755,
+        "output_tokens": 146,
+        "seconds": 4.05,
+        "repaired": false
+      },
+      "hold": false,
+      "verified_catch": null,
+      "untargeted_hold": null,
+      "false_alarm": false
+    }
+  }
+}

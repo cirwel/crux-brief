@@ -1,0 +1,58 @@
+{
+  "scenario_id": "S21",
+  "variant": "flawed",
+  "domain": "operational_briefs",
+  "difficulty_tier": 2,
+  "synth_model": "nemotron3:33b",
+  "k_spotted": 3,
+  "advisor_caught_by_model": {
+    "gemma4:latest": true,
+    "nemotron3:33b": true,
+    "qwen3.6:27b-coding-mxfp8": true
+  },
+  "briefs": {
+    "consensus": {
+      "raw": {
+        "overview": "All three advisors unanimously confirm that the database-backed request p95 latency for API Engine v3.2 (248 ms) exceeds the critical 180 ms threshold, violating the core constraint despite the overall mean latency improvement from 140 ms to 101 ms. The shared focus on the specific p95 metric for database queries, rather than aggregate performance, establishes clear consensus on the constraint breach.",
+        "points_of_note": "The advisors consistently cite the 248 ms p95 latency figure for database-backed requests across all assessments, explicitly noting this exceeds the 180 ms limit. While Advisor 1 questions the measurement context, Advisors 2 and 3 clarify this represents the unmitigated p95 for the uncached database-query path, with no evidence suggesting alternative metrics resolve the violation. The 28% mean latency reduction remains irrelevant to the constraint, as all emphasize the database-specific p95 requirement must be met.",
+        "suggested_next_step": "Immediately investigate and implement ORM join optimizations to reduce database-backed p95 latency from 248 ms to <= 180 ms before any production promotion, as all advisors agree this is the necessary corrective action to satisfy the constraint."
+      },
+      "text": "ASSESSMENT OVERVIEW: All three advisors unanimously confirm that the database-backed request p95 latency for API Engine v3.2 (248 ms) exceeds the critical 180 ms threshold, violating the core constraint despite the overall mean latency improvement from 140 ms to 101 ms. The shared focus on the specific p95 metric for database queries, rather than aggregate performance, establishes clear consensus on the constraint breach.\nPOINTS OF NOTE: The advisors consistently cite the 248 ms p95 latency figure for database-backed requests across all assessments, explicitly noting this exceeds the 180 ms limit. While Advisor 1 questions the measurement context, Advisors 2 and 3 clarify this represents the unmitigated p95 for the uncached database-query path, with no evidence suggesting alternative metrics resolve the violation. The 28% mean latency reduction remains irrelevant to the constraint, as all emphasize the database-specific p95 requirement must be met.\nSUGGESTED NEXT STEP: Immediately investigate and implement ORM join optimizations to reduce database-backed p95 latency from 248 ms to <= 180 ms before any production promotion, as all advisors agree this is the necessary corrective action to satisfy the constraint.",
+      "words": 181,
+      "meta": {
+        "prompt_tokens": 1335,
+        "output_tokens": 272,
+        "seconds": 8.45,
+        "repaired": false
+      }
+    },
+    "crux": {
+      "raw": {
+        "shared_ground": [
+          "Database-backed request p95 latency must stay <= 180 ms",
+          "v3.2 database-backed request p95 latency is 248 ms"
+        ],
+        "cruxes": [
+          {
+            "topic": "p95 latency measurement validity",
+            "side_a": "248 ms p95 latency for database-backed requests is the true, unmitigated value",
+            "side_b": "248 ms may represent an inflated metric (e.g., including ORM join impact) that doesn't reflect actual p95",
+            "premise_at_stake": "Whether the 248 ms value accurately reflects the constraint-governing p95 latency"
+          }
+        ],
+        "unverified_premises": [
+          "The 248 ms p95 latency figure explicitly measures the uncached database-query path during v3.2 benchmarking"
+        ],
+        "decisive_check": "Verify if the 248 ms p95 latency measurement for database-backed requests during v3.2 benchmarking is valid and unmitigated"
+      },
+      "text": "ASSESSMENT OVERVIEW: Database-backed request p95 latency must stay <= 180 ms v3.2 database-backed request p95 latency is 248 ms\nPOINTS OF NOTE: Disagreements: (1) p95 latency measurement validity: Side A [248 ms p95 latency for database-backed requests is the true, unmitigated value] vs. Side B [248 ms may represent an inflated metric (e.g., including ORM join impact) that doesn't reflect actual p95] (at stake: Whether the 248 ms value accurately reflects the constraint-governing p95 latency) Flagged issues: The 248 ms p95 latency figure explicitly measures the uncached database-query path during v3.2 benchmarking\nSUGGESTED NEXT STEP: Verify if the 248 ms p95 latency measurement for database-backed requests during v3.2 benchmarking is valid and unmitigated",
+      "words": 113,
+      "meta": {
+        "prompt_tokens": 1504,
+        "output_tokens": 246,
+        "seconds": 7.5,
+        "repaired": false
+      }
+    }
+  }
+}

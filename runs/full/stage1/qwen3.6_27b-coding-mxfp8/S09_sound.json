@@ -1,0 +1,28 @@
+{
+  "scenario_id": "S09",
+  "variant": "sound",
+  "domain": "leases",
+  "difficulty_tier": 2,
+  "model": "qwen3.6:27b-coding-mxfp8",
+  "seed": 2117,
+  "output": {
+    "summary": "The user's constraint is a maximum liability of $2,000 for a 4-day holdover. The lease defines daily rent as Base ($5,400) plus Additional ($1,200), totaling $6,600 monthly. The daily rate is $6,600 / 30 = $220. The holdover penalty for the first 10 days is 125% of this daily rate. Calculation: $220 * 1.25 = $275 per day. For 4 days, the total liability is $275 * 4 = $1,100. Since $1,100 is well below the $2,000 limit, the constraint is satisfied. There are no hidden exclusions or arithmetic errors in the packet that violate the user's goal.",
+    "key_claims": [
+      "Total monthly rent is $6,600 ($5,400 Base + $1,200 Additional).",
+      "4-day holdover liability calculates to $1,100 (125% of daily rate)."
+    ],
+    "recommendation": "proceed",
+    "risks_or_flaws": [
+      "none"
+    ],
+    "verification_question": "none",
+    "confidence": 100
+  },
+  "meta": {
+    "prompt_tokens": 533,
+    "output_tokens": 305,
+    "seconds": 64.45,
+    "repaired": false
+  },
+  "advisor_caught": null
+}

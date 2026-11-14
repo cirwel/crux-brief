@@ -1,0 +1,29 @@
+{
+  "scenario_id": "S04",
+  "variant": "sound",
+  "domain": "job_offers",
+  "difficulty_tier": 3,
+  "model": "gemma4:latest",
+  "seed": 107,
+  "output": {
+    "summary": "The packet provides a stated equity value of $400,000 based on the Series C mark ($1.00/share). However, the constraint requires the grant value to be calculated on an independent common-stock basis using the $0.82/share 409A valuation. The calculated value based on the 400,000 shares and $0.82/share is $328,000, which is below the required $280,000 threshold. The payout value check is not determinable from the provided facts.",
+    "key_claims": [
+      "Stated equity value (Series C): $400,000",
+      "Calculated equity value (400,000 shares * $0.82/share): $328,000",
+      "Required minimum equity value: $280,000"
+    ],
+    "recommendation": "hold_to_verify",
+    "risks_or_flaws": [
+      "The calculated equity grant value ($328,000) based on the 409A independent common stock valuation ($0.82/share) is less than the required minimum of $280,000 over 4 years, although it is greater than the minimum."
+    ],
+    "verification_question": "Does the $328,000 calculated grant value (400,000 shares * $0.82/share) satisfy the constraint of being >= $70,000/yr ($280,000 over 4 years) on an independent common-stock basis?",
+    "confidence": 100
+  },
+  "meta": {
+    "prompt_tokens": 626,
+    "output_tokens": 394,
+    "seconds": 14.15,
+    "repaired": false
+  },
+  "advisor_caught": null
+}

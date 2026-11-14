@@ -1,0 +1,147 @@
+{
+  "scenario_id": "S22",
+  "variant": "flawed",
+  "domain": "operational_briefs",
+  "difficulty_tier": 1,
+  "eval_model": "nemotron3:33b",
+  "synth_model": "gemma4:latest",
+  "single_advisor_model": "gemma4:latest",
+  "k_spotted": 3,
+  "advisor_caught_by_model": {
+    "gemma4:latest": true,
+    "nemotron3:33b": true,
+    "qwen3.6:27b-coding-mxfp8": true
+  },
+  "briefs": {
+    "single": {
+      "text": "ASSESSMENT OVERVIEW: The goal requires a >= 20% year-over-year decrease in safety incidents per 10,000 service miles. Last year's rate was (38 incidents / 120,000 miles) * 10,000 = 3.17 incidents/10k miles. This year's rate is (28 incidents / 78,000 miles) * 10,000 = 3.59 incidents/10k miles. Since 3.59 is higher than 3.17, the required >= 20% decrease was not met. Key facts: Last year's incident rate: 3.17 incidents per 10,000 miles; This year's incident rate: 3.59 incidents per 10,000 miles; The required decrease was not met as 3.59 is not <= (3.17 * 0.80).\nPOINTS OF NOTE: The calculated incident rate for this year (3.59/10k miles) is higher than last year's rate (3.17/10k miles), failing the required >= 20% decrease..\nSUGGESTED NEXT STEP: Can the packet provide the total service miles for the period corresponding to the 38 incidents from last year, to ensure the comparison is based on the same time period?",
+      "words": 154
+    },
+    "consensus": {
+      "raw": {
+        "overview": "The advisors show strong consensus that the primary constraint\u2014a minimum 20% year-over-year decrease in safety incidents per 10,000 service miles\u2014has not been met. While the total incident count showed a notable 26.3% drop, this positive metric is overshadowed by the change in operational mileage, leading to a failure to meet the required safety threshold for expansion authorization.",
+        "points_of_note": "All three advisors independently calculated the normalized rates, establishing last year's rate at 3.17 per 10k miles and this year's rate at 3.59 per 10k miles. This consistent calculation confirms that the rate actually increased, violating the required >= 20% decrease. The discrepancy between the headline 26% drop (total count) and the actual rate increase is the central point of divergence from the stated constraint.",
+        "suggested_next_step": "Given the unanimous finding that the per-10,000-mile incident rate increased rather than decreased by the required margin, the recommended next step is to hold authorization for Phase-2 expansion until the safety metric demonstrates the necessary >= 20% year-over-year reduction."
+      },
+      "text": "ASSESSMENT OVERVIEW: The advisors show strong consensus that the primary constraint\u2014a minimum 20% year-over-year decrease in safety incidents per 10,000 service miles\u2014has not been met. While the total incident count showed a notable 26.3% drop, this positive metric is overshadowed by the change in operational mileage, leading to a failure to meet the required safety threshold for expansion authorization.\nPOINTS OF NOTE: All three advisors independently calculated the normalized rates, establishing last year's rate at 3.17 per 10k miles and this year's rate at 3.59 per 10k miles. This consistent calculation confirms that the rate actually increased, violating the required >= 20% decrease. The discrepancy between the headline 26% drop (total count) and the actual rate increase is the central point of divergence from the stated constraint.\nSUGGESTED NEXT STEP: Given the unanimous finding that the per-10,000-mile incident rate increased rather than decreased by the required margin, the recommended next step is to hold authorization for Phase-2 expansion until the safety metric demonstrates the necessary >= 20% year-over-year reduction.",
+      "words": 169,
+      "meta": {
+        "prompt_tokens": 1275,
+        "output_tokens": 269,
+        "seconds": 11.13,
+        "repaired": false
+      }
+    },
+    "crux": {
+      "raw": {
+        "shared_ground": [
+          "The required constraint is a >= 20% year-over-year decrease in safety incidents per 10,000 service miles.",
+          "The calculated incident rate for last year was 3.17 per 10,000 miles, and for this year it was 3.59 per 10,000 miles."
+        ],
+        "cruxes": [
+          {
+            "topic": "Rate Trend",
+            "side_a": "The rate increased (3.59 > 3.17), violating the constraint.",
+            "side_b": "The headline 26% drop in total incidents suggests compliance.",
+            "premise_at_stake": "Whether the total incident count drop outweighs the normalized rate increase."
+          }
+        ],
+        "unverified_premises": [
+          "The comparison period for the total service miles corresponding to last year's 38 incidents needs confirmation."
+        ],
+        "decisive_check": "Confirm the total service miles for the period corresponding to the 38 incidents from last year to ensure a valid year-over-year rate comparison."
+      },
+      "text": "ASSESSMENT OVERVIEW: The required constraint is a >= 20% year-over-year decrease in safety incidents per 10,000 service miles. The calculated incident rate for last year was 3.17 per 10,000 miles, and for this year it was 3.59 per 10,000 miles.\nPOINTS OF NOTE: Disagreements: (1) Rate Trend: Side A [The rate increased (3.59 > 3.17), violating the constraint.] vs. Side B [The headline 26% drop in total incidents suggests compliance.] (at stake: Whether the total incident count drop outweighs the normalized rate increase.) Flagged issues: The comparison period for the total service miles corresponding to last year's 38 incidents needs confirmation.\nSUGGESTED NEXT STEP: Confirm the total service miles for the period corresponding to the 38 incidents from last year to ensure a valid year-over-year rate comparison.",
+      "words": 127,
+      "meta": {
+        "prompt_tokens": 1423,
+        "output_tokens": 266,
+        "seconds": 11.34,
+        "repaired": false
+      }
+    }
+  },
+  "crux_survived": {
+    "single": true,
+    "consensus": true,
+    "crux": true
+  },
+  "decisions": {
+    "raw": {
+      "output": {
+        "primary_reason": "The 26.3% incident count drop does not account for the 35% mileage reduction, so the per-10k-mile incident rate likely did not decrease by 20% or more.",
+        "target_clause_or_metric": "Fleet Telemetry Table (78,000 service miles this Q3 vs. 120,000 last year's Q3)",
+        "action": "hold_to_verify",
+        "confidence": 95,
+        "brief_endorsement": null
+      },
+      "meta": {
+        "prompt_tokens": 642,
+        "output_tokens": 129,
+        "seconds": 3.91,
+        "repaired": false
+      },
+      "hold": true,
+      "verified_catch": true,
+      "untargeted_hold": false,
+      "false_alarm": null
+    },
+    "single": {
+      "output": {
+        "primary_reason": "The packet shows a 26.3% drop in total incidents (38 to 28), but the per-10k-mile incident rate increased from 3.17 to 3.59, failing the required >=20% decrease in incidents per 10,000 service miles.",
+        "target_clause_or_metric": "Fleet Telemetry Table (active fleet mileage declined 35% to 78,000 service miles) and Incident Count Headline (28 incidents in Q3 this year vs. 38 in Q3 last year)",
+        "action": "hold_to_verify",
+        "confidence": 95,
+        "brief_endorsement": 5
+      },
+      "meta": {
+        "prompt_tokens": 978,
+        "output_tokens": 171,
+        "seconds": 5.0,
+        "repaired": false
+      },
+      "hold": true,
+      "verified_catch": true,
+      "untargeted_hold": false,
+      "false_alarm": null
+    },
+    "consensus": {
+      "output": {
+        "primary_reason": "The packet shows a 26.3% drop in total incidents but a 35% decline in service miles, resulting in a per-10k-mile incident rate that increased from 3.17 to 3.59, failing the required >=20% year-over-year decrease.",
+        "target_clause_or_metric": "Fleet Telemetry Table (35% mileage decline) and Incident Count Headline (26.3% drop) combined with advisor calculations showing rate increase from 3.17 to 3.59 per 10k miles",
+        "action": "hold_to_verify",
+        "confidence": 100,
+        "brief_endorsement": 5
+      },
+      "meta": {
+        "prompt_tokens": 911,
+        "output_tokens": 167,
+        "seconds": 4.78,
+        "repaired": false
+      },
+      "hold": true,
+      "verified_catch": true,
+      "untargeted_hold": false,
+      "false_alarm": null
+    },
+    "crux": {
+      "output": {
+        "primary_reason": "The packet shows a 26.3% drop in total incidents but the per-10k-mile incident rate actually increased from 3.17 to 3.59, failing the 20% decrease requirement. The brief explicitly flags this rate trend violation.",
+        "target_clause_or_metric": "Incident Count Headline (26.3% drop) and Fleet Telemetry Table (120,000 to 78,000 miles) showing rate increase from 3.17 to 3.59 per 10,000 miles",
+        "action": "hold_to_verify",
+        "confidence": 95,
+        "brief_endorsement": 5
+      },
+      "meta": {
+        "prompt_tokens": 871,
+        "output_tokens": 169,
+        "seconds": 4.85,
+        "repaired": false
+      },
+      "hold": true,
+      "verified_catch": true,
+      "untargeted_hold": false,
+      "false_alarm": null
+    }
+  }
+}

@@ -29,4 +29,11 @@ This project (`crux-brief`, Track 3: Epistemic Products) was developed in parall
 
 ## 4. Checkpoint 2: Post-Run & Report Peer Critique
 
-*(Pending completion of `runs/full` and `report/REPORT.md`.)*
+- **Reviewer:** `claude:host-adapter` via `unitares-governance:consult(purpose="critique", effort="thorough", privacy="cloud_allowed")`
+- **Consultation ID:** `ed703870-c4df-4176-8a7b-cb9d090cce1c`
+- **Critique Verification & Report Dispositions:**
+  1. *Verified calculations:* Confirmed all Table 1–6 counts, proportions, 95% Wilson CIs, `Net J`, and exact two-sided McNemar `p`-values against `results/tables.md`.
+  2. *Fixed `gemma4 -> nemotron3` trace accounting (`3/24` FAs):* Corrected draft confusion with same-model `gemma4 -> gemma4` (`S13_sound` actually resolved `proceed` on cross-family `nemotron3`; `3/24` FAs are `S04` contagion + `S15`, `S24` unanimous leakage).
+  3. *Cluster-adjusted & multiple-testing inference:* Added exact scenario-level sign tests (`n = 24` independent scenario twins: `crux vs. consensus` `b = 0, c = 6`, `p = 0.0312`; `crux vs. raw` `b = 9, c = 1`, `p = 0.0215`; `consensus vs. raw` `b = 12, c = 0`, `p = 0.0005`), marked pooled `n = 48` and `vs. raw` comparisons as nominal/post-hoc, and noted identical `0.0391` FA/twin p-values share the same false-alarm discordance.
+  4. *Honest hypothesis status:* Recast H2 (`k in {1, 2}`) as **not evaluable** (`n = 1` split scenario `S20_flawed`, tied `1/1` between `consensus` and `crux`), added post-hoc sound-panel stratification (`21` unanimous `proceed` vs. `3` split `1`-of-`3` Stage-1 hold), added `"any hold on flawed"` sensitivity (`crux` `24/24` on both deciders), and clarified `S20_flawed` (`single` = `0/1` via `nemotron3`, `raw` = `proceed`, both multi-advisor briefs rescued).
+  5. *Scoped mechanistic & design claims:* Replaced causal overstatements with qualitative trace analysis, noted shorter `crux` brief word counts (`100`–`124w` vs. `154`–`180w`) and asymmetric Checkpoint 1 `consensus` prompt tuning, framed gating + deterministic arithmetic verification as untested product hypotheses (acknowledging that a decision-boundary gate alone would not stop 2–1 contagion on `S04`/`S08`/`S09`), aligned MASK/Habermas/Angels citations, and updated abstract word count cleanly (`150–250` words).

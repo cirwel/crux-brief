@@ -1,0 +1,134 @@
+{
+  "scenario_id": "S06",
+  "variant": "sound",
+  "domain": "job_offers",
+  "difficulty_tier": 1,
+  "eval_model": "gemma4:latest",
+  "synth_model": "nemotron3:33b",
+  "single_advisor_model": "qwen3.6:27b-coding-mxfp8",
+  "k_spotted": null,
+  "advisor_caught_by_model": {
+    "gemma4:latest": null,
+    "nemotron3:33b": null,
+    "qwen3.6:27b-coding-mxfp8": null
+  },
+  "briefs": {
+    "single": {
+      "text": "ASSESSMENT OVERVIEW: The user requires a guaranteed net after-tax relocation cash of at least $14,000. The decision packet specifies a $24,000 total package consisting of $10,000 in direct moving reimbursements and a $14,000 lump-sum stipend. Crucially, Section 3 states the company provides a full tax gross-up, ensuring the employee receives the full $24,000 benefit cleanly after taxes. Since the total net benefit is $24,000, which is strictly greater than the $14,000 threshold, the constraint is satisfied. The breakdown confirms liquidity is available for moving and housing. Key facts: Total relocation package is $24,000.; Company provides full tax gross-up, ensuring $24,000 is received net after taxes.; Net amount ($24,000) exceeds the user's minimum requirement of $14,000..\nPOINTS OF NOTE: No concrete constraint violations flagged.\nSUGGESTED NEXT STEP: None required; stated constraints appear satisfied.",
+      "words": 132
+    },
+    "consensus": {
+      "raw": {
+        "overview": "All three advisors unanimously recommend proceeding with the relocation decision, as each confirms the guaranteed net after-tax relocation cash of $24,000 exceeds the $14,000 liquidity requirement under the 35% marginal tax rate constraint, with no material issues identified.",
+        "points_of_note": "The advisors consistently highlight that the $24,000 gross relocation benefit is fully preserved after taxes due to a company-provided tax gross-up, ensuring the net cash remains $24,000\u2014well above the $14,000 threshold\u2014with Advisor 3 specifically clarifying the breakdown includes $10,000 moving reimbursements and a $14,000 stipend, all treated as net liquid funds.",
+        "suggested_next_step": "Proceed with accepting the relocation offer, as the $24,000 net guaranteed liquidity satisfies the $14,000 minimum requirement without constraint violations."
+      },
+      "text": "ASSESSMENT OVERVIEW: All three advisors unanimously recommend proceeding with the relocation decision, as each confirms the guaranteed net after-tax relocation cash of $24,000 exceeds the $14,000 liquidity requirement under the 35% marginal tax rate constraint, with no material issues identified.\nPOINTS OF NOTE: The advisors consistently highlight that the $24,000 gross relocation benefit is fully preserved after taxes due to a company-provided tax gross-up, ensuring the net cash remains $24,000\u2014well above the $14,000 threshold\u2014with Advisor 3 specifically clarifying the breakdown includes $10,000 moving reimbursements and a $14,000 stipend, all treated as net liquid funds.\nSUGGESTED NEXT STEP: Proceed with accepting the relocation offer, as the $24,000 net guaranteed liquidity satisfies the $14,000 minimum requirement without constraint violations.",
+      "words": 117,
+      "meta": {
+        "prompt_tokens": 1105,
+        "output_tokens": 216,
+        "seconds": 7.79,
+        "repaired": false
+      }
+    },
+    "crux": {
+      "raw": {
+        "shared_ground": [
+          "Relocation package is $24,000 gross",
+          "35% marginal tax rate applies with full tax gross-up ensuring net cash equals gross amount"
+        ],
+        "cruxes": [],
+        "unverified_premises": [],
+        "decisive_check": "None required; all advisors concur stated constraints are satisfied."
+      },
+      "text": "ASSESSMENT OVERVIEW: Relocation package is $24,000 gross 35% marginal tax rate applies with full tax gross-up ensuring net cash equals gross amount\nPOINTS OF NOTE: No concrete disagreements or constraint violations flagged across advisors.\nSUGGESTED NEXT STEP: None required; all advisors concur stated constraints are satisfied.",
+      "words": 46,
+      "meta": {
+        "prompt_tokens": 1274,
+        "output_tokens": 85,
+        "seconds": 4.1,
+        "repaired": false
+      }
+    }
+  },
+  "crux_survived": null,
+  "decisions": {
+    "raw": {
+      "output": {
+        "primary_reason": "The packet states the full $24,000 benefit is received cleanly after taxes due to a gross-up, which implies the net amount meets the $14,000 minimum. However, the constraint requires the *net after-tax relocation cash* to be >= $14,000, and the mechanism described (gross-up) is a statement of intent rather than a verifiable calculation against the $14,000 threshold.",
+        "target_clause_or_metric": "Section 3",
+        "action": "hold_to_verify",
+        "confidence": 95,
+        "brief_endorsement": null
+      },
+      "meta": {
+        "prompt_tokens": 591,
+        "output_tokens": 154,
+        "seconds": 4.68,
+        "repaired": false
+      },
+      "hold": true,
+      "verified_catch": null,
+      "untargeted_hold": null,
+      "false_alarm": true
+    },
+    "single": {
+      "output": {
+        "primary_reason": "The Pre-Decision Brief confirms that the stated $24,000 total package, combined with the full tax gross-up in Section 3, results in a net cash benefit of $24,000, which exceeds the required minimum of $14,000.",
+        "target_clause_or_metric": "none",
+        "action": "proceed",
+        "confidence": 100,
+        "brief_endorsement": 5
+      },
+      "meta": {
+        "prompt_tokens": 827,
+        "output_tokens": 115,
+        "seconds": 3.29,
+        "repaired": false
+      },
+      "hold": false,
+      "verified_catch": null,
+      "untargeted_hold": null,
+      "false_alarm": false
+    },
+    "consensus": {
+      "output": {
+        "primary_reason": "The packet, supported by the pre-decision brief, confirms that the net after-tax relocation cash is guaranteed to be $24,000, which significantly exceeds the required minimum of $14,000. The tax gross-up mechanism explicitly addresses the tax constraint.",
+        "target_clause_or_metric": "none",
+        "action": "proceed",
+        "confidence": 100,
+        "brief_endorsement": 5
+      },
+      "meta": {
+        "prompt_tokens": 792,
+        "output_tokens": 113,
+        "seconds": 3.12,
+        "repaired": false
+      },
+      "hold": false,
+      "verified_catch": null,
+      "untargeted_hold": null,
+      "false_alarm": false
+    },
+    "crux": {
+      "output": {
+        "primary_reason": "The packet explicitly states that the company pays a tax gross-up ensuring the employee receives the full $24,000 benefit after taxes, which meets the minimum required net amount of $14,000.",
+        "target_clause_or_metric": "none",
+        "action": "proceed",
+        "confidence": 100,
+        "brief_endorsement": 5
+      },
+      "meta": {
+        "prompt_tokens": 659,
+        "output_tokens": 100,
+        "seconds": 2.89,
+        "repaired": false
+      },
+      "hold": false,
+      "verified_catch": null,
+      "untargeted_hold": null,
+      "false_alarm": false
+    }
+  }
+}

@@ -1,0 +1,29 @@
+{
+  "scenario_id": "S23",
+  "variant": "flawed",
+  "domain": "operational_briefs",
+  "difficulty_tier": 3,
+  "model": "gemma4:latest",
+  "seed": 144,
+  "output": {
+    "summary": "The packet shows a positive ARPU lift of 11.0% (Control $4.10 vs. Variant $4.55) with a p-value of 0.03, which meets the stated statistical significance threshold (p < 0.05). The experiment was halted early, which is noted. However, the engineering footnote reveals a potential data integrity issue concerning 1,600 low-intent mobile visitors in the Variant group, which could compromise the validity of the observed lift.",
+    "key_claims": [
+      "ARPU lift is +11.0% (Control $4.10 vs. Variant $4.55)",
+      "The two-sided p-value is 0.03, meeting the p < 0.05 threshold.",
+      "1,600 low-intent mobile visitors in the Variant group experienced script timeouts."
+    ],
+    "recommendation": "hold_to_verify",
+    "risks_or_flaws": [
+      "The engineering footnote describes 1,600 low-intent mobile visitors in the Variant group whose session logging was incomplete due to script timeouts, potentially invalidating the observed lift."
+    ],
+    "verification_question": "How will the impact of the 1,600 low-intent mobile visitors with incomplete session logging be accounted for in the final ARPU calculation to ensure the statistical validity of the lift?",
+    "confidence": 95
+  },
+  "meta": {
+    "prompt_tokens": 588,
+    "output_tokens": 328,
+    "seconds": 10.8,
+    "repaired": false
+  },
+  "advisor_caught": true
+}

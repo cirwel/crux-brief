@@ -1,0 +1,134 @@
+{
+  "scenario_id": "S03",
+  "variant": "sound",
+  "domain": "job_offers",
+  "difficulty_tier": 2,
+  "eval_model": "nemotron3:33b",
+  "synth_model": "gemma4:latest",
+  "single_advisor_model": "qwen3.6:27b-coding-mxfp8",
+  "k_spotted": null,
+  "advisor_caught_by_model": {
+    "gemma4:latest": null,
+    "nemotron3:33b": null,
+    "qwen3.6:27b-coding-mxfp8": null
+  },
+  "briefs": {
+    "single": {
+      "text": "ASSESSMENT OVERVIEW: The user requires annual cash earnings at historical team attainment to be at least $210,000. The packet states a $160,000 base and $80,000 variable at 100% quota. Historical median attainment is 96%. Calculating cash earnings at this attainment: $160,000 base + (0.96 * $80,000 variable) = $160,000 + $76,800 = $236,800. This figure ($236,800) is strictly greater than the $210,000 constraint. The payout gate confirms proportional payment from the first dollar, validating the linear calculation. No hidden exclusions or thresholds reduce this amount. The constraint is satisfied. Key facts: Base salary is $160,000.; Variable commission is $80,000 at 100% quota.; Historical median attainment is 96%..\nPOINTS OF NOTE: No concrete constraint violations flagged.\nSUGGESTED NEXT STEP: None required; stated constraints appear satisfied.",
+      "words": 124
+    },
+    "consensus": {
+      "raw": {
+        "overview": "There is strong consensus among the advisors that the proposed compensation structure meets the user's primary financial constraint. All three assessments conclude that the expected annual cash earnings, calculated using the historical median attainment rate, comfortably exceed the required minimum of $210,000. The overall alignment suggests that the compensation package is financially sound relative to the stated goal.",
+        "points_of_note": "The advisors consistently utilized the specific figures of a $160,000 base salary and an $80,000 variable component at 100% quota. Advisor 2 and Advisor 3 both calculated the expected variable earnings at the 96% historical median attainment to be $76,800, leading to a total expected cash earning of $236,800. Advisor 1 provided a slightly different calculation resulting in $230,400, but all figures confirm a substantial buffer above the $210,000 threshold. No advisor flagged any specific clause or data point that would reduce the historical attainment cash below the required minimum.",
+        "suggested_next_step": "Given the unanimous recommendation to proceed and the consistent confirmation that the expected cash earnings at historical attainment exceed the $210,000 minimum, the decision maker should feel confident in accepting the offer based on the financial parameters reviewed."
+      },
+      "text": "ASSESSMENT OVERVIEW: There is strong consensus among the advisors that the proposed compensation structure meets the user's primary financial constraint. All three assessments conclude that the expected annual cash earnings, calculated using the historical median attainment rate, comfortably exceed the required minimum of $210,000. The overall alignment suggests that the compensation package is financially sound relative to the stated goal.\nPOINTS OF NOTE: The advisors consistently utilized the specific figures of a $160,000 base salary and an $80,000 variable component at 100% quota. Advisor 2 and Advisor 3 both calculated the expected variable earnings at the 96% historical median attainment to be $76,800, leading to a total expected cash earning of $236,800. Advisor 1 provided a slightly different calculation resulting in $230,400, but all figures confirm a substantial buffer above the $210,000 threshold. No advisor flagged any specific clause or data point that would reduce the historical attainment cash below the required minimum.\nSUGGESTED NEXT STEP: Given the unanimous recommendation to proceed and the consistent confirmation that the expected cash earnings at historical attainment exceed the $210,000 minimum, the decision maker should feel confident in accepting the offer based on the financial parameters reviewed.",
+      "words": 194,
+      "meta": {
+        "prompt_tokens": 1099,
+        "output_tokens": 296,
+        "seconds": 10.84,
+        "repaired": false
+      }
+    },
+    "crux": {
+      "raw": {
+        "shared_ground": [
+          "The required minimum annual cash earnings at historical attainment is $210,000.",
+          "All advisors calculate the expected cash earnings at 96% historical attainment to be $236,800 (or similar figures exceeding the threshold)."
+        ],
+        "cruxes": [],
+        "unverified_premises": [],
+        "decisive_check": "None required; all advisors concur stated constraints are satisfied."
+      },
+      "text": "ASSESSMENT OVERVIEW: The required minimum annual cash earnings at historical attainment is $210,000. All advisors calculate the expected cash earnings at 96% historical attainment to be $236,800 (or similar figures exceeding the threshold).\nPOINTS OF NOTE: No concrete disagreements or constraint violations flagged across advisors.\nSUGGESTED NEXT STEP: None required; all advisors concur stated constraints are satisfied.",
+      "words": 57,
+      "meta": {
+        "prompt_tokens": 1247,
+        "output_tokens": 108,
+        "seconds": 5.89,
+        "repaired": false
+      }
+    }
+  },
+  "crux_survived": null,
+  "decisions": {
+    "raw": {
+      "output": {
+        "primary_reason": "The packet states historical team attainment is 96%, which would yield $76,800 variable commission (96% of $80,000), resulting in total cash earnings of $236,800, exceeding the $210,000 threshold.",
+        "target_clause_or_metric": "Historical Team Data (Onboarding FAQ) - 96% median attainment",
+        "action": "proceed",
+        "confidence": 95,
+        "brief_endorsement": null
+      },
+      "meta": {
+        "prompt_tokens": 691,
+        "output_tokens": 127,
+        "seconds": 3.78,
+        "repaired": false
+      },
+      "hold": false,
+      "verified_catch": null,
+      "untargeted_hold": null,
+      "false_alarm": false
+    },
+    "single": {
+      "output": {
+        "primary_reason": "The calculation confirms historical median attainment (96%) yields $236,800 cash earnings, exceeding the $210,000 minimum requirement as validated by the payout gate's proportional payment structure.",
+        "target_clause_or_metric": "Schedule A, Clause 5 (payout gate) and Historical Team Data (96% median attainment)",
+        "action": "proceed",
+        "confidence": 95,
+        "brief_endorsement": 5
+      },
+      "meta": {
+        "prompt_tokens": 969,
+        "output_tokens": 118,
+        "seconds": 3.89,
+        "repaired": false
+      },
+      "hold": false,
+      "verified_catch": null,
+      "untargeted_hold": null,
+      "false_alarm": false
+    },
+    "consensus": {
+      "output": {
+        "primary_reason": "The packet confirms that expected cash earnings at historical median attainment (96%) are $236,800, exceeding the $210,000 minimum requirement, with no clause or metric threatening this outcome.",
+        "target_clause_or_metric": "none",
+        "action": "proceed",
+        "confidence": 95,
+        "brief_endorsement": 5
+      },
+      "meta": {
+        "prompt_tokens": 992,
+        "output_tokens": 98,
+        "seconds": 3.95,
+        "repaired": false
+      },
+      "hold": false,
+      "verified_catch": null,
+      "untargeted_hold": null,
+      "false_alarm": false
+    },
+    "crux": {
+      "output": {
+        "primary_reason": "The packet confirms historical attainment is 96% and calculates expected cash earnings at this level as $236,800, which exceeds the $210,000 threshold.",
+        "target_clause_or_metric": "Schedule A, Clause 5 (payout gate) and Historical Team Data (96% median attainment)",
+        "action": "proceed",
+        "confidence": 95,
+        "brief_endorsement": 5
+      },
+      "meta": {
+        "prompt_tokens": 792,
+        "output_tokens": 112,
+        "seconds": 4.12,
+        "repaired": false
+      },
+      "hold": false,
+      "verified_catch": null,
+      "untargeted_hold": null,
+      "false_alarm": false
+    }
+  }
+}

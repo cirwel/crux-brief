@@ -1,0 +1,29 @@
+{
+  "scenario_id": "S04",
+  "variant": "sound",
+  "domain": "job_offers",
+  "difficulty_tier": 3,
+  "model": "qwen3.6:27b-coding-mxfp8",
+  "seed": 2107,
+  "output": {
+    "summary": "The packet states a grant of 400,000 shares. Using the independent common stock valuation of $0.82/share (Exhibit C), the total value is $328,000. Divided over the 4-year vesting period, the annual value is $82,000. This exceeds the user's minimum constraint of $70,000/year ($280,000 total). The terms are non-participating preferred, ensuring common stock retains value in a $100M exit. All stated constraints are satisfied.",
+    "key_claims": [
+      "Annual equity value: $82,000 (400,000 shares * $0.82 / 4 years)",
+      "Total equity value: $328,000",
+      "Constraint floor: $280,000 total / $70,000 annual"
+    ],
+    "recommendation": "proceed",
+    "risks_or_flaws": [
+      "none"
+    ],
+    "verification_question": "none",
+    "confidence": 100
+  },
+  "meta": {
+    "prompt_tokens": 609,
+    "output_tokens": 266,
+    "seconds": 49.88,
+    "repaired": false
+  },
+  "advisor_caught": null
+}

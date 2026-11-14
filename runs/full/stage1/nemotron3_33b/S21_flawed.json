@@ -1,0 +1,29 @@
+{
+  "scenario_id": "S21",
+  "variant": "flawed",
+  "domain": "operational_briefs",
+  "difficulty_tier": 2,
+  "model": "nemotron3:33b",
+  "seed": 1140,
+  "output": {
+    "summary": "The packet states database-backed request p95 latency increased from 165 ms (v3.1) to 248 ms (v3.2) during v3.2 benchmarking. This exceeds the 180 ms threshold, violating the core constraint requiring p95 latency to stay <= 180 ms. The 28% mean latency drop (140 ms to 101 ms) is irrelevant to the database-specific p95 requirement.",
+    "key_claims": [
+      "Database-backed request p95 latency rose from 165 ms (v3.1) to 248 ms (v3.2)",
+      "p95 latency threshold is 180 ms",
+      "248 ms > 180 ms violates constraint"
+    ],
+    "recommendation": "hold_to_verify",
+    "risks_or_flaws": [
+      "Database-backed request p95 latency (248 ms) exceeds 180 ms threshold"
+    ],
+    "verification_question": "Is the 248 ms p95 latency value for database-backed requests explicitly measured during the v3.2 benchmark window?",
+    "confidence": 100
+  },
+  "meta": {
+    "prompt_tokens": 682,
+    "output_tokens": 277,
+    "seconds": 10.69,
+    "repaired": false
+  },
+  "advisor_caught": true
+}

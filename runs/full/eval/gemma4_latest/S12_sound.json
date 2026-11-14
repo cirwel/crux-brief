@@ -1,0 +1,134 @@
+{
+  "scenario_id": "S12",
+  "variant": "sound",
+  "domain": "leases",
+  "difficulty_tier": 1,
+  "eval_model": "gemma4:latest",
+  "synth_model": "nemotron3:33b",
+  "single_advisor_model": "qwen3.6:27b-coding-mxfp8",
+  "k_spotted": null,
+  "advisor_caught_by_model": {
+    "gemma4:latest": null,
+    "nemotron3:33b": null,
+    "qwen3.6:27b-coding-mxfp8": null
+  },
+  "briefs": {
+    "single": {
+      "text": "ASSESSMENT OVERVIEW: The decision packet confirms the monthly rent is $2,550, which satisfies the constraint of being less than or equal to $2,700. Regarding internet speed, Clause 6.1 explicitly states the unit includes a dedicated municipal fiber drop with symmetric 1,000 Mbps (1 Gbps) up and down. This significantly exceeds the user's requirement for symmetrical speeds of at least 200 Mbps. The initial concern about 'building Wi-Fi' is resolved by the specific fiber provision, ensuring the unit supports the necessary bandwidth for remote engineering tasks. All stated constraints are met. Key facts: Rent is $2,550/month, satisfying the <= $2,700 limit.; Internet is symmetric 1,000 Mbps fiber, exceeding the >= 200 Mbps requirement..\nPOINTS OF NOTE: No concrete constraint violations flagged.\nSUGGESTED NEXT STEP: None required; stated constraints appear satisfied.",
+      "words": 129
+    },
+    "consensus": {
+      "raw": {
+        "overview": "All three advisors unanimously confirm the unit meets the core constraints: rent at $2,550/month is below the $2,700 ceiling, and the telecommunications rider explicitly guarantees a symmetric 1,000 Mbps dedicated fiber connection, far exceeding the required 200 Mbps minimum for remote engineering work. The initial concern about 'building Wi-Fi' is resolved by the specific fiber provision, with no constraint violations identified across any assessment.",
+        "points_of_note": "The rent figure ($2,550) is consistently cited as compliant with the $2,700 limit by all advisors, with no discrepancies in evidence. Similarly, the symmetric 1,000 Mbps fiber speed is explicitly confirmed in all reports as satisfying the 200 Mbps requirement, with Advisor 3 specifically resolving the Wi-Fi ambiguity through Clause 6.1's dedicated municipal fiber detail. No advisor flagged material issues or introduced conflicting evidence.",
+        "suggested_next_step": "Proceed with signing the lease, as all constraints are definitively satisfied with no material concerns requiring further verification."
+      },
+      "text": "ASSESSMENT OVERVIEW: All three advisors unanimously confirm the unit meets the core constraints: rent at $2,550/month is below the $2,700 ceiling, and the telecommunications rider explicitly guarantees a symmetric 1,000 Mbps dedicated fiber connection, far exceeding the required 200 Mbps minimum for remote engineering work. The initial concern about 'building Wi-Fi' is resolved by the specific fiber provision, with no constraint violations identified across any assessment.\nPOINTS OF NOTE: The rent figure ($2,550) is consistently cited as compliant with the $2,700 limit by all advisors, with no discrepancies in evidence. Similarly, the symmetric 1,000 Mbps fiber speed is explicitly confirmed in all reports as satisfying the 200 Mbps requirement, with Advisor 3 specifically resolving the Wi-Fi ambiguity through Clause 6.1's dedicated municipal fiber detail. No advisor flagged material issues or introduced conflicting evidence.\nSUGGESTED NEXT STEP: Proceed with signing the lease, as all constraints are definitively satisfied with no material concerns requiring further verification.",
+      "words": 154,
+      "meta": {
+        "prompt_tokens": 1024,
+        "output_tokens": 241,
+        "seconds": 5.76,
+        "repaired": false
+      }
+    },
+    "crux": {
+      "raw": {
+        "shared_ground": [
+          "Rent is $2,550/month",
+          "Symmetric 1,000 Mbps fiber is included"
+        ],
+        "cruxes": [],
+        "unverified_premises": [],
+        "decisive_check": "None required; all advisors concur stated constraints are satisfied."
+      },
+      "text": "ASSESSMENT OVERVIEW: Rent is $2,550/month Symmetric 1,000 Mbps fiber is included\nPOINTS OF NOTE: No concrete disagreements or constraint violations flagged across advisors.\nSUGGESTED NEXT STEP: None required; all advisors concur stated constraints are satisfied.",
+      "words": 35,
+      "meta": {
+        "prompt_tokens": 1193,
+        "output_tokens": 78,
+        "seconds": 3.31,
+        "repaired": false
+      }
+    }
+  },
+  "crux_survived": null,
+  "decisions": {
+    "raw": {
+      "output": {
+        "primary_reason": "The packet explicitly states the unit includes a symmetric 1,000 Mbps dedicated fiber drop, which far exceeds the minimum requirement of >= 200 Mbps, and the rent of $2,550/month is below the $2,700 maximum.",
+        "target_clause_or_metric": "none",
+        "action": "proceed",
+        "confidence": 100,
+        "brief_endorsement": null
+      },
+      "meta": {
+        "prompt_tokens": 552,
+        "output_tokens": 110,
+        "seconds": 4.16,
+        "repaired": false
+      },
+      "hold": false,
+      "verified_catch": null,
+      "untargeted_hold": null,
+      "false_alarm": false
+    },
+    "single": {
+      "output": {
+        "primary_reason": "The packet confirms the rent is $2,550/month, which is below the $2,700 limit, and Clause 6.1 guarantees a symmetric 1,000 Mbps fiber connection, which far exceeds the minimum 200 Mbps requirement.",
+        "target_clause_or_metric": "none",
+        "action": "proceed",
+        "confidence": 100,
+        "brief_endorsement": 5
+      },
+      "meta": {
+        "prompt_tokens": 754,
+        "output_tokens": 112,
+        "seconds": 3.86,
+        "repaired": false
+      },
+      "hold": false,
+      "verified_catch": null,
+      "untargeted_hold": null,
+      "false_alarm": false
+    },
+    "consensus": {
+      "output": {
+        "primary_reason": "The packet explicitly states a symmetric 1,000 Mbps dedicated fiber connection, which far exceeds the required 200 Mbps, and the rent of $2,550 is below the $2,700 limit. The pre-decision brief confirms all constraints are met.",
+        "target_clause_or_metric": "none",
+        "action": "proceed",
+        "confidence": 100,
+        "brief_endorsement": 5
+      },
+      "meta": {
+        "prompt_tokens": 779,
+        "output_tokens": 114,
+        "seconds": 3.66,
+        "repaired": false
+      },
+      "hold": false,
+      "verified_catch": null,
+      "untargeted_hold": null,
+      "false_alarm": false
+    },
+    "crux": {
+      "output": {
+        "primary_reason": "The packet satisfies both constraints: the rent of $2,550/month is less than the $2,700 maximum, and the dedicated fiber is 1,000 Mbps symmetric, which exceeds the required 200 Mbps.",
+        "target_clause_or_metric": "none",
+        "action": "proceed",
+        "confidence": 100,
+        "brief_endorsement": 5
+      },
+      "meta": {
+        "prompt_tokens": 609,
+        "output_tokens": 107,
+        "seconds": 3.46,
+        "repaired": false
+      },
+      "hold": false,
+      "verified_catch": null,
+      "untargeted_hold": null,
+      "false_alarm": false
+    }
+  }
+}

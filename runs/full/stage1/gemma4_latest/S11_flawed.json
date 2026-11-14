@@ -1,0 +1,29 @@
+{
+  "scenario_id": "S11",
+  "variant": "flawed",
+  "domain": "leases",
+  "difficulty_tier": 3,
+  "model": "gemma4:latest",
+  "seed": 120,
+  "output": {
+    "summary": "The packet indicates the tenant is responsible for full capital replacement of the HVAC unit if failure occurs, as per Clause 7c. The Property Inspection Memo quantifies this potential replacement cost at $26,500. This figure significantly exceeds the user's stated cap of $3,000 for annual non-rent building repair exposure, and it represents a capital replacement obligation, violating the user's constraint.",
+    "key_claims": [
+      "Tenant is responsible for full capital replacement of the HVAC unit upon failure (Clause 7c).",
+      "The quoted replacement cost for the HVAC unit is $26,500.",
+      "The user's maximum allowable non-rent building repair exposure is $3,000/yr."
+    ],
+    "recommendation": "hold_to_verify",
+    "risks_or_flaws": [
+      "Clause 7c shifts a potential capital replacement risk of $26,500 to the Tenant, which violates the constraint that the annual non-rent building repair exposure must be capped <= $3,000/yr and that there must be no unbudgeted capital equipment replacement obligations."
+    ],
+    "verification_question": "Does the Landlord's cover email promise ('Tenant only handles normal upkeep') supersede the specific language in Clause 7c regarding 'full capital replacement' of the HVAC unit?",
+    "confidence": 100
+  },
+  "meta": {
+    "prompt_tokens": 599,
+    "output_tokens": 320,
+    "seconds": 11.53,
+    "repaired": false
+  },
+  "advisor_caught": true
+}

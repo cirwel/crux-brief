@@ -1,0 +1,154 @@
+{
+  "scenario_id": "S23",
+  "variant": "flawed",
+  "domain": "operational_briefs",
+  "difficulty_tier": 3,
+  "eval_model": "gemma4:latest",
+  "synth_model": "nemotron3:33b",
+  "single_advisor_model": "nemotron3:33b",
+  "k_spotted": 3,
+  "advisor_caught_by_model": {
+    "gemma4:latest": true,
+    "nemotron3:33b": true,
+    "qwen3.6:27b-coding-mxfp8": true
+  },
+  "briefs": {
+    "single": {
+      "text": "ASSESSMENT OVERVIEW: The packet confirms a statistically significant ARPU lift (p=0.03 < 0.05) with 11.0% increase from $4.10 to $4.55, satisfying the primary constraint. However, the experiment was halted early after 10,000 control sessions and 8,380 variant sessions (18,380 total), violating the pre-registered 14-day window and 50/50 split requirement, creating a validity risk despite the p-value. Key facts: Control ARPU $4.10 vs. Variant ARPU $4.55 (+11.0%, p=0.03); 10,000 control sessions vs. 8,380 variant sessions (18,380 total); Experiment halted on Day 5 instead of 14-day window.\nPOINTS OF NOTE: Early stopping violates pre-registered 14-day window and 50/50 split requirement; 1,600 low-intent mobile visitors excluded due to redirect timeout, potentially biasing sample.\nSUGGESTED NEXT STEP: Does early stopping at Day 5 with unequal session counts (10,000 vs 8,380) invalidate statistical significance despite p<0.05?",
+      "words": 131
+    },
+    "consensus": {
+      "raw": {
+        "overview": "All advisors concur the packet reports a statistically significant 11.0% ARPU lift (p=0.03) meeting the pre-registered p<0.05 threshold, but unanimously flag critical validity concerns that undermine the evidence's reliability per the experiment's pre-registered design.",
+        "points_of_note": "Advisor 1 and 2 emphasize that early termination on Day 5 instead of the pre-registered 14 days and the imbalanced sample split (10,000 vs 8,380 sessions) violate core validity constraints, with Advisor 1 specifically noting this creates Type I error inflation through peeking bias and non-random attrition. Advisor 3 corroborates the p=0.03 significance but adds a nuanced validity risk from 1,600 low-intent mobile visitors in the variant group experiencing incomplete session logging due to script timeouts, potentially distorting the ARPU calculation despite the apparent lift.",
+        "suggested_next_step": "Conduct a validity audit to verify whether the statistical analysis explicitly adjusts for early stopping-induced peeking bias and accounts for the 1,600 low-intent mobile visitors with incomplete session logging in the variant group before proceeding."
+      },
+      "text": "ASSESSMENT OVERVIEW: All advisors concur the packet reports a statistically significant 11.0% ARPU lift (p=0.03) meeting the pre-registered p<0.05 threshold, but unanimously flag critical validity concerns that undermine the evidence's reliability per the experiment's pre-registered design.\nPOINTS OF NOTE: Advisor 1 and 2 emphasize that early termination on Day 5 instead of the pre-registered 14 days and the imbalanced sample split (10,000 vs 8,380 sessions) violate core validity constraints, with Advisor 1 specifically noting this creates Type I error inflation through peeking bias and non-random attrition. Advisor 3 corroborates the p=0.03 significance but adds a nuanced validity risk from 1,600 low-intent mobile visitors in the variant group experiencing incomplete session logging due to script timeouts, potentially distorting the ARPU calculation despite the apparent lift.\nSUGGESTED NEXT STEP: Conduct a validity audit to verify whether the statistical analysis explicitly adjusts for early stopping-induced peeking bias and accounts for the 1,600 low-intent mobile visitors with incomplete session logging in the variant group before proceeding.",
+      "words": 162,
+      "meta": {
+        "prompt_tokens": 1379,
+        "output_tokens": 266,
+        "seconds": 11.14,
+        "repaired": false
+      }
+    },
+    "crux": {
+      "raw": {
+        "shared_ground": [
+          "The packet reports a statistically significant ARPU lift (p < 0.05) with an 11.0% increase from $4.10 to $4.55",
+          "The experiment was halted early instead of the pre-registered 14-day window"
+        ],
+        "cruxes": [
+          {
+            "topic": "Early stopping validity",
+            "side_a": "Early stopping on Day 5 inflates Type I error rates and invalidates p-value due to peeking bias",
+            "side_b": "p-value of 0.03 remains statistically significant despite early stopping",
+            "premise_at_stake": "Whether early termination violates the pre-registered validity constraint for statistical inference"
+          },
+          {
+            "topic": "Sample imbalance",
+            "side_a": "Variant sample size (8,380) is significantly lower than Control (10,000) due to technical timeout",
+            "side_b": "p-value of 0.03 is valid despite unequal sample sizes",
+            "premise_at_stake": "Whether unequal sample sizes compromise the randomized integrity required for valid inference"
+          }
+        ],
+        "unverified_premises": [
+          "The impact of 1,600 low-intent mobile visitors with incomplete session logging on the ARPU calculation is unverified",
+          "The statistical analysis accounts for multiple testing/peeking bias from early stopping"
+        ],
+        "decisive_check": "Does the statistical analysis account for the multiple testing/peeking bias introduced by stopping early on Day 5?"
+      },
+      "text": "ASSESSMENT OVERVIEW: The packet reports a statistically significant ARPU lift (p < 0.05) with an 11.0% increase from $4.10 to $4.55 The experiment was halted early instead of the pre-registered 14-day window\nPOINTS OF NOTE: Disagreements: (1) Early stopping validity: Side A [Early stopping on Day 5 inflates Type I error rates and invalidates p-value due to peeking bias] vs. Side B [p-value of 0.03 remains statistically significant despite early stopping] (at stake: Whether early termination violates the pre-registered validity constraint for statistical inference) | (2) Sample imbalance: Side A [Variant sample size (8,380) is significantly lower than Control (10,000) due to technical timeout] vs. Side B [p-value of 0.03 is valid despite unequal sample sizes] (at stake: Whether unequal sample sizes compromise the randomized integrity required for valid inference) Flagged issues: The impact of 1,600 low-intent mobile visitors with incomplete session logging on the ARPU calculation is unverified; The statistical analysis accounts for multiple testing/peeking bias from early stopping\nSUGGESTED NEXT STEP: Does the statistical analysis account for the multiple testing/peeking bias introduced by stopping early on Day 5?",
+      "words": 180,
+      "meta": {
+        "prompt_tokens": 1548,
+        "output_tokens": 346,
+        "seconds": 10.27,
+        "repaired": false
+      }
+    }
+  },
+  "crux_survived": {
+    "single": true,
+    "consensus": true,
+    "crux": true
+  },
+  "decisions": {
+    "raw": {
+      "output": {
+        "primary_reason": "The packet shows a positive lift and p < 0.05, but the early stopping due to reaching significance, combined with the noted technical failure affecting a subset of users, raises concerns about the validity of the final results.",
+        "target_clause_or_metric": "Sample & Stopping Log (early halt) and Engineering Footnote (script timeout affecting 1,600 users)",
+        "action": "hold_to_verify",
+        "confidence": 95,
+        "brief_endorsement": null
+      },
+      "meta": {
+        "prompt_tokens": 603,
+        "output_tokens": 124,
+        "seconds": 5.36,
+        "repaired": false
+      },
+      "hold": true,
+      "verified_catch": true,
+      "untargeted_hold": false,
+      "false_alarm": null
+    },
+    "single": {
+      "output": {
+        "primary_reason": "The packet shows a statistically significant lift (p=0.03), but the pre-decision brief and the packet itself highlight two major deviations from the pre-registered plan: early stopping (Day 5 vs 14 days) and unequal sample sizes (10,000 vs 8,380). These deviations threaten the validity of the reported p-value.",
+        "target_clause_or_metric": "Sample & Stopping Log (early halt on Day 5) and Engineering Footnote (1,600 low-intent mobile visitors excluded)",
+        "action": "hold_to_verify",
+        "confidence": 100,
+        "brief_endorsement": 5
+      },
+      "meta": {
+        "prompt_tokens": 890,
+        "output_tokens": 164,
+        "seconds": 8.83,
+        "repaired": false
+      },
+      "hold": true,
+      "verified_catch": true,
+      "untargeted_hold": false,
+      "false_alarm": null
+    },
+    "consensus": {
+      "output": {
+        "primary_reason": "Although the headline result shows a statistically significant lift (p=0.03), the packet details multiple critical validity concerns: early stopping on Day 5 instead of the pre-registered 14 days, an imbalanced sample split, and incomplete session logging for 1,600 mobile visitors. These issues threaten the statistical validity required by the constraints.",
+        "target_clause_or_metric": "Sample & Stopping Log (early halt on Day 5 vs 14-day window) and Engineering Footnote (1,600 low-intent mobile visitors timeout)",
+        "action": "hold_to_verify",
+        "confidence": 100,
+        "brief_endorsement": 5
+      },
+      "meta": {
+        "prompt_tokens": 855,
+        "output_tokens": 165,
+        "seconds": 8.09,
+        "repaired": false
+      },
+      "hold": true,
+      "verified_catch": true,
+      "untargeted_hold": false,
+      "false_alarm": null
+    },
+    "crux": {
+      "output": {
+        "primary_reason": "The packet presents a statistically significant lift (p=0.03), but the pre-decision brief highlights two major concerns regarding experimental validity: early stopping (peeking bias) and sample imbalance due to technical failure. These unresolved issues threaten the core constraint of 'statistically valid evidence' required for shipping.",
+        "target_clause_or_metric": "Section 2 (Early stopping on Day 5) and Section 3 (1,600 low-intent mobile visitors timeout)",
+        "action": "hold_to_verify",
+        "confidence": 100,
+        "brief_endorsement": 5
+      },
+      "meta": {
+        "prompt_tokens": 894,
+        "output_tokens": 146,
+        "seconds": 8.34,
+        "repaired": false
+      },
+      "hold": true,
+      "verified_catch": true,
+      "untargeted_hold": false,
+      "false_alarm": null
+    }
+  }
+}

@@ -1,0 +1,29 @@
+{
+  "scenario_id": "S15",
+  "variant": "sound",
+  "domain": "procurement_handoffs",
+  "difficulty_tier": 2,
+  "model": "qwen3.6:27b-coding-mxfp8",
+  "seed": 2129,
+  "output": {
+    "summary": "The packet proposes paying $245,000 on Day 10 to secure a $5,000 discount on a $250,000 invoice. This requires borrowing $245,000 at 12.0% APR for 20 days (Day 10 to Day 30). The interest cost is calculated as $245,000 * 0.12 * (20/365) \u2248 $1,616.44. Comparing the $5,000 discount against the ~$1,616 financing cost yields a net positive savings of approximately $3,383. Since the net dollar savings is positive, the constraint for early payment is satisfied.",
+    "key_claims": [
+      "Discount amount: $5,000",
+      "Financing cost: ~$1,616 (12% APR on $245k for 20 days)",
+      "Net savings: ~$3,384"
+    ],
+    "recommendation": "proceed",
+    "risks_or_flaws": [
+      "none"
+    ],
+    "verification_question": "none",
+    "confidence": 100
+  },
+  "meta": {
+    "prompt_tokens": 629,
+    "output_tokens": 289,
+    "seconds": 61.6,
+    "repaired": false
+  },
+  "advisor_caught": null
+}

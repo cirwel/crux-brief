@@ -1,0 +1,29 @@
+{
+  "scenario_id": "S08",
+  "variant": "flawed",
+  "domain": "leases",
+  "difficulty_tier": 2,
+  "model": "qwen3.6:27b-coding-mxfp8",
+  "seed": 2114,
+  "output": {
+    "summary": "The lease term is 12 months, ending December 31. To exit cleanly without triggering the automatic renewal, the tenant must provide notice 90 days prior to expiration. Counting back 90 days from December 31 places the deadline around October 2. The user states that Month 10 sales results are available November 3. Since November 3 is after the October 2 deadline, the user cannot base their decision on those results without violating the notice requirement. This creates a direct conflict between the user's constraint (deciding based on Nov 3 data) and the lease's notice mechanics.",
+    "key_claims": [
+      "Lease expires December 31",
+      "Notice deadline is approximately October 2 (90 days prior)",
+      "Sales results available November 3"
+    ],
+    "recommendation": "hold_to_verify",
+    "risks_or_flaws": [
+      "The 90-day notice deadline (approx. Oct 2) precedes the availability of sales data (Nov 3), making it impossible to exit cleanly based on the specified constraint without risking automatic renewal."
+    ],
+    "verification_question": "Can the landlord agree to extend the notice deadline to November 3 to align with the availability of sales results?",
+    "confidence": 95
+  },
+  "meta": {
+    "prompt_tokens": 566,
+    "output_tokens": 290,
+    "seconds": 51.79,
+    "repaired": false
+  },
+  "advisor_caught": true
+}

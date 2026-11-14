@@ -1,0 +1,49 @@
+{
+  "scenario_id": "S16",
+  "variant": "sound",
+  "domain": "procurement_handoffs",
+  "difficulty_tier": 3,
+  "synth_model": "nemotron3:33b",
+  "k_spotted": null,
+  "advisor_caught_by_model": {
+    "gemma4:latest": null,
+    "nemotron3:33b": null,
+    "qwen3.6:27b-coding-mxfp8": null
+  },
+  "briefs": {
+    "consensus": {
+      "raw": {
+        "overview": "All three advisors unanimously recommend proceeding with confidence 100/100, confirming the analytics platform meets the core constraint of being deployable as a white-labeled commercial product sublicensed to external enterprise clients through clear ownership and licensing terms.",
+        "points_of_note": "The shared evidence establishes that Section 9.1 confirms Buyer owns 100% of custom deliverables (foreground work product), while Section 9.3 grants a perpetual, worldwide, paid-up, transferable license for background technology with explicit rights to distribute and sublicense to external clients, directly satisfying white-labeling requirements without any flagged issues or constraint breaches.",
+        "suggested_next_step": "Proceed with signing the agreement as all advisors confirm the licensing and ownership terms fully satisfy the white-labeled, sublicensable product requirement with no material concerns identified."
+      },
+      "text": "ASSESSMENT OVERVIEW: All three advisors unanimously recommend proceeding with confidence 100/100, confirming the analytics platform meets the core constraint of being deployable as a white-labeled commercial product sublicensed to external enterprise clients through clear ownership and licensing terms.\nPOINTS OF NOTE: The shared evidence establishes that Section 9.1 confirms Buyer owns 100% of custom deliverables (foreground work product), while Section 9.3 grants a perpetual, worldwide, paid-up, transferable license for background technology with explicit rights to distribute and sublicense to external clients, directly satisfying white-labeling requirements without any flagged issues or constraint breaches.\nSUGGESTED NEXT STEP: Proceed with signing the agreement as all advisors confirm the licensing and ownership terms fully satisfy the white-labeled, sublicensable product requirement with no material concerns identified.",
+      "words": 121,
+      "meta": {
+        "prompt_tokens": 1008,
+        "output_tokens": 183,
+        "seconds": 6.5,
+        "repaired": false
+      }
+    },
+    "crux": {
+      "raw": {
+        "shared_ground": [
+          "Buyer owns 100% of custom deliverables (Section 9.1)",
+          "Vendor grants perpetual, worldwide, transferable license for background technology/runtime with sublicensing rights"
+        ],
+        "cruxes": [],
+        "unverified_premises": [],
+        "decisive_check": "None required; all advisors concur stated constraints are satisfied."
+      },
+      "text": "ASSESSMENT OVERVIEW: Buyer owns 100% of custom deliverables (Section 9.1) Vendor grants perpetual, worldwide, transferable license for background technology/runtime with sublicensing rights\nPOINTS OF NOTE: No concrete disagreements or constraint violations flagged across advisors.\nSUGGESTED NEXT STEP: None required; all advisors concur stated constraints are satisfied.",
+      "words": 46,
+      "meta": {
+        "prompt_tokens": 1177,
+        "output_tokens": 91,
+        "seconds": 4.93,
+        "repaired": false
+      }
+    }
+  }
+}

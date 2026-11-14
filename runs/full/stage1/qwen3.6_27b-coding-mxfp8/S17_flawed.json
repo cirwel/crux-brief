@@ -1,0 +1,29 @@
+{
+  "scenario_id": "S17",
+  "variant": "flawed",
+  "domain": "procurement_handoffs",
+  "difficulty_tier": 1,
+  "model": "qwen3.6:27b-coding-mxfp8",
+  "seed": 2132,
+  "output": {
+    "summary": "The user requires the total all-in cost for 100 workstations to be <= $118,000. The packet lists hardware at $1,150/unit, mandatory support at $95/unit, and a flat shipping fee of $3,800. Calculating the total: Hardware is 100 * $1,150 = $115,000. Support is 100 * $95 = $9,500. Shipping is $3,800. The sum is $115,000 + $9,500 + $3,800 = $128,300. This total significantly exceeds the $118,000 budget constraint by $10,300. Therefore, the decision packet violates the explicit financial constraint.",
+    "key_claims": [
+      "Total calculated cost is $128,300",
+      "Budget constraint is $118,000",
+      "Overage is $10,300"
+    ],
+    "recommendation": "hold_to_verify",
+    "risks_or_flaws": [
+      "The all-in cost of $128,300 exceeds the maximum budget of $118,000."
+    ],
+    "verification_question": "Can the sales rep provide a discount or alternative configuration to reduce the total cost below $118,000?",
+    "confidence": 100
+  },
+  "meta": {
+    "prompt_tokens": 548,
+    "output_tokens": 346,
+    "seconds": 78.49,
+    "repaired": false
+  },
+  "advisor_caught": true
+}

@@ -1,0 +1,29 @@
+{
+  "scenario_id": "S11",
+  "variant": "flawed",
+  "domain": "leases",
+  "difficulty_tier": 3,
+  "model": "nemotron3:33b",
+  "seed": 1120,
+  "output": {
+    "summary": "Clause 7c requires Tenant to fund full capital replacement of the 10-ton rooftop HVAC unit (compressor/heat-exchanger failure), costing $26,500 per Property Inspection Memo. This single replacement exceeds the $3,000 annual cap by over 8x, violating the exposure limit. No other repair clauses shift additional capital risk to Tenant.",
+    "key_claims": [
+      "Clause 7c mandates Tenant-paid capital replacement of 10-ton rooftop HVAC unit upon compressor/heat-exchanger failure",
+      "Property Inspection Memo states full replacement cost is $26,500 for 19-year-old unit",
+      "$26,500 replacement cost exceeds $3,000 annual cap by 787%"
+    ],
+    "recommendation": "hold_to_verify",
+    "risks_or_flaws": [
+      "Clause 7c shifts $26,500 capital replacement risk to Tenant, violating <=$3,000/yr exposure cap"
+    ],
+    "verification_question": "Does Clause 7c's 'good working order' obligation explicitly include full capital replacement costs beyond routine maintenance?",
+    "confidence": 95
+  },
+  "meta": {
+    "prompt_tokens": 665,
+    "output_tokens": 285,
+    "seconds": 10.66,
+    "repaired": false
+  },
+  "advisor_caught": true
+}

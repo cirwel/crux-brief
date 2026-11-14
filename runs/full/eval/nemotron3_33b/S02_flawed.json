@@ -1,0 +1,148 @@
+{
+  "scenario_id": "S02",
+  "variant": "flawed",
+  "domain": "job_offers",
+  "difficulty_tier": 1,
+  "eval_model": "nemotron3:33b",
+  "synth_model": "gemma4:latest",
+  "single_advisor_model": "nemotron3:33b",
+  "k_spotted": 3,
+  "advisor_caught_by_model": {
+    "gemma4:latest": true,
+    "nemotron3:33b": true,
+    "qwen3.6:27b-coding-mxfp8": true
+  },
+  "briefs": {
+    "single": {
+      "text": "ASSESSMENT OVERVIEW: The repayment rider requires full $40,000 gross bonus repayment within 15 days of voluntary resignation at any time within 24 months, with no proration. The user's goal requires repayment obligation to expire by Month 12 (or prorate monthly on net after-tax payout) to avoid out-of-pocket clawback at Month 18. The rider's unprorated 24-month window directly violates the Month 12 expiration constraint, creating a Month 18 repayment obligation that would trigger out-of-pocket cash clawback. Key facts: Sign-on bonus gross amount: $40,000; Repayment window: 24 months from start date; Repayment requirement: 100% gross repayment within 15 days (no proration).\nPOINTS OF NOTE: Repayment obligation extends beyond Month 12 to Month 24, violating the user's constraint that repayment must expire by Month 12 (or prorate monthly) to avoid out-of-pocket clawback at Month 18.\nSUGGESTED NEXT STEP: Does Clause 6b's 24-month window with no proration satisfy the user's Month 12 expiration requirement?",
+      "words": 150
+    },
+    "consensus": {
+      "raw": {
+        "overview": "The advisors show strong consensus regarding the core conflict: the current sign-on bonus repayment clause appears to conflict with the user's critical constraint. All three reports highlight that the existing terms mandate a full repayment obligation for the $40,000 bonus if the employee resigns within 24 months. This duration significantly exceeds the user's stated requirement that any repayment obligation must expire by Month 12 to prevent an out-of-pocket clawback upon leaving at Month 18.",
+        "points_of_note": "The evidence cited across all reports is highly consistent, specifically noting the 100% repayment of the gross $40,000 bonus tied to a 24-month window. Crucially, all advisors point out that the clause lacks the necessary monthly proration or the 12-month expiration date required by the user. No advisor identified any mitigating language that would satisfy the constraint; rather, the consensus is that the 24-month term creates a direct violation.",
+        "suggested_next_step": "Given the unanimous identification of a material constraint violation, the next step must be to negotiate the repayment clause. Specifically, the decision maker should seek confirmation on whether Clause 6b can be amended to limit the repayment obligation duration to 12 months or implement a clear, prorated monthly repayment schedule that expires by Month 12."
+      },
+      "text": "ASSESSMENT OVERVIEW: The advisors show strong consensus regarding the core conflict: the current sign-on bonus repayment clause appears to conflict with the user's critical constraint. All three reports highlight that the existing terms mandate a full repayment obligation for the $40,000 bonus if the employee resigns within 24 months. This duration significantly exceeds the user's stated requirement that any repayment obligation must expire by Month 12 to prevent an out-of-pocket clawback upon leaving at Month 18.\nPOINTS OF NOTE: The evidence cited across all reports is highly consistent, specifically noting the 100% repayment of the gross $40,000 bonus tied to a 24-month window. Crucially, all advisors point out that the clause lacks the necessary monthly proration or the 12-month expiration date required by the user. No advisor identified any mitigating language that would satisfy the constraint; rather, the consensus is that the 24-month term creates a direct violation.\nSUGGESTED NEXT STEP: Given the unanimous identification of a material constraint violation, the next step must be to negotiate the repayment clause. Specifically, the decision maker should seek confirmation on whether Clause 6b can be amended to limit the repayment obligation duration to 12 months or implement a clear, prorated monthly repayment schedule that expires by Month 12.",
+      "words": 206,
+      "meta": {
+        "prompt_tokens": 1229,
+        "output_tokens": 300,
+        "seconds": 12.55,
+        "repaired": false
+      }
+    },
+    "crux": {
+      "raw": {
+        "shared_ground": [
+          "The sign-on bonus repayment obligation is 100% of the gross $40,000 bonus.",
+          "All advisors agree the current repayment clause extends to 24 months, violating the user's constraint."
+        ],
+        "cruxes": [
+          {
+            "topic": "Repayment Structure",
+            "side_a": "Repayment must expire by Month 12 (or prorate monthly on net after-tax payout)",
+            "side_b": "Repayment is 100% of gross $40,000 if resigning within 24 months (no proration)",
+            "premise_at_stake": "Whether the 24-month, unprorated repayment clause triggers an out-of-pocket clawback upon leaving at Month 18."
+          }
+        ],
+        "unverified_premises": [
+          "The specific mechanism for avoiding clawback at Month 18 (i.e., expiration by Month 12 or monthly proration on net after-tax payout) remains unconfirmed by the packet.",
+          "The feasibility of negotiating the repayment period down to 12 months is unknown."
+        ],
+        "decisive_check": "Confirmation is required on whether Clause 6b can be amended to ensure the repayment obligation expires by Month 12 or is structured with monthly proration on net after-tax payout."
+      },
+      "text": "ASSESSMENT OVERVIEW: The sign-on bonus repayment obligation is 100% of the gross $40,000 bonus. All advisors agree the current repayment clause extends to 24 months, violating the user's constraint.\nPOINTS OF NOTE: Disagreements: (1) Repayment Structure: Side A [Repayment must expire by Month 12 (or prorate monthly on net after-tax payout)] vs. Side B [Repayment is 100% of gross $40,000 if resigning within 24 months (no proration)] (at stake: Whether the 24-month, unprorated repayment clause triggers an out-of-pocket clawback upon leaving at Month 18.) Flagged issues: The specific mechanism for avoiding clawback at Month 18 (i.e., expiration by Month 12 or monthly proration on net after-tax payout) remains unconfirmed by the packet.; The feasibility of negotiating the repayment period down to 12 months is unknown.\nSUGGESTED NEXT STEP: Confirmation is required on whether Clause 6b can be amended to ensure the repayment obligation expires by Month 12 or is structured with monthly proration on net after-tax payout.",
+      "words": 157,
+      "meta": {
+        "prompt_tokens": 1377,
+        "output_tokens": 322,
+        "seconds": 12.36,
+        "repaired": false
+      }
+    }
+  },
+  "crux_survived": {
+    "single": true,
+    "consensus": true,
+    "crux": true
+  },
+  "decisions": {
+    "raw": {
+      "output": {
+        "primary_reason": "The repayment clause (Clause 6b) requires full $40,000 gross repayment within 15 days of voluntary resignation within 24 months, which violates the constraint that any sign-on bonus repayment obligation must expire by Month 12 (or be prorated monthly after-tax).",
+        "target_clause_or_metric": "Clause 6b",
+        "action": "hold_to_verify",
+        "confidence": 100,
+        "brief_endorsement": null
+      },
+      "meta": {
+        "prompt_tokens": 693,
+        "output_tokens": 125,
+        "seconds": 3.88,
+        "repaired": false
+      },
+      "hold": true,
+      "verified_catch": true,
+      "untargeted_hold": false,
+      "false_alarm": null
+    },
+    "single": {
+      "output": {
+        "primary_reason": "The repayment rider requires full $40,000 gross repayment within 15 days of voluntary resignation at any time within 24 months, with no proration, directly violating the constraint that repayment obligation must expire by Month 12 (or prorate monthly) to avoid out-of-pocket clawback at Month 18.",
+        "target_clause_or_metric": "Clause 6b",
+        "action": "hold_to_verify",
+        "confidence": 95,
+        "brief_endorsement": 5
+      },
+      "meta": {
+        "prompt_tokens": 990,
+        "output_tokens": 131,
+        "seconds": 4.21,
+        "repaired": false
+      },
+      "hold": true,
+      "verified_catch": true,
+      "untargeted_hold": false,
+      "false_alarm": null
+    },
+    "consensus": {
+      "output": {
+        "primary_reason": "The repayment clause (Clause 6b) requires 100% gross repayment of the $40,000 sign-on bonus if the employee resigns within 24 months, which violates the constraint that any repayment obligation must expire by Month 12 to prevent an out-of-pocket clawback at Month 18.",
+        "target_clause_or_metric": "Clause 6b",
+        "action": "hold_to_verify",
+        "confidence": 95,
+        "brief_endorsement": 5
+      },
+      "meta": {
+        "prompt_tokens": 1000,
+        "output_tokens": 131,
+        "seconds": 4.08,
+        "repaired": false
+      },
+      "hold": true,
+      "verified_catch": true,
+      "untargeted_hold": false,
+      "false_alarm": null
+    },
+    "crux": {
+      "output": {
+        "primary_reason": "The repayment clause (Clause 6b) requires 100% gross repayment of the $40,000 sign-on bonus if resigning within 24 months, with no proration or tax adjustment, which violates the constraint that repayment must expire by Month 12 or be prorated monthly on net after-tax payout.",
+        "target_clause_or_metric": "Clause 6b",
+        "action": "hold_to_verify",
+        "confidence": 95,
+        "brief_endorsement": 5
+      },
+      "meta": {
+        "prompt_tokens": 989,
+        "output_tokens": 135,
+        "seconds": 4.09,
+        "repaired": false
+      },
+      "hold": true,
+      "verified_catch": true,
+      "untargeted_hold": false,
+      "false_alarm": null
+    }
+  }
+}

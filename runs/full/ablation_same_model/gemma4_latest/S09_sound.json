@@ -1,0 +1,143 @@
+{
+  "scenario_id": "S09",
+  "variant": "sound",
+  "domain": "leases",
+  "difficulty_tier": 2,
+  "eval_model": "gemma4:latest",
+  "synth_model": "gemma4:latest",
+  "single_advisor_model": "qwen3.6:27b-coding-mxfp8",
+  "k_spotted": null,
+  "advisor_caught_by_model": {
+    "gemma4:latest": null,
+    "nemotron3:33b": null,
+    "qwen3.6:27b-coding-mxfp8": null
+  },
+  "briefs": {
+    "single": {
+      "text": "ASSESSMENT OVERVIEW: The user's constraint is a maximum liability of $2,000 for a 4-day holdover. The lease defines daily rent as Base ($5,400) plus Additional ($1,200), totaling $6,600 monthly. The daily rate is $6,600 / 30 = $220. The holdover penalty for the first 10 days is 125% of this daily rate. Calculation: $220 * 1.25 = $275 per day. For 4 days, the total liability is $275 * 4 = $1,100. Since $1,100 is well below the $2,000 limit, the constraint is satisfied. There are no hidden exclusions or arithmetic errors in the packet that violate the user's goal. Key facts: Total monthly rent is $6,600 ($5,400 Base + $1,200 Additional).; 4-day holdover liability calculates to $1,100 (125% of daily rate)..\nPOINTS OF NOTE: No concrete constraint violations flagged.\nSUGGESTED NEXT STEP: None required; stated constraints appear satisfied.",
+      "words": 139
+    },
+    "consensus": {
+      "raw": {
+        "overview": "The advisors present a divergence regarding the calculation of the potential holdover penalty, though there is strong consensus that the underlying monthly rent structure is $6,600 ($5,400 base + $1,200 additional). Two advisors conclude that the resulting 4-day liability remains comfortably below the user's $2,000 maximum exposure, while one advisor calculates a significantly higher figure, suggesting a potential discrepancy in the penalty application.",
+        "points_of_note": "Advisor 2 and Advisor 3 both establish the daily rate as $220 ($6,600 / 30 days) and calculate the 4-day penalty at $1,100, which satisfies the $2,000 constraint. Conversely, Advisor 1 calculates the liability as $3,300, citing a different application of the 125% holdover rate. The specific figures cited\u2014$220 daily rate versus the $3,300 total\u2014highlight a material difference in how the holdover penalty is applied, which must be reconciled.",
+        "suggested_next_step": "Given the consensus from two advisors that the penalty is $1,100, and the explicit calculation provided by Advisor 1 showing a potential $3,300 liability, the decision maker should immediately seek clarification on the lease's precise methodology for calculating the holdover penalty for a 4-day overrun."
+      },
+      "text": "ASSESSMENT OVERVIEW: The advisors present a divergence regarding the calculation of the potential holdover penalty, though there is strong consensus that the underlying monthly rent structure is $6,600 ($5,400 base + $1,200 additional). Two advisors conclude that the resulting 4-day liability remains comfortably below the user's $2,000 maximum exposure, while one advisor calculates a significantly higher figure, suggesting a potential discrepancy in the penalty application.\nPOINTS OF NOTE: Advisor 2 and Advisor 3 both establish the daily rate as $220 ($6,600 / 30 days) and calculate the 4-day penalty at $1,100, which satisfies the $2,000 constraint. Conversely, Advisor 1 calculates the liability as $3,300, citing a different application of the 125% holdover rate. The specific figures cited\u2014$220 daily rate versus the $3,300 total\u2014highlight a material difference in how the holdover penalty is applied, which must be reconciled.\nSUGGESTED NEXT STEP: Given the consensus from two advisors that the penalty is $1,100, and the explicit calculation provided by Advisor 1 showing a potential $3,300 liability, the decision maker should immediately seek clarification on the lease's precise methodology for calculating the holdover penalty for a 4-day overrun.",
+      "words": 185,
+      "meta": {
+        "prompt_tokens": 1174,
+        "output_tokens": 316,
+        "seconds": 11.51,
+        "repaired": false
+      }
+    },
+    "crux": {
+      "raw": {
+        "shared_ground": [
+          "The total monthly rent is consistently calculated as $6,600 ($5,400 base + $1,200 additional).",
+          "The calculated 4-day holdover liability is $1,100, which is below the $2,000 constraint."
+        ],
+        "cruxes": [
+          {
+            "topic": "Calculation Method",
+            "side_a": "Advisor 1 calculates 4-day liability as $6,600 * 1.25 * 4 = $3,300.",
+            "side_b": "Advisors 2 & 3 calculate 4-day liability as $1,100 (based on a daily rate of $220).",
+            "premise_at_stake": "The correct methodology for calculating the 4-day holdover penalty."
+          }
+        ],
+        "unverified_premises": [
+          "The calculation method used by Advisor 1 ($6,600 * 1.25 * 4) appears inconsistent with the methods used by Advisors 2 and 3."
+        ],
+        "decisive_check": "Confirm the correct formula for calculating the 4-day holdover penalty: is it (Total Monthly Rent * 1.25 * 4) or (Daily Rate * 1.25 * 4)?"
+      },
+      "text": "ASSESSMENT OVERVIEW: The total monthly rent is consistently calculated as $6,600 ($5,400 base + $1,200 additional). The calculated 4-day holdover liability is $1,100, which is below the $2,000 constraint.\nPOINTS OF NOTE: Disagreements: (1) Calculation Method: Side A [Advisor 1 calculates 4-day liability as $6,600 * 1.25 * 4 = $3,300.] vs. Side B [Advisors 2 & 3 calculate 4-day liability as $1,100 (based on a daily rate of $220).] (at stake: The correct methodology for calculating the 4-day holdover penalty.) Flagged issues: The calculation method used by Advisor 1 ($6,600 * 1.25 * 4) appears inconsistent with the methods used by Advisors 2 and 3.\nSUGGESTED NEXT STEP: Confirm the correct formula for calculating the 4-day holdover penalty: is it (Total Monthly Rent * 1.25 * 4) or (Daily Rate * 1.25 * 4)?",
+      "words": 135,
+      "meta": {
+        "prompt_tokens": 1322,
+        "output_tokens": 322,
+        "seconds": 12.21,
+        "repaired": false
+      }
+    }
+  },
+  "crux_survived": null,
+  "decisions": {
+    "raw": {
+      "output": {
+        "primary_reason": "The packet details the holdover provision but does not provide the specific daily rate calculation needed to determine if a 4-day overrun exceeds the $2,000 limit.",
+        "target_clause_or_metric": "Clause 19",
+        "action": "hold_to_verify",
+        "confidence": 100,
+        "brief_endorsement": null
+      },
+      "meta": {
+        "prompt_tokens": 567,
+        "output_tokens": 96,
+        "seconds": 4.06,
+        "repaired": false
+      },
+      "hold": true,
+      "verified_catch": null,
+      "untargeted_hold": null,
+      "false_alarm": true
+    },
+    "single": {
+      "output": {
+        "primary_reason": "The Pre-Decision Brief accurately calculates the 4-day holdover cost at $1,100, which is below the stated maximum liability of $2,000, thus satisfying the constraint.",
+        "target_clause_or_metric": "none",
+        "action": "proceed",
+        "confidence": 100,
+        "brief_endorsement": 5
+      },
+      "meta": {
+        "prompt_tokens": 836,
+        "output_tokens": 97,
+        "seconds": 3.31,
+        "repaired": false
+      },
+      "hold": false,
+      "verified_catch": null,
+      "untargeted_hold": null,
+      "false_alarm": false
+    },
+    "consensus": {
+      "output": {
+        "primary_reason": "The decision packet provides the clause (Clause 19) but does not calculate the 4-day penalty, leaving the material discrepancy highlighted in the brief unresolved. The brief itself points to a conflict in calculation methods ($1,100 vs $3,300), requiring clarification before proceeding.",
+        "target_clause_or_metric": "Clause 19",
+        "action": "hold_to_verify",
+        "confidence": 100,
+        "brief_endorsement": 5
+      },
+      "meta": {
+        "prompt_tokens": 867,
+        "output_tokens": 123,
+        "seconds": 6.35,
+        "repaired": false
+      },
+      "hold": true,
+      "verified_catch": null,
+      "untargeted_hold": null,
+      "false_alarm": true
+    },
+    "crux": {
+      "output": {
+        "primary_reason": "The Pre-Decision Brief highlights a material discrepancy regarding the calculation method for the 4-day holdover penalty, presenting two conflicting formulas ($3,300 vs $1,100). This unresolved calculation method directly threatens the stated constraint of not exceeding a $2,000 liability.",
+        "target_clause_or_metric": "Clause 19 (Holdover Provision) and the conflicting calculations presented in the PRE-DECISION BRIEF",
+        "action": "hold_to_verify",
+        "confidence": 100,
+        "brief_endorsement": 5
+      },
+      "meta": {
+        "prompt_tokens": 830,
+        "output_tokens": 140,
+        "seconds": 6.74,
+        "repaired": false
+      },
+      "hold": true,
+      "verified_catch": null,
+      "untargeted_hold": null,
+      "false_alarm": true
+    }
+  }
+}

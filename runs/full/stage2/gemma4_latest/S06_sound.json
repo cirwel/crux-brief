@@ -1,0 +1,49 @@
+{
+  "scenario_id": "S06",
+  "variant": "sound",
+  "domain": "job_offers",
+  "difficulty_tier": 1,
+  "synth_model": "gemma4:latest",
+  "k_spotted": null,
+  "advisor_caught_by_model": {
+    "gemma4:latest": null,
+    "nemotron3:33b": null,
+    "qwen3.6:27b-coding-mxfp8": null
+  },
+  "briefs": {
+    "consensus": {
+      "raw": {
+        "overview": "All three advisors reached a unanimous conclusion recommending proceeding with the offer, as the proposed relocation package appears to satisfy the primary financial constraint. The consensus centers on the total guaranteed net cash available exceeding the required minimum threshold of $14,000, thereby mitigating the user's primary concern regarding liquidity.",
+        "points_of_note": "The evidence consistently points to a total relocation package value of $24,000. Advisors 1, 2, and 3 all confirm that the key mechanism ensuring compliance is the company's provision of a full tax gross-up, which guarantees the employee receives the full $24,000 net after taxes. This figure is robustly cited across all reports and comfortably surpasses the $14,000 minimum requirement, with Advisor 3 further detailing the package structure ($10,000 reimbursement + $14,000 stipend).",
+        "suggested_next_step": "Given the unanimous assessment that the net after-tax relocation cash of $24,000 exceeds the $14,000 minimum threshold, the decision maker should feel confident in proceeding with the offer based on the current documentation."
+      },
+      "text": "ASSESSMENT OVERVIEW: All three advisors reached a unanimous conclusion recommending proceeding with the offer, as the proposed relocation package appears to satisfy the primary financial constraint. The consensus centers on the total guaranteed net cash available exceeding the required minimum threshold of $14,000, thereby mitigating the user's primary concern regarding liquidity.\nPOINTS OF NOTE: The evidence consistently points to a total relocation package value of $24,000. Advisors 1, 2, and 3 all confirm that the key mechanism ensuring compliance is the company's provision of a full tax gross-up, which guarantees the employee receives the full $24,000 net after taxes. This figure is robustly cited across all reports and comfortably surpasses the $14,000 minimum requirement, with Advisor 3 further detailing the package structure ($10,000 reimbursement + $14,000 stipend).\nSUGGESTED NEXT STEP: Given the unanimous assessment that the net after-tax relocation cash of $24,000 exceeds the $14,000 minimum threshold, the decision maker should feel confident in proceeding with the offer based on the current documentation.",
+      "words": 163,
+      "meta": {
+        "prompt_tokens": 1007,
+        "output_tokens": 261,
+        "seconds": 9.08,
+        "repaired": false
+      }
+    },
+    "crux": {
+      "raw": {
+        "shared_ground": [
+          "The total relocation package value is $24,000.",
+          "All advisors conclude the constraint is satisfied, recommending 'proceed'."
+        ],
+        "cruxes": [],
+        "unverified_premises": [],
+        "decisive_check": "None required; all advisors concur stated constraints are satisfied."
+      },
+      "text": "ASSESSMENT OVERVIEW: The total relocation package value is $24,000. All advisors conclude the constraint is satisfied, recommending 'proceed'.\nPOINTS OF NOTE: No concrete disagreements or constraint violations flagged across advisors.\nSUGGESTED NEXT STEP: None required; all advisors concur stated constraints are satisfied.",
+      "words": 42,
+      "meta": {
+        "prompt_tokens": 1155,
+        "output_tokens": 83,
+        "seconds": 4.28,
+        "repaired": false
+      }
+    }
+  }
+}

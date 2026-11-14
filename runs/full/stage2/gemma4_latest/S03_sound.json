@@ -1,0 +1,49 @@
+{
+  "scenario_id": "S03",
+  "variant": "sound",
+  "domain": "job_offers",
+  "difficulty_tier": 2,
+  "synth_model": "gemma4:latest",
+  "k_spotted": null,
+  "advisor_caught_by_model": {
+    "gemma4:latest": null,
+    "nemotron3:33b": null,
+    "qwen3.6:27b-coding-mxfp8": null
+  },
+  "briefs": {
+    "consensus": {
+      "raw": {
+        "overview": "There is strong consensus among the advisors that the proposed compensation structure meets the user's primary financial constraint. All three assessments conclude that the expected annual cash earnings, calculated using the historical median attainment rate, comfortably exceed the required minimum of $210,000. The overall alignment suggests that the compensation package is financially sound relative to the stated goal.",
+        "points_of_note": "The advisors consistently utilized the specific figures of a $160,000 base salary and an $80,000 variable component at 100% quota. Advisor 2 and Advisor 3 both calculated the expected variable earnings at the 96% historical median attainment to be $76,800, leading to a total expected cash earning of $236,800. Advisor 1 provided a slightly different calculation resulting in $230,400, but all figures confirm a substantial buffer above the $210,000 threshold. No advisor flagged any specific clause or data point that would reduce the historical attainment cash below the required minimum.",
+        "suggested_next_step": "Given the unanimous recommendation to proceed and the consistent confirmation that the expected cash earnings at historical attainment exceed the $210,000 minimum, the decision maker should feel confident in accepting the offer based on the financial parameters reviewed."
+      },
+      "text": "ASSESSMENT OVERVIEW: There is strong consensus among the advisors that the proposed compensation structure meets the user's primary financial constraint. All three assessments conclude that the expected annual cash earnings, calculated using the historical median attainment rate, comfortably exceed the required minimum of $210,000. The overall alignment suggests that the compensation package is financially sound relative to the stated goal.\nPOINTS OF NOTE: The advisors consistently utilized the specific figures of a $160,000 base salary and an $80,000 variable component at 100% quota. Advisor 2 and Advisor 3 both calculated the expected variable earnings at the 96% historical median attainment to be $76,800, leading to a total expected cash earning of $236,800. Advisor 1 provided a slightly different calculation resulting in $230,400, but all figures confirm a substantial buffer above the $210,000 threshold. No advisor flagged any specific clause or data point that would reduce the historical attainment cash below the required minimum.\nSUGGESTED NEXT STEP: Given the unanimous recommendation to proceed and the consistent confirmation that the expected cash earnings at historical attainment exceed the $210,000 minimum, the decision maker should feel confident in accepting the offer based on the financial parameters reviewed.",
+      "words": 194,
+      "meta": {
+        "prompt_tokens": 1099,
+        "output_tokens": 296,
+        "seconds": 10.84,
+        "repaired": false
+      }
+    },
+    "crux": {
+      "raw": {
+        "shared_ground": [
+          "The required minimum annual cash earnings at historical attainment is $210,000.",
+          "All advisors calculate the expected cash earnings at 96% historical attainment to be $236,800 (or similar figures exceeding the threshold)."
+        ],
+        "cruxes": [],
+        "unverified_premises": [],
+        "decisive_check": "None required; all advisors concur stated constraints are satisfied."
+      },
+      "text": "ASSESSMENT OVERVIEW: The required minimum annual cash earnings at historical attainment is $210,000. All advisors calculate the expected cash earnings at 96% historical attainment to be $236,800 (or similar figures exceeding the threshold).\nPOINTS OF NOTE: No concrete disagreements or constraint violations flagged across advisors.\nSUGGESTED NEXT STEP: None required; all advisors concur stated constraints are satisfied.",
+      "words": 57,
+      "meta": {
+        "prompt_tokens": 1247,
+        "output_tokens": 108,
+        "seconds": 5.89,
+        "repaired": false
+      }
+    }
+  }
+}

@@ -1,0 +1,29 @@
+{
+  "scenario_id": "S24",
+  "variant": "sound",
+  "domain": "operational_briefs",
+  "difficulty_tier": 1,
+  "model": "qwen3.6:27b-coding-mxfp8",
+  "seed": 2147,
+  "output": {
+    "summary": "The proposal claims $30,000/month in savings, totaling $360,000 annually. Costs include two nurses at $95,000 each ($190,000 total) plus a $15,000 referral bonus, resulting in total Year-1 costs of $205,000. Subtracting costs from savings yields a net Year-1 saving of $155,000. This figure exceeds the user's minimum constraint of $100,000. All stated constraints are satisfied.",
+    "key_claims": [
+      "Annual savings: $360,000",
+      "Total Year-1 costs: $205,000",
+      "Net Year-1 savings: $155,000"
+    ],
+    "recommendation": "proceed",
+    "risks_or_flaws": [
+      "none"
+    ],
+    "verification_question": "none",
+    "confidence": 100
+  },
+  "meta": {
+    "prompt_tokens": 539,
+    "output_tokens": 224,
+    "seconds": 40.68,
+    "repaired": false
+  },
+  "advisor_caught": null
+}

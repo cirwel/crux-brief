@@ -1,0 +1,29 @@
+{
+  "scenario_id": "S07",
+  "variant": "sound",
+  "domain": "leases",
+  "difficulty_tier": 1,
+  "model": "gemma4:latest",
+  "seed": 113,
+  "output": {
+    "summary": "The total unavoidable monthly housing cost is calculated by summing the Base Rent ($2,325) and all mandatory monthly fees. The mandatory fees identified are the Fiber Internet & Building Access fee ($75) and Valet Trash ($30). The sum of these mandatory costs is $2,430. This total remains below the stated maximum constraint of $2,550/month, satisfying the user's primary condition.",
+    "key_claims": [
+      "Base Rent: $2,325/month",
+      "Mandatory Fees (Internet + Trash): $105/month",
+      "Total Unavoidable Monthly Cost: $2,430/month"
+    ],
+    "recommendation": "proceed",
+    "risks_or_flaws": [
+      "none"
+    ],
+    "verification_question": "none",
+    "confidence": 100
+  },
+  "meta": {
+    "prompt_tokens": 563,
+    "output_tokens": 211,
+    "seconds": 7.87,
+    "repaired": false
+  },
+  "advisor_caught": null
+}

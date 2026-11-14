@@ -1,0 +1,29 @@
+{
+  "scenario_id": "S19",
+  "variant": "flawed",
+  "domain": "operational_briefs",
+  "difficulty_tier": 3,
+  "model": "nemotron3:33b",
+  "seed": 1136,
+  "output": {
+    "summary": "The packet states 96.0% sensitivity and 92.0% specificity, implying a 96% true positive rate and 8% false positive rate. With a live fraud base rate of 1.0% (100 fraudulent, 9,900 legitimate per 10,000 accounts), the actual fraud detection rate among suspended accounts is 100 / (100 + 792) = 11.2%, far below the required 40% threshold. The policy routes all flagged accounts to suspension, so the 40% fraud requirement must be met by the detection rate, which is only 11.2%.",
+    "key_claims": [
+      "96.0% sensitivity and 92.0% specificity imply 11.2% fraud rate among suspended accounts",
+      "Live production fraud base rate is 1.0% (100 fraudulent, 9,900 legitimate per 10,000 accounts)",
+      "Required fraud rate for auto-suspension is at least 40%"
+    ],
+    "recommendation": "hold_to_verify",
+    "risks_or_flaws": [
+      "Actual fraud rate among suspended accounts (11.2%) is below the required 40% threshold"
+    ],
+    "verification_question": "What is the actual fraud rate among suspended accounts based on the 96.0% sensitivity and 92.0% specificity with a 1.0% fraud base rate?",
+    "confidence": 100
+  },
+  "meta": {
+    "prompt_tokens": 634,
+    "output_tokens": 354,
+    "seconds": 11.1,
+    "repaired": false
+  },
+  "advisor_caught": true
+}

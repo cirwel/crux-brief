@@ -1,0 +1,29 @@
+{
+  "scenario_id": "S01",
+  "variant": "sound",
+  "domain": "job_offers",
+  "difficulty_tier": 1,
+  "model": "qwen3.6:27b-coding-mxfp8",
+  "seed": 2101,
+  "output": {
+    "summary": "The user requires Year-1 realized gross compensation of at least $260,000. The packet lists a base salary of $205,000 and a guaranteed signing bonus of $10,000. The equity grant is $400,000 total, with 25% vesting at the 12-month cliff. Calculating the Year-1 equity value: 25% of $400,000 equals $100,000. Summing these components: $205,000 (base) + $10,000 (signing) + $100,000 (equity) equals $315,000. This total exceeds the $260,000 threshold. The discretionary bonus is excluded as it is not guaranteed. All stated constraints are satisfied.",
+    "key_claims": [
+      "Base Salary: $205,000",
+      "Guaranteed Signing Bonus: $10,000",
+      "Year-1 Equity Vesting (25% of $400k): $100,000"
+    ],
+    "recommendation": "proceed",
+    "risks_or_flaws": [
+      "none"
+    ],
+    "verification_question": "none",
+    "confidence": 100
+  },
+  "meta": {
+    "prompt_tokens": 621,
+    "output_tokens": 320,
+    "seconds": 37.65,
+    "repaired": false
+  },
+  "advisor_caught": null
+}

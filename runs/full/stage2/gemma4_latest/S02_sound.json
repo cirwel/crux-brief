@@ -1,0 +1,49 @@
+{
+  "scenario_id": "S02",
+  "variant": "sound",
+  "domain": "job_offers",
+  "difficulty_tier": 1,
+  "synth_model": "gemma4:latest",
+  "k_spotted": null,
+  "advisor_caught_by_model": {
+    "gemma4:latest": null,
+    "nemotron3:33b": null,
+    "qwen3.6:27b-coding-mxfp8": null
+  },
+  "briefs": {
+    "consensus": {
+      "raw": {
+        "overview": "The advisors present a strong consensus that the proposed agreement structure successfully meets the user's primary constraint regarding the sign-on bonus repayment obligation. All three assessments conclude that because the repayment clause expires after twelve months, a planned departure at Month 18 will not result in any out-of-pocket cash clawback for the user.",
+        "points_of_note": "The evidence consistently points to Clause 6b, which stipulates that the repayment obligation amortizes monthly and reaches zero after Month 12. Advisor 2 provided specific figures, noting the $40,000 gross bonus results in a $24,800 net repayment total over 12 months. This specific detail, combined with the explicit confirmation from all advisors that the obligation ceases after the 12-month mark, confirms the constraint satisfaction without flagging any material issues.",
+        "suggested_next_step": "Given the unanimous recommendation and the consistent confirmation across all reports that the repayment clause expires by Month 12, the decision maker should feel confident in proceeding with the agreement."
+      },
+      "text": "ASSESSMENT OVERVIEW: The advisors present a strong consensus that the proposed agreement structure successfully meets the user's primary constraint regarding the sign-on bonus repayment obligation. All three assessments conclude that because the repayment clause expires after twelve months, a planned departure at Month 18 will not result in any out-of-pocket cash clawback for the user.\nPOINTS OF NOTE: The evidence consistently points to Clause 6b, which stipulates that the repayment obligation amortizes monthly and reaches zero after Month 12. Advisor 2 provided specific figures, noting the $40,000 gross bonus results in a $24,800 net repayment total over 12 months. This specific detail, combined with the explicit confirmation from all advisors that the obligation ceases after the 12-month mark, confirms the constraint satisfaction without flagging any material issues.\nSUGGESTED NEXT STEP: Given the unanimous recommendation and the consistent confirmation across all reports that the repayment clause expires by Month 12, the decision maker should feel confident in proceeding with the agreement.",
+      "words": 160,
+      "meta": {
+        "prompt_tokens": 1000,
+        "output_tokens": 232,
+        "seconds": 8.1,
+        "repaired": false
+      }
+    },
+    "crux": {
+      "raw": {
+        "shared_ground": [
+          "The sign-on bonus is $40,000 gross.",
+          "All three advisors recommend proceeding because the repayment obligation expires after Month 12."
+        ],
+        "cruxes": [],
+        "unverified_premises": [],
+        "decisive_check": "None required; all advisors concur stated constraints are satisfied."
+      },
+      "text": "ASSESSMENT OVERVIEW: The sign-on bonus is $40,000 gross. All three advisors recommend proceeding because the repayment obligation expires after Month 12.\nPOINTS OF NOTE: No concrete disagreements or constraint violations flagged across advisors.\nSUGGESTED NEXT STEP: None required; all advisors concur stated constraints are satisfied.",
+      "words": 45,
+      "meta": {
+        "prompt_tokens": 1148,
+        "output_tokens": 88,
+        "seconds": 3.98,
+        "repaired": false
+      }
+    }
+  }
+}

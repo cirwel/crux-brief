@@ -1,0 +1,58 @@
+{
+  "scenario_id": "S18",
+  "variant": "flawed",
+  "domain": "procurement_handoffs",
+  "difficulty_tier": 3,
+  "synth_model": "nemotron3:33b",
+  "k_spotted": 3,
+  "advisor_caught_by_model": {
+    "gemma4:latest": true,
+    "nemotron3:33b": true,
+    "qwen3.6:27b-coding-mxfp8": true
+  },
+  "briefs": {
+    "consensus": {
+      "raw": {
+        "overview": "All three advisors concur that the supplier's rebate structure fails to guarantee the required $15,000 savings across the entire 950-1,050 unit demand band, as volumes below 1,000 units (950-999) yield $0 rebate despite the constraint demanding minimum savings at all volumes within the specified range.",
+        "points_of_note": "The critical issue centers on the $0 rebate for volumes 950-999 units, which directly violates the constraint requiring >= $15,000 savings at any volume in the 950-1,050 band; Advisor 1 notes the cliff structure with $20/unit retroactive credit only applying at 1,000+ units, Advisor 2 emphasizes the 999-unit threshold violation, and Advisor 3 confirms Schedule C's explicit $0 rebate for 999 units or fewer while noting the maximum $21,000 rebate at 1,050 units does not resolve the minimum guarantee failure.",
+        "suggested_next_step": "Verify with the supplier whether the 1,000-unit threshold applies to all units or only incremental units above 1,000 to determine if a revised rebate structure can guarantee the $15,000 minimum across the full 950-1,050 unit band."
+      },
+      "text": "ASSESSMENT OVERVIEW: All three advisors concur that the supplier's rebate structure fails to guarantee the required $15,000 savings across the entire 950-1,050 unit demand band, as volumes below 1,000 units (950-999) yield $0 rebate despite the constraint demanding minimum savings at all volumes within the specified range.\nPOINTS OF NOTE: The critical issue centers on the $0 rebate for volumes 950-999 units, which directly violates the constraint requiring >= $15,000 savings at any volume in the 950-1,050 band; Advisor 1 notes the cliff structure with $20/unit retroactive credit only applying at 1,000+ units, Advisor 2 emphasizes the 999-unit threshold violation, and Advisor 3 confirms Schedule C's explicit $0 rebate for 999 units or fewer while noting the maximum $21,000 rebate at 1,050 units does not resolve the minimum guarantee failure.\nSUGGESTED NEXT STEP: Verify with the supplier whether the 1,000-unit threshold applies to all units or only incremental units above 1,000 to determine if a revised rebate structure can guarantee the $15,000 minimum across the full 950-1,050 unit band.",
+      "words": 169,
+      "meta": {
+        "prompt_tokens": 1491,
+        "output_tokens": 317,
+        "seconds": 8.78,
+        "repaired": false
+      }
+    },
+    "crux": {
+      "raw": {
+        "shared_ground": [
+          "Rebate is $0 for volumes 950-999 units",
+          "Rebate requires 1,000+ units to trigger any savings"
+        ],
+        "cruxes": [
+          {
+            "topic": "Rebate structure applicability",
+            "side_a": "Rebate applies only to volumes >= 1,000 units (Advisor 1, 2, 3)",
+            "side_b": "Rebate may apply to all units in band (Advisor 3's check on Schedule C)",
+            "premise_at_stake": "Whether the 1,000-unit threshold applies to all units or only incremental units above 1,000"
+          }
+        ],
+        "unverified_premises": [
+          "Confirmation of Schedule C's rebate structure definition (threshold applicability)"
+        ],
+        "decisive_check": "Verify Schedule C's exact wording on whether the 1,000-unit threshold applies universally or only to units exceeding 1,000"
+      },
+      "text": "ASSESSMENT OVERVIEW: Rebate is $0 for volumes 950-999 units Rebate requires 1,000+ units to trigger any savings\nPOINTS OF NOTE: Disagreements: (1) Rebate structure applicability: Side A [Rebate applies only to volumes >= 1,000 units (Advisor 1, 2, 3)] vs. Side B [Rebate may apply to all units in band (Advisor 3's check on Schedule C)] (at stake: Whether the 1,000-unit threshold applies to all units or only incremental units above 1,000) Flagged issues: Confirmation of Schedule C's rebate structure definition (threshold applicability)\nSUGGESTED NEXT STEP: Verify Schedule C's exact wording on whether the 1,000-unit threshold applies universally or only to units exceeding 1,000",
+      "words": 104,
+      "meta": {
+        "prompt_tokens": 1660,
+        "output_tokens": 231,
+        "seconds": 6.87,
+        "repaired": false
+      }
+    }
+  }
+}

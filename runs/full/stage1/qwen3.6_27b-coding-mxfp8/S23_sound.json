@@ -1,0 +1,29 @@
+{
+  "scenario_id": "S23",
+  "variant": "sound",
+  "domain": "operational_briefs",
+  "difficulty_tier": 3,
+  "model": "qwen3.6:27b-coding-mxfp8",
+  "seed": 2145,
+  "output": {
+    "summary": "The decision packet confirms the experiment ran for the full pre-registered 14-day window with no early stopping, satisfying the temporal validity constraint. The sample sizes are balanced (10,000 vs 10,032), and telemetry confirms no data loss or technical bias. The reported ARPU lift is positive ($4.48 vs $4.10) and statistically significant (p=0.004 < 0.05). All explicit constraints regarding statistical validity and positive lift are met based on the provided facts.",
+    "key_claims": [
+      "ARPU lift is +9.3% ($4.10 to $4.48) with p=0.004",
+      "Experiment ran full 14 days with no early stopping",
+      "Sample sizes are 10,000 (Control) and 10,032 (Variant)"
+    ],
+    "recommendation": "proceed",
+    "risks_or_flaws": [
+      "none"
+    ],
+    "verification_question": "none",
+    "confidence": 100
+  },
+  "meta": {
+    "prompt_tokens": 558,
+    "output_tokens": 255,
+    "seconds": 45.63,
+    "repaired": false
+  },
+  "advisor_caught": null
+}

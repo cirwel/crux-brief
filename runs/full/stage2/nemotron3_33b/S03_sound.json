@@ -1,0 +1,49 @@
+{
+  "scenario_id": "S03",
+  "variant": "sound",
+  "domain": "job_offers",
+  "difficulty_tier": 2,
+  "synth_model": "nemotron3:33b",
+  "k_spotted": null,
+  "advisor_caught_by_model": {
+    "gemma4:latest": null,
+    "nemotron3:33b": null,
+    "qwen3.6:27b-coding-mxfp8": null
+  },
+  "briefs": {
+    "consensus": {
+      "raw": {
+        "overview": "All three advisors unanimously recommend proceeding, as each confirms the expected annual cash earnings at historical team attainment exceed the $210,000 threshold. They consistently calculate earnings based on a $160,000 base and $80,000 variable commission, with historical median attainment at 96%, yielding $236,800. Even at lower attainment levels like 88%, earnings remain above $210,000, satisfying the manager's constraint without any identified clause or data point reducing cash below the required minimum.",
+        "points_of_note": "The advisors converge on the $160,000 base plus $80,000 variable structure, with historical median attainment of 96% producing $236,800 in cash earnings\u2014well above the $210,000 requirement. Advisor 1 specifically validates that even at 88% attainment (the lower bound of the rep range), earnings would be $211,200, confirming no constraint breach. All assessments explicitly state no clauses or thresholds reduce historical attainment cash below $210,000, with no flagged points or suggested checks needed.",
+        "suggested_next_step": "Proceed with acceptance, as all advisors confirm the quota payout rules maintain historical-attainment cash earnings above $210,000 with no constraint violations identified."
+      },
+      "text": "ASSESSMENT OVERVIEW: All three advisors unanimously recommend proceeding, as each confirms the expected annual cash earnings at historical team attainment exceed the $210,000 threshold. They consistently calculate earnings based on a $160,000 base and $80,000 variable commission, with historical median attainment at 96%, yielding $236,800. Even at lower attainment levels like 88%, earnings remain above $210,000, satisfying the manager's constraint without any identified clause or data point reducing cash below the required minimum.\nPOINTS OF NOTE: The advisors converge on the $160,000 base plus $80,000 variable structure, with historical median attainment of 96% producing $236,800 in cash earnings\u2014well above the $210,000 requirement. Advisor 1 specifically validates that even at 88% attainment (the lower bound of the rep range), earnings would be $211,200, confirming no constraint breach. All assessments explicitly state no clauses or thresholds reduce historical attainment cash below $210,000, with no flagged points or suggested checks needed.\nSUGGESTED NEXT STEP: Proceed with acceptance, as all advisors confirm the quota payout rules maintain historical-attainment cash earnings above $210,000 with no constraint violations identified.",
+      "words": 173,
+      "meta": {
+        "prompt_tokens": 1214,
+        "output_tokens": 310,
+        "seconds": 9.69,
+        "repaired": false
+      }
+    },
+    "crux": {
+      "raw": {
+        "shared_ground": [
+          "Historical median attainment is 96%",
+          "Base salary is $160,000"
+        ],
+        "cruxes": [],
+        "unverified_premises": [],
+        "decisive_check": "None required; all advisors concur stated constraints are satisfied."
+      },
+      "text": "ASSESSMENT OVERVIEW: Historical median attainment is 96% Base salary is $160,000\nPOINTS OF NOTE: No concrete disagreements or constraint violations flagged across advisors.\nSUGGESTED NEXT STEP: None required; all advisors concur stated constraints are satisfied.",
+      "words": 35,
+      "meta": {
+        "prompt_tokens": 1383,
+        "output_tokens": 73,
+        "seconds": 6.58,
+        "repaired": false
+      }
+    }
+  }
+}

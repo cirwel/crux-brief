@@ -1,0 +1,49 @@
+{
+  "scenario_id": "S14",
+  "variant": "sound",
+  "domain": "procurement_handoffs",
+  "difficulty_tier": 3,
+  "synth_model": "nemotron3:33b",
+  "k_spotted": null,
+  "advisor_caught_by_model": {
+    "gemma4:latest": null,
+    "nemotron3:33b": null,
+    "qwen3.6:27b-coding-mxfp8": null
+  },
+  "briefs": {
+    "consensus": {
+      "raw": {
+        "overview": "All three advisors unanimously recommend proceeding with the wire payout, confirming that the calculated total of $21,000.00 USD exactly matches the Purchase Order ceiling without exceeding it, and that the receiving clerk's verification of quantity and unit figures aligns with the PO terms.",
+        "points_of_note": "The advisors consistently cite the exact calculation (500 units \u00d7 $42.00) yielding $21,000.00 USD, which precisely meets the $21,000.00 ceiling constraint with no evidence of deductions, currency conversion, or hidden costs, and all note zero flagged issues or constraint violations.",
+        "suggested_next_step": "Approve the wire payout immediately as the total USD debit of $21,000.00 exactly meets the Purchase Order ceiling without exceeding it."
+      },
+      "text": "ASSESSMENT OVERVIEW: All three advisors unanimously recommend proceeding with the wire payout, confirming that the calculated total of $21,000.00 USD exactly matches the Purchase Order ceiling without exceeding it, and that the receiving clerk's verification of quantity and unit figures aligns with the PO terms.\nPOINTS OF NOTE: The advisors consistently cite the exact calculation (500 units \u00d7 $42.00) yielding $21,000.00 USD, which precisely meets the $21,000.00 ceiling constraint with no evidence of deductions, currency conversion, or hidden costs, and all note zero flagged issues or constraint violations.\nSUGGESTED NEXT STEP: Approve the wire payout immediately as the total USD debit of $21,000.00 exactly meets the Purchase Order ceiling without exceeding it.",
+      "words": 112,
+      "meta": {
+        "prompt_tokens": 1117,
+        "output_tokens": 189,
+        "seconds": 6.0,
+        "repaired": false
+      }
+    },
+    "crux": {
+      "raw": {
+        "shared_ground": [
+          "Total calculated cost is $21,000.00 USD (500 units * $42.00)",
+          "PO ceiling is $21,000.00 USD"
+        ],
+        "cruxes": [],
+        "unverified_premises": [],
+        "decisive_check": "None required; all advisors concur stated constraints are satisfied."
+      },
+      "text": "ASSESSMENT OVERVIEW: Total calculated cost is $21,000.00 USD (500 units * $42.00) PO ceiling is $21,000.00 USD\nPOINTS OF NOTE: No concrete disagreements or constraint violations flagged across advisors.\nSUGGESTED NEXT STEP: None required; all advisors concur stated constraints are satisfied.",
+      "words": 41,
+      "meta": {
+        "prompt_tokens": 1286,
+        "output_tokens": 96,
+        "seconds": 3.73,
+        "repaired": false
+      }
+    }
+  }
+}

@@ -1,0 +1,59 @@
+{
+  "scenario_id": "S17",
+  "variant": "flawed",
+  "domain": "procurement_handoffs",
+  "difficulty_tier": 1,
+  "synth_model": "gemma4:latest",
+  "k_spotted": 3,
+  "advisor_caught_by_model": {
+    "gemma4:latest": true,
+    "nemotron3:33b": true,
+    "qwen3.6:27b-coding-mxfp8": true
+  },
+  "briefs": {
+    "consensus": {
+      "raw": {
+        "overview": "The advisors show strong consensus regarding the calculation of the total all-in Purchase Order cost for 100 engineering workstations. All three assessments arrive at a total cost of $128,300. This figure significantly exceeds the user's stated constraint of $118,000, indicating a clear violation of the established budget ceiling across all analyses.",
+        "points_of_note": "The evidence is highly consistent: the calculation involves $115,000 for hardware, $9,500 for mandatory support, and a $3,800 shipping fee, yielding a total of $128,300. This calculated total is consistently flagged as exceeding the $118,000 limit by $10,300. No advisor identified any material issues with the calculation methodology itself, only the resulting figure's relationship to the budget.",
+        "suggested_next_step": "Given the unanimous finding that the current quote exceeds the budget, the decision maker must pause approval and request the sales representative provide a revised quote or alternative configuration that demonstrably brings the total all-in cost at or below the $118,000 threshold."
+      },
+      "text": "ASSESSMENT OVERVIEW: The advisors show strong consensus regarding the calculation of the total all-in Purchase Order cost for 100 engineering workstations. All three assessments arrive at a total cost of $128,300. This figure significantly exceeds the user's stated constraint of $118,000, indicating a clear violation of the established budget ceiling across all analyses.\nPOINTS OF NOTE: The evidence is highly consistent: the calculation involves $115,000 for hardware, $9,500 for mandatory support, and a $3,800 shipping fee, yielding a total of $128,300. This calculated total is consistently flagged as exceeding the $118,000 limit by $10,300. No advisor identified any material issues with the calculation methodology itself, only the resulting figure's relationship to the budget.\nSUGGESTED NEXT STEP: Given the unanimous finding that the current quote exceeds the budget, the decision maker must pause approval and request the sales representative provide a revised quote or alternative configuration that demonstrably brings the total all-in cost at or below the $118,000 threshold.",
+      "words": 158,
+      "meta": {
+        "prompt_tokens": 1288,
+        "output_tokens": 265,
+        "seconds": 10.34,
+        "repaired": false
+      }
+    },
+    "crux": {
+      "raw": {
+        "shared_ground": [
+          "The calculated all-in PO total for 100 workstations is $128,300.",
+          "The explicit budget constraint requires the total cost to be less than or equal to $118,000."
+        ],
+        "cruxes": [
+          {
+            "topic": "Budget Violation",
+            "side_a": "Calculated total cost is $128,300",
+            "side_b": "Maximum allowed budget is $118,000",
+            "premise_at_stake": "Whether the calculated cost violates the stated financial constraint."
+          }
+        ],
+        "unverified_premises": [
+          "The advisors uniformly flag that the calculated total of $128,300 exceeds the $118,000 budget.",
+          "All advisors suggest seeking a discount or alternative configuration to meet the budget."
+        ],
+        "decisive_check": "Confirmation from the sales rep regarding cost reduction options to bring the total below $118,000."
+      },
+      "text": "ASSESSMENT OVERVIEW: The calculated all-in PO total for 100 workstations is $128,300. The explicit budget constraint requires the total cost to be less than or equal to $118,000.\nPOINTS OF NOTE: Disagreements: (1) Budget Violation: Side A [Calculated total cost is $128,300] vs. Side B [Maximum allowed budget is $118,000] (at stake: Whether the calculated cost violates the stated financial constraint.) Flagged issues: The advisors uniformly flag that the calculated total of $128,300 exceeds the $118,000 budget.; All advisors suggest seeking a discount or alternative configuration to meet the budget.\nSUGGESTED NEXT STEP: Confirmation from the sales rep regarding cost reduction options to bring the total below $118,000.",
+      "words": 108,
+      "meta": {
+        "prompt_tokens": 1436,
+        "output_tokens": 250,
+        "seconds": 9.93,
+        "repaired": false
+      }
+    }
+  }
+}

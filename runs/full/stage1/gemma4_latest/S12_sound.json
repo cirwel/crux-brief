@@ -1,0 +1,29 @@
+{
+  "scenario_id": "S12",
+  "variant": "sound",
+  "domain": "leases",
+  "difficulty_tier": 1,
+  "model": "gemma4:latest",
+  "seed": 123,
+  "output": {
+    "summary": "The packet confirms the rent is $2,550/month, which is below the $2,700 maximum constraint. Furthermore, the telecommunications rider explicitly states the unit includes a symmetric 1,000 Mbps dedicated fiber drop, which significantly exceeds the required minimum of 200 Mbps for the specified remote work needs. All stated constraints appear to be met by the provided facts.",
+    "key_claims": [
+      "Rent is $2,550/month, which is less than the $2,700 maximum.",
+      "The unit includes a symmetric 1,000 Mbps dedicated fiber drop.",
+      "The required minimum symmetrical speed of 200 Mbps is exceeded."
+    ],
+    "recommendation": "proceed",
+    "risks_or_flaws": [
+      "none"
+    ],
+    "verification_question": "none",
+    "confidence": 100
+  },
+  "meta": {
+    "prompt_tokens": 537,
+    "output_tokens": 215,
+    "seconds": 7.82,
+    "repaired": false
+  },
+  "advisor_caught": null
+}

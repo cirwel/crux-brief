@@ -1,0 +1,147 @@
+{
+  "scenario_id": "S18",
+  "variant": "flawed",
+  "domain": "procurement_handoffs",
+  "difficulty_tier": 3,
+  "eval_model": "gemma4:latest",
+  "synth_model": "nemotron3:33b",
+  "single_advisor_model": "qwen3.6:27b-coding-mxfp8",
+  "k_spotted": 3,
+  "advisor_caught_by_model": {
+    "gemma4:latest": true,
+    "nemotron3:33b": true,
+    "qwen3.6:27b-coding-mxfp8": true
+  },
+  "briefs": {
+    "single": {
+      "text": "ASSESSMENT OVERVIEW: The user requires a guaranteed rebate savings of at least $15,000 across the entire 950-to-1,050 unit demand band. The supplier's rebate structure is a cliff: $0 rebate for volumes under 1,000 units, and a $20/unit retroactive credit for volumes of 1,000 or more. If Q4 demand falls between 950 and 999 units (which is within the specified band), the rebate is $0. This $0 outcome violates the constraint that savings must be >= $15,000 even if demand lands anywhere in the band. Therefore, the guarantee is not met. Key facts: Rebate is $0 for volumes 950-999 units; Rebate is $20,000 for volumes >= 1,000 units; User requires >= $15,000 savings for ANY volume in 950-1,050 range.\nPOINTS OF NOTE: Rebate fails to meet the >= $15,000 guarantee if Q4 volume is between 950 and 999 units, resulting in $0 savings instead of the required minimum..\nSUGGESTED NEXT STEP: Does the supplier offer a tiered or linear rebate structure that ensures at least $15,000 in savings for volumes below 1,000 units?",
+      "words": 172
+    },
+    "consensus": {
+      "raw": {
+        "overview": "All three advisors concur that the supplier's rebate structure fails to guarantee the required $15,000 savings across the entire 950-1,050 unit demand band, as volumes below 1,000 units (950-999) yield $0 rebate despite the constraint demanding minimum savings at all volumes within the specified range.",
+        "points_of_note": "The critical issue centers on the $0 rebate for volumes 950-999 units, which directly violates the constraint requiring >= $15,000 savings at any volume in the 950-1,050 band; Advisor 1 notes the cliff structure with $20/unit retroactive credit only applying at 1,000+ units, Advisor 2 emphasizes the 999-unit threshold violation, and Advisor 3 confirms Schedule C's explicit $0 rebate for 999 units or fewer while noting the maximum $21,000 rebate at 1,050 units does not resolve the minimum guarantee failure.",
+        "suggested_next_step": "Verify with the supplier whether the 1,000-unit threshold applies to all units or only incremental units above 1,000 to determine if a revised rebate structure can guarantee the $15,000 minimum across the full 950-1,050 unit band."
+      },
+      "text": "ASSESSMENT OVERVIEW: All three advisors concur that the supplier's rebate structure fails to guarantee the required $15,000 savings across the entire 950-1,050 unit demand band, as volumes below 1,000 units (950-999) yield $0 rebate despite the constraint demanding minimum savings at all volumes within the specified range.\nPOINTS OF NOTE: The critical issue centers on the $0 rebate for volumes 950-999 units, which directly violates the constraint requiring >= $15,000 savings at any volume in the 950-1,050 band; Advisor 1 notes the cliff structure with $20/unit retroactive credit only applying at 1,000+ units, Advisor 2 emphasizes the 999-unit threshold violation, and Advisor 3 confirms Schedule C's explicit $0 rebate for 999 units or fewer while noting the maximum $21,000 rebate at 1,050 units does not resolve the minimum guarantee failure.\nSUGGESTED NEXT STEP: Verify with the supplier whether the 1,000-unit threshold applies to all units or only incremental units above 1,000 to determine if a revised rebate structure can guarantee the $15,000 minimum across the full 950-1,050 unit band.",
+      "words": 169,
+      "meta": {
+        "prompt_tokens": 1491,
+        "output_tokens": 317,
+        "seconds": 8.78,
+        "repaired": false
+      }
+    },
+    "crux": {
+      "raw": {
+        "shared_ground": [
+          "Rebate is $0 for volumes 950-999 units",
+          "Rebate requires 1,000+ units to trigger any savings"
+        ],
+        "cruxes": [
+          {
+            "topic": "Rebate structure applicability",
+            "side_a": "Rebate applies only to volumes >= 1,000 units (Advisor 1, 2, 3)",
+            "side_b": "Rebate may apply to all units in band (Advisor 3's check on Schedule C)",
+            "premise_at_stake": "Whether the 1,000-unit threshold applies to all units or only incremental units above 1,000"
+          }
+        ],
+        "unverified_premises": [
+          "Confirmation of Schedule C's rebate structure definition (threshold applicability)"
+        ],
+        "decisive_check": "Verify Schedule C's exact wording on whether the 1,000-unit threshold applies universally or only to units exceeding 1,000"
+      },
+      "text": "ASSESSMENT OVERVIEW: Rebate is $0 for volumes 950-999 units Rebate requires 1,000+ units to trigger any savings\nPOINTS OF NOTE: Disagreements: (1) Rebate structure applicability: Side A [Rebate applies only to volumes >= 1,000 units (Advisor 1, 2, 3)] vs. Side B [Rebate may apply to all units in band (Advisor 3's check on Schedule C)] (at stake: Whether the 1,000-unit threshold applies to all units or only incremental units above 1,000) Flagged issues: Confirmation of Schedule C's rebate structure definition (threshold applicability)\nSUGGESTED NEXT STEP: Verify Schedule C's exact wording on whether the 1,000-unit threshold applies universally or only to units exceeding 1,000",
+      "words": 104,
+      "meta": {
+        "prompt_tokens": 1660,
+        "output_tokens": 231,
+        "seconds": 6.87,
+        "repaired": false
+      }
+    }
+  },
+  "crux_survived": {
+    "single": true,
+    "consensus": true,
+    "crux": true
+  },
+  "decisions": {
+    "raw": {
+      "output": {
+        "primary_reason": "The rebate structure explicitly states that if Q4 volume is 999 units or fewer, zero rebate is earned, which violates the constraint requiring at least $15,000 savings within the 950-1,050 band.",
+        "target_clause_or_metric": "Schedule C states explicitly that if Q4 volume finishes at 999 units or fewer, zero rebate ($0) is earned.",
+        "action": "hold_to_verify",
+        "confidence": 100,
+        "brief_endorsement": null
+      },
+      "meta": {
+        "prompt_tokens": 598,
+        "output_tokens": 135,
+        "seconds": 5.52,
+        "repaired": false
+      },
+      "hold": true,
+      "verified_catch": true,
+      "untargeted_hold": false,
+      "false_alarm": null
+    },
+    "single": {
+      "output": {
+        "primary_reason": "The rebate structure creates a cliff effect, resulting in $0 savings if Q4 volume is between 950 and 999 units, which violates the constraint requiring at least $15,000 savings across the entire 950-1,050 band.",
+        "target_clause_or_metric": "Schedule C states explicitly that if Q4 volume finishes at 999 units or fewer, zero rebate ($0) is earned.",
+        "action": "hold_to_verify",
+        "confidence": 100,
+        "brief_endorsement": 5
+      },
+      "meta": {
+        "prompt_tokens": 905,
+        "output_tokens": 143,
+        "seconds": 6.09,
+        "repaired": false
+      },
+      "hold": true,
+      "verified_catch": true,
+      "untargeted_hold": false,
+      "false_alarm": null
+    },
+    "consensus": {
+      "output": {
+        "primary_reason": "The rebate structure fails to meet the constraint because volumes between 950 and 999 units result in a $0 rebate, which is significantly less than the required minimum of $15,000.",
+        "target_clause_or_metric": "Schedule C states explicitly that if Q4 volume finishes at 999 units or fewer, zero rebate ($0) is earned.",
+        "action": "hold_to_verify",
+        "confidence": 100,
+        "brief_endorsement": 5
+      },
+      "meta": {
+        "prompt_tokens": 898,
+        "output_tokens": 128,
+        "seconds": 5.17,
+        "repaired": false
+      },
+      "hold": true,
+      "verified_catch": true,
+      "untargeted_hold": false,
+      "false_alarm": null
+    },
+    "crux": {
+      "output": {
+        "primary_reason": "The constraint requires guaranteed >= $15,000 savings across the entire 950-1,050 band, but the packet shows the rebate is $0 if volume is 999 or less, failing the guarantee for the lower end of the band.",
+        "target_clause_or_metric": "Schedule C states explicitly that if Q4 volume finishes at 999 units or fewer, zero rebate ($0) is earned.",
+        "action": "hold_to_verify",
+        "confidence": 100,
+        "brief_endorsement": 5
+      },
+      "meta": {
+        "prompt_tokens": 789,
+        "output_tokens": 141,
+        "seconds": 4.81,
+        "repaired": false
+      },
+      "hold": true,
+      "verified_catch": true,
+      "untargeted_hold": false,
+      "false_alarm": null
+    }
+  }
+}

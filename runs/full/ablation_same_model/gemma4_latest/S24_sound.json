@@ -1,0 +1,143 @@
+{
+  "scenario_id": "S24",
+  "variant": "sound",
+  "domain": "operational_briefs",
+  "difficulty_tier": 1,
+  "eval_model": "gemma4:latest",
+  "synth_model": "gemma4:latest",
+  "single_advisor_model": "qwen3.6:27b-coding-mxfp8",
+  "k_spotted": null,
+  "advisor_caught_by_model": {
+    "gemma4:latest": null,
+    "nemotron3:33b": null,
+    "qwen3.6:27b-coding-mxfp8": null
+  },
+  "briefs": {
+    "single": {
+      "text": "ASSESSMENT OVERVIEW: The proposal claims $30,000/month in savings, totaling $360,000 annually. Costs include two nurses at $95,000 each ($190,000 total) plus a $15,000 referral bonus, resulting in total Year-1 costs of $205,000. Subtracting costs from savings yields a net Year-1 saving of $155,000. This figure exceeds the user's minimum constraint of $100,000. All stated constraints are satisfied. Key facts: Annual savings: $360,000; Total Year-1 costs: $205,000; Net Year-1 savings: $155,000.\nPOINTS OF NOTE: No concrete constraint violations flagged.\nSUGGESTED NEXT STEP: None required; stated constraints appear satisfied.",
+      "words": 87
+    },
+    "consensus": {
+      "raw": {
+        "overview": "The consensus among all advisors is a strong recommendation to proceed with the hospital float-pool hiring plan. All three assessments confirm that the proposal successfully meets the critical financial constraint: achieving Year-1 net budget savings of at least $100,000. The overall alignment is positive, suggesting the plan is financially sound based on the provided data.",
+        "points_of_note": "All advisors independently confirm the core financial components: annual savings derived from eliminating external costs are consistently cited around $360,000. Regarding costs, there is minor variation in the final calculation, with advisors citing total Year-1 costs between $190,000 and $205,000. Despite these minor arithmetic differences in the final net savings figure ($155,000 to $250,000), every calculation confirms a net saving significantly above the required $100,000 threshold.",
+        "suggested_next_step": "Given the unanimous recommendation to proceed and the consistent confirmation that the Year-1 net budget savings substantially exceed the $100,000 minimum threshold, the decision maker should approve the hospital float-pool hiring plan."
+      },
+      "text": "ASSESSMENT OVERVIEW: The consensus among all advisors is a strong recommendation to proceed with the hospital float-pool hiring plan. All three assessments confirm that the proposal successfully meets the critical financial constraint: achieving Year-1 net budget savings of at least $100,000. The overall alignment is positive, suggesting the plan is financially sound based on the provided data.\nPOINTS OF NOTE: All advisors independently confirm the core financial components: annual savings derived from eliminating external costs are consistently cited around $360,000. Regarding costs, there is minor variation in the final calculation, with advisors citing total Year-1 costs between $190,000 and $205,000. Despite these minor arithmetic differences in the final net savings figure ($155,000 to $250,000), every calculation confirms a net saving significantly above the required $100,000 threshold.\nSUGGESTED NEXT STEP: Given the unanimous recommendation to proceed and the consistent confirmation that the Year-1 net budget savings substantially exceed the $100,000 minimum threshold, the decision maker should approve the hospital float-pool hiring plan.",
+      "words": 161,
+      "meta": {
+        "prompt_tokens": 1082,
+        "output_tokens": 264,
+        "seconds": 11.33,
+        "repaired": false
+      }
+    },
+    "crux": {
+      "raw": {
+        "shared_ground": [
+          "All advisors recommend proceeding with the plan.",
+          "The annual savings from eliminating overtime are consistently cited as $360,000."
+        ],
+        "cruxes": [
+          {
+            "topic": "Total Year-1 Costs Calculation",
+            "side_a": "$190,000 (2 \u00d7 $95,000 + $15,000)",
+            "side_b": "$205,000 (2 \u00d7 $95,000 + $15,000)",
+            "premise_at_stake": "The precise calculation of total new annual costs."
+          }
+        ],
+        "unverified_premises": [
+          "The final net Year-1 savings figure varies between $170,000, $250,000, and $155,000 due to differing cost calculations."
+        ],
+        "decisive_check": "Confirm the correct total Year-1 cost calculation: Is it $190,000 (Advisor 1) or $205,000 (Advisor 3)?"
+      },
+      "text": "ASSESSMENT OVERVIEW: All advisors recommend proceeding with the plan. The annual savings from eliminating overtime are consistently cited as $360,000.\nPOINTS OF NOTE: Disagreements: (1) Total Year-1 Costs Calculation: Side A [$190,000 (2 \u00d7 $95,000 + $15,000)] vs. Side B [$205,000 (2 \u00d7 $95,000 + $15,000)] (at stake: The precise calculation of total new annual costs.) Flagged issues: The final net Year-1 savings figure varies between $170,000, $250,000, and $155,000 due to differing cost calculations.\nSUGGESTED NEXT STEP: Confirm the correct total Year-1 cost calculation: Is it $190,000 (Advisor 1) or $205,000 (Advisor 3)?",
+      "words": 94,
+      "meta": {
+        "prompt_tokens": 1230,
+        "output_tokens": 272,
+        "seconds": 11.14,
+        "repaired": false
+      }
+    }
+  },
+  "crux_survived": null,
+  "decisions": {
+    "raw": {
+      "output": {
+        "primary_reason": "The packet provides the necessary components to calculate the Year-1 net budget savings, but the calculation must be performed to confirm if the savings meet the $100,000 threshold. The calculation is: ($30,000/month * 12 months) - ($95,000 + $95,000 + $15,000) = $360,000 - $205,000 = $155,000, which is >= $100,000.",
+        "target_clause_or_metric": "none",
+        "action": "proceed",
+        "confidence": 100,
+        "brief_endorsement": null
+      },
+      "meta": {
+        "prompt_tokens": 569,
+        "output_tokens": 176,
+        "seconds": 7.4,
+        "repaired": false
+      },
+      "hold": false,
+      "verified_catch": null,
+      "untargeted_hold": null,
+      "false_alarm": false
+    },
+    "single": {
+      "output": {
+        "primary_reason": "The pre-decision brief clearly calculates the net Year-1 savings to be $155,000, which satisfies the minimum required threshold of $100,000. All constraints appear to be met based on the provided data.",
+        "target_clause_or_metric": "none",
+        "action": "proceed",
+        "confidence": 100,
+        "brief_endorsement": 5
+      },
+      "meta": {
+        "prompt_tokens": 768,
+        "output_tokens": 106,
+        "seconds": 5.32,
+        "repaired": false
+      },
+      "hold": false,
+      "verified_catch": null,
+      "untargeted_hold": null,
+      "false_alarm": false
+    },
+    "consensus": {
+      "output": {
+        "primary_reason": "The packet's headline benefit suggests $30,000/month in savings, totaling $360,000 annually, which significantly exceeds the $100,000 minimum threshold. The PRE-DECISION BRIEF confirms this calculation, stating net savings are consistently above $100,000, thus satisfying the constraint.",
+        "target_clause_or_metric": "none",
+        "action": "proceed",
+        "confidence": 95,
+        "brief_endorsement": 5
+      },
+      "meta": {
+        "prompt_tokens": 817,
+        "output_tokens": 128,
+        "seconds": 7.49,
+        "repaired": false
+      },
+      "hold": false,
+      "verified_catch": null,
+      "untargeted_hold": null,
+      "false_alarm": false
+    },
+    "crux": {
+      "output": {
+        "primary_reason": "The constraint requires Year-1 net budget savings to be >= $100,000, but the Pre-Decision Brief highlights a material discrepancy in the total Year-1 cost calculation, leading to varying net savings figures ($170k, $250k, $155k).",
+        "target_clause_or_metric": "Pre-Decision Brief: Disagreements: (1) Total Year-1 Costs Calculation: Side A [$190,000 (2 \u00d7 $95,000 + $15,000)] vs. Side B [$205,000 (2 \u00d7 $95,000 + $15,000)]",
+        "action": "hold_to_verify",
+        "confidence": 100,
+        "brief_endorsement": 5
+      },
+      "meta": {
+        "prompt_tokens": 784,
+        "output_tokens": 201,
+        "seconds": 13.98,
+        "repaired": false
+      },
+      "hold": true,
+      "verified_catch": null,
+      "untargeted_hold": null,
+      "false_alarm": true
+    }
+  }
+}

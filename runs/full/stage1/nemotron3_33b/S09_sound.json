@@ -1,0 +1,29 @@
+{
+  "scenario_id": "S09",
+  "variant": "sound",
+  "domain": "leases",
+  "difficulty_tier": 2,
+  "model": "nemotron3:33b",
+  "seed": 1117,
+  "output": {
+    "summary": "The lease requires $6,600 monthly ($5,400 base + $1,200 additional). Daily rate is $220. A 4-day overrun incurs 4 \u00d7 $220 \u00d7 125% = $1,100, well under the $2,000 exposure limit, so the penalty does not create >$2,000 liability.",
+    "key_claims": [
+      "Monthly rent totals $6,600 ($5,400 base + $1,200 additional)",
+      "Daily rate is $220 ($6,600 \u00f7 30 days)",
+      "4-day holdover penalty is $1,100 (4 \u00d7 $220 \u00d7 125%)"
+    ],
+    "recommendation": "proceed",
+    "risks_or_flaws": [
+      "none"
+    ],
+    "verification_question": "none",
+    "confidence": 100
+  },
+  "meta": {
+    "prompt_tokens": 603,
+    "output_tokens": 225,
+    "seconds": 8.8,
+    "repaired": false
+  },
+  "advisor_caught": null
+}

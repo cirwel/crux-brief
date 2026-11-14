@@ -1,0 +1,147 @@
+{
+  "scenario_id": "S14",
+  "variant": "flawed",
+  "domain": "procurement_handoffs",
+  "difficulty_tier": 3,
+  "eval_model": "gemma4:latest",
+  "synth_model": "nemotron3:33b",
+  "single_advisor_model": "nemotron3:33b",
+  "k_spotted": 3,
+  "advisor_caught_by_model": {
+    "gemma4:latest": true,
+    "nemotron3:33b": true,
+    "qwen3.6:27b-coding-mxfp8": true
+  },
+  "briefs": {
+    "single": {
+      "text": "ASSESSMENT OVERVIEW: The packet states the PO ceiling is $21,000.00 USD. The invoice is 21,000.00 EUR. At the quoted spot rate of 1.14 USD/EUR, the USD payout equals 21,000.00 * 1.14 = $23,940.00, which exceeds the $21,000.00 ceiling. All stated quantities and rates are consistent, but the conversion violates the constraint. Key facts: PO ceiling is $21,000.00 USD; Invoice amount is 21,000.00 EUR; Spot rate is 1.14 USD/EUR, resulting in $23,940.00 USD payout.\nPOINTS OF NOTE: USD payout ($23,940.00) exceeds $21,000.00 PO ceiling.\nSUGGESTED NEXT STEP: Is the USD payout calculated as 21,000.00 EUR \u00d7 1.14 USD/EUR?",
+      "words": 97
+    },
+    "consensus": {
+      "raw": {
+        "overview": "All three advisors unanimously confirm that the calculated USD payout of $23,940.00, derived from converting the 21,000.00 EUR invoice at the stated spot rate of 1.14 USD/EUR, exceeds the $21,000.00 USD Purchase Order ceiling, creating a clear constraint violation despite matching unit figures and quantities.",
+        "points_of_note": "Each advisor precisely identifies the $23,940.00 USD debit as exceeding the $21,000.00 USD ceiling, with Advisor 1 explicitly questioning the conversion methodology, Advisor 2 verifying the ceiling applies to final USD debit regardless of EUR invoicing, and Advisor 3 emphasizing the direct violation of the explicit USD cap despite accurate unit/quantity alignment.",
+        "suggested_next_step": "Withhold payment approval pending verification of the USD conversion methodology and confirmation that the $23,940.00 debit does not breach the $21,000.00 USD ceiling constraint."
+      },
+      "text": "ASSESSMENT OVERVIEW: All three advisors unanimously confirm that the calculated USD payout of $23,940.00, derived from converting the 21,000.00 EUR invoice at the stated spot rate of 1.14 USD/EUR, exceeds the $21,000.00 USD Purchase Order ceiling, creating a clear constraint violation despite matching unit figures and quantities.\nPOINTS OF NOTE: Each advisor precisely identifies the $23,940.00 USD debit as exceeding the $21,000.00 USD ceiling, with Advisor 1 explicitly questioning the conversion methodology, Advisor 2 verifying the ceiling applies to final USD debit regardless of EUR invoicing, and Advisor 3 emphasizing the direct violation of the explicit USD cap despite accurate unit/quantity alignment.\nSUGGESTED NEXT STEP: Withhold payment approval pending verification of the USD conversion methodology and confirmation that the $23,940.00 debit does not breach the $21,000.00 USD ceiling constraint.",
+      "words": 129,
+      "meta": {
+        "prompt_tokens": 1356,
+        "output_tokens": 234,
+        "seconds": 6.87,
+        "repaired": false
+      }
+    },
+    "crux": {
+      "raw": {
+        "shared_ground": [
+          "PO ceiling is $21,000.00 USD",
+          "Invoice amount is 21,000.00 EUR"
+        ],
+        "cruxes": [
+          {
+            "topic": "USD payout calculation",
+            "side_a": "PO ceiling applies to final USD debit amount (21,000 EUR \u00d7 1.14 = $23,940.00)",
+            "side_b": "PO ceiling applies only to EUR invoice amount (21,000.00 EUR)",
+            "premise_at_stake": "Whether the $21,000.00 USD ceiling constrains the converted USD payout or the original EUR invoice"
+          }
+        ],
+        "unverified_premises": [
+          "Whether the spot rate of 1.14 USD/EUR is the correct conversion factor for this transaction"
+        ],
+        "decisive_check": "Verify if the $23,940.00 USD settlement amount violates the strict $21,000.00 USD cap"
+      },
+      "text": "ASSESSMENT OVERVIEW: PO ceiling is $21,000.00 USD Invoice amount is 21,000.00 EUR\nPOINTS OF NOTE: Disagreements: (1) USD payout calculation: Side A [PO ceiling applies to final USD debit amount (21,000 EUR \u00d7 1.14 = $23,940.00)] vs. Side B [PO ceiling applies only to EUR invoice amount (21,000.00 EUR)] (at stake: Whether the $21,000.00 USD ceiling constrains the converted USD payout or the original EUR invoice) Flagged issues: Whether the spot rate of 1.14 USD/EUR is the correct conversion factor for this transaction\nSUGGESTED NEXT STEP: Verify if the $23,940.00 USD settlement amount violates the strict $21,000.00 USD cap",
+      "words": 99,
+      "meta": {
+        "prompt_tokens": 1525,
+        "output_tokens": 248,
+        "seconds": 7.31,
+        "repaired": false
+      }
+    }
+  },
+  "crux_survived": {
+    "single": true,
+    "consensus": true,
+    "crux": true
+  },
+  "decisions": {
+    "raw": {
+      "output": {
+        "primary_reason": "The total USD debit is calculated based on the EUR invoice amount (21,000.00 EUR) multiplied by the exchange rate (1.14 USD/EUR), resulting in $23,940.00 USD, which exceeds the $21,000.00 PO ceiling.",
+        "target_clause_or_metric": "Section 3: Settlement Wire Detail (Line 7) calculation resulting in $23,940.00 USD",
+        "action": "hold_to_verify",
+        "confidence": 100,
+        "brief_endorsement": null
+      },
+      "meta": {
+        "prompt_tokens": 632,
+        "output_tokens": 150,
+        "seconds": 5.21,
+        "repaired": false
+      },
+      "hold": true,
+      "verified_catch": true,
+      "untargeted_hold": false,
+      "false_alarm": null
+    },
+    "single": {
+      "output": {
+        "primary_reason": "The packet details an invoice of 21,000.00 EUR, which, when converted using the quoted rate of 1.14 USD/EUR, results in a total USD debit of $23,940.00. This amount clearly exceeds the stated $21,000.00 USD Purchase Order ceiling, violating the primary constraint.",
+        "target_clause_or_metric": "Settlement Wire Detail (Line 7) and PO Authorization: $21,000.00 USD",
+        "action": "hold_to_verify",
+        "confidence": 100,
+        "brief_endorsement": 5
+      },
+      "meta": {
+        "prompt_tokens": 872,
+        "output_tokens": 161,
+        "seconds": 5.65,
+        "repaired": false
+      },
+      "hold": true,
+      "verified_catch": true,
+      "untargeted_hold": false,
+      "false_alarm": null
+    },
+    "consensus": {
+      "output": {
+        "primary_reason": "The packet details a calculated USD debit of $23,940.00 based on the EUR invoice and FX rate, which clearly exceeds the stated $21,000.00 USD Purchase Order ceiling constraint. The PRE-DECISION BRIEF confirms this discrepancy and advises withholding payment.",
+        "target_clause_or_metric": "Settlement Wire Detail (Line 7) and the $21,000.00 USD Purchase Order ceiling",
+        "action": "hold_to_verify",
+        "confidence": 100,
+        "brief_endorsement": 5
+      },
+      "meta": {
+        "prompt_tokens": 852,
+        "output_tokens": 144,
+        "seconds": 5.57,
+        "repaired": false
+      },
+      "hold": true,
+      "verified_catch": true,
+      "untargeted_hold": false,
+      "false_alarm": null
+    },
+    "crux": {
+      "output": {
+        "primary_reason": "The packet details a final USD debit of $23,940.00 based on the EUR invoice and the spot rate, which exceeds the stated $21,000.00 USD PO ceiling. This discrepancy requires verification before proceeding with payment.",
+        "target_clause_or_metric": "Settlement Wire Detail (Line 7) and the $21,000.00 USD Purchase Order ceiling",
+        "action": "hold_to_verify",
+        "confidence": 100,
+        "brief_endorsement": 5
+      },
+      "meta": {
+        "prompt_tokens": 834,
+        "output_tokens": 137,
+        "seconds": 5.12,
+        "repaired": false
+      },
+      "hold": true,
+      "verified_catch": true,
+      "untargeted_hold": false,
+      "false_alarm": null
+    }
+  }
+}

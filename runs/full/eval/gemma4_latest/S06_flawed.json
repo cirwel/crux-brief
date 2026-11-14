@@ -1,0 +1,147 @@
+{
+  "scenario_id": "S06",
+  "variant": "flawed",
+  "domain": "job_offers",
+  "difficulty_tier": 1,
+  "eval_model": "gemma4:latest",
+  "synth_model": "nemotron3:33b",
+  "single_advisor_model": "qwen3.6:27b-coding-mxfp8",
+  "k_spotted": 3,
+  "advisor_caught_by_model": {
+    "gemma4:latest": true,
+    "nemotron3:33b": true,
+    "qwen3.6:27b-coding-mxfp8": true
+  },
+  "briefs": {
+    "single": {
+      "text": "ASSESSMENT OVERVIEW: The packet specifies a total relocation package of $18,000, split into an $8,000 moving reimbursement and a $10,000 stipend. Both components are explicitly classified as taxable W-2 compensation with no tax gross-up. Applying the user's 35% marginal tax rate to the full $18,000 gross amount results in $6,300 in taxes ($18,000 * 0.35). The resulting net cash available is $11,700 ($18,000 - $6,300). This figure is strictly below the user's mandatory constraint of >= $14,000 net after-tax liquidity. Therefore, the offer fails to meet the financial threshold required for acceptance. Key facts: Total gross relocation value is $18,000 ($8,000 reimbursement + $10,000 stipend).; Net after-tax cash is $11,700, calculated as $18,000 * (1 - 0.35).; The net amount of $11,700 is less than the required $14,000 threshold..\nPOINTS OF NOTE: The net after-tax relocation cash ($11,700) violates the explicit constraint of >= $14,000..\nSUGGESTED NEXT STEP: Does the employer offer any alternative structure or gross-up that would increase the net after-tax amount to at least $14,000?",
+      "words": 168
+    },
+    "consensus": {
+      "raw": {
+        "overview": "All three advisors concur that the relocation package's $18,000 gross amount\u2014comprising $10,000 stipend and $8,000 reimbursement\u2014is fully taxable at the user's 35% marginal rate, resulting in $6,300 in taxes and $11,700 net cash, which falls short of the $14,000 required liquidity threshold.",
+        "points_of_note": "The advisors uniformly identify the $11,700 net after-tax figure as violating the >=$14,000 constraint, with Advisor 1 explicitly flagging the shortfall and requesting verification of potential gross-up structures, while Advisors 2 and 3 similarly note the deficit and suggest checking for non-taxable components or structural alternatives that might adjust the taxable base.",
+        "suggested_next_step": "Verify whether the employer offers any tax gross-up or alternative compensation structure to elevate net after-tax liquidity to at least $14,000 before proceeding."
+      },
+      "text": "ASSESSMENT OVERVIEW: All three advisors concur that the relocation package's $18,000 gross amount\u2014comprising $10,000 stipend and $8,000 reimbursement\u2014is fully taxable at the user's 35% marginal rate, resulting in $6,300 in taxes and $11,700 net cash, which falls short of the $14,000 required liquidity threshold.\nPOINTS OF NOTE: The advisors uniformly identify the $11,700 net after-tax figure as violating the >=$14,000 constraint, with Advisor 1 explicitly flagging the shortfall and requesting verification of potential gross-up structures, while Advisors 2 and 3 similarly note the deficit and suggest checking for non-taxable components or structural alternatives that might adjust the taxable base.\nSUGGESTED NEXT STEP: Verify whether the employer offers any tax gross-up or alternative compensation structure to elevate net after-tax liquidity to at least $14,000 before proceeding.",
+      "words": 125,
+      "meta": {
+        "prompt_tokens": 1408,
+        "output_tokens": 234,
+        "seconds": 8.55,
+        "repaired": false
+      }
+    },
+    "crux": {
+      "raw": {
+        "shared_ground": [
+          "Total gross relocation value is $18,000 ($8,000 reimbursement + $10,000 stipend)",
+          "Net after-tax cash is $11,700 calculated as $18,000 * (1 - 0.35)"
+        ],
+        "cruxes": [
+          {
+            "topic": "Taxability of relocation components",
+            "side_a": "All $18,000 gross relocation amount is taxable W-2 compensation with no gross-up",
+            "side_b": "Potential non-taxable components may exist in the $18,000 total",
+            "premise_at_stake": "Whether non-taxable portions reduce the taxable base below $18,000"
+          }
+        ],
+        "unverified_premises": [
+          "Whether any portion of the $18,000 relocation package is excluded from taxable income for payroll withholding"
+        ],
+        "decisive_check": "Does the $18,000 total taxable amount include any non-taxable components that should be excluded from the 35% payroll withholding calculation?"
+      },
+      "text": "ASSESSMENT OVERVIEW: Total gross relocation value is $18,000 ($8,000 reimbursement + $10,000 stipend) Net after-tax cash is $11,700 calculated as $18,000 * (1 - 0.35)\nPOINTS OF NOTE: Disagreements: (1) Taxability of relocation components: Side A [All $18,000 gross relocation amount is taxable W-2 compensation with no gross-up] vs. Side B [Potential non-taxable components may exist in the $18,000 total] (at stake: Whether non-taxable portions reduce the taxable base below $18,000) Flagged issues: Whether any portion of the $18,000 relocation package is excluded from taxable income for payroll withholding\nSUGGESTED NEXT STEP: Does the $18,000 total taxable amount include any non-taxable components that should be excluded from the 35% payroll withholding calculation?",
+      "words": 112,
+      "meta": {
+        "prompt_tokens": 1577,
+        "output_tokens": 271,
+        "seconds": 8.63,
+        "repaired": false
+      }
+    }
+  },
+  "crux_survived": {
+    "single": true,
+    "consensus": true,
+    "crux": true
+  },
+  "decisions": {
+    "raw": {
+      "output": {
+        "primary_reason": "The packet states the $10,000 stipend and $8,000 reimbursement are fully taxable with no tax gross-up, meaning the net cash available will be significantly less than the required $14,000 threshold.",
+        "target_clause_or_metric": "Section 3",
+        "action": "hold_to_verify",
+        "confidence": 100,
+        "brief_endorsement": null
+      },
+      "meta": {
+        "prompt_tokens": 607,
+        "output_tokens": 110,
+        "seconds": 3.57,
+        "repaired": false
+      },
+      "hold": true,
+      "verified_catch": true,
+      "untargeted_hold": false,
+      "false_alarm": null
+    },
+    "single": {
+      "output": {
+        "primary_reason": "The provided calculation in the Pre-Decision Brief accurately shows that the net after-tax cash ($11,700) falls below the required minimum of $14,000, violating the core constraint.",
+        "target_clause_or_metric": "Section 3 (Tax & Reimbursement Rule) and the overall net calculation derived from the $18,000 gross.",
+        "action": "hold_to_verify",
+        "confidence": 100,
+        "brief_endorsement": 5
+      },
+      "meta": {
+        "prompt_tokens": 946,
+        "output_tokens": 128,
+        "seconds": 4.39,
+        "repaired": false
+      },
+      "hold": true,
+      "verified_catch": true,
+      "untargeted_hold": false,
+      "false_alarm": null
+    },
+    "consensus": {
+      "output": {
+        "primary_reason": "The provided packet confirms the tax treatment (Section 3) and the net cash calculation ($11,700) matches the pre-decision brief, which explicitly shows a violation of the required minimum net liquidity of $14,000.",
+        "target_clause_or_metric": "Section 3 (Tax & Reimbursement Rule) and the resulting $11,700 net cash figure",
+        "action": "hold_to_verify",
+        "confidence": 100,
+        "brief_endorsement": 5
+      },
+      "meta": {
+        "prompt_tokens": 825,
+        "output_tokens": 132,
+        "seconds": 4.16,
+        "repaired": false
+      },
+      "hold": true,
+      "verified_catch": true,
+      "untargeted_hold": false,
+      "false_alarm": null
+    },
+    "crux": {
+      "output": {
+        "primary_reason": "The packet explicitly states that both the $10,000 stipend and $8,000 reimbursement are fully taxable W-2 compensation, leading to a net cash of $11,700, which fails to meet the required minimum of $14,000.",
+        "target_clause_or_metric": "Section 3: Both the $10,000 lump-sum stipend and the $8,000 moving-company reimbursement are classified as taxable W-2 compensation with NO tax gross-up provided; payroll withholds Employee's 35% combined marginal rate from first-month pay.",
+        "action": "hold_to_verify",
+        "confidence": 100,
+        "brief_endorsement": 5
+      },
+      "meta": {
+        "prompt_tokens": 828,
+        "output_tokens": 181,
+        "seconds": 5.2,
+        "repaired": false
+      },
+      "hold": true,
+      "verified_catch": true,
+      "untargeted_hold": false,
+      "false_alarm": null
+    }
+  }
+}

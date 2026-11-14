@@ -1,0 +1,30 @@
+{
+  "scenario_id": "S13",
+  "variant": "flawed",
+  "domain": "procurement_handoffs",
+  "difficulty_tier": 2,
+  "model": "nemotron3:33b",
+  "seed": 1124,
+  "output": {
+    "summary": "The SLA guarantees 99.5% uptime (3.625 hours downtime/month). With up to 8 hours of scheduled maintenance per month (2 hours/week), total unscheduled+scheduled outage could reach 11.625 hours, exceeding the 60-minute limit. The credit remedy is capped at 10% of the $8,000 fee ($800), which is less than 50% of the monthly fee ($4,000).",
+    "key_claims": [
+      "99.5% uptime = 3.625 hours downtime/month",
+      "8 hours scheduled maintenance/month (2 hours/week)",
+      "10% credit = $800, less than 50% of $8,000 fee"
+    ],
+    "recommendation": "hold_to_verify",
+    "risks_or_flaws": [
+      "Total outage (scheduled + unscheduled) exceeds 60-minute limit",
+      "Remedy credit < 50% of monthly fee"
+    ],
+    "verification_question": "Can scheduled maintenance be excluded from the 60-minute outage calculation?",
+    "confidence": 100
+  },
+  "meta": {
+    "prompt_tokens": 646,
+    "output_tokens": 283,
+    "seconds": 10.77,
+    "repaired": false
+  },
+  "advisor_caught": true
+}

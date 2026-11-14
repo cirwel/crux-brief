@@ -1,0 +1,147 @@
+{
+  "scenario_id": "S03",
+  "variant": "flawed",
+  "domain": "job_offers",
+  "difficulty_tier": 2,
+  "eval_model": "nemotron3:33b",
+  "synth_model": "gemma4:latest",
+  "single_advisor_model": "qwen3.6:27b-coding-mxfp8",
+  "k_spotted": 3,
+  "advisor_caught_by_model": {
+    "gemma4:latest": true,
+    "nemotron3:33b": true,
+    "qwen3.6:27b-coding-mxfp8": true
+  },
+  "briefs": {
+    "single": {
+      "text": "ASSESSMENT OVERVIEW: The user requires expected annual cash earnings at historical team attainment to be at least $210,000. The decision packet states the variable commission has a strict zero-commission cliff below 80% quota attainment. Historical team data indicates the median quota attainment is 74%, which falls below the 80% threshold. Consequently, at historical attainment, the variable commission is $0. Total cash earnings would be limited to the $160,000 base salary. This is significantly below the $210,000 constraint, violating the user's explicit financial requirement. Key facts: Median historical quota attainment is 74%; Zero commission is paid below 80% attainment; Base salary is $160,000.\nPOINTS OF NOTE: At historical median attainment of 74%, variable pay is $0 due to the 80% cliff, resulting in total cash earnings of $160,000, which fails the >= $210,000 constraint..\nSUGGESTED NEXT STEP: Does the 'zero-commission cliff below 80%' apply to the historical median attainment of 74%, thereby reducing total cash compensation to $160,000?",
+      "words": 157
+    },
+    "consensus": {
+      "raw": {
+        "overview": "The advisors present a consistent and significant concern regarding the financial viability of accepting the role based on historical performance metrics. All three assessments converge on the finding that the expected annual cash earnings, calculated using the historical median team attainment, fall substantially short of the required $210,000 minimum. The consensus indicates that the current structure creates a substantial gap between the expected compensation and the user's stated financial floor.",
+        "points_of_note": "The evidence cited across all reports is highly specific: the historical median attainment is consistently identified as 74%. Crucially, all advisors point to a zero-commission cliff below the 80% quota attainment threshold. This structural element, combined with the $160,000 base salary, results in a total cash earning estimate of only $160,000, which fails the $210,000 constraint. No advisor identified any mitigating factors or exceptions to this calculation.",
+        "suggested_next_step": "Given the unanimous identification of a material constraint breach based on the historical median attainment, the immediate next step must be to seek clarification on the payout structure. Specifically, confirm if the $210,000 minimum requirement can be met under any historical attainment scenario, or if the payout rules have an exception for historical performance below the 80% cliff."
+      },
+      "text": "ASSESSMENT OVERVIEW: The advisors present a consistent and significant concern regarding the financial viability of accepting the role based on historical performance metrics. All three assessments converge on the finding that the expected annual cash earnings, calculated using the historical median team attainment, fall substantially short of the required $210,000 minimum. The consensus indicates that the current structure creates a substantial gap between the expected compensation and the user's stated financial floor.\nPOINTS OF NOTE: The evidence cited across all reports is highly specific: the historical median attainment is consistently identified as 74%. Crucially, all advisors point to a zero-commission cliff below the 80% quota attainment threshold. This structural element, combined with the $160,000 base salary, results in a total cash earning estimate of only $160,000, which fails the $210,000 constraint. No advisor identified any mitigating factors or exceptions to this calculation.\nSUGGESTED NEXT STEP: Given the unanimous identification of a material constraint breach based on the historical median attainment, the immediate next step must be to seek clarification on the payout structure. Specifically, confirm if the $210,000 minimum requirement can be met under any historical attainment scenario, or if the payout rules have an exception for historical performance below the 80% cliff.",
+      "words": 203,
+      "meta": {
+        "prompt_tokens": 1274,
+        "output_tokens": 293,
+        "seconds": 12.19,
+        "repaired": false
+      }
+    },
+    "crux": {
+      "raw": {
+        "shared_ground": [
+          "The historical median quota attainment is 74%.",
+          "The payout structure imposes a zero-commission cliff below 80% quota attainment."
+        ],
+        "cruxes": [
+          {
+            "topic": "Impact of 74% Attainment",
+            "side_a": "Total cash earnings are $160,000 (Base Salary) because 74% is below the 80% cliff.",
+            "side_b": "The $210,000 minimum constraint must be met, regardless of the 74% median attainment.",
+            "premise_at_stake": "Whether the 74% historical median attainment triggers the zero-commission cliff, resulting in total earnings below the $210,000 threshold."
+          }
+        ],
+        "unverified_premises": [
+          "Whether the payout structure has an exception for historical attainment below the 80% cliff, or if the $210,000 minimum is based on a different historical metric than the median."
+        ],
+        "decisive_check": "Confirmation of the variable commission payout calculation when historical attainment is 74% relative to the 80% cliff, and how this impacts the $210,000 minimum."
+      },
+      "text": "ASSESSMENT OVERVIEW: The historical median quota attainment is 74%. The payout structure imposes a zero-commission cliff below 80% quota attainment.\nPOINTS OF NOTE: Disagreements: (1) Impact of 74% Attainment: Side A [Total cash earnings are $160,000 (Base Salary) because 74% is below the 80% cliff.] vs. Side B [The $210,000 minimum constraint must be met, regardless of the 74% median attainment.] (at stake: Whether the 74% historical median attainment triggers the zero-commission cliff, resulting in total earnings below the $210,000 threshold.) Flagged issues: Whether the payout structure has an exception for historical attainment below the 80% cliff, or if the $210,000 minimum is based on a different historical metric than the median.\nSUGGESTED NEXT STEP: Confirmation of the variable commission payout calculation when historical attainment is 74% relative to the 80% cliff, and how this impacts the $210,000 minimum.",
+      "words": 139,
+      "meta": {
+        "prompt_tokens": 1422,
+        "output_tokens": 298,
+        "seconds": 10.78,
+        "repaired": false
+      }
+    }
+  },
+  "crux_survived": {
+    "single": true,
+    "consensus": true,
+    "crux": true
+  },
+  "decisions": {
+    "raw": {
+      "output": {
+        "primary_reason": "The packet states the historical median quota attainment is 74%, which means historical-earnings cash would be 74% of the $80,000 variable component, resulting in $59,200\u2014well below the $210,000 threshold. This violates the constraint that historical-earnings cash must be >= $210,000.",
+        "target_clause_or_metric": "Clause 5 (payout gate) and Historical Team Data (74% median quota attainment)",
+        "action": "hold_to_verify",
+        "confidence": 95,
+        "brief_endorsement": null
+      },
+      "meta": {
+        "prompt_tokens": 685,
+        "output_tokens": 153,
+        "seconds": 4.63,
+        "repaired": false
+      },
+      "hold": true,
+      "verified_catch": true,
+      "untargeted_hold": false,
+      "false_alarm": null
+    },
+    "single": {
+      "output": {
+        "primary_reason": "The packet states variable commission is $0 below 80% quota, and historical median attainment is 74%, resulting in $160,000 cash earnings which is below the $210,000 requirement.",
+        "target_clause_or_metric": "Payout Gate (Schedule A, Clause 5): Variable commission pays linearly above 80% quota attainment, with a strict zero-commission cliff below 80.0% annual quota attainment.",
+        "action": "hold_to_verify",
+        "confidence": 100,
+        "brief_endorsement": 5
+      },
+      "meta": {
+        "prompt_tokens": 972,
+        "output_tokens": 143,
+        "seconds": 4.44,
+        "repaired": false
+      },
+      "hold": true,
+      "verified_catch": true,
+      "untargeted_hold": false,
+      "false_alarm": null
+    },
+    "consensus": {
+      "output": {
+        "primary_reason": "The historical median quota attainment of 74% (Clause 3) combined with the zero-commission cliff below 80% (Clause 2) results in expected cash earnings of $160,000, which is $50,000 below the required $210,000 minimum.",
+        "target_clause_or_metric": "Clause 2 (payout gate) and Clause 3 (historical median 74% attainment)",
+        "action": "hold_to_verify",
+        "confidence": 95,
+        "brief_endorsement": 5
+      },
+      "meta": {
+        "prompt_tokens": 981,
+        "output_tokens": 144,
+        "seconds": 4.22,
+        "repaired": false
+      },
+      "hold": true,
+      "verified_catch": true,
+      "untargeted_hold": false,
+      "false_alarm": null
+    },
+    "crux": {
+      "output": {
+        "primary_reason": "The packet states the zero-commission cliff applies below 80% quota attainment, and the historical median attainment is 74%, which would result in $160,000 total cash earnings (base only), falling below the $210,000 threshold.",
+        "target_clause_or_metric": "Payout Gate (Schedule A, Clause 5): Variable commission pays linearly above 80% quota attainment, with a strict zero-commission cliff below 80.0% annual quota attainment.",
+        "action": "hold_to_verify",
+        "confidence": 95,
+        "brief_endorsement": 5
+      },
+      "meta": {
+        "prompt_tokens": 954,
+        "output_tokens": 152,
+        "seconds": 4.29,
+        "repaired": false
+      },
+      "hold": true,
+      "verified_catch": true,
+      "untargeted_hold": false,
+      "false_alarm": null
+    }
+  }
+}

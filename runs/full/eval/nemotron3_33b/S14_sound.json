@@ -1,0 +1,134 @@
+{
+  "scenario_id": "S14",
+  "variant": "sound",
+  "domain": "procurement_handoffs",
+  "difficulty_tier": 3,
+  "eval_model": "nemotron3:33b",
+  "synth_model": "gemma4:latest",
+  "single_advisor_model": "nemotron3:33b",
+  "k_spotted": null,
+  "advisor_caught_by_model": {
+    "gemma4:latest": null,
+    "nemotron3:33b": null,
+    "qwen3.6:27b-coding-mxfp8": null
+  },
+  "briefs": {
+    "single": {
+      "text": "ASSESSMENT OVERVIEW: The packet states a $21,000.00 USD PO ceiling for 500 units at $42.00 each. Calculated total (500 \u00d7 $42.00) equals exactly $21,000.00, which does not exceed the ceiling. All constraints align with the goal to approve payment only if USD payout \u2264 $21,000.00. Key facts: 500 units \u00d7 $42.00 USD = $21,000.00 USD; PO ceiling is $21,000.00 USD; Settlement wire detail confirms $21,000.00 USD payment with no deductions.\nPOINTS OF NOTE: No concrete constraint violations flagged.\nSUGGESTED NEXT STEP: None required; stated constraints appear satisfied.",
+      "words": 87
+    },
+    "consensus": {
+      "raw": {
+        "overview": "There is strong consensus among the advisors that the proposed wire payout is fully compliant with the stated constraint. All three assessments confirm that the total calculated debit amount precisely matches the established Purchase Order ceiling, indicating a clear path to approval based on the provided data.",
+        "points_of_note": "The evidence consistently points to a total debit calculation of $21,000.00 USD, derived from 500 units at a rate of $42.00 USD. This figure aligns perfectly with the $21,000.00 USD PO ceiling, satisfying the core requirement that the debit must not exceed this limit. Furthermore, all advisors noted the absence of any currency conversion or intermediary deductions that would alter this established total.",
+        "suggested_next_step": "Given that all advisors concur that the calculated total debit of $21,000.00 USD does not exceed the $21,000.00 USD PO ceiling, the decision maker should proceed with approving the wire payout."
+      },
+      "text": "ASSESSMENT OVERVIEW: There is strong consensus among the advisors that the proposed wire payout is fully compliant with the stated constraint. All three assessments confirm that the total calculated debit amount precisely matches the established Purchase Order ceiling, indicating a clear path to approval based on the provided data.\nPOINTS OF NOTE: The evidence consistently points to a total debit calculation of $21,000.00 USD, derived from 500 units at a rate of $42.00 USD. This figure aligns perfectly with the $21,000.00 USD PO ceiling, satisfying the core requirement that the debit must not exceed this limit. Furthermore, all advisors noted the absence of any currency conversion or intermediary deductions that would alter this established total.\nSUGGESTED NEXT STEP: Given that all advisors concur that the calculated total debit of $21,000.00 USD does not exceed the $21,000.00 USD PO ceiling, the decision maker should proceed with approving the wire payout.",
+      "words": 149,
+      "meta": {
+        "prompt_tokens": 1018,
+        "output_tokens": 227,
+        "seconds": 10.66,
+        "repaired": false
+      }
+    },
+    "crux": {
+      "raw": {
+        "shared_ground": [
+          "The PO details are 500 units at $42.00 USD each.",
+          "The calculated total debit is exactly $21,000.00 USD, matching the PO ceiling."
+        ],
+        "cruxes": [],
+        "unverified_premises": [],
+        "decisive_check": "None required; all advisors concur stated constraints are satisfied."
+      },
+      "text": "ASSESSMENT OVERVIEW: The PO details are 500 units at $42.00 USD each. The calculated total debit is exactly $21,000.00 USD, matching the PO ceiling.\nPOINTS OF NOTE: No concrete disagreements or constraint violations flagged across advisors.\nSUGGESTED NEXT STEP: None required; all advisors concur stated constraints are satisfied.",
+      "words": 48,
+      "meta": {
+        "prompt_tokens": 1166,
+        "output_tokens": 99,
+        "seconds": 5.57,
+        "repaired": false
+      }
+    }
+  },
+  "crux_survived": null,
+  "decisions": {
+    "raw": {
+      "output": {
+        "primary_reason": "The packet confirms the total USD payout is exactly $21,000.00, which equals the PO ceiling and does not exceed it, satisfying the constraint.",
+        "target_clause_or_metric": "Line 7: Vendor billed invoice directly in USD (500 x $42.00 USD = $21,000.00 USD)",
+        "action": "proceed",
+        "confidence": 100,
+        "brief_endorsement": null
+      },
+      "meta": {
+        "prompt_tokens": 685,
+        "output_tokens": 123,
+        "seconds": 4.03,
+        "repaired": false
+      },
+      "hold": false,
+      "verified_catch": null,
+      "untargeted_hold": null,
+      "false_alarm": false
+    },
+    "single": {
+      "output": {
+        "primary_reason": "The packet confirms the total USD payout is exactly $21,000.00, which does not exceed the $21,000.00 PO ceiling, satisfying the approval constraint.",
+        "target_clause_or_metric": "Line 7 (Settlement Wire Detail) confirming $21,000.00 USD payment with no deductions",
+        "action": "proceed",
+        "confidence": 100,
+        "brief_endorsement": 5
+      },
+      "meta": {
+        "prompt_tokens": 893,
+        "output_tokens": 123,
+        "seconds": 4.51,
+        "repaired": false
+      },
+      "hold": false,
+      "verified_catch": null,
+      "untargeted_hold": null,
+      "false_alarm": false
+    },
+    "consensus": {
+      "output": {
+        "primary_reason": "The total USD payout of $21,000.00 exactly matches the PO ceiling of $21,000.00, satisfying the constraint that the debit must not exceed this limit.",
+        "target_clause_or_metric": "Line 7: Vendor billed invoice directly in USD (500 x $42.00 USD = $21,000.00 USD)",
+        "action": "proceed",
+        "confidence": 100,
+        "brief_endorsement": 5
+      },
+      "meta": {
+        "prompt_tokens": 916,
+        "output_tokens": 133,
+        "seconds": 4.47,
+        "repaired": false
+      },
+      "hold": false,
+      "verified_catch": null,
+      "untargeted_hold": null,
+      "false_alarm": false
+    },
+    "crux": {
+      "output": {
+        "primary_reason": "The total USD payout is exactly $21,000.00, which does not exceed the PO ceiling of $21,000.00 as verified by the receiving clerk and settlement details.",
+        "target_clause_or_metric": "Line 7 (Settlement Wire Detail) showing 500 x $42.00 USD = $21,000.00 USD",
+        "action": "proceed",
+        "confidence": 100,
+        "brief_endorsement": 5
+      },
+      "meta": {
+        "prompt_tokens": 776,
+        "output_tokens": 133,
+        "seconds": 4.49,
+        "repaired": false
+      },
+      "hold": false,
+      "verified_catch": null,
+      "untargeted_hold": null,
+      "false_alarm": false
+    }
+  }
+}

@@ -1,0 +1,58 @@
+{
+  "scenario_id": "S09",
+  "variant": "sound",
+  "domain": "leases",
+  "difficulty_tier": 2,
+  "synth_model": "nemotron3:33b",
+  "k_spotted": null,
+  "advisor_caught_by_model": {
+    "gemma4:latest": null,
+    "nemotron3:33b": null,
+    "qwen3.6:27b-coding-mxfp8": null
+  },
+  "briefs": {
+    "consensus": {
+      "raw": {
+        "overview": "All advisors concur that the 4-day holdover liability must be evaluated against the $2,000 exposure cap, with calculations based on a $6,600 monthly rent ($5,400 base + $1,200 additional) yielding a $220 daily rate. The core issue centers on whether the 125% holdover rate applies to the full daily amount or a prorated base, with Advisor 1 flagging a $3,300 liability while Advisors 2 and 3 confirm $1,100. No constraint breaches were identified as all assessments validate the penalty calculation under the lease terms.",
+        "points_of_note": "Advisor 1's $3,300 calculation suggests a potential arithmetic discrepancy or misinterpretation of the holdover rate application, questioning whether the 125% rate applies to the full $220 daily rate or a prorated base; Advisors 2 and 3 resolve this by consistently applying 125% to the $220 daily rate ($275/day), yielding $1,100 for 4 days\u2014well below the $2,000 limit\u2014with no cited lease provisions or arithmetic errors invalidating this approach.",
+        "suggested_next_step": "Proceed with signing, as all advisors confirm the $1,100 4-day holdover liability remains within the $2,000 exposure constraint with no material issues flagged."
+      },
+      "text": "ASSESSMENT OVERVIEW: All advisors concur that the 4-day holdover liability must be evaluated against the $2,000 exposure cap, with calculations based on a $6,600 monthly rent ($5,400 base + $1,200 additional) yielding a $220 daily rate. The core issue centers on whether the 125% holdover rate applies to the full daily amount or a prorated base, with Advisor 1 flagging a $3,300 liability while Advisors 2 and 3 confirm $1,100. No constraint breaches were identified as all assessments validate the penalty calculation under the lease terms.\nPOINTS OF NOTE: Advisor 1's $3,300 calculation suggests a potential arithmetic discrepancy or misinterpretation of the holdover rate application, questioning whether the 125% rate applies to the full $220 daily rate or a prorated base; Advisors 2 and 3 resolve this by consistently applying 125% to the $220 daily rate ($275/day), yielding $1,100 for 4 days\u2014well below the $2,000 limit\u2014with no cited lease provisions or arithmetic errors invalidating this approach.\nSUGGESTED NEXT STEP: Proceed with signing, as all advisors confirm the $1,100 4-day holdover liability remains within the $2,000 exposure constraint with no material issues flagged.",
+      "words": 182,
+      "meta": {
+        "prompt_tokens": 1306,
+        "output_tokens": 326,
+        "seconds": 11.02,
+        "repaired": false
+      }
+    },
+    "crux": {
+      "raw": {
+        "shared_ground": [
+          "Total monthly rent is $6,600 ($5,400 base + $1,200 additional)",
+          "Daily rate is $220 ($6,600 \u00f7 30 days)"
+        ],
+        "cruxes": [
+          {
+            "topic": "Holdover liability calculation",
+            "side_a": "Advisor 1: $6,600 * 1.25 * 4 = $3,300 liability",
+            "side_b": "Advisors 2 & 3: $220 * 1.25 * 4 = $1,100 liability",
+            "premise_at_stake": "Whether the daily rate is multiplied by 1.25 for the first 10 days"
+          }
+        ],
+        "unverified_premises": [
+          "Whether the lease contains a cap on the 125% holdover rate for the first 10 days"
+        ],
+        "decisive_check": "Verify if the lease specifies a capped holdover rate for the first 10 days"
+      },
+      "text": "ASSESSMENT OVERVIEW: Total monthly rent is $6,600 ($5,400 base + $1,200 additional) Daily rate is $220 ($6,600 \u00f7 30 days)\nPOINTS OF NOTE: Disagreements: (1) Holdover liability calculation: Side A [Advisor 1: $6,600 * 1.25 * 4 = $3,300 liability] vs. Side B [Advisors 2 & 3: $220 * 1.25 * 4 = $1,100 liability] (at stake: Whether the daily rate is multiplied by 1.25 for the first 10 days) Flagged issues: Whether the lease contains a cap on the 125% holdover rate for the first 10 days\nSUGGESTED NEXT STEP: Verify if the lease specifies a capped holdover rate for the first 10 days",
+      "words": 105,
+      "meta": {
+        "prompt_tokens": 1475,
+        "output_tokens": 250,
+        "seconds": 10.26,
+        "repaired": false
+      }
+    }
+  }
+}

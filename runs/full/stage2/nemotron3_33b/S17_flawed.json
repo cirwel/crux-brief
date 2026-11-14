@@ -1,0 +1,59 @@
+{
+  "scenario_id": "S17",
+  "variant": "flawed",
+  "domain": "procurement_handoffs",
+  "difficulty_tier": 1,
+  "synth_model": "nemotron3:33b",
+  "k_spotted": 3,
+  "advisor_caught_by_model": {
+    "gemma4:latest": true,
+    "nemotron3:33b": true,
+    "qwen3.6:27b-coding-mxfp8": true
+  },
+  "briefs": {
+    "consensus": {
+      "raw": {
+        "overview": "All three advisors confirm that the calculated all-in cost for 100 engineering workstations totals $128,300, which exceeds the $118,000 budget constraint by $10,300, indicating a clear financial violation that must be addressed before approval.",
+        "points_of_note": "The consistent calculation across advisors\u2014$115,000 for hardware, $9,500 for mandatory support, and $3,800 for shipping\u2014shows the $128,300 total is not a discrepancy but a confirmed overrun; Advisor 2's specific reference to Bundle Policy Note B underscores the mandatory nature of the $95/unit support, reinforcing that cost reduction must come from hardware or shipping adjustments, not support scope.",
+        "suggested_next_step": "Contact the sales representative to verify whether a hardware discount, alternative configuration, or revised shipping arrangement can reduce the total cost to $118,000 or below."
+      },
+      "text": "ASSESSMENT OVERVIEW: All three advisors confirm that the calculated all-in cost for 100 engineering workstations totals $128,300, which exceeds the $118,000 budget constraint by $10,300, indicating a clear financial violation that must be addressed before approval.\nPOINTS OF NOTE: The consistent calculation across advisors\u2014$115,000 for hardware, $9,500 for mandatory support, and $3,800 for shipping\u2014shows the $128,300 total is not a discrepancy but a confirmed overrun; Advisor 2's specific reference to Bundle Policy Note B underscores the mandatory nature of the $95/unit support, reinforcing that cost reduction must come from hardware or shipping adjustments, not support scope.\nSUGGESTED NEXT STEP: Contact the sales representative to verify whether a hardware discount, alternative configuration, or revised shipping arrangement can reduce the total cost to $118,000 or below.",
+      "words": 124,
+      "meta": {
+        "prompt_tokens": 1442,
+        "output_tokens": 223,
+        "seconds": 8.66,
+        "repaired": false
+      }
+    },
+    "crux": {
+      "raw": {
+        "shared_ground": [
+          "Total all-in PO cost for 100 workstations is $128,300",
+          "Budget constraint is $118,000"
+        ],
+        "cruxes": [
+          {
+            "topic": "Support inclusion",
+            "side_a": "Support is included at $95/unit (SKU-SUP-3Y) as required by Bundle Policy Note B",
+            "side_b": "Support may not be included or priced differently, affecting total cost",
+            "premise_at_stake": "Whether mandatory support is included at $95/unit"
+          }
+        ],
+        "unverified_premises": [
+          "Whether the hardware quote includes mandatory 3-year support (SKU-SUP-3Y) at $95/unit",
+          "Whether alternative support or hardware options exist to reduce total cost below $118,000"
+        ],
+        "decisive_check": "Confirm inclusion of mandatory 3-year support (SKU-SUP-3Y) at $95/unit in the hardware quote"
+      },
+      "text": "ASSESSMENT OVERVIEW: Total all-in PO cost for 100 workstations is $128,300 Budget constraint is $118,000\nPOINTS OF NOTE: Disagreements: (1) Support inclusion: Side A [Support is included at $95/unit (SKU-SUP-3Y) as required by Bundle Policy Note B] vs. Side B [Support may not be included or priced differently, affecting total cost] (at stake: Whether mandatory support is included at $95/unit) Flagged issues: Whether the hardware quote includes mandatory 3-year support (SKU-SUP-3Y) at $95/unit; Whether alternative support or hardware options exist to reduce total cost below $118,000\nSUGGESTED NEXT STEP: Confirm inclusion of mandatory 3-year support (SKU-SUP-3Y) at $95/unit in the hardware quote",
+      "words": 102,
+      "meta": {
+        "prompt_tokens": 1611,
+        "output_tokens": 243,
+        "seconds": 8.39,
+        "repaired": false
+      }
+    }
+  }
+}

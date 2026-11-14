@@ -1,0 +1,29 @@
+{
+  "scenario_id": "S16",
+  "variant": "sound",
+  "domain": "procurement_handoffs",
+  "difficulty_tier": 3,
+  "model": "gemma4:latest",
+  "seed": 131,
+  "output": {
+    "summary": "The packet addresses the core concern regarding ownership and distribution rights. Section 9.1 confirms the Buyer owns 100% of custom deliverables (Foreground Work Product). Section 9.3 addresses the Vendor's background IP, granting the Buyer a perpetual, worldwide, paid-up, transferable license with full rights to distribute and sublicense to external clients. This aligns with the user's goal of a white-labeled, sublicensable product.",
+    "key_claims": [
+      "Buyer owns 100% of custom deliverables (Foreground Work Product).",
+      "Vendor grants Buyer a perpetual, worldwide, paid-up, transferable license for Background Technology.",
+      "The license explicitly includes full rights to distribute and sublicense to Buyer's external clients."
+    ],
+    "recommendation": "proceed",
+    "risks_or_flaws": [
+      "none"
+    ],
+    "verification_question": "none",
+    "confidence": 100
+  },
+  "meta": {
+    "prompt_tokens": 545,
+    "output_tokens": 221,
+    "seconds": 7.85,
+    "repaired": false
+  },
+  "advisor_caught": null
+}

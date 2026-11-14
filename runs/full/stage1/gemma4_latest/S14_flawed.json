@@ -1,0 +1,29 @@
+{
+  "scenario_id": "S14",
+  "variant": "flawed",
+  "domain": "procurement_handoffs",
+  "difficulty_tier": 3,
+  "model": "gemma4:latest",
+  "seed": 126,
+  "output": {
+    "summary": "The PO ceiling is $21,000.00 USD. The calculation for the total USD debit is derived from the EUR invoice amount (21,000.00 EUR) multiplied by the stated FX rate (1.14 USD/EUR). This results in a total debit of $23,940.00 USD, which exceeds the $21,000.00 USD ceiling.",
+    "key_claims": [
+      "PO Ceiling: $21,000.00 USD",
+      "Total EUR Invoice: 21,000.00 EUR",
+      "Calculated USD Debit: $23,940.00 USD"
+    ],
+    "recommendation": "hold_to_verify",
+    "risks_or_flaws": [
+      "The calculated total USD debit ($23,940.00 USD) exceeds the stated PO ceiling ($21,000.00 USD)."
+    ],
+    "verification_question": "Does the $21,000.00 USD PO ceiling apply to the final USD debit amount, even if the invoice is billed in EUR?",
+    "confidence": 100
+  },
+  "meta": {
+    "prompt_tokens": 617,
+    "output_tokens": 284,
+    "seconds": 11.3,
+    "repaired": false
+  },
+  "advisor_caught": true
+}

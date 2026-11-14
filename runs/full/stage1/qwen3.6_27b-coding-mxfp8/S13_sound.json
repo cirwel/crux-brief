@@ -1,0 +1,29 @@
+{
+  "scenario_id": "S13",
+  "variant": "sound",
+  "domain": "procurement_handoffs",
+  "difficulty_tier": 2,
+  "model": "qwen3.6:27b-coding-mxfp8",
+  "seed": 2125,
+  "output": {
+    "summary": "The vendor guarantees 99.9% monthly uptime, which mathematically permits approximately 43.2 minutes of total downtime per 30-day month. Since 43.2 minutes is less than the user's 60-minute maximum threshold, the availability constraint is satisfied. The maintenance exclusion explicitly restricts scheduled windows to Sundays, ensuring zero US business hour outages. The remedy clause provides a 50% service credit for any breach, meeting the user's requirement for >= 50% reimbursement. All stated constraints are fully satisfied by the packet terms.",
+    "key_claims": [
+      "99.9% uptime allows ~43.2 minutes of monthly downtime",
+      "Maintenance restricted to Sundays (02:00-04:00 UTC)",
+      "Breach triggers 50% service credit"
+    ],
+    "recommendation": "proceed",
+    "risks_or_flaws": [
+      "none"
+    ],
+    "verification_question": "none",
+    "confidence": 100
+  },
+  "meta": {
+    "prompt_tokens": 588,
+    "output_tokens": 238,
+    "seconds": 42.07,
+    "repaired": false
+  },
+  "advisor_caught": null
+}

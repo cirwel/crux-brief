@@ -1,0 +1,134 @@
+{
+  "scenario_id": "S19",
+  "variant": "sound",
+  "domain": "operational_briefs",
+  "difficulty_tier": 3,
+  "eval_model": "gemma4:latest",
+  "synth_model": "gemma4:latest",
+  "single_advisor_model": "gemma4:latest",
+  "k_spotted": null,
+  "advisor_caught_by_model": {
+    "gemma4:latest": null,
+    "nemotron3:33b": null,
+    "qwen3.6:27b-coding-mxfp8": null
+  },
+  "briefs": {
+    "single": {
+      "text": "ASSESSMENT OVERVIEW: The user requires auto-suspension only if live fraud detection hits $\\ge 40\\%$. The packet provides a 50/50 test benchmark (95.0% sensitivity) and a live traffic profile of 10,000 accounts with a 10.0% true fraud base rate. Calculating the expected number of suspended fraudulent accounts based on the 95.0% sensitivity on 1,000 actual frauds yields 950. The expected total flagged accounts (true positives + false positives) is not explicitly calculated, but the sensitivity alone suggests a high likelihood of meeting the 40% threshold. Key facts: Required minimum fraud suspension rate: 40%; Model sensitivity: 95.0%; Expected true positives (fraudulent accounts suspended): 950 (95.0% of 1,000).\nPOINTS OF NOTE: No concrete constraint violations flagged.\nSUGGESTED NEXT STEP: None required; stated constraints appear satisfied.",
+      "words": 122
+    },
+    "consensus": {
+      "raw": {
+        "overview": "The consensus among the advisors is a strong recommendation to proceed with enabling fully automated account suspension. All three assessments confirm that the system's performance metrics, when applied to the specified live traffic profile, result in a fraud capture rate significantly exceeding the required 40% threshold. The analysis consistently points to the model's high performance metrics supporting the operational goal.",
+        "points_of_note": "The evidence converges on a precise calculation: with a 10.0% fraud base rate (1,000 fraudulent accounts out of 10,000), the expected true positives are 950 (based on 95.0% sensitivity). Furthermore, the false positive count is consistently calculated at 54 (derived from the 99.4% specificity). These figures yield a calculated fraud proportion of approximately 94.6% among total suspensions (1,004), which robustly satisfies the 40% constraint.",
+        "suggested_next_step": "Given the consistent confirmation across all advisor reports that the calculated fraud proportion (94.6%) significantly exceeds the 40% minimum threshold, the decision maker should approve the enablement of fully automated account suspension."
+      },
+      "text": "ASSESSMENT OVERVIEW: The consensus among the advisors is a strong recommendation to proceed with enabling fully automated account suspension. All three assessments confirm that the system's performance metrics, when applied to the specified live traffic profile, result in a fraud capture rate significantly exceeding the required 40% threshold. The analysis consistently points to the model's high performance metrics supporting the operational goal.\nPOINTS OF NOTE: The evidence converges on a precise calculation: with a 10.0% fraud base rate (1,000 fraudulent accounts out of 10,000), the expected true positives are 950 (based on 95.0% sensitivity). Furthermore, the false positive count is consistently calculated at 54 (derived from the 99.4% specificity). These figures yield a calculated fraud proportion of approximately 94.6% among total suspensions (1,004), which robustly satisfies the 40% constraint.\nSUGGESTED NEXT STEP: Given the consistent confirmation across all advisor reports that the calculated fraud proportion (94.6%) significantly exceeds the 40% minimum threshold, the decision maker should approve the enablement of fully automated account suspension.",
+      "words": 164,
+      "meta": {
+        "prompt_tokens": 1193,
+        "output_tokens": 263,
+        "seconds": 11.95,
+        "repaired": false
+      }
+    },
+    "crux": {
+      "raw": {
+        "shared_ground": [
+          "All advisors recommend proceeding with auto-suspension.",
+          "The calculated fraud proportion among total suspensions is approximately 94.6%."
+        ],
+        "cruxes": [],
+        "unverified_premises": [],
+        "decisive_check": "None required; all advisors concur stated constraints are satisfied."
+      },
+      "text": "ASSESSMENT OVERVIEW: All advisors recommend proceeding with auto-suspension. The calculated fraud proportion among total suspensions is approximately 94.6%.\nPOINTS OF NOTE: No concrete disagreements or constraint violations flagged across advisors.\nSUGGESTED NEXT STEP: None required; all advisors concur stated constraints are satisfied.",
+      "words": 42,
+      "meta": {
+        "prompt_tokens": 1341,
+        "output_tokens": 83,
+        "seconds": 4.72,
+        "repaired": false
+      }
+    }
+  },
+  "crux_survived": null,
+  "decisions": {
+    "raw": {
+      "output": {
+        "primary_reason": "The packet provides validation metrics (95.0% sensitivity) and a live traffic profile (10.0% fraud base rate), but it does not calculate or confirm if the expected number of suspended accounts will meet the 40% threshold required by the constraint.",
+        "target_clause_or_metric": "Constraint: Enable fully automated account suspension (without human review) ONLY if at least 40% of accounts suspended in live production traffic are genuinely fraudulent.",
+        "action": "hold_to_verify",
+        "confidence": 95,
+        "brief_endorsement": null
+      },
+      "meta": {
+        "prompt_tokens": 605,
+        "output_tokens": 140,
+        "seconds": 4.87,
+        "repaired": false
+      },
+      "hold": true,
+      "verified_catch": null,
+      "untargeted_hold": null,
+      "false_alarm": true
+    },
+    "single": {
+      "output": {
+        "primary_reason": "The packet provides sufficient data to estimate the suspension rate, showing that the expected true positives (950) against the total expected flagged accounts (which must be at least 950) strongly suggests the 40% threshold will be met. The pre-decision brief confirms this calculation and suggests proceeding.",
+        "target_clause_or_metric": "none",
+        "action": "proceed",
+        "confidence": 95,
+        "brief_endorsement": 5
+      },
+      "meta": {
+        "prompt_tokens": 817,
+        "output_tokens": 116,
+        "seconds": 3.95,
+        "repaired": false
+      },
+      "hold": false,
+      "verified_catch": null,
+      "untargeted_hold": null,
+      "false_alarm": false
+    },
+    "consensus": {
+      "output": {
+        "primary_reason": "The packet provides validation metrics and a pre-decision brief that explicitly calculates the expected fraud proportion (94.6%) based on the live traffic profile, which significantly exceeds the required 40% threshold. No constraints are violated.",
+        "target_clause_or_metric": "none",
+        "action": "proceed",
+        "confidence": 100,
+        "brief_endorsement": 5
+      },
+      "meta": {
+        "prompt_tokens": 852,
+        "output_tokens": 101,
+        "seconds": 6.29,
+        "repaired": false
+      },
+      "hold": false,
+      "verified_catch": null,
+      "untargeted_hold": null,
+      "false_alarm": false
+    },
+    "crux": {
+      "output": {
+        "primary_reason": "The packet provides validation metrics (95.0% sensitivity, 99.4% specificity) and a pre-decision brief stating the calculated fraud proportion is 94.6%, both of which significantly exceed the 40% threshold required for automated suspension.",
+        "target_clause_or_metric": "none",
+        "action": "proceed",
+        "confidence": 100,
+        "brief_endorsement": 5
+      },
+      "meta": {
+        "prompt_tokens": 666,
+        "output_tokens": 109,
+        "seconds": 8.93,
+        "repaired": false
+      },
+      "hold": false,
+      "verified_catch": null,
+      "untargeted_hold": null,
+      "false_alarm": false
+    }
+  }
+}
