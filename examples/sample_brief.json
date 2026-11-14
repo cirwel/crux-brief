@@ -1,0 +1,114 @@
+{
+  "title": "Commercial Studio Lease \u2014 Controllable vs. Uncontrollable CAM Cap",
+  "constraints": "Constraints: Total monthly occupancy cost (Base Rent + NNN CAM charges) must not exceed $4,300/month in Year 1 OR Year 2 under stated escalation terms. The space fits our studio perfectly and the broker recommends signing before another tenant takes it, so I am leaning toward signing unless the numbers can exceed $4,300/month in Year 2.",
+  "panel_models": [
+    "gemma4:latest",
+    "qwen3.6:27b-coding-mxfp8",
+    "nemotron3:33b"
+  ],
+  "synth_model": "gemma4:latest",
+  "advisors": [
+    {
+      "model": "gemma4:latest",
+      "output": {
+        "summary": "The total occupancy cost for Year 1 is $3,200 (Base Rent) + $950 (CAM) = $4,150/month, which is under the $4,300 limit. For Year 2, the Base Rent increases by 3.0% to $3,296/month. The NNN CAM increases by 3.0% on the controllable portion ($330 * 1.03 = $340), plus the projected $185 increase in uncontrollable costs. The total Year 2 cost is $3,296 + $340 + ($620 - $330 + $340 + $185) = $3,296 + $340 + $995 = $4,631/month, exceeding the $4,300 limit.",
+        "key_claims": [
+          "Year 1 Total Cost: $4,150/month",
+          "Year 2 Base Rent: $3,296/month",
+          "Year 2 Total Cost: $4,631/month"
+        ],
+        "recommendation": "hold_to_verify",
+        "risks_or_flaws": [
+          "The calculated Year 2 total occupancy cost ($4,631/month) exceeds the stated constraint limit of $4,300/month."
+        ],
+        "verification_question": "Does the $185/month increase in property taxes and insurance for Year 2 apply only to the uncontrollable portion, or does it increase the total NNN CAM charge beyond the calculation used?",
+        "confidence": 100
+      },
+      "meta": {
+        "prompt_tokens": 674,
+        "output_tokens": 388,
+        "seconds": 13.51,
+        "repaired": false
+      }
+    },
+    {
+      "model": "qwen3.6:27b-coding-mxfp8",
+      "output": {
+        "summary": "The user requires total monthly occupancy cost (Base Rent + NNN CAM) to not exceed $4,300 in Year 1 or Year 2. Year 1 cost is $3,200 (Rent) + $950 (CAM) = $4,150, which is under the limit. For Year 2, Base Rent escalates 3% to $3,296. CAM increases by the projected $185 for uncontrollable expenses, while controllable expenses are capped at 3% ($330 * 1.03 = $339.90). Total Year 2 CAM is $339.90 + ($620 + $185) = $1,144.90. Total Year 2 cost is $3,296 + $1,144.90 = $4,440.90. This exceeds the $4,300 constraint.",
+        "key_claims": [
+          "Year 1 Total Cost: $4,150/month",
+          "Year 2 Total Cost: $4,440.90/month"
+        ],
+        "recommendation": "hold_to_verify",
+        "risks_or_flaws": [
+          "Year 2 total occupancy cost ($4,440.90) exceeds the user's maximum constraint of $4,300/month due to projected increases in uncontrollable CAM expenses."
+        ],
+        "verification_question": "Can the landlord agree to cap the uncontrollable CAM increases or reduce the base rent to ensure Year 2 total costs remain below $4,300?",
+        "confidence": 95
+      },
+      "meta": {
+        "prompt_tokens": 652,
+        "output_tokens": 382,
+        "seconds": 68.87,
+        "repaired": false
+      }
+    },
+    {
+      "model": "nemotron3:33b",
+      "output": {
+        "summary": "Year 1 total cost = $3,200 + $950 = $4,150, under $4,300. Year 2 base rent = $3,200 * 1.03 = $3,296. Controllable CAM remains $330 (3% cap). Uncontrollable CAM rises $185 to $805. Year 2 total = $3,296 + $950 + $185 = $4,431, exceeding $4,300. Constraint violated in Year 2.",
+        "key_claims": [
+          "Year 1 total: $4,150",
+          "Year 2 total: $4,431",
+          "Exceeds $4,300 in Year 2"
+        ],
+        "recommendation": "hold_to_verify",
+        "risks_or_flaws": [
+          "Year 2 total cost exceeds $4,300 constraint"
+        ],
+        "verification_question": "Confirm Year 2 base rent calculation and uncontrollable CAM increase amount",
+        "confidence": 100
+      },
+      "meta": {
+        "prompt_tokens": 739,
+        "output_tokens": 268,
+        "seconds": 5.58,
+        "repaired": false
+      }
+    }
+  ],
+  "crux": {
+    "shared_ground": [
+      "Year 1 total occupancy cost is consistently calculated at $4,150/month, which is under the $4,300 limit.",
+      "All advisors conclude that the Year 2 total occupancy cost exceeds the $4,300 constraint."
+    ],
+    "cruxes": [
+      {
+        "topic": "Year 2 CAM Calculation",
+        "side_a": "Advisor 1 calculates Year 2 total cost as $4,631/month using a complex breakdown.",
+        "side_b": "Advisor 3 calculates Year 2 total cost as $4,440.90/month, detailing controllable and uncontrollable components.",
+        "premise_at_stake": "The precise method for calculating the Year 2 NNN CAM charge and the resulting total cost."
+      }
+    ],
+    "unverified_premises": [
+      "The exact mechanism for calculating the Year 2 NNN CAM charge, particularly how the $185 increase interacts with the controllable portion.",
+      "Whether the landlord can agree to cap uncontrollable CAM increases or reduce base rent to meet the Year 2 constraint."
+    ],
+    "decisive_check": "Confirmation of the Year 2 NNN CAM calculation methodology and negotiation potential regarding cost caps."
+  },
+  "brief_text": "ASSESSMENT OVERVIEW: Year 1 total occupancy cost is consistently calculated at $4,150/month, which is under the $4,300 limit. All advisors conclude that the Year 2 total occupancy cost exceeds the $4,300 constraint.\nPOINTS OF NOTE: Disagreements: (1) Year 2 CAM Calculation: Side A [Advisor 1 calculates Year 2 total cost as $4,631/month using a complex breakdown.] vs. Side B [Advisor 3 calculates Year 2 total cost as $4,440.90/month, detailing controllable and uncontrollable components.] (at stake: The precise method for calculating the Year 2 NNN CAM charge and the resulting total cost.) Flagged issues: The exact mechanism for calculating the Year 2 NNN CAM charge, particularly how the $185 increase interacts with the controllable portion.; Whether the landlord can agree to cap uncontrollable CAM increases or reduce base rent to meet the Year 2 constraint.\nSUGGESTED NEXT STEP: Confirmation of the Year 2 NNN CAM calculation methodology and negotiation potential regarding cost caps.",
+  "brief_word_count": 152,
+  "crux_meta": {
+    "prompt_tokens": 1531,
+    "output_tokens": 293,
+    "seconds": 9.95,
+    "repaired": false
+  },
+  "consensus_text": "ASSESSMENT OVERVIEW: The advisors show strong consensus regarding the initial year's costs, confirming that the Year 1 total occupancy cost of $4,150/month remains comfortably below the $4,300 constraint. However, there is clear and consistent divergence regarding the Year 2 projection, with all three reports concluding that the projected total occupancy cost will exceed the stipulated $4,300 limit.\nPOINTS OF NOTE: All advisors agree on the Year 1 total of $4,150/month. Regarding Year 2, the core conflict centers on the calculation of the total NNN CAM charges and the resulting total cost. Advisor 1 calculates a Year 2 total of $4,631/month, while Advisor 2 estimates $4,431, and Advisor 3 projects $4,440.90. The consistent element across all reports is that the projected Year 2 cost significantly breaches the $4,300 threshold due to escalations in base rent and uncontrollable CAM components.\nSUGGESTED NEXT STEP: Given the unanimous identification of a Year 2 constraint breach, the immediate next step must be to negotiate with the landlord. Specifically, the decision-maker should seek confirmation on whether the uncontrollable CAM increases can be capped or if the base rent escalation can be modified to bring the Year 2 total cost below $4,300.",
+  "consensus_meta": {
+    "prompt_tokens": 1383,
+    "output_tokens": 305,
+    "seconds": 9.92,
+    "repaired": false
+  }
+}

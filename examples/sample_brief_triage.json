@@ -1,0 +1,114 @@
+{
+  "title": "Regional Support Triage Rollout \u2014 Segment Resolution Check",
+  "constraints": "Constraints: Approve global rollout of the new AI triage router only if it improves resolution rate over the legacy router for both Enterprise and SMB customers. The dashboard headline shows a clear overall resolution-rate lift, so I am leaning toward approving rollout unless segment performance fails.",
+  "panel_models": [
+    "gemma4:latest",
+    "qwen3.6:27b-coding-mxfp8",
+    "nemotron3:33b"
+  ],
+  "synth_model": "gemma4:latest",
+  "advisors": [
+    {
+      "model": "gemma4:latest",
+      "output": {
+        "summary": "The packet shows an overall lift (67.5% to 70.9%), but the constraint requires improvement for *both* Enterprise and SMB segments. For Enterprise, the rate improved from 340/400 (85.0%) to 984/1200 (82.0%), which is a decrease. For SMB, the rate improved from 1010/1600 (63.1%) to 434/800 (54.2%), which is also a decrease. Therefore, the core condition for approval is not met.",
+        "key_claims": [
+          "Enterprise Resolution Rate (Legacy): 340/400 (85.0%)",
+          "Enterprise Resolution Rate (AI v2): 984/1200 (82.0%)",
+          "SMB Resolution Rate (Legacy): 1010/1600 (63.1%)"
+        ],
+        "recommendation": "hold_to_verify",
+        "risks_or_flaws": [
+          "The constraint requires the AI Triage router to improve resolution rate over the legacy router for *both* Enterprise and SMB customers. The computed rates show a decrease for both segments."
+        ],
+        "verification_question": "Please confirm the calculation or data source for the segment resolution rates, as the provided figures indicate a performance degradation for both Enterprise (85.0% to 82.0%) and SMB (63.1% to 54.2%) compared to the legacy router.",
+        "confidence": 100
+      },
+      "meta": {
+        "prompt_tokens": 643,
+        "output_tokens": 369,
+        "seconds": 10.75,
+        "repaired": false
+      }
+    },
+    {
+      "model": "qwen3.6:27b-coding-mxfp8",
+      "output": {
+        "summary": "The user requires improved resolution rates for both Enterprise and SMB segments. Calculating segment performance: Legacy Enterprise rate is 340/400 = 85%, while AI v2 is 984/1,200 = 82%. This is a decrease, violating the constraint. Legacy SMB rate is 1,010/1,600 = 63.1%, while AI v2 is 434/800 = 54.25%. This is also a decrease. Although the headline shows an overall lift, the segment-specific constraints are failed due to Simpson's Paradox caused by the shift in ticket mix (more easy Enterprise tickets routed to AI).",
+        "key_claims": [
+          "Legacy Enterprise resolution rate: 85% vs AI v2: 82%"
+        ],
+        "recommendation": "hold_to_verify",
+        "risks_or_flaws": [
+          "AI Triage v2 resolution rate for Enterprise customers decreased from 85% to 82%, violating the constraint to improve resolution rate for Enterprise."
+        ],
+        "verification_question": "Does the user accept a rollout where both Enterprise and SMB segment resolution rates decrease, despite an overall aggregate lift?",
+        "confidence": 100
+      },
+      "meta": {
+        "prompt_tokens": 631,
+        "output_tokens": 288,
+        "seconds": 38.82,
+        "repaired": false
+      }
+    },
+    {
+      "model": "nemotron3:33b",
+      "output": {
+        "summary": "Overall resolution rate improved from 67.5% to 70.9% (+3.4 pp) across 2,000 tickets per arm. Enterprise: legacy 340/400 (85%); AI v2 984/1,200 (82%). SMB: legacy 1,010/1,600 (63.1%); AI v2 434/800 (54.25%). AI v2 underperforms legacy in both segments despite overall lift.",
+        "key_claims": [
+          "Overall resolution rate: 67.5% (legacy) vs 70.9% (AI v2)",
+          "Enterprise resolution: 85% (legacy) vs 82% (AI v2)",
+          "SMB resolution: 63.1% (legacy) vs 54.25% (AI v2)"
+        ],
+        "recommendation": "hold_to_verify",
+        "risks_or_flaws": [
+          "AI v2 resolution rate is lower than legacy for Enterprise customers (82% vs 85%)",
+          "AI v2 resolution rate is lower than legacy for SMB customers (54.25% vs 63.1%)"
+        ],
+        "verification_question": "Confirm whether the segment counts (400 Enterprise, 1,600 SMB for legacy; 1,200 Enterprise, 800 SMB for AI v2) are accurate and whether resolution counts (340/400, 1,010/1,600, 984/1,200, 434/800) are correctly derived from the packet.",
+        "confidence": 95
+      },
+      "meta": {
+        "prompt_tokens": 704,
+        "output_tokens": 408,
+        "seconds": 8.67,
+        "repaired": false
+      }
+    }
+  ],
+  "crux": {
+    "shared_ground": [
+      "The overall resolution rate lifted from 67.5% to 70.9%.",
+      "Both advisors confirm that the AI v2 router shows a lower resolution rate than the legacy router for both Enterprise and SMB segments."
+    ],
+    "cruxes": [
+      {
+        "topic": "Segment Performance Constraint",
+        "side_a": "Constraint requires improvement for *both* Enterprise and SMB segments.",
+        "side_b": "Overall lift is present, suggesting approval despite segment dips.",
+        "premise_at_stake": "Whether the overall lift outweighs the failure to meet segment-specific improvement constraints."
+      }
+    ],
+    "unverified_premises": [
+      "The underlying data source or calculation for the segment resolution rates needs confirmation, as all advisors note a performance degradation in both segments.",
+      "The impact of the ticket mix shift (Simpson's Paradox) on the segment-level metrics is unverified."
+    ],
+    "decisive_check": "Confirm the segment resolution rates (Enterprise: 85% vs 82%; SMB: 63.1% vs 54.25%) are accurate and if the user accepts a rollout where both segment rates decrease despite an overall aggregate lift."
+  },
+  "brief_text": "ASSESSMENT OVERVIEW: The overall resolution rate lifted from 67.5% to 70.9%. Both advisors confirm that the AI v2 router shows a lower resolution rate than the legacy router for both Enterprise and SMB segments.\nPOINTS OF NOTE: Disagreements: (1) Segment Performance Constraint: Side A [Constraint requires improvement for *both* Enterprise and SMB segments.] vs. Side B [Overall lift is present, suggesting approval despite segment dips.] (at stake: Whether the overall lift outweighs the failure to meet segment-specific improvement constraints.) Flagged issues: The underlying data source or calculation for the segment resolution rates needs confirmation, as all advisors note a performance degradation in both segments.; The impact of the ticket mix shift (Simpson's Paradox) on the segment-level metrics is unverified.\nSUGGESTED NEXT STEP: Confirm the segment resolution rates (Enterprise: 85% vs 82%; SMB: 63.1% vs 54.25%) are accurate and if the user accepts a rollout where both segment rates decrease despite an overall aggregate lift.",
+  "brief_word_count": 154,
+  "crux_meta": {
+    "prompt_tokens": 1525,
+    "output_tokens": 285,
+    "seconds": 9.75,
+    "repaired": false
+  },
+  "consensus_text": "ASSESSMENT OVERVIEW: The advisors present a clear divergence between the overall performance metrics and the specific segment requirements outlined in the user's constraints. While all reports acknowledge a positive overall lift in the resolution rate (from 67.5% to 70.9%), this aggregate improvement is contradicted by the segment-level data. The consensus among the advisors is that the core condition\u2014improvement in resolution rate for *both* Enterprise and SMB customers\u2014has not been met.\nPOINTS OF NOTE: The evidence consistently points to a failure to meet the segment-specific constraint. Specifically, the analysis shows the Enterprise resolution rate declining from 85.0% (Legacy) to 82.0% (AI v2), and the SMB rate declining from 63.1% (Legacy) to 54.25% (AI v2). Advisor 3 correctly identifies this pattern as potentially related to Simpson's Paradox due to ticket mix shifts. The specific figures cited across all reports\u2014such as the 85% vs 82% Enterprise comparison\u2014are highly consistent and directly violate the stated requirement for improvement in both segments.\nSUGGESTED NEXT STEP: Given the unanimous identification of a constraint violation at the segment level, the recommended next step is to halt the global rollout. Further investigation must focus on reconciling the segment performance data to determine if the observed degradation in Enterprise and SMB rates can be mitigated or if the constraint must be re-evaluated against the observed overall lift.",
+  "consensus_meta": {
+    "prompt_tokens": 1377,
+    "output_tokens": 320,
+    "seconds": 10.75,
+    "repaired": false
+  }
+}
