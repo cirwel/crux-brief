@@ -53,3 +53,4 @@ Prior to locking this plan, the 4-pair smoke calibration suite (`runs/smoke_cali
 ## Changes after the lock
 
 - **2026-11-14 (visual chart layout only):** Adjusted `make_figure1` in [`crux_brief/figures.py`](crux_brief/figures.py) so numeric bar labels sit cleanly above each 95% Wilson CI whisker cap (`min(1.08, h + hi_err + 0.015)`, `ylim(0, 1.18)`) rather than colliding with error bars. Zero changes were made to `runs/full`, prompts, scenarios, metrics, or `results/tables.md`.
+- **2026-11-15 (publication metadata & PDF rebuild only):** Added Apache-2.0 `LICENSE`, Apart Research author block, and public GitHub repository links (`https://github.com/cirwel/crux-brief`, `https://github.com/cirwel/signed-is-not-true`), removed local filesystem paths from `COLLAB-NOTES.md`, updated `report/style.css` (`h1 + p + p + p` centering), and rebuilt `report/crux-brief.pdf`. Zero changes were made to `runs/full`, prompts, scenarios, metrics, or `results/tables.md`.

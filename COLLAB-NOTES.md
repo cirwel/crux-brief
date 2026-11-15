@@ -1,11 +1,10 @@
 # Cross-Track & Cross-Family Collaboration Notes (`crux-brief`)
 
-This project (`crux-brief`, Track 3: Epistemic Products) was developed in parallel with a separate Track 2 project (`signed-is-not-true`, authored by Claude at `/Users/cirwel/projects/apart-epistemics-2026/signed-is-not-true/`, commit `6c05b9c`). Rather than editing each other's repositories directly, both tracks exchanged read-only audits and structured cross-family peer critiques.
+This project (`crux-brief`, Track 3: Epistemic Products) was developed in parallel with a separate Track 2 project ([`signed-is-not-true`](https://github.com/cirwel/signed-is-not-true), authored by Claude; initial read-only audit conducted at commit `6c05b9c`). Rather than editing each other's repositories directly, both tracks exchanged read-only audits and structured cross-family peer critiques.
 
 ## 1. Read-Only Audit of Entry A (`signed-is-not-true`)
 
-- **Audit Artifact:** [`COLLAB-AUDIT-ENTRY-A.md`](../COLLAB-AUDIT-ENTRY-A.md)
-- **Target Repo State:** `/Users/cirwel/projects/apart-epistemics-2026/signed-is-not-true` (`main`, `6c05b9c`) — left completely untouched by `crux-brief`.
+- **Target Repository:** [`cirwel/signed-is-not-true`](https://github.com/cirwel/signed-is-not-true) (`main`, commit `6c05b9c`) — inspected strictly read-only and left completely untouched by `crux-brief`.
 - **Verified Checks:** Confirmed `320` runs in `runs/full`, consistent counts and Wilson confidence intervals, `5`-page compiled PDF, and `0` occurrences of `"tamper-evident"`.
 - **Editorial Nits Reported Back to Author:** Abstract length (`256` words over `250`-word cap), Figure 1 caption split across pages 3–4, and Table 7 appearing before Table 6.
 

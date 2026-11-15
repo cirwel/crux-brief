@@ -3,6 +3,8 @@
 Entry for the Apart Research AI x Epistemics Research Sprint, 13 to 15 November 2026
 (Track 3, Epistemic Products).
 
+**Paper & Results:** [`report/REPORT.md`](report/REPORT.md) | [`report/crux-brief.pdf`](report/crux-brief.pdf) | [`results/tables.md`](results/tables.md)
+
 When a multi-model advisory panel reviews a consequential decision (job offer,
 commercial lease, procurement handoff, or operational data readout), one advisor
 often spots a flawed premise or hidden constraint violation while the others
@@ -29,7 +31,7 @@ This repository contains:
 All code, scenario packets, calibration runs, full evaluation runs, analysis scripts,
 figures, and report text in this repository were written during the 13–15 November 2026
 Apart AI x Epistemics Research Sprint. No preexisting codebase is reused or bundled here.
-(Companion Track 2 submission `signed-is-not-true` lives in a separate repository.)
+(Companion Track 2 submission [`signed-is-not-true`](https://github.com/cirwel/signed-is-not-true) lives in a separate repository.)
 
 ## Quickstart: Run the Product CLI
 
@@ -65,3 +67,7 @@ The `crux_brief` implementation, scenario suite, statistical scripts, and report
 were built with an AI coding agent working under the author's direction, with peer design
 and paper critiques from a separate model family (`anthropic`). The author is responsible
 for the repository, runs, and claims.
+
+## License
+
+Apache License 2.0 ([`LICENSE`](LICENSE)).
